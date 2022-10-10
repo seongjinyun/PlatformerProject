@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75342fe1d6ecf4d899773eb76f45e71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainBody: {fileID: 2800000, guid: e02fee5a8643c475988de1404c29e83e, type: 3}
+  _mainBody: {fileID: 0}
   _maxNumber: 100
   unitPath: Assets/Resources/SPUM/SPUM_Units/
   _unitObjSet: {fileID: 0}
@@ -61,8 +62,7 @@ MonoBehaviour:
   _unitCode: {fileID: 0}
   _unitNumber: {fileID: 0}
   _drawItemObj: {fileID: 0}
-  _childItem: {fileID: 5577627943664093003, guid: 1634d8045e75445b7a39f6e29b9fca12,
-    type: 3}
+  _childItem: {fileID: 5577627943664093003, guid: 1634d8045e75445b7a39f6e29b9fca12, type: 3}
   _childPool: {fileID: 0}
   _colorPicker: {fileID: 0}
   _nowColorNum: 0

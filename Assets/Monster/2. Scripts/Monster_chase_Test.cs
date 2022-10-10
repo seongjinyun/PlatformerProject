@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Monster_chase_Test : MonoBehaviour
 {
+
     [SerializeField] // == public 근데 외부 스크립트에서 수정못함
     GameObject face;
 
@@ -29,7 +30,6 @@ public class Monster_chase_Test : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
@@ -56,9 +56,10 @@ public class Monster_chase_Test : MonoBehaviour
         {
             ChasePlayer();
         }
+
     }
 
-        bool CanSeePlayer(float distnace)
+    bool CanSeePlayer(float distnace)
     {
         bool val = false;
         float castDist = distnace;
@@ -77,6 +78,7 @@ public class Monster_chase_Test : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 val = true;
+                
             }
             else
             {
@@ -92,6 +94,7 @@ public class Monster_chase_Test : MonoBehaviour
         return val;
 
     }
+
 
     void ChasePlayer()
     {
