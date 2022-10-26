@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster1
       objectReference: {fileID: 0}
+    - target: {fileID: 906192620957400682, guid: c11d64bbdeb48884f93ed5037ef96c96, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 906192620957400685, guid: c11d64bbdeb48884f93ed5037ef96c96, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -629,6 +633,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579140980337199987, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199991, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199991, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199991, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199991, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199991, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199991, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
