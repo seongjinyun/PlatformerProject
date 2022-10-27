@@ -124,7 +124,7 @@ public class Monster_chase_Test : MonoBehaviour
 
     private void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
+        if (coll.gameObject.CompareTag("Player_Weapon")) // 웨폰 충돌시 HP감소
         {
             Monster_HP -= 10;
             if (Monster_HP <= 0)
