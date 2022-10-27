@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+
+public class GameManager : MonoBehaviour
+{
+    public static GameManager instance; //싱글턴 처리용 인스턴스 변수 선언
+    public TMP_Text txtTitle, btnStartText, btnOptionText, btnQuitText; //메시지 텍스트, 타임 텍스트
+    public Button btnStart; //시작 버튼   
+    public Button btnOption; //시작 버튼
+
+    private void Awake() 
+    {
+        //게임매니저를 싱글턴 처리
+        if (instance == null) instance = this; //인스턴스가 존재하지 않으면 현재 인스턴스로 
+        else Destroy(this);                    //인스턴스가 존재하면 현재 인스턴스를 삭제 
+    }
+
+
+    void Update()
+    {
+
+    }
+    void Start()
+    {
+        
+    }
+
+    public void GameStart() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
+    {
+        SceneManager.LoadScene("UI_Tutorial");
+        Debug.Log("게임시작");
+    }
+
+    public void GameOption() //게임 시작 함수 (옵션 버튼을 누르면 실행됨)
+    {
+        SceneManager.LoadScene("UI_Option");
+        Debug.Log("옵션씬으로 이동");
+    }
+    public void Quit() //게임 정지 함수 (QUIT 버튼을 누르면 실행)
+    {
+        Application.Quit();
+    }
+}
