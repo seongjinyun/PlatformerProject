@@ -27,6 +27,7 @@ public class Monster_State : MonoBehaviour
             {
                 animator.SetBool("Run", true);
             }
+
         }
     }
 

@@ -26,6 +26,8 @@ public class Monster_chase_Test : MonoBehaviour
 
     private bool isAgro = false;
     private bool isSearching;
+
+    public int Monster_HP;
     // Start is called before the first frame update
     void Start()
     {
@@ -118,5 +120,17 @@ public class Monster_chase_Test : MonoBehaviour
         isAgro = false;
         isSearching = false;
         rb2d.velocity = new Vector2(0, 0);
+    }
+
+    private void OnCollisionEnter(Collision coll)
+    {
+        if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
+        {
+            Monster_HP -= 10;
+            if (Monster_HP <= 0)
+            {
+                Destroy(gameObject); // 체력 0이 될시 삭제
+            }
+        }
     }
 }
