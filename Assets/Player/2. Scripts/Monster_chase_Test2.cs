@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_chase_Test : MonoBehaviour
+public class Monster_chase_Test2 : MonoBehaviour
 {
 
     [SerializeField] // == public 근데 외부 스크립트에서 수정못함
