@@ -560,6 +560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster1
       objectReference: {fileID: 0}
+    - target: {fileID: 7854807322033393989, guid: 57489820928d31d4b8114b26d17c8719, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7854807322033393997, guid: 57489820928d31d4b8114b26d17c8719, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -641,6 +645,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1977713872}
+    - target: {fileID: 7906471685092051112, guid: 91ebd7582b2a51844a4c099ddc616a9e, type: 3}
+      propertyPath: agroRange
+      value: 12.23
+      objectReference: {fileID: 0}
     - target: {fileID: 7906471685092051113, guid: 91ebd7582b2a51844a4c099ddc616a9e, type: 3}
       propertyPath: m_RootOrder
       value: 5
