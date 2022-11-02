@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; //싱글턴 처리용 인스턴스 변수 선언
     public TMP_Text txtTitle, btnStartText, btnOptionText, btnQuitText; //메시지 텍스트, 타임 텍스트
     public Button btnStart; //시작 버튼   
-    public Button btnOption; //시작 버튼
+    public Button btnOption; //옵션 버튼
+    public Button btnBack; //메인씬이동 버튼
 
     private void Awake() 
     {
@@ -43,5 +44,11 @@ public class GameManager : MonoBehaviour
     public void Quit() //게임 정지 함수 (QUIT 버튼을 누르면 실행)
     {
         Application.Quit();
+    }
+
+    public void GameMain()
+    {
+        SceneManager.LoadScene("UI_Main");
+        Debug.Log("메인메뉴로 이동");
     }
 }
