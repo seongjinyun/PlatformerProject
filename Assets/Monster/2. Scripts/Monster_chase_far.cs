@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_chase_Test : MonoBehaviour
+public class Monster_chase_far : MonoBehaviour
 {
 
     [SerializeField] // == public 근데 외부 스크립트에서 수정못함
@@ -19,6 +19,18 @@ public class Monster_chase_Test : MonoBehaviour
 
     [SerializeField]
     float moveSpeed;
+
+
+    [SerializeField]
+    float Monster_atkDistance;
+
+    [SerializeField]
+    GameObject Monster_bullet;
+
+    public Transform Bullet_pos;
+    public float Monster_cool;
+    public float Monster_cur;
+
 
     Rigidbody2D rb2d;
 
@@ -81,6 +93,20 @@ public class Monster_chase_Test : MonoBehaviour
             {
                 val = true;
 
+                if (Vector2.Distance(transform.position, hit.collider.transform.position) < Monster_atkDistance)
+                {
+                    if (Monster_cur <= 0)
+                    {
+                        Instantiate(Monster_bullet, Bullet_pos.position, transform.rotation);
+
+                        Monster_cur = Monster_cool;
+                    }
+                    else
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, hit.collider.transform.position, Time.deltaTime * moveSpeed);
+                    }
+                    Monster_cur -= Time.deltaTime;
+                }
             }
             else
             {
@@ -103,14 +129,16 @@ public class Monster_chase_Test : MonoBehaviour
         {
             // enemy is to the left side of the player, so move right
             rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(2, 2); //크기
+            //transform.localScale = new Vector2(2, 2); //크기
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             isFacingLeft = false;
         }
         else
         {
             // enemy is to the left side of the player, so move right
             rb2d.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(-2, 2); 
+            //transform.localScale = new Vector2(-2, 2);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             isFacingLeft = true;
         }
     }
@@ -123,7 +151,7 @@ public class Monster_chase_Test : MonoBehaviour
 
     private void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.CompareTag("Player_Weapon")) // 웨폰 충돌시 HP감소
+        if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
         {
             Monster_HP -= 10;
             if (Monster_HP <= 0)
