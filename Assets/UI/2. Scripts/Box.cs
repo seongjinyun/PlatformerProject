@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    public GameObject[] items = new GameObject[3];
+    public GameObject[] items = new GameObject[5];
     // Start is called before the first frame update
     void Start()
     {  
@@ -15,8 +15,8 @@ public class Box : MonoBehaviour
     {        
         if (collision.gameObject.tag == "Player")
         {  
-            int rand = Random.Range(0, 3);
-            // 랜덤수를 설정(0 ~2)
+            int rand = Random.Range(0, 5);
+
             Instantiate(items[rand], transform.position, Quaternion.identity);
 
             Destroy(this.gameObject);
