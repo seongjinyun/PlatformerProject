@@ -9,103 +9,103 @@ public class Monster_chase_far : MonoBehaviour
     GameObject face;
 
     [SerializeField]
-    Transform castPoint;
+    Transform Monster2_castPoint;
 
     [SerializeField]
-    Transform Player;
+    Transform Monster2_Player;
 
     [SerializeField]
-    float agroRange; // 어그로범위
+    float Monster2_agroRange; // 어그로범위
 
     [SerializeField]
-    float moveSpeed;
+    float Monster2_moveSpeed;
 
 
     [SerializeField]
-    float Monster_atkDistance;
+    float Monster2_atkDistance;
 
     [SerializeField]
-    GameObject Monster_bullet;
+    GameObject Monster2_bullet;
 
-    public Transform Bullet_pos;
-    public float Monster_cool;
-    public float Monster_cur;
+    public Transform Monster2_bullet_pos;
+    public float Monster2_cool;
+    public float Monster2_cur;
 
 
-    Rigidbody2D rb2d;
+    Rigidbody2D Monster2_rb2d;
 
-    bool isFacingLeft;
+    bool Monster2_isFacingLeft;
 
-    private bool isAgro = false;
-    private bool isSearching;
+    private bool Monster2_isAgro = false;
+    private bool Monster2_isSearching;
 
-    public int Monster_HP;
+    public int Monster2_HP;
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        Monster2_rb2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (CanSeePlayer(agroRange))
+        if (Monster2_CanSeeMonster2_Player(Monster2_agroRange))
         {
-            isAgro = true;
+            Monster2_isAgro = true;
         }
         else
         {
-            if (isAgro)
+            if (Monster2_isAgro)
             {
-                if (isSearching)
+                if (Monster2_isSearching)
                 {
-                    isSearching = true;
+                    Monster2_isSearching = true;
                 }
-                Invoke("StopChasingPlayer", 3);
+                Invoke("StopChasingMonster2_Player", 3);
             }
 
         }
 
-        if (isAgro)
+        if (Monster2_isAgro)
         {
-            ChasePlayer();
+            Monster2_ChaseMonster2_Player();
         }
 
     }
 
-    bool CanSeePlayer(float distnace)
+    bool Monster2_CanSeeMonster2_Player(float distnace)
     {
         bool val = false;
         float castDist = distnace;
 
-        if (isFacingLeft)
+        if (Monster2_isFacingLeft)
         {
             castDist = -distnace;
         }
 
-        Vector2 endPos = castPoint.position + Vector3.right * castDist;
+        Vector2 endPos = Monster2_castPoint.position + Vector3.right * castDist;
 
-        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Water")); // 플레이어 레이어 설정
+        RaycastHit2D hit = Physics2D.Linecast(Monster2_castPoint.position, endPos, 1 << LayerMask.NameToLayer("Water")); // 플레이어 레이어 설정
 
         if (hit.collider != null)
         {
-            if (hit.collider.gameObject.CompareTag("Player")) // 플레이어일때 원거리 공격.
+            if (hit.collider.gameObject.CompareTag("Monster2_Player")) // 플레이어일때 원거리 공격.
             {
                 val = true;
 
-                if (Vector2.Distance(transform.position, hit.collider.transform.position) < Monster_atkDistance)
+                if (Vector2.Distance(transform.position, hit.collider.transform.position) < Monster2_atkDistance)
                 {
-                    if (Monster_cur <= 0)
+                    if (Monster2_cur <= 0)
                     {
-                        Instantiate(Monster_bullet, Bullet_pos.position, transform.rotation);
+                        Instantiate(Monster2_bullet, Monster2_bullet_pos.position, transform.rotation);
 
-                        Monster_cur = Monster_cool;
+                        Monster2_cur = Monster2_cool;
                     }
                     else
                     {
-                        transform.position = Vector3.MoveTowards(transform.position, hit.collider.transform.position, Time.deltaTime * moveSpeed);
+                        transform.position = Vector3.MoveTowards(transform.position, hit.collider.transform.position, Time.deltaTime * Monster2_moveSpeed);
                     }
-                    Monster_cur -= Time.deltaTime;
+                    Monster2_cur -= Time.deltaTime;
                 }
             }
             else
@@ -113,48 +113,48 @@ public class Monster_chase_far : MonoBehaviour
                 val = false;
             }
 
-            Debug.DrawLine(castPoint.position, hit.point, Color.yellow);
+            Debug.DrawLine(Monster2_castPoint.position, hit.point, Color.yellow);
         }
         else
         {
-            Debug.DrawLine(castPoint.position, endPos, Color.blue);
+            Debug.DrawLine(Monster2_castPoint.position, endPos, Color.blue);
         }
         return val;
 
     }
 
-    void ChasePlayer()
+    void Monster2_ChaseMonster2_Player()
     {
-        if (transform.position.x < Player.position.x)
+        if (transform.position.x < Monster2_Player.position.x)
         {
-            // enemy is to the left side of the player, so move right
-            rb2d.velocity = new Vector2(moveSpeed, 0);
+            // enemy is to the left side of the Monster2_Player, so move right
+            Monster2_rb2d.velocity = new Vector2(Monster2_moveSpeed, 0);
             //transform.localScale = new Vector2(2, 2); //크기
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            isFacingLeft = false;
+            Monster2_isFacingLeft = false;
         }
         else
         {
-            // enemy is to the left side of the player, so move right
-            rb2d.velocity = new Vector2(-moveSpeed, 0);
+            // enemy is to the left side of the Monster2_Player, so move right
+            Monster2_rb2d.velocity = new Vector2(-Monster2_moveSpeed, 0);
             //transform.localScale = new Vector2(-2, 2);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            isFacingLeft = true;
+            Monster2_isFacingLeft = true;
         }
     }
-    void StopChasingPlayer()
+    void StopChasingMonster2_Player()
     {
-        isAgro = false;
-        isSearching = false;
-        rb2d.velocity = new Vector2(0, 0);
+        Monster2_isAgro = false;
+        Monster2_isSearching = false;
+        Monster2_rb2d.velocity = new Vector2(0, 0);
     }
 
     private void OnCollisionEnter(Collision coll)
     {
         if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
         {
-            Monster_HP -= 10;
-            if (Monster_HP <= 0)
+            Monster2_HP -= 10;
+            if (Monster2_HP <= 0)
             {
                 Destroy(gameObject); // 체력 0이 될시 삭제
             }
