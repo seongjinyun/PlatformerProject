@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_State : MonoBehaviour
+public class Monster_State_test : MonoBehaviour
 {
     public enum State { IDLE, RUN, ATTACK, DIE }
 
