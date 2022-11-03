@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Move : MonoBehaviour
+public class Player_Move_test : MonoBehaviour
 {
    // public SpriteRenderer sr;
     public float speed = 3f;
