@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_chase : MonoBehaviour
+public class Monster_chased : MonoBehaviour
 {
     public float Monster_speed = 1;
     public GameObject target;
