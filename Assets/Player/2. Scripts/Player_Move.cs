@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
-   // public SpriteRenderer sr;
-    public float speed = 3f;
+    // public SpriteRenderer sr;
+    public float speed;
     public float jumpPower;
     Rigidbody2D Player_rigid;
     Transform Player_tr;
@@ -13,11 +13,11 @@ public class Player_Move : MonoBehaviour
     bool isGround = true;
 
     // 대쉬 변수
-    private bool canDash = true;
-    private bool isDash;
-    private float dashPower = 20.0f;
-    private float dashTime = 0.2f;
-    private float dashCooldown = 1f;
+    private float defaultSpeed;
+    private bool isdash;
+    public float dashSpeed;
+    public float defaultTime;
+    private float dashTime;
 
 
     
@@ -27,6 +27,7 @@ public class Player_Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        defaultSpeed = speed;
         Player_rigid = GetComponent<Rigidbody2D>();
         Player_tr = GetComponent<Transform>();
         
@@ -76,9 +77,21 @@ public class Player_Move : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z)) //플레이어 대쉬
         {
-
+            isdash = true;
         }
         
+        if(dashTime <= 0)
+        {
+            defaultSpeed = speed;
+            if (isdash)
+                dashTime = defaultTime;
+        }
+        else
+        {
+            dashTime -= Time.deltaTime;
+            defaultSpeed = dashSpeed;
+        }
+        isdash = false;
     }
 
     // Update is called once per frame
