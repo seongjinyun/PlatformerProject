@@ -30,6 +30,7 @@ public class Monster_chase_far : MonoBehaviour
     public Transform Bullet_pos;
     public float Monster_cool;
     public float Monster_cur;
+    public bool Monster_longAtk = false;
 
 
     Rigidbody2D rb2d;
@@ -106,6 +107,11 @@ public class Monster_chase_far : MonoBehaviour
                         transform.position = Vector3.MoveTowards(transform.position, hit.collider.transform.position, Time.deltaTime * moveSpeed);
                     }
                     Monster_cur -= Time.deltaTime;
+                    Monster_longAtk = true; // 공격 시 true
+                }
+                else
+                {
+                    Monster_longAtk = false; // 아니면 false
                 }
             }
             else
