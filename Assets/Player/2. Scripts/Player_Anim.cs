@@ -8,6 +8,7 @@ public class Player_Anim : MonoBehaviour
     Animator Player_anim;
     public Transform pos;
     public Vector2 player_boxSize;
+    public GameObject enemy;
     
     Rigidbody2D player_rigid;
     private float str = 16;
@@ -43,7 +44,7 @@ public class Player_Anim : MonoBehaviour
         }
 
     }
-    public void Nb(GameObject enemy)
+    public void Nb()
     {
         Vector2 dir = (transform.position - enemy.transform.position).normalized;
         player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
@@ -51,7 +52,7 @@ public class Player_Anim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Nb();
         Attack();
     }
 

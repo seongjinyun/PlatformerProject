@@ -196,12 +196,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7579140980337199987, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: dash_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199987, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
       propertyPath: defaultTime
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7579140980337199987, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
       propertyPath: defaultSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199987, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: StartDashTimer
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
@@ -503,27 +511,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 1603552376}
   player_boxSize: {x: 1, y: 1.2}
---- !u!50 &1251776853
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251776845}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &1254839540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 906192621229835068, guid: c11d64bbdeb48884f93ed5037ef96c96, type: 3}
