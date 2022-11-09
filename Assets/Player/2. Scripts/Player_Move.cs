@@ -4,33 +4,42 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
-   // public SpriteRenderer sr;
-    public float speed = 3f;
+    // public SpriteRenderer sr;
+    public float speed;
     public float jumpPower;
     Rigidbody2D Player_rigid;
     Transform Player_tr;
     bool doubleJumpState = false;
     bool isGround = true;
 
+    //회피 변수
+    /*public float dodge_Distance;
+    public float dodge_Time;
+    public float dodge_NeedEnergy;
+    private float dodge_TimeCheck;
+    public float dodge_ButtonTime;          // 회피 버튼을 2번 눌러야 되는 시간
+    private bool dodge;*/
+
     // 대쉬 변수
-    private bool canDash = true;
+    public float dash_Speed; //대쉬 속도
     private bool isDash;
-    private float dashPower = 20.0f;
-    private float dashTime = 0.2f;
-    private float dashCooldown = 1f;
+    public float StartDashTimer;
 
-
+    float CurrentDashTimer;
+    float Dashdirection;
+    float movX;
     
     
     public int prHp = 100; //플레이어 체력
     SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
-    {
+    {       
         Player_rigid = GetComponent<Rigidbody2D>();
-        Player_tr = GetComponent<Transform>();
-        
+        Player_tr = GetComponent<Transform>();       
         sprite = GetComponent<SpriteRenderer>();
+
+        
     }
 
 
@@ -72,21 +81,47 @@ public class Player_Move : MonoBehaviour
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);
-
-        if (Input.GetKeyDown(KeyCode.Z)) //플레이어 대쉬
-        {
-
-        }
+        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);       
         
+               
     }
 
+    void Dash()
+    {
+        movX = Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
+        {
+            isDash = true;
+            CurrentDashTimer = StartDashTimer;
+            Player_rigid.velocity = Vector2.zero;
+            Dashdirection = (int)movX;
+        }
+
+        if (isDash)
+        {
+            if (transform.rotation.y <= 0)
+            { 
+                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed; 
+            }
+            else
+            {
+                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * -1;
+            }
+            CurrentDashTimer -= Time.deltaTime;
+
+            if(CurrentDashTimer <= 0)
+            {
+                isDash = false;
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         move();
         Jump();
-        
+        Dash();
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_chase_Test : MonoBehaviour
+public class Monster_chase : MonoBehaviour
 {
 
     [SerializeField] // == public 근데 외부 스크립트에서 수정못함
@@ -28,6 +28,7 @@ public class Monster_chase_Test : MonoBehaviour
     private bool isSearching;
 
     public int Monster_HP;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,10 +59,9 @@ public class Monster_chase_Test : MonoBehaviour
         {
             ChasePlayer();
         }
-
     }
 
-    bool CanSeePlayer(float distnace)
+    bool CanSeePlayer(float distnace) // 레이로 플레이어를 찾음
     {
         bool val = false;
         float castDist = distnace;
@@ -77,7 +77,7 @@ public class Monster_chase_Test : MonoBehaviour
 
         if (hit.collider != null)
         {
-            if (hit.collider.gameObject.CompareTag("Player")) // 플레이어일때 원거리 공격.
+            if (hit.collider.gameObject.CompareTag("Player")) // 플레이어일때 공격.
             {
                 val = true;
 
@@ -97,31 +97,33 @@ public class Monster_chase_Test : MonoBehaviour
 
     }
 
-    void ChasePlayer()
+    void ChasePlayer() // 이동, 회전, 추적 
     {
         if (transform.position.x < Player.position.x)
         {
             // enemy is to the left side of the player, so move right
             rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(2, 2); //크기
+            //transform.localScale = new Vector2(2, 2); //크기
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             isFacingLeft = false;
         }
         else
         {
             // enemy is to the left side of the player, so move right
             rb2d.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(-2, 2); 
+            //transform.localScale = new Vector2(-2, 2);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             isFacingLeft = true;
         }
     }
-    void StopChasingPlayer()
+    void StopChasingPlayer() // 멈춤
     {
         isAgro = false;
         isSearching = false;
         rb2d.velocity = new Vector2(0, 0);
     }
 
-    private void OnCollisionEnter(Collision coll)
+    private void OnCollisionEnter(Collision coll) 
     {
         if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
         {

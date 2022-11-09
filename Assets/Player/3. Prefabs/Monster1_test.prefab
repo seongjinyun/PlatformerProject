@@ -1316,7 +1316,7 @@ GameObject:
   - component: {fileID: 906192620957400683}
   - component: {fileID: 906192620957400682}
   - component: {fileID: 906192620957400676}
-  - component: {fileID: 906192620957400687}
+  - component: {fileID: 1693006472}
   m_Layer: 5
   m_Name: Monster1_test
   m_TagString: Untagged
@@ -1431,7 +1431,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &906192620957400687
+--- !u!114 &1693006472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 906192620957400677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb9ea6b73d73ae45afa0c20d0e15070, type: 3}
+  m_Script: {fileID: 11500000, guid: 33a725d3fe026cf458baf37b7b8c347c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   face: {fileID: 906192620771253233}
@@ -1448,6 +1448,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   agroRange: 4
   moveSpeed: 2
+  prHp: 100
 --- !u!1 &906192620976360485
 GameObject:
   m_ObjectHideFlags: 0
