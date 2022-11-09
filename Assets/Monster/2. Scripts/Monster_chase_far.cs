@@ -94,8 +94,6 @@ public class Monster_chase_far : MonoBehaviour
             {
                 val = true;
 
-<<<<<<<< HEAD:Assets/Monster/2. Scripts/Monster_chase_Test.cs
-========
                 if (Vector2.Distance(transform.position, hit.collider.transform.position) < Monster_atkDistance)
                 {
                     if (Monster_cur <= 0)
@@ -115,7 +113,7 @@ public class Monster_chase_far : MonoBehaviour
                 {
                     Monster_longAtk = false; // ¾Æ´Ï¸é false
                 }
->>>>>>>> Monster:Assets/Monster/2. Scripts/Monster_chase_far.cs
+
             }
             else
             {
