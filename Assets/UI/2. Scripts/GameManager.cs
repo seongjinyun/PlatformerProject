@@ -32,13 +32,13 @@ public class GameManager : MonoBehaviour
 
     public void GameStart() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
     {
-        LoadingSceneController.LoadScene("UI_Tutorial");
+        SceneManager.LoadScene("UI_Tutorial");
         Debug.Log("게임시작");
     }
 
     public void GameOption() //게임 시작 함수 (옵션 버튼을 누르면 실행됨)
     {
-        LoadingSceneController.LoadScene("UI_Option");
+        SceneManager.LoadScene("UI_Option");
         Debug.Log("옵션씬으로 이동");
     }
     public void Quit() //게임 정지 함수 (QUIT 버튼을 누르면 실행)
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void GameMain()
     {
-        LoadingSceneController.LoadScene("UI_Main");
+        SceneManager.LoadScene("UI_Main");
         Debug.Log("메인메뉴로 이동");
     }
 }
