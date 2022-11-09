@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: StartDashTimer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7579140980337199990, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 7618766520624286119, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -528,7 +532,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7579140979198140518, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
   m_PrefabInstance: {fileID: 449602537}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &1251776854
+--- !u!50 &1251776859
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -537,7 +541,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251776845}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
