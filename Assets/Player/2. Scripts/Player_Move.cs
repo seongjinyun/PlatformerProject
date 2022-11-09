@@ -100,7 +100,14 @@ public class Player_Move : MonoBehaviour
 
         if (isDash)
         {
-            Player_rigid.velocity = transform.right * Dashdirection * dash_Speed;
+            if (transform.rotation.y <= 0)
+            { 
+                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed; 
+            }
+            else
+            {
+                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * -1;
+            }
             CurrentDashTimer -= Time.deltaTime;
 
             if(CurrentDashTimer <= 0)

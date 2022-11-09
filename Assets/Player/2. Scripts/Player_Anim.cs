@@ -16,6 +16,7 @@ public class Player_Anim : MonoBehaviour
     void Start()
     {
         Player_anim = GetComponent<Animator>();
+        player_rigid = GetComponent<Rigidbody2D>();
     }
 
     void Attack()
