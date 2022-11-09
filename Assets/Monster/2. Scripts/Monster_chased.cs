@@ -4,68 +4,134 @@ using UnityEngine;
 
 public class Monster_chased : MonoBehaviour
 {
-    public float Monster_speed = 1;
-    public GameObject target;
-    public float Monster_Dist = 5f;
 
+    [SerializeField] // == public 근데 외부 스크립트에서 수정못함
+    GameObject face;
 
-    // public GameObject Ene;
-    // public int hp = 5;
-    // public GameObject Bullet;
+    [SerializeField]
+    Transform castPoint;
 
-    /*private void OnTriggerEnter2D(Collider2D collision) // HP
-    {
-        if (collision.gameObject.CompareTag("BULLET"))
-        {
-            Destroy(collision.gameObject);
-            hp -= 1;
-            if (hp <= 0)
-            {
-                Destroy(Ene);
-            }
-        }
-    }*/
+    [SerializeField]
+    Transform Player;
+
+    [SerializeField]
+    float agroRange; // 어그로범위
+
+    [SerializeField]
+    float moveSpeed;
+
+    Rigidbody2D rb2d;
+
+    bool isFacingLeft;
+
+    private bool isAgro = false;
+    private bool isSearching;
+
+    public int Monster_HP;
+
+    // Start is called before the first frame update
     void Start()
     {
-
+        rb2d = GetComponent<Rigidbody2D>();
     }
-
 
     // Update is called once per frame
     void Update()
     {
-        Monster_Rotate();
-        //Ray();
-        //GameObject target = GameObject.Find("Player_test");
-        //transform.position = Vector3.Lerp(transform.position, target.transform.position, Monster_speed * Time.deltaTime);
-    }
-
-    void Monster_Rotate()
-    {
-        // 플레이어의 x좌표보다 작으면 오른쪽으로 회전
-        if (target.transform.position.x > transform.position.x)
+        if (CanSeePlayer(agroRange))
         {
-            transform.localEulerAngles = new Vector3(0, 180, 0);
+            isAgro = true;
         }
-        else if (target.transform.position.x < transform.position.x)
+        else
         {
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-        }
-    }
-
-    /*void Ray()
-    {
-        RaycastHit2D rayHit;
-        Debug.DrawRay(this.transform.position + Vector3.up, Vector2.left * 10, Color.red);
-
-        if (rayHit = Physics2D.Raycast(transform.position + Vector3.up, Vector2.left * 10, LayerMask.GetMask("Water")))
-        {
-            //Destroy(rayHit.collider);
-            if (rayHit.collider.tag == "Player")
+            if (isAgro)
             {
-                Debug.Log("player");
+                if (isSearching)
+                {
+                    isSearching = true;
+                }
+                Invoke("StopChasingPlayer", 3);
+            }
+
+        }
+
+        if (isAgro)
+        {
+            ChasePlayer();
+        }
+    }
+
+    bool CanSeePlayer(float distnace) // 레이로 플레이어를 찾음
+    {
+        bool val = false;
+        float castDist = distnace;
+
+        if (isFacingLeft)
+        {
+            castDist = -distnace;
+        }
+
+        Vector2 endPos = castPoint.position + Vector3.right * castDist;
+
+        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Water")); // 플레이어 레이어 설정
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Player")) // 플레이어일때 공격.
+            {
+                val = true;
+
+            }
+            else
+            {
+                val = false;
+            }
+
+            Debug.DrawLine(castPoint.position, hit.point, Color.yellow);
+        }
+        else
+        {
+            Debug.DrawLine(castPoint.position, endPos, Color.blue);
+        }
+        return val;
+
+    }
+
+    void ChasePlayer() // 이동, 회전, 추적 
+    {
+        if (transform.position.x < Player.position.x)
+        {
+            // enemy is to the left side of the player, so move right
+            rb2d.velocity = new Vector2(moveSpeed, 0);
+            //transform.localScale = new Vector2(2, 2); //크기
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            isFacingLeft = false;
+        }
+        else
+        {
+            // enemy is to the left side of the player, so move right
+            rb2d.velocity = new Vector2(-moveSpeed, 0);
+            //transform.localScale = new Vector2(-2, 2);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            isFacingLeft = true;
+        }
+    }
+    void StopChasingPlayer() // 멈춤
+    {
+        isAgro = false;
+        isSearching = false;
+        rb2d.velocity = new Vector2(0, 0);
+    }
+
+    private void OnCollisionEnter(Collision coll) 
+    {
+        if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
+        {
+            Monster_HP -= 10;
+            if (Monster_HP <= 0)
+            {
+                Destroy(gameObject); // 체력 0이 될시 삭제
             }
         }
-
-    }*/
+    }
 }
