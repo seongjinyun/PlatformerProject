@@ -9,6 +9,10 @@ public class Player_Anim : MonoBehaviour
     public Transform pos;
     public Vector2 player_boxSize;
     public GameObject enemy;
+    public float Knockback_speed = 3;
+    
+    
+    
     
     Rigidbody2D player_rigid;
     private float str = 16;
@@ -30,7 +34,21 @@ public class Player_Anim : MonoBehaviour
                 if (collider.tag == "Enemy")
                 {
                     Debug.Log("Enemy Attack");
-                   
+                    if (transform.position.x >= enemy.transform.position.x)
+
+                    {
+
+                        enemy.transform.Translate(0.5f, 0.2f, 0);
+
+                    }
+
+                    else
+
+                    {
+
+                        enemy.transform.Translate(-0.5f, 0.2f, 0);
+
+                    }
                 }
             }
             
@@ -45,15 +63,15 @@ public class Player_Anim : MonoBehaviour
         }
 
     }
-    public void Nb()
+    /*public void Nb()
     {
         Vector2 dir = (transform.position - enemy.transform.position).normalized;
         player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
-    }
+    }*/
     // Update is called once per frame
     void Update()
     {
-        Nb();
+        //Nb();
         Attack();
     }
 

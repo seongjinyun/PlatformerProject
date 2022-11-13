@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.208
       objectReference: {fileID: 0}
+    - target: {fileID: 8582126095216097002, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 2018960677}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cadf45e7974b8c429b1cd25896da844, type: 3}
 --- !u!1 &539565574 stripped
@@ -481,6 +485,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster1_test
       objectReference: {fileID: 0}
+    - target: {fileID: 906192620957400677, guid: c11d64bbdeb48884f93ed5037ef96c96, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 906192620957400685, guid: c11d64bbdeb48884f93ed5037ef96c96, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -553,3 +561,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &2018960677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 906192620957400677, guid: c11d64bbdeb48884f93ed5037ef96c96, type: 3}
+  m_PrefabInstance: {fileID: 1094363041}
+  m_PrefabAsset: {fileID: 0}
