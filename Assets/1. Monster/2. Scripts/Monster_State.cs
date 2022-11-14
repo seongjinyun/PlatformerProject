@@ -44,12 +44,12 @@ public class Monster_State : MonoBehaviour
             {
                 if (Parent.transform.position.x > Player.transform.position.x)
                 {
-                    Player.transform.Translate(-0.5f, 0, 0);
+                    Player.transform.Translate(-0.5f, 0.3f, 0);
                     cur = coolT;
                 }
                 else if (Parent.transform.position.x < Player.transform.position.x)
                 {
-                    Player.transform.Translate(0.5f, 0, 0);
+                    Player.transform.Translate(0.5f, 0.3f, 0);
                     cur = coolT;
                 }
 
