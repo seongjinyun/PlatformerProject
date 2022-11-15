@@ -28,8 +28,10 @@ public class Player_Move : MonoBehaviour
     float CurrentDashTimer;
     float Dashdirection;
     float movX;
-    
-    
+
+    public float Dash_delayTime = 2f;
+    float Dash_timer = 0f;
+
     public int prHp = 100; //플레이어 체력
     SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -100,6 +102,7 @@ public class Player_Move : MonoBehaviour
 
         if (isDash)
         {
+            Dash_timer += Time.deltaTime;
             if (transform.rotation.y <= 0)
             { 
                 Player_rigid.velocity = transform.right * Dashdirection * dash_Speed; 
@@ -112,6 +115,11 @@ public class Player_Move : MonoBehaviour
 
             if(CurrentDashTimer <= 0)
             {
+                isDash = false;
+            }
+            if(Dash_timer >= Dash_delayTime)
+            {
+                Dash_timer = 0f;
                 isDash = false;
             }
         }
