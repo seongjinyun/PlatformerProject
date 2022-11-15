@@ -9,11 +9,15 @@ public class Player_Anim : MonoBehaviour
     public Transform pos;
     public Vector2 player_boxSize;
     public GameObject enemy;
+
+    //³Ë¹é
     public float Knockback_speed = 3;
-    
-    
-    
-    
+    private bool isKnockback;
+    public float Kb_delayTime = 2f;
+
+    float Kb_timer = 0f;
+
+
     Rigidbody2D player_rigid;
     private float str = 16;
     // Start is called before the first frame update
@@ -34,20 +38,28 @@ public class Player_Anim : MonoBehaviour
                 if (collider.tag == "Enemy")
                 {
                     Debug.Log("Enemy Attack");
-                    if (transform.position.x >= enemy.transform.position.x)
+                    if (transform.position.x >= enemy.transform.position.x && !isKnockback)
 
                     {
-
+                        isKnockback = true;
                         enemy.transform.Translate(0.5f, 0.2f, 0);
 
                     }
-
                     else
 
                     {
-
+                        isKnockback = true;
                         enemy.transform.Translate(-0.5f, 0.2f, 0);
 
+                    }
+                    if (isKnockback)
+                    {
+                        Kb_timer += Time.deltaTime;
+                        if(Kb_timer >= Kb_delayTime)
+                        {
+                            Kb_timer = 0f;
+                            isKnockback = false;
+                        }
                     }
                 }
             }
