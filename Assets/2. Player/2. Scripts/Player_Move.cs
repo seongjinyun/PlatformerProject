@@ -29,9 +29,9 @@ public class Player_Move : MonoBehaviour
     float Dashdirection;
     float movX;
 
-    private bool isDash_Delay;
+    public bool isDash_Delay = false;
     public float Dash_delayTime = 2f; //대쉬쿨타임
-    float Dash_timer = 0f;
+    public float Dash_timer = 0f;
 
     public int prHp = 100; //플레이어 체력
     SpriteRenderer sprite;
@@ -92,20 +92,24 @@ public class Player_Move : MonoBehaviour
     void Dash()
     {
         movX = Input.GetAxis("Horizontal");
+        Dash_timer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
+        if (Dash_timer <= 0f)
         {
-            isDash = true;
-            CurrentDashTimer = StartDashTimer;
-            Player_rigid.velocity = Vector2.zero;
-            Dashdirection = (int)movX;
-            /*if (!isDash_Delay)
+            if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
             {
-                isDash_Delay = true;
-            }*/
-            isDash_Delay = true;
+                isDash = true;
+                CurrentDashTimer = StartDashTimer;
+                Player_rigid.velocity = Vector2.zero;
+                Dashdirection = (int)movX;
+                /*if (!isDash_Delay)
+                {
+                    isDash_Delay = true;
+                }*/
+                //isDash_Delay = true;
+                Dash_timer = 5f;
+            }
         }
-
         if (isDash) //대쉬가 true이면
         {
             
@@ -126,15 +130,15 @@ public class Player_Move : MonoBehaviour
             }
             
         }
-        if (isDash_Delay) //대쉬딜레이가 true면
+        /*if (isDash_Delay == true) //대쉬딜레이가 true면
         {
-            Dash_timer += Time.deltaTime; // 대쉬타이머는 Time.deltaTime 만큼 증가
+                                             // 대쉬타이머는 Time.deltaTime 만큼 증가
             if (Dash_timer >= Dash_delayTime) //대쉬타이머가 대쉬 딜레이타임보다 커지거나 같아지면
             {
                 Dash_timer = 0f; //초기화
                 isDash_Delay = false; //대쉬딜레이 false
             }
-        }
+        }*/
     }
     // Update is called once per frame
     void Update()
