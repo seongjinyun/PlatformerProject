@@ -30,7 +30,7 @@ public class Player_Move : MonoBehaviour
     float movX;
 
     private bool isDash_Delay;
-    public float Dash_delayTime = 2f;
+    public float Dash_delayTime = 2f; //대쉬쿨타임
     float Dash_timer = 0f;
 
     public int prHp = 100; //플레이어 체력
@@ -99,15 +99,16 @@ public class Player_Move : MonoBehaviour
             CurrentDashTimer = StartDashTimer;
             Player_rigid.velocity = Vector2.zero;
             Dashdirection = (int)movX;
-            if (!isDash_Delay)
+            /*if (!isDash_Delay)
             {
                 isDash_Delay = true;
-            }
+            }*/
+            isDash_Delay = true;
         }
 
-        if (isDash)
+        if (isDash) //대쉬가 true이면
         {
-            Dash_timer += Time.deltaTime;
+            
             if (transform.rotation.y <= 0)
             { 
                 Player_rigid.velocity = transform.right * Dashdirection * dash_Speed; 
@@ -123,14 +124,15 @@ public class Player_Move : MonoBehaviour
                 
                 isDash = false;
             }
-            if (isDash_Delay)
+            
+        }
+        if (isDash_Delay) //대쉬딜레이가 true면
+        {
+            Dash_timer += Time.deltaTime; // 대쉬타이머는 Time.deltaTime 만큼 증가
+            if (Dash_timer >= Dash_delayTime) //대쉬타이머가 대쉬 딜레이타임보다 커지거나 같아지면
             {
-                Dash_timer += Time.deltaTime;
-                if(Dash_timer >= Dash_delayTime)
-                {
-                    Dash_timer = 0f;
-                    isDash_Delay = false;
-                }
+                Dash_timer = 0f; //초기화
+                isDash_Delay = false; //대쉬딜레이 false
             }
         }
     }
