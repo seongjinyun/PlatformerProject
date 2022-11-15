@@ -29,6 +29,7 @@ public class Player_Move : MonoBehaviour
     float Dashdirection;
     float movX;
 
+    private bool isDash_Delay;
     public float Dash_delayTime = 2f;
     float Dash_timer = 0f;
 
@@ -98,6 +99,10 @@ public class Player_Move : MonoBehaviour
             CurrentDashTimer = StartDashTimer;
             Player_rigid.velocity = Vector2.zero;
             Dashdirection = (int)movX;
+            if (!isDash_Delay)
+            {
+                isDash_Delay = true;
+            }
         }
 
         if (isDash)
@@ -115,12 +120,17 @@ public class Player_Move : MonoBehaviour
 
             if(CurrentDashTimer <= 0)
             {
+                
                 isDash = false;
             }
-            if(Dash_timer >= Dash_delayTime)
+            if (isDash_Delay)
             {
-                Dash_timer = 0f;
-                isDash = false;
+                Dash_timer += Time.deltaTime;
+                if(Dash_timer >= Dash_delayTime)
+                {
+                    Dash_timer = 0f;
+                    isDash_Delay = false;
+                }
             }
         }
     }
