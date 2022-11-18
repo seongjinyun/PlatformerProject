@@ -5,7 +5,19 @@ using System;
 
 public class Inventory : MonoBehaviour
 {
-
+    public Item item;
+    #region Singleton
+    public static Inventory instance;
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
+    #endregion
     public delegate void OnSlotCountChange(int val);
     public OnSlotCountChange onSlotCountChange;
 
@@ -13,7 +25,6 @@ public class Inventory : MonoBehaviour
     public OnchangeItem onChangeItem;
 
     public List<Item> items = new List<Item>();
-
     private int slotCnt;
     public int SlotCnt
     {
@@ -27,12 +38,13 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        
         SlotCnt = 1;
     }
 
     public bool AddItem(Item _item)
-    {
-        if(items.Count < SlotCnt)
+    {   
+        if (items.Count < SlotCnt)
         {
             items.Add(_item);
             if(onChangeItem != null)

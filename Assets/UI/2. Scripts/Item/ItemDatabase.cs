@@ -15,7 +15,7 @@ public class ItemDatabase : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player") 
         {
             GameObject go = Instantiate(DropItemPrefab ,transform.position, Quaternion.identity);
             go.GetComponent<DropItem>().DropItems(itemDB[Random.Range(0, 5)]);
