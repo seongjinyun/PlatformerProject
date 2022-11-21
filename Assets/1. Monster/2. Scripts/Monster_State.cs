@@ -16,13 +16,13 @@ public class Monster_State : MonoBehaviour
     float coolT = 3f;
 
     GameObject Parent;
+
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         Parent = transform.parent.gameObject;
-        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -40,7 +40,7 @@ public class Monster_State : MonoBehaviour
             }
 
             cur -= Time.deltaTime;
-            if (cur <= 0)
+            if (cur <= 0) // 넉백
             {
                 if (Parent.transform.position.x > Player.transform.position.x)
                 {
@@ -71,6 +71,5 @@ public class Monster_State : MonoBehaviour
                 animator.SetTrigger("Attack");
             }
         }
-
     }
 }
