@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
     public Image itemIcon;
 
     public void UpdateSlotUI()
-    {
+    {   
         itemIcon.sprite = item.itemImage;
         itemIcon.gameObject.SetActive(true);
     }
@@ -19,4 +19,5 @@ public class Slot : MonoBehaviour
         item = null;
         itemIcon.gameObject.SetActive(false);
     }
+
 }

@@ -32,13 +32,12 @@ public class Inventory : MonoBehaviour
         set
         {
             slotCnt = value;
-            onSlotCountChange.Invoke(slotCnt);
+     
         }
     }
 
     void Start()
     {
-        
         SlotCnt = 1;
     }
 
@@ -52,6 +51,10 @@ public class Inventory : MonoBehaviour
             return true;
         }
         return false;
+    }
+    public void RemoveInven()
+    {
+        items = new List<Item>(); //
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
