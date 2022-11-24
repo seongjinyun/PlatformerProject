@@ -29,7 +29,7 @@ public class Monster_State : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
         {
-            Debug.Log("플레이어 피격");
+            //Debug.Log("플레이어 피격");
 
             animator.SetBool("Run", false);
             animator.SetTrigger("Attack");

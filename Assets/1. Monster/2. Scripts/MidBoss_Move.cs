@@ -4,55 +4,50 @@ using UnityEngine;
 
 public class MidBoss_Move : MonoBehaviour
 {
-    public enum State { idle, Run, Attack, Jump, Die };
-
-    public State Boss_state = State.idle;
-
-    public float speed;
     public GameObject[] Target;
+    public Transform[] WallCheck;
+    public float speed = 0.5f;
+    public float Radius = 2f;
+    public float JumpPower = 3f;
+    Rigidbody2D rb;
+    public LayerMask Layer_Wall;
+    public LayerMask Layer_Chase;
 
-    public float Timer = 0f;
-
-    public GameObject Monster_bullet;
-    public Transform Bullet_pos;
 
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
-    // Update is called once per frame
+
     void Update()
     {
-        Timer += Time.deltaTime;
-
-        if (Timer >= 10f)
+        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, Radius, Layer_Chase);
+        if (collider2D.gameObject.CompareTag("Player"))
         {
-            Instantiate(Monster_bullet, Bullet_pos.position, transform.rotation);
-            Timer = 0f;
+            transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
         }
 
-        Rotate();
-    }
+        //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
 
-    void LateUpdate() // 하이라키뷰 플레이어 이름 찾아서 추적
-    {
 
-        transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
-
-        //RaycastHit2D Hit = Physics2D.Raycast(transform.position, transform.right, 3f);
-        //Debug.DrawLine(transform.position, Hit.point, Color.yellow);
-
-    }
-
-    void Rotate()
-    {
-        if (transform.position.x > Target[0].transform.position.x)
+        if (!Physics2D.OverlapCircle(WallCheck[0].position, 0.01f, Layer_Wall) &&
+            Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall) &&
+            !Physics2D.Raycast(transform.position, -transform.localScale.x * transform.right, 1f, Layer_Wall))
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            Debug.Log("벽 충돌");
+            rb.velocity = new Vector2(rb.velocity.x, JumpPower);
         }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        else if (Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall))
+        {/*
+            if (transform.position.x > Target[0].transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }*/
         }
     }
 }
