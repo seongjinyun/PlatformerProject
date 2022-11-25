@@ -17,6 +17,7 @@ public class MidBoss_Move : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
     }
 
     void Update()
@@ -24,10 +25,20 @@ public class MidBoss_Move : MonoBehaviour
         Collider2D collider2D = Physics2D.OverlapCircle(transform.position, Radius, Layer_Chase);
         if (collider2D.gameObject.CompareTag("Player"))
         {
-            transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
+            //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
+            if (transform.position.x > Target[0].transform.position.x)
+            {
+                rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(-transform.localScale.x * speed, rb.velocity.y);
+            }
+
+
         }
 
-        //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
+
 
 
         if (!Physics2D.OverlapCircle(WallCheck[0].position, 0.01f, Layer_Wall) &&
@@ -39,15 +50,21 @@ public class MidBoss_Move : MonoBehaviour
         }
 
         else if (Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall))
-        {/*
-            if (transform.position.x > Target[0].transform.position.x)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-            else
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }*/
+        {
+
+        }
+        Rotate();
+
+    }
+    void Rotate()
+    {
+        if (transform.position.x > Target[0].transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
