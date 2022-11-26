@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_BossMove : MonoBehaviour
+public class FinalBoss_ : MonoBehaviour
 {
     public float speed;
-    public GameObject[] Target;
 
     public float Timer = 0f;
 
     public GameObject Monster_bullet;
     public Transform Bullet_pos;
-
+    public GameObject[] Target;
 
     public float JumpPower = 3f;
     Rigidbody2D rb;
@@ -34,8 +33,6 @@ public class Monster_BossMove : MonoBehaviour
              Instantiate(Monster_bullet, Bullet_pos.position, transform.rotation);
              Timer = 0f;
         }
-
-        Rotate();
         Jump();
 
     }
@@ -45,17 +42,6 @@ public class Monster_BossMove : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
     }
 
-    void Rotate()
-    {
-        if (transform.position.x > Target[0].transform.position.x)
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-    }
     void Jump()
     {
         Debug.DrawLine(Pos.transform.position, Vector2.right, Color.red, 1f);
