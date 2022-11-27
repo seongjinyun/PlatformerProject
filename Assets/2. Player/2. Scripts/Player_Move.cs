@@ -94,6 +94,8 @@ public class Player_Move : MonoBehaviour
         movX = Input.GetAxis("Horizontal");
         Dash_timer -= Time.deltaTime;
 
+        
+
         if (Dash_timer <= 0f)
         {
             if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
