@@ -17,6 +17,10 @@ public class Player_Anim : MonoBehaviour
 
     float Kb_timer = 0f;
 
+    //½ºÅ³
+    public GameObject Sword_skill;
+    
+    
 
     Rigidbody2D player_rigid;
     private float str = 16;
@@ -25,6 +29,7 @@ public class Player_Anim : MonoBehaviour
     {
         Player_anim = GetComponent<Animator>();
         player_rigid = GetComponent<Rigidbody2D>();
+        
     }
 
     void Attack()
@@ -71,7 +76,17 @@ public class Player_Anim : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Player_anim.SetTrigger("Skill");
+            
+            
+                Player_anim.SetTrigger("Skill");
+                Instantiate(Sword_skill, pos.position, transform.rotation);
+            
+           
+            
+               
+            
+            
+
         }
 
     }
