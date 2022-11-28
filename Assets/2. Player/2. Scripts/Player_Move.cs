@@ -64,6 +64,11 @@ public class Player_Move : MonoBehaviour
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             doubleJumpState = false;
         }
+
+        if(Input.GetKeyDown(KeyCode.C) && Input.GetKeyDown(KeyCode.DownArrow))
+        {
+
+        }
     }
     
 

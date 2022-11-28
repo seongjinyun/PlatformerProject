@@ -78,10 +78,9 @@ public class Player_Anim : MonoBehaviour
         {
             
             
-                Player_anim.SetTrigger("Skill");
-                Instantiate(Sword_skill, pos.position, transform.rotation);
+            Player_anim.SetTrigger("Skill");
+            Instantiate(Sword_skill, pos.position, transform.rotation);
             
-           
             
                
             
