@@ -34,10 +34,10 @@ public class Monster_State : MonoBehaviour
             animator.SetBool("Run", false);
             animator.SetTrigger("Attack");
 
-            if (!collision.gameObject.CompareTag("Player")) // 없으면 다시 Run
+            /*if (!collision.gameObject.CompareTag("Player")) // 없으면 다시 Run
             {
                 animator.SetBool("Run", true);
-            }
+            }*/
 
             cur -= Time.deltaTime;
             if (cur <= 0) // 넉백
@@ -61,7 +61,7 @@ public class Monster_State : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("Run", true);
+
 
         if (longAtk == true)
         {
