@@ -33,6 +33,9 @@ public class Player_Move : MonoBehaviour
     public float Dash_delayTime = 2f; //대쉬쿨타임
     public float Dash_timer = 0f;
 
+    //하단 점프
+    int Player_Layer, Ground_Layer;
+
     public int prHp = 100; //플레이어 체력
     SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -41,7 +44,8 @@ public class Player_Move : MonoBehaviour
         Player_rigid = GetComponent<Rigidbody2D>();
         Player_tr = GetComponent<Transform>();       
         sprite = GetComponent<SpriteRenderer>();
-
+        Player_Layer = LayerMask.NameToLayer("Player");
+        Ground_Layer = LayerMask.NameToLayer("Ground");
         
     }
 
@@ -67,7 +71,8 @@ public class Player_Move : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C) && Input.GetKeyDown(KeyCode.DownArrow)) //하단 점프
         {
-
+            Physics2D.IgnoreLayerCollision(Player_Layer, Ground_Layer, true);
+            Player_rigid.AddForce(Vector2.down * jumpPower, ForceMode2D.Impulse);
         }
     }
     
