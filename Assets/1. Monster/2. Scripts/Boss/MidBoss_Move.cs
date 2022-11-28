@@ -7,7 +7,7 @@ public class MidBoss_Move : Boss
     public GameObject[] Target;
     public Transform[] WallCheck;
     public GameObject Child_anim;
-    public Animator anim;
+    Animator anim;
 
     public float JumpPower = 3f;
     public float speed = 0.5f;
@@ -20,7 +20,7 @@ public class MidBoss_Move : Boss
 
     public void Start()
     {
-
+        anim = Child_anim.GetComponent<Animator>();
     }
 
     protected void Update()
@@ -49,10 +49,7 @@ public class MidBoss_Move : Boss
                 rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
             }
         }
-        anim.SetBool("Run", false);
-
-
-
+        //anim.SetBool("Run", false);
     }
     void Rotate()
     {
@@ -66,27 +63,25 @@ public class MidBoss_Move : Boss
         }
     }
     protected void Chase()
-    // virtual - 자식 오브젝트가 받을 수 있게 해줌
-    // Override - 부모에서 virtual이 선언되면 오버라이드를 해야함
-    // protected - 상속된 스크립트에서만 접근 가능
     {
         Collider2D collider2D = Physics2D.OverlapCircle(transform.position, Radius, Layer_Chase);
         if (collider2D.gameObject.CompareTag("Player")) // ??
         {
-            //anim.SetBool("Run", true);
             if (transform.position.x < Target[0].transform.position.x)
             {
                 rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
+                anim.SetBool("Run", true);
             }
             else
             {
                 rb.velocity = new Vector2(-transform.localScale.x * speed, rb.velocity.y);
+                anim.SetBool("Run", true);
             }
             //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
         }
         else
         {
-
+            //anim.SetBool("Run", false);
         }
     }
 }
