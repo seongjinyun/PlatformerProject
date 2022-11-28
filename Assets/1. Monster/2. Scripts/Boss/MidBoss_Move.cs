@@ -70,12 +70,12 @@ public class MidBoss_Move : Boss
             if (transform.position.x < Target[0].transform.position.x)
             {
                 rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
-                anim.SetBool("Run", true);
+                //anim.SetBool("Run", true);
             }
             else
             {
                 rb.velocity = new Vector2(-transform.localScale.x * speed, rb.velocity.y);
-                anim.SetBool("Run", true);
+                //anim.SetBool("Run", true);
             }
             //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
         }
