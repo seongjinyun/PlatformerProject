@@ -65,7 +65,7 @@ public class Player_Move : MonoBehaviour
             doubleJumpState = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.C) && Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKeyDown(KeyCode.C) && Input.GetKeyDown(KeyCode.DownArrow)) //하단 점프
         {
 
         }
