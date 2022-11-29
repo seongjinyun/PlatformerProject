@@ -33,6 +33,8 @@ public class Player_Move : MonoBehaviour
     public float Dash_delayTime = 2f; //대쉬쿨타임
     public float Dash_timer = 0f;
 
+    //public bool Time_end = false;
+
     //하단 점프
     int Player_Layer, Ground_Layer;
 
@@ -120,6 +122,7 @@ public class Player_Move : MonoBehaviour
                 }*/
                 //isDash_Delay = true;
                 Dash_timer = 5f;
+                
             }
         }
         if (isDash) //대쉬가 true이면
@@ -139,6 +142,7 @@ public class Player_Move : MonoBehaviour
             {
                 
                 isDash = false;
+                
             }
             
         }
