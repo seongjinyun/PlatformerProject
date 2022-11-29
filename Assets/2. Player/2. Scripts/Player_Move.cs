@@ -33,7 +33,7 @@ public class Player_Move : MonoBehaviour
     public float Dash_delayTime = 2f; //대쉬쿨타임
     public float Dash_timer = 0f;
 
-    //public bool Time_end = false;
+    public bool Time_end = false;
 
     //하단 점프
     int Player_Layer, Ground_Layer;
