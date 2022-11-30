@@ -386,34 +386,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &318280210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318280198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca9826c7470fd5b43a965f3b0ffc9fa6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target:
-  - {fileID: 756199916}
-  WallCheck:
-  - {fileID: 437882761}
-  - {fileID: 1727914543}
-  Child_anim: {fileID: 636505822}
-  JumpPower: 12
-  speed: 1
-  Radius: 10
-  Layer_Chase:
-    serializedVersion: 2
-    m_Bits: 16
-  Layer_Wall:
-    serializedVersion: 2
-    m_Bits: 536870912
-  rb: {fileID: 318280212}
 --- !u!50 &318280212 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3855857716649468455, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
@@ -438,6 +410,36 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &318280216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318280198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0d93d6ca549074d9cddb09aa653d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target:
+  - {fileID: 756199916}
+  WallCheck:
+  - {fileID: 437882761}
+  - {fileID: 1727914543}
+  Child_anim: {fileID: 636505822}
+  anim: {fileID: 0}
+  JumpPower: 12
+  speed: 1
+  Radius: 10
+  Layer_Chase:
+    serializedVersion: 2
+    m_Bits: 16
+  Layer_Wall:
+    serializedVersion: 2
+    m_Bits: 536870912
+  rb: {fileID: 318280212}
+  collider2D: 0
 --- !u!4 &407498147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6496766354478483469, guid: fa324eea83b4c5846a09139f6acceda4, type: 3}
@@ -608,6 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 756199916}
   longAtk: 0
+  test: {fileID: 0}
 --- !u!61 &636505827
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1470,7 +1473,8 @@ MonoBehaviour:
   WallCheck:
   - {fileID: 456473669}
   - {fileID: 1934587466}
-  Child_anim: {fileID: 0}
+  Child_anim: {fileID: 1698383603}
+  anim: {fileID: 0}
   JumpPower: 10
   speed: 0.4
   Radius: 10
@@ -1481,6 +1485,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 536870912
   rb: {fileID: 1698383605}
+  collider2D: 0
 --- !u!251 &1698383616
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1815,7 +1820,7 @@ PrefabInstance:
     - target: {fileID: 780993360805740049, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b573af050747c3a4db08cccdb69484ea, type: 2}
+      objectReference: {fileID: 9100000, guid: dba0de1c7f6ccea48a48894731a39d14, type: 2}
     - target: {fileID: 881363650157450010, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
       propertyPath: m_Layer
       value: 30

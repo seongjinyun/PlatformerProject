@@ -16,6 +16,7 @@ public class Monster_State : MonoBehaviour
     float coolT = 3f;
 
     GameObject Parent;
+    public GameObject test;
 
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class Monster_State : MonoBehaviour
         {
             //Debug.Log("플레이어 피격");
 
-            animator.SetBool("Run", false);
+            //animator.SetBool("Run", false);
             animator.SetTrigger("Attack");
 
             /*if (!collision.gameObject.CompareTag("Player")) // 없으면 다시 Run
