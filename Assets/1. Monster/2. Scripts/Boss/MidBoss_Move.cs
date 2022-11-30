@@ -11,13 +11,14 @@ public class MidBoss_Move : Boss
 
     public float JumpPower = 3f;
     public float speed = 0.5f;
-    public float Radius = 2f;
+    public float Radius = 10f;
 
     public LayerMask Layer_Chase;
     public LayerMask Layer_Wall;
 
     public Rigidbody2D rb;
 
+    bool collider2D;
     public void Start()
     {
         anim = Child_anim.GetComponent<Animator>();
@@ -25,14 +26,15 @@ public class MidBoss_Move : Boss
 
     protected void Update()
     {
-        Rotate();
         Chase();
+        Rotate();
+        
 
         if (!Physics2D.OverlapCircle(WallCheck[0].position, 0.01f, Layer_Wall) &&
             Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall) &&
             !Physics2D.Raycast(transform.position, -transform.localScale.x * transform.right, 1f, Layer_Wall))
         {
-            Debug.Log("벽 충돌");
+            //Debug.Log("벽 충돌");
             rb.velocity = new Vector2(rb.velocity.x, JumpPower);
         }
 
@@ -64,9 +66,12 @@ public class MidBoss_Move : Boss
     }
     protected void Chase()
     {
-        Collider2D collider2D = Physics2D.OverlapCircle(transform.position, Radius, Layer_Chase);
-        if (collider2D.gameObject.CompareTag("Player")) // ??
+        collider2D = Physics2D.OverlapCircle(transform.position, Radius, Layer_Chase);
+        Debug.Log($"{Time.time}"+collider2D);
+        //if (true) // ??
+        if (collider2D) // ??
         {
+            //Debug.Log(!collider2D.gameObject.CompareTag("Player"));
             if (transform.position.x < Target[0].transform.position.x)
             {
                 rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
@@ -78,9 +83,11 @@ public class MidBoss_Move : Boss
                 //anim.SetBool("Run", true);
             }
             //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
+            
         }
         else
         {
+            
             //anim.SetBool("Run", false);
         }
     }
