@@ -65,19 +65,32 @@ public class Player_Move : MonoBehaviour
         if (isGround && Input.GetKeyDown(KeyCode.C))
         {
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+
+            
         }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C))
         {
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             doubleJumpState = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.C) && Input.GetKeyDown(KeyCode.DownArrow)) //하단 점프
+        if(Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
         {
-            Physics2D.IgnoreLayerCollision(Player_Layer, Ground_Layer, true);
-            Player_rigid.AddForce(Vector2.down * jumpPower, ForceMode2D.Impulse);
+            Debug.Log("아래점프");
+            GameObject.FindWithTag("Downplatform").GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
+            // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브제트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
         }
+
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GetComponent<CapsuleCollider2D>().isTrigger = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        GetComponent<CapsuleCollider2D>().isTrigger = false;
+    }
+
 
     void move()
     {
