@@ -66,5 +66,10 @@ public class Boss : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+        //== 타겟 방향으로 회전함 ==//
+        //Vector3 dir = target.position - transform.position;
+        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        //transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
     }
 }

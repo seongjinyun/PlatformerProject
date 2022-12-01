@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class One_Stage_Boss : Boss
 {
+    //public BoxCollider2D HitBox;
+    public Vector2 size;
+
+    protected override void Start()
+    {
+        base.Start();
+        //HitBox = GetComponent<BoxCollider2D>();
+    }
+
     protected override void Update()
     {
         base.Update();
         Chase();
+        Attack();
     }
     protected virtual void Chase()
     {
@@ -33,5 +43,21 @@ public class One_Stage_Boss : Boss
         {
             anim.SetBool("Run", false);
         }
+    }
+    protected virtual void Attack()
+    {
+        if (collider2D = Physics2D.OverlapBox(transform.position, size, Layer_Chase))
+        {
+            if (collider2D)
+            {
+                anim.SetTrigger("Attack");
+            }
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, size);
+
     }
 }

@@ -28,7 +28,7 @@ public class Monster_State : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
+                if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
         {
             //Debug.Log("플레이어 피격");
 
