@@ -7,10 +7,10 @@ public class One_Stage_Boss : Boss
     //public BoxCollider2D HitBox;
     public Vector2 size;
 
+
     protected override void Start()
     {
         base.Start();
-        //HitBox = GetComponent<BoxCollider2D>();
     }
 
     protected override void Update()
@@ -46,13 +46,19 @@ public class One_Stage_Boss : Boss
     }
     protected virtual void Attack()
     {
-        if (collider2D = Physics2D.OverlapBox(transform.position, size, Layer_Chase))
+        Collider2D Hit = Physics2D.OverlapBox(transform.position, size, Layer_Chase);
+        if (Hit.gameObject.CompareTag("Player"))
         {
-            if (collider2D)
-            {
-                anim.SetTrigger("Attack");
-            }
+            anim.SetTrigger("Attack");
+            anim.SetBool("Run", false);
+            Debug.Log(Hit.gameObject.CompareTag("Player"));
         }
+        else
+        {
+            anim.SetBool("Run", true);
+        }
+
+
     }
     private void OnDrawGizmos()
     {
