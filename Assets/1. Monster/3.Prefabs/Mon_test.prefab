@@ -2005,6 +2005,7 @@ GameObject:
   - component: {fileID: 2408493369857206975}
   - component: {fileID: 6686665108268735623}
   - component: {fileID: 1492841986781952924}
+  - component: {fileID: 4595341557273069988}
   - component: {fileID: 6035189575068848054}
   m_Layer: 5
   m_Name: Mon_test
@@ -2118,7 +2119,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6035189575068848054
+--- !u!114 &4595341557273069988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2127,15 +2128,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 4746272106760716157}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2285dacbdabbc44a9e0bf23236159d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: {fileID: 0}
+  castPoint: {fileID: 0}
+  Player: {fileID: 0}
+  agroRange: 0
+  moveSpeed: 0
+  Monster_atkDistance: 0
+  Monster_bullet: {fileID: 0}
+  Bullet_pos: {fileID: 0}
+  Monster_cool: 0
+  Monster_cur: 0
+  Monster_longAtk: 0
+  Monster_HP: 0
+--- !u!114 &6035189575068848054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746272106760716157}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cb9ea6b73d73ae45afa0c20d0e15070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   face: {fileID: 7854807321982563537, guid: 57489820928d31d4b8114b26d17c8719, type: 3}
   castPoint: {fileID: 7854807323523027080, guid: 57489820928d31d4b8114b26d17c8719, type: 3}
-  Player: {fileID: 0}
+  Player:
+  - {fileID: 0}
   agroRange: 4
   moveSpeed: 2
+  isAgro: 0
+  Move_Run: 0
   Monster_HP: 0
+  Child_Anim: {fileID: 0}
+  Child: {fileID: 0}
 --- !u!1 &4772582193056088832
 GameObject:
   m_ObjectHideFlags: 0

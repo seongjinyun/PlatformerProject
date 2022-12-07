@@ -10,13 +10,13 @@ public class Monster_State : MonoBehaviour
 
     public GameObject Player;
 
-    public bool longAtk = false;
+
+    public bool longAtk = false; // 원거리 공격
 
     float cur = 1f;
     float coolT = 3f;
 
     GameObject Parent;
-    public GameObject test;
 
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
@@ -28,17 +28,16 @@ public class Monster_State : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-                if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
+        if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
         {
             //Debug.Log("플레이어 피격");
-
-            //animator.SetBool("Run", false);
             animator.SetTrigger("Attack");
+            //animator.SetBool("Run", false);
 
-            /*if (!collision.gameObject.CompareTag("Player")) // 없으면 다시 Run
+            if (!collision.gameObject.CompareTag("Player")) // 없으면 다시 Run
             {
                 animator.SetBool("Run", true);
-            }*/
+            }
 
             cur -= Time.deltaTime;
             if (cur <= 0) // 넉백
@@ -55,17 +54,19 @@ public class Monster_State : MonoBehaviour
                 }
 
             }
-
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
+        long_Atk();
+        //melee_Atk();
+    }
+    void long_Atk()
+    {
         if (longAtk == true)
-        {
+        { 
             Monster_chase_far monster_chase_far = GameObject.Find("Monster2").GetComponent<Monster_chase_far>(); // 오브젝트를 찾아 스크립트를 가져옴
             if (monster_chase_far.Monster_longAtk == true)  // 몬스터 longAtk가 true시 공격 애니메이션 발동
             {
