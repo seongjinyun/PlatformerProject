@@ -7,8 +7,8 @@ public class Player_Move : MonoBehaviour
     // public SpriteRenderer sr;
     public float speed;
     public float jumpPower;
-    Rigidbody2D Player_rigid;
-    Transform Player_tr;
+    protected Rigidbody2D Player_rigid;
+    protected Transform Player_tr;
     bool doubleJumpState = false;
     bool isGround = true;
 
@@ -39,7 +39,7 @@ public class Player_Move : MonoBehaviour
     int Player_Layer, Ground_Layer;
 
     public int Player_Hp = 100; //플레이어 체력
-    SpriteRenderer sprite;
+    protected SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {       
@@ -77,7 +77,7 @@ public class Player_Move : MonoBehaviour
         {
             Debug.Log("아래점프");
             GameObject.FindWithTag("Downplatform").GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
-            // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브제트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
+            // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
         }
 
     }
@@ -92,7 +92,7 @@ public class Player_Move : MonoBehaviour
     }
 
 
-    void move()
+    protected virtual void move() //부모 클래스에서 자식에게 상속하는것 protected virtual--> 가상함수 부모에서 이미 만들었지만 자식클래스에서 수정가능
     {
 
         if (Input.GetKey(KeyCode.RightArrow))
