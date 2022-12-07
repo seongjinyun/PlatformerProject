@@ -24,23 +24,29 @@ public class Monster_chase : MonoBehaviour
 
     bool isFacingLeft;
 
-    private bool isAgro = false;
+    public bool isAgro = false;
     private bool isSearching;
+    public bool Move_Run = false; 
 
     public int Monster_HP;
+
+    public Animator Child_Anim;
+    public GameObject Child;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        Child_Anim = Child.GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (CanSeePlayer(agroRange))
         {
             isAgro = true;
+            Child_Anim.SetBool("Run", true);
         }
         else
         {
@@ -51,8 +57,8 @@ public class Monster_chase : MonoBehaviour
                     isSearching = true;
                 }
                 Invoke("StopChasingPlayer", 3);
+                
             }
-
         }
 
         if (isAgro)
@@ -80,7 +86,6 @@ public class Monster_chase : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Player")) // 플레이어일때 공격.
             {
                 val = true;
-
             }
             else
             {
@@ -121,6 +126,7 @@ public class Monster_chase : MonoBehaviour
         isAgro = false;
         isSearching = false;
         rb2d.velocity = new Vector2(0, 0);
+        Child_Anim.SetBool("Run", false);
     }
 
     private void OnCollisionEnter(Collision coll) 

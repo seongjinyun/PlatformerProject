@@ -9,7 +9,7 @@ public class Monster_chase_far : MonoBehaviour
     GameObject face;
 
     [SerializeField]
-    Transform castPoint;
+    Transform castPoint; 
 
     [SerializeField]
     Transform Player;
@@ -18,20 +18,23 @@ public class Monster_chase_far : MonoBehaviour
     float agroRange; // 어그로범위
 
     [SerializeField]
-    float moveSpeed;
+    float moveSpeed; //이동속도 
 
 
     [SerializeField]
-    float Monster_atkDistance;
+    float Monster_atkDistance; // 몬스터 원거리 공격 사거리
 
     [SerializeField]
-    GameObject Monster_bullet;
+    GameObject Monster_bullet;// 몬스터 불렛 or 스킬
 
-    public Transform Bullet_pos;
-    public float Monster_cool;
+    public Transform Bullet_pos; //불렛 or 스킬 시작 위치
+    public float Monster_cool; //쿨타임
     public float Monster_cur;
     public bool Monster_longAtk = false;
 
+    public Animator Child_Anim;
+    public GameObject Child;
+    public bool Move_Run = false;
 
     Rigidbody2D rb2d;
 
@@ -45,6 +48,7 @@ public class Monster_chase_far : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        Child_Anim = Child.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,7 @@ public class Monster_chase_far : MonoBehaviour
         if (CanSeePlayer(agroRange))
         {
             isAgro = true;
+            Child_Anim.SetBool("Run", true);
         }
         else
         {
@@ -99,7 +104,7 @@ public class Monster_chase_far : MonoBehaviour
                     if (Monster_cur <= 0)
                     {
                         Instantiate(Monster_bullet, Bullet_pos.position, transform.rotation);
-
+                        Child_Anim.SetTrigger("Attack");
                         Monster_cur = Monster_cool;
                     }
                     else
@@ -153,6 +158,7 @@ public class Monster_chase_far : MonoBehaviour
         isAgro = false;
         isSearching = false;
         rb2d.velocity = new Vector2(0, 0);
+        Child_Anim.SetBool("Run", false);
     }
 
     private void OnCollisionEnter(Collision coll)
