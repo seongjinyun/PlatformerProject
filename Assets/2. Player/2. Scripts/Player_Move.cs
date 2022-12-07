@@ -38,7 +38,7 @@ public class Player_Move : MonoBehaviour
     //하단 점프
     int Player_Layer, Ground_Layer;
 
-    public int prHp = 100; //플레이어 체력
+    public int Player_Hp = 100; //플레이어 체력
     SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -62,12 +62,12 @@ public class Player_Move : MonoBehaviour
             doubleJumpState = true;
 
 
-        if (isGround && Input.GetKeyDown(KeyCode.C))
+        if (isGround && Input.GetKeyDown(KeyCode.C)) //점프
         {
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
 
             
-        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C))
+        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //더블점프
         {
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             doubleJumpState = false;
@@ -81,14 +81,14 @@ public class Player_Move : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) // 캐릭터에 따로 추가한 박스콜라이더가 벽에 충돌하면 캐릭터가 지닌 캡슐콜라이더 트리거가 true 
     {
         GetComponent<CapsuleCollider2D>().isTrigger = true;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision) //따로 추가한 박스콜라이더 트리거가 끝나면 캡슐콜라이더 트리거가 false 
     {
-        GetComponent<CapsuleCollider2D>().isTrigger = false;
+        GetComponent<CapsuleCollider2D>().isTrigger = false; 
     }
 
 
@@ -180,8 +180,8 @@ public class Player_Move : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ENEMY"))
         {
-            prHp -= 10;
-            if (prHp <= 0)
+            Player_Hp -= 10;
+            if (Player_Hp <= 0)
             {
                 Debug.Log("피격");
                 //player die

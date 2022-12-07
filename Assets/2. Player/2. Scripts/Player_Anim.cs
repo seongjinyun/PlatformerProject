@@ -19,6 +19,10 @@ public class Player_Anim : MonoBehaviour
 
     //스킬
     public GameObject Sword_skill;
+
+    //게이지
+    public float Skill_gauge = 100;
+
     
     
 
@@ -40,7 +44,7 @@ public class Player_Anim : MonoBehaviour
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach(Collider2D collider in collider2Ds)
             {
-                if (collider.tag == "Enemy")
+                if (collider.tag == "Enemy") //Enemy 태그와 충돌하면
                 {
                     Debug.Log("Enemy Attack");
                     if (transform.position.x >= enemy.transform.position.x && !isKnockback)
@@ -57,7 +61,7 @@ public class Player_Anim : MonoBehaviour
                         enemy.transform.Translate(-0.5f, 0.2f, 0);
 
                     }
-                    if (isKnockback)
+                    if (isKnockback) //넉백 타이머
                     {
                         Kb_timer += Time.deltaTime;
                         if(Kb_timer >= Kb_delayTime)
@@ -66,6 +70,9 @@ public class Player_Anim : MonoBehaviour
                             isKnockback = false;
                         }
                     }
+
+                    Skill_gauge += 5;
+                    Debug.Log("게이지 + 5");
                 }
             }
             
@@ -74,18 +81,15 @@ public class Player_Anim : MonoBehaviour
             //player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && Skill_gauge >= 100) //스킬게이지가 100이고 A키를 누르면
         {
             
             
             Player_anim.SetTrigger("Skill");
             Instantiate(Sword_skill, pos.position, transform.rotation);
+            Skill_gauge = 0; //게이지 0으로 초기화
             
             
-               
-            
-            
-
         }
 
     }
