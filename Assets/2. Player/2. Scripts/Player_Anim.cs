@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class Player_Anim : MonoBehaviour
 {
-    Animator Player_anim;
+    protected Animator Player_anim;
     public Transform pos;
     public Vector2 player_boxSize;
     public GameObject enemy;
 
     //³Ë¹é
     public float Knockback_speed = 3;
-    private bool isKnockback;
+    protected bool isKnockback;
     public float Kb_delayTime = 2f;
 
-    float Kb_timer = 0f;
+    protected float Kb_timer = 0f;
 
     //½ºÅ³
     public GameObject Sword_skill;
@@ -26,7 +26,7 @@ public class Player_Anim : MonoBehaviour
     
     
 
-    Rigidbody2D player_rigid;
+    protected Rigidbody2D player_rigid;
     private float str = 16;
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class Player_Anim : MonoBehaviour
         
     }
 
-    void Attack()
+    protected virtual void Attack()
     {
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -105,7 +105,7 @@ public class Player_Anim : MonoBehaviour
         Attack();
     }
 
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, player_boxSize);
