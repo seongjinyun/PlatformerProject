@@ -154,6 +154,69 @@ Transform:
   m_Father: {fileID: 407498147}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &277334651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277334652}
+  - component: {fileID: 277334654}
+  - component: {fileID: 277334653}
+  m_Layer: 30
+  m_Name: Pattern
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277334652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277334651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 318280203}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &277334653
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277334651}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.56
+--- !u!114 &277334654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277334651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7279feeb31e60fa47b415d9f1a607655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warning: {fileID: 9173681113856071217, guid: 33ac14de4565b6749a0619da8afdc088, type: 3}
+  Atk1: {fileID: 3743053951820987082, guid: 2e5055cd158f40b499aa803cd22ff858, type: 3}
 --- !u!1001 &302557297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,9 +801,6 @@ MonoBehaviour:
   - {fileID: 1727914543}
   Child_anim: {fileID: 636505822}
   anim: {fileID: 0}
-  Monster_Skill: {fileID: 0}
-  Skill_pos: {fileID: 728346665}
-  Skill_timer: 0
   JumpPower: 12
   speed: 1
   Radius: 10
@@ -1352,7 +1412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_TagString
@@ -1792,9 +1852,6 @@ MonoBehaviour:
   - {fileID: 1934587466}
   Child_anim: {fileID: 1698383603}
   anim: {fileID: 0}
-  Monster_Skill: {fileID: 0}
-  Skill_pos: {fileID: 0}
-  Skill_timer: 0
   JumpPower: 10
   speed: 0.4
   Radius: 10

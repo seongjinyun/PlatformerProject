@@ -15,10 +15,6 @@ public class Boss : MonoBehaviour
     public GameObject Child_anim;
     public Animator anim;
 
-    public GameObject Monster_Skill;
-    public Transform Skill_pos;
-    public float Skill_timer = 0f;
-
     public float JumpPower = 3f;
     public float speed = 0.5f;
     public float Radius = 10f;
@@ -30,6 +26,8 @@ public class Boss : MonoBehaviour
 
     public bool collider2D;
     public bool MonsterDie = false;
+
+
 
     /*yield return null;  :  다음 프레임에 실행 됨.
     yield return new WaitForSeconds(float );  :  매개변수로 입력한 숫자에 해당하는 초만 큼 기다렸다가 실행됨.
@@ -44,11 +42,8 @@ public class Boss : MonoBehaviour
 
     protected virtual void Update()
     {
-        
         Rotate();
         StartCoroutine(Boss_Jump());
-        StartCoroutine(Boss_Skill());
-
     }
     void Rotate()
     {
@@ -100,14 +95,5 @@ public class Boss : MonoBehaviour
             }
         }
     }
-    IEnumerator Boss_Skill()
-    {
-        yield return null;
-        if (Skill_timer >= 10f)
-        {
-            yield return null;
-            Instantiate(Monster_Skill, Skill_pos.position, transform.rotation);
-            Skill_timer = 0f;
-        }
-    }
+
 }
