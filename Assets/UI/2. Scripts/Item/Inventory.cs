@@ -54,7 +54,12 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveInven()
     {
-        items = new List<Item>(); //
+        items.RemoveRange(0, items.Count);
+    }
+
+    public void Removeslot()
+    {   
+        onChangeItem.Invoke();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

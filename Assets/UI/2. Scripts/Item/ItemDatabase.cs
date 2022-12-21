@@ -18,7 +18,7 @@ public class ItemDatabase : MonoBehaviour
         if (collision.gameObject.tag == "Player") 
         {
             GameObject go = Instantiate(DropItemPrefab ,transform.position, Quaternion.identity);
-            go.GetComponent<DropItem>().DropItems(itemDB[Random.Range(0, 5)]);
+            go.GetComponent<DropItem>().DropItems(itemDB[Random.Range(0, 4)]);
 
             Destroy(gameObject);
         }

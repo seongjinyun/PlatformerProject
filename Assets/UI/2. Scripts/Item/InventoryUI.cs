@@ -17,31 +17,28 @@ public class InventoryUI : MonoBehaviour
     {
         inven = Inventory.instance;
         slots = slotHolder.GetComponentsInChildren<Slot>();
-        inven.onChangeItem += RedrawSlotUI;  
-
+        if(inven)inven.onChangeItem += RedrawSlotUI;
     }
 
 
     void RedrawSlotUI()
     {   
         for (int i = 0; i < slots.Length; i++)
-        {   
+        {
+            if (inven.items.Count == 0)
+            {   
+                slots[i].itemIcon.sprite = null;
+                break;
+            }
             if (inven.items[i].itemType == ItemType.Consumables)
             {
                 slots[i].item = inven.items[i];
                 slots[i].UpdateSlotUI();
-            }
-            if (inven.items[i].itemType == ItemType.ImConsumables)
-            {
-                Debug.Log("체력 회복!");
-                Inventory.instance.RemoveInven();
-                return;
-            }
+            }     
             if (inven.items[i].itemType == ItemType.etc)
             {
-                Debug.Log("으앜 쓰레기야!");
-                Inventory.instance.RemoveInven();
-                return;
+                slots[i].item = inven.items[i];
+                slots[i].UpdateSlotUI();
             }
         }
     }

@@ -17,12 +17,6 @@ public class Item
     public string itemName;
     public Sprite itemImage;
     
-
-    public bool Use()
-    {
-        return false;
-    }
-
     public static implicit operator Item(List<Item> v)
     {
         throw new NotImplementedException();
