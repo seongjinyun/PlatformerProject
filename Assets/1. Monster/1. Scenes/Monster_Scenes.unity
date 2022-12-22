@@ -217,6 +217,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warning: {fileID: 9173681113856071217, guid: 33ac14de4565b6749a0619da8afdc088, type: 3}
   Atk1: {fileID: 3743053951820987082, guid: 2e5055cd158f40b499aa803cd22ff858, type: 3}
+  Skill: 0
+  ColTime: 5
+  CurTime: 0
 --- !u!1001 &302557297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1412,7 +1415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_TagString
