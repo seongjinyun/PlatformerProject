@@ -4,20 +4,48 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    Rigidbody2D rigid; //물리이동을 위한 변수 선언 
+    // public SpriteRenderer sr;
+    public float speed = 3f;
 
-    private void Awake()
+    public int prHp = 100;
+
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        //  sr = this.gameObject.GetComponent<SpriteRenderer>();
+
+        //  sr.flipX = false;
+    }
+
+    void move()
     {
 
-        rigid = GetComponent<Rigidbody2D>(); //변수 초기화 
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            //  sr.flipX = true;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            //  sr.flipX = false;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            // sr.flipX = true;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            // sr.flipX = false; 
+        }
 
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
-
+        move();
     }
 }
