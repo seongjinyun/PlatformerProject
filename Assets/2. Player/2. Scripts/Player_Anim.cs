@@ -27,7 +27,7 @@ public class Player_Anim : MonoBehaviour
     
 
     protected Rigidbody2D player_rigid;
-    private float str = 16;
+    //private float str = 16;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,7 +81,7 @@ public class Player_Anim : MonoBehaviour
             //player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && Skill_gauge >= 100) //스킬게이지가 100이고 A키를 누르면
+        if (Input.GetKeyDown(KeyCode.A) /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
         {
             
             
