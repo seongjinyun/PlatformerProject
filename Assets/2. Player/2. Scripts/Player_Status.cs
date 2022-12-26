@@ -48,7 +48,7 @@ public class Player_Status : MonoBehaviour
 
             switch (unitCode)
             {
-                case Unit_Code:
+                case Unit_Code.Sword:
                     status = new Status(unitCode, "Sword", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
                     break;
             }

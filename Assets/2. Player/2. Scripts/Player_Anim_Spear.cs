@@ -105,9 +105,9 @@ public class Player_Anim_Spear : MonoBehaviour
             //Vector2 dir = (transform.position - Enemy.transform.position).normalized;
             //player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
         }
-        if (Input.GetKeyDown(KeyCode.A) /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
+        if (Input.GetKeyDown(KeyCode.A) /*&& Skill_gauge >= 100*/ ) //스킬게이지가 100이고 A키를 누르면
         {
-
+            
 
             Spear_anim.SetTrigger("Skill_spear");
             Instantiate(Spear_skill, pos.position, transform.rotation);
