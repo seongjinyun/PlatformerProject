@@ -18,7 +18,7 @@ public class Player_Skill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigid_bullet.velocity = transform.right  * skill_speed;
+        //rigid_bullet.velocity = transform.right *-1 * skill_speed;
 
     }
 }

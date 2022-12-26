@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player_Anim : MonoBehaviour
 {
+    
+
     protected Animator Player_anim;
     public Transform pos;
     public Vector2 player_boxSize;
@@ -33,6 +35,7 @@ public class Player_Anim : MonoBehaviour
     {
         Player_anim = GetComponent<Animator>();
         player_rigid = GetComponent<Rigidbody2D>();
+
         
     }
 

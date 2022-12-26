@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
+    public Unit_Code unit_Code;
+    public Player_Status status;
+
+
+
     // public SpriteRenderer sr;
     public float speed;
-    public float jumpPower;
+    
     protected Rigidbody2D Player_rigid;
     protected Transform Player_tr;
+
+    //점프
     bool doubleJumpState = false;
     bool isGround = true;
+    public float jumpPower;
 
     //회피 변수
     /*public float dodge_Distance;
@@ -48,7 +56,9 @@ public class Player_Move : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
-        
+
+        status = new Player_Status();
+        //status = status.SetUnitStatus(unit_Code);
     }
 
 
