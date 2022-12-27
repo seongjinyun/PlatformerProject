@@ -2,22 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Status : MonoBehaviour
+
+
+    
+
+    public class Player_Status
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public class Status
-    {
         public Unit_Code unitCode { get; } //유닛코드
         public string name { get; set; } //이름
         public int atk { get; set; } // 공격력
@@ -26,12 +16,12 @@ public class Player_Status : MonoBehaviour
         public int hp { get; set; } //체력
         public int move_speed { get; set; } //이동속도
 
-        public Status()
+        public Player_Status()
         {
 
         }
 
-        public Status(Unit_Code unit_code, string name, int atk, int SP_atk, int atk_speed, int hp, int move_speed)
+        public Player_Status(Unit_Code unit_code, string name, int atk, int SP_atk, int atk_speed, int hp, int move_speed)
         {
             this.unitCode = unit_code;
             this.name = name;
@@ -42,18 +32,24 @@ public class Player_Status : MonoBehaviour
             this.move_speed = move_speed;
         }
 
-        public Status SetUnitStatus(Unit_Code unitCode)
+        public Player_Status SetUnitStatus(Unit_Code unitCode)
         {
-            Status status = null;
+        Player_Status status = null;
 
             switch (unitCode)
             {
                 case Unit_Code.Sword:
-                    status = new Status(unitCode, "Sword", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
+                    status = new Player_Status(unitCode, "Sword", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
                     break;
-            }
+            case Unit_Code.Shield:
+                status = new Player_Status(unitCode, "Shield", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
+                break;
+            case Unit_Code.Spear:
+                status = new Player_Status(unitCode, "Spear", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
+                break;
+        }
             return status;
         }
         
     }
-}
+

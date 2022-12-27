@@ -17,6 +17,6 @@ public class Player_Skill_Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject, 0.5f);
     }
 }

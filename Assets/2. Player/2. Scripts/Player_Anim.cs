@@ -89,7 +89,7 @@ public class Player_Anim : MonoBehaviour
             
             
             Player_anim.SetTrigger("Skill");
-            Instantiate(Sword_skill, pos.position, transform.rotation);
+            Instantiate(Sword_skill, pos.position, Quaternion.Euler(180,0,180));
             Skill_gauge = 0; //게이지 0으로 초기화
             
             
