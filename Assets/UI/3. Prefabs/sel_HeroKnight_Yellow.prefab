@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 3563432127847847818}
   - component: {fileID: 7996002249688988145}
   - component: {fileID: -4256386873974366917}
-  - component: {fileID: 847683492373078791}
   m_Layer: 0
   m_Name: sel_HeroKnight_Yellow
   m_TagString: Player
@@ -215,23 +214,6 @@ MonoBehaviour:
     itemName: 
     itemImage: {fileID: 0}
   items: []
---- !u!114 &847683492373078791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744877147368397468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0dd9bc60e5ccdf40b04f2f95f774ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: 2
-  chars:
-  - {fileID: 5807186441504181463, guid: 9850142fa9759c842a7947bd88d211f5, type: 3}
-  - {fileID: 7993196773069832976, guid: e5a778cc6ab79c042aae0cac1994cf51, type: 3}
-  - {fileID: 847683492373078791}
 --- !u!1 &2406233037801049401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5260,8 +5242,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -309977167
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0

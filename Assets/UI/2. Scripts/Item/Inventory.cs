@@ -7,9 +7,10 @@ public class Inventory : MonoBehaviour
 {
     public Item item;
     #region Singleton
+    [SerializeField]
     public static Inventory instance;
     private void Awake()
-    {
+    {   
         if(instance != null)
         {
             Destroy(gameObject);
@@ -42,12 +43,12 @@ public class Inventory : MonoBehaviour
     }
 
     public bool AddItem(Item _item)
-    {   
+    {
         if (items.Count < SlotCnt)
         {
             items.Add(_item);
             if(onChangeItem != null)
-            onChangeItem.Invoke();
+                onChangeItem.Invoke();
             return true;
         }
         return false;

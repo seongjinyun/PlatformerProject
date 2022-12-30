@@ -4786,7 +4786,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -6
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9601,8 +9601,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -309977167
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -9711,7 +9711,6 @@ GameObject:
   - component: {fileID: 8247273422221672048}
   - component: {fileID: 7279798645395038474}
   - component: {fileID: -8433913931572551665}
-  - component: {fileID: 5807186441504181463}
   m_Layer: 0
   m_Name: sel_HeroKnight
   m_TagString: Player
@@ -9910,23 +9909,6 @@ MonoBehaviour:
     itemName: 
     itemImage: {fileID: 0}
   items: []
---- !u!114 &5807186441504181463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571004047837901670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0dd9bc60e5ccdf40b04f2f95f774ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: 0
-  chars:
-  - {fileID: 5807186441504181463}
-  - {fileID: 7993196773069832976, guid: e5a778cc6ab79c042aae0cac1994cf51, type: 3}
-  - {fileID: 847683492373078791, guid: 66e0b62b9fe7d424e901998ef0e4a689, type: 3}
 --- !u!1 &7089582712770520259
 GameObject:
   m_ObjectHideFlags: 0

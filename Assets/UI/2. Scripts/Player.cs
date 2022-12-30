@@ -7,11 +7,12 @@ public class Player : MonoBehaviour
     Inventory inven;
     public Slot[] slots;
     public ParticleSystem particleObject, particleObject2;
-   
+    
     int playerSpeed = 10;
     Rigidbody2D rid2D;
     public int Player_Hp;
     // Start is called before the first frame update
+
 
     void Start()
     {
@@ -26,7 +27,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {  
             if (inven.items[0].itemName == "Speed")
-            {
+            {   
                 particleObject.Play();
                 Inventory.instance.RemoveInven();
                 Inventory.instance.onChangeItem();

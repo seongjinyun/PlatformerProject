@@ -6,7 +6,8 @@ public class Respawn : MonoBehaviour
 {
     public GameObject[] charPrebabs;
     public GameObject player;
-    void Start()
+    
+    void Awake()
     {
         player = Instantiate(charPrebabs[(int)DataMgr.instance.currentCharacter]);
         player.transform.position = transform.position;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 public class InventoryUI : MonoBehaviour
-{
+{   
     Inventory inven;
     public DropItem dropitem;
     public GameObject inventoryPannel;
@@ -15,7 +15,14 @@ public class InventoryUI : MonoBehaviour
 
     public void Start()
     {
-        inven = Inventory.instance;
+        if(Inventory.instance != null){
+            inven = Inventory.instance;
+        }
+        else
+        {
+            Inventory.instance = inven;
+        }
+            
         slots = slotHolder.GetComponentsInChildren<Slot>();
         if(inven)inven.onChangeItem += RedrawSlotUI;
     }
@@ -23,8 +30,9 @@ public class InventoryUI : MonoBehaviour
 
     void RedrawSlotUI()
     {   
+
         for (int i = 0; i < slots.Length; i++)
-        {
+        {   
             if (inven.items.Count == 0)
             {   
                 slots[i].itemIcon.sprite = null;
@@ -32,6 +40,7 @@ public class InventoryUI : MonoBehaviour
             }
             if (inven.items[i].itemType == ItemType.Consumables)
             {
+
                 slots[i].item = inven.items[i];
                 slots[i].UpdateSlotUI();
             }     
