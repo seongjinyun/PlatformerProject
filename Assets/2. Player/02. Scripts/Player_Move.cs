@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
+    
+
+    //스텟
     public Unit_Code unit_Code;
     public Player_Status status;
 
@@ -30,18 +33,22 @@ public class Player_Move : MonoBehaviour
 
     // 대쉬 변수
     public float dash_Speed; //대쉬 속도
-    private bool isDash;
+    protected bool isDash;
     public float StartDashTimer;
 
-    float CurrentDashTimer;
-    float Dashdirection;
-    float movX;
+    protected float CurrentDashTimer;
+    protected float Dashdirection;
+    protected float movX;
 
     public bool isDash_Delay = false;
     public float Dash_delayTime = 2f; //대쉬쿨타임
     public float Dash_timer = 0f;
 
     public bool Time_end = false;
+
+    public GameObject dash_effect; // 대쉬이펙트
+    public Transform dash_transform;
+
 
     //하단 점프
     int Player_Layer, Ground_Layer;
@@ -58,7 +65,7 @@ public class Player_Move : MonoBehaviour
         Ground_Layer = LayerMask.NameToLayer("Ground");
 
         status = new Player_Status();
-        //status = status.SetUnitStatus(unit_Code);
+        status = status.SetUnitStatus(unit_Code);
     }
 
 
@@ -124,7 +131,7 @@ public class Player_Move : MonoBehaviour
                
     }
 
-    void Dash()
+    protected virtual void Dash()
     {
         movX = Input.GetAxis("Horizontal");
         Dash_timer -= Time.deltaTime;
@@ -153,11 +160,13 @@ public class Player_Move : MonoBehaviour
             
             if (transform.rotation.y <= 0)
             { 
-                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed; 
+                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed;
+                Instantiate(dash_effect, dash_transform.position, transform.rotation);
             }
             else
             {
                 Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * -1;
+                Instantiate(dash_effect, dash_transform.position, transform.rotation);
             }
             CurrentDashTimer -= Time.deltaTime;
 

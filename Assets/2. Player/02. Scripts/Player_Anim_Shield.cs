@@ -8,6 +8,7 @@ public class Player_Anim_Shield : MonoBehaviour
     public GameObject enemy;
     public GameObject Shield_Skill;
     public GameObject player;
+    public GameObject Shield_pos;
 
     //넉백
     public float Knockback_speed = 3;
@@ -91,7 +92,7 @@ public class Player_Anim_Shield : MonoBehaviour
 
             
             Shield_Anim.SetTrigger("Skill_shield");
-            Instantiate(Shield_Skill, enemy.transform.position, transform.rotation);
+            Instantiate(Shield_Skill, Shield_pos.transform.position, transform.rotation);
             Skill_gauge = 0; //게이지 0으로 초기화
             
 

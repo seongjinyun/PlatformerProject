@@ -2915,8 +2915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit_Code: {fileID: 0}
-  status: {fileID: 0}
+  unit_Code: 1
   speed: 0
   jumpPower: 0
   dash_Speed: 0
@@ -2925,6 +2924,8 @@ MonoBehaviour:
   Dash_delayTime: 2
   Dash_timer: 0
   Time_end: 0
+  dash_effect: {fileID: 0}
+  dash_transform: {fileID: 0}
   Player_Hp: 100
 --- !u!1 &6007795568513487490
 GameObject:

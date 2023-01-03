@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Player_Anim : MonoBehaviour
 {
-    
+    public GameObject self;
+
 
     protected Animator Player_anim;
     public Transform pos;
@@ -86,12 +87,21 @@ public class Player_Anim : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
         {
-            
-            
-            Player_anim.SetTrigger("Skill");
-            Instantiate(Sword_skill, pos.position, Quaternion.Euler(180,0,180));
-            Skill_gauge = 0; //게이지 0으로 초기화
-            
+
+            if (self.transform.rotation.y > 0) // 오른쪽으로 스킬
+            {
+                Player_anim.SetTrigger("Skill");
+                Instantiate(Sword_skill, pos.position, Quaternion.Euler(0, 0, 0));
+                Skill_gauge = 0; //게이지 0으로 초기화
+            }
+            else if(self.transform.rotation.y == 0) //왼쪽으로 스킬
+            {
+
+
+                Player_anim.SetTrigger("Skill");
+                Instantiate(Sword_skill, pos.position, Quaternion.Euler(180, 0, 180));
+                Skill_gauge = 0; //게이지 0으로 초기화
+            }
             
         }
 

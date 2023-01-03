@@ -19,7 +19,7 @@ public class Player_Skill : MonoBehaviour
     void Update()
     {
         //rigid_bullet.velocity = transform.right *-1 * skill_speed;
-        Destroy(gameObject,0.5f);
+        //Destroy(gameObject,0.5f);
     }
     
 }
