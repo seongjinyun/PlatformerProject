@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
+
     
 
     //스텟
@@ -17,11 +18,14 @@ public class Player_Move : MonoBehaviour
     
     protected Rigidbody2D Player_rigid;
     protected Transform Player_tr;
+    
 
     //점프
     bool doubleJumpState = false;
     bool isGround = true;
     public float jumpPower;
+    public GameObject jump_effect; //점프 이펙트
+    public Transform effect_Pos;
 
     //회피 변수
     /*public float dodge_Distance;
@@ -46,7 +50,7 @@ public class Player_Move : MonoBehaviour
 
     public bool Time_end = false;
 
-    public GameObject dash_effect; // 대쉬이펙트
+    public GameObject Dash_effect; // 대쉬이펙트
     public Transform dash_transform;
 
 
@@ -82,12 +86,15 @@ public class Player_Move : MonoBehaviour
         if (isGround && Input.GetKeyDown(KeyCode.C)) //점프
         {
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-
+            GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
+            Destroy(jump_ef, 0.5f);
             
         }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //더블점프
         {
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             doubleJumpState = false;
+            GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
+            Destroy(jump_ef, 0.5f);
         }
 
         if(Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
@@ -157,16 +164,20 @@ public class Player_Move : MonoBehaviour
         }
         if (isDash) //대쉬가 true이면
         {
+
+            
             
             if (transform.rotation.y <= 0)
             { 
                 Player_rigid.velocity = transform.right * Dashdirection * dash_Speed;
-                Instantiate(dash_effect, dash_transform.position, transform.rotation);
+                GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
+                Destroy(dash_ef, 0.5f);
             }
             else
             {
                 Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * -1;
-                Instantiate(dash_effect, dash_transform.position, transform.rotation);
+                GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
+                Destroy(dash_ef, 1.0f);
             }
             CurrentDashTimer -= Time.deltaTime;
 
