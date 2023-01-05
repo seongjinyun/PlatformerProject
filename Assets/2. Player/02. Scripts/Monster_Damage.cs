@@ -12,7 +12,7 @@ public class Monster_Damage : MonoBehaviour
         if (collision.CompareTag("Spear"))
         {
             Debug.Log("Ãæµ¹");
-            Instantiate(Damage_Effect, collision.transform.position, Quaternion.identity);
+            //Instantiate(Damage_Effect, collision.transform.position, Quaternion.identity);
 
             GameObject effect = Instantiate(Damage_Effect, Enemy.transform.position, Quaternion.identity);
             Destroy(effect,0.5f);

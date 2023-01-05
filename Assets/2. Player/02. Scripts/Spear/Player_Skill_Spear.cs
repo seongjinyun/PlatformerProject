@@ -9,7 +9,7 @@ public class Player_Skill_Spear : MonoBehaviour
 
     //public GameObject explo;
 
-    //public GameObject SpawnPos1;
+    
 
     //float x = 1;
     //float y = -1f;
@@ -30,15 +30,6 @@ public class Player_Skill_Spear : MonoBehaviour
         //rigid_spear.AddForce(Vector2.left * skill_speed);
         
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Instantiate(explo, SpawnPos1.transform.position, transform.rotation);
-            
-            Destroy(gameObject, 1.0f);
-            
-        }
-    }*/
+    
     
 }
