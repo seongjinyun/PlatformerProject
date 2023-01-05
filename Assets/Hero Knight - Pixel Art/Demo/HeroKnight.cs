@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HeroKnight : MonoBehaviour {
 
+    public string currentmapname;
+
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] float      m_rollForce = 6.0f;
@@ -30,6 +32,7 @@ public class HeroKnight : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        DontDestroyOnLoad(this.gameObject);
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
