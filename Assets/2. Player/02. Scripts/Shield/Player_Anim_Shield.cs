@@ -92,7 +92,8 @@ public class Player_Anim_Shield : MonoBehaviour
 
             
             Shield_Anim.SetTrigger("Skill_shield");
-            Instantiate(Shield_Skill, Shield_pos.transform.position, transform.rotation);
+            GameObject She_ =  Instantiate(Shield_Skill, Shield_pos.transform.position, transform.rotation);
+            Destroy(She_, 1f);
             Skill_gauge = 0; //게이지 0으로 초기화
             
 

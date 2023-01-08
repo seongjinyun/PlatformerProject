@@ -73,7 +73,7 @@ public class Player_Move : MonoBehaviour
     }
 
 
-    void Jump() 
+    protected virtual void Jump() 
     {
         if (Player_rigid.velocity.y == 0)
             isGround = true;

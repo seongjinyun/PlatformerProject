@@ -16,6 +16,8 @@ public class Player_Shield : Player_Move
     void Update()
     {
         move();
+        Jump();
+        Dash();
     }
 
     /*protected override void move() // 부모클래스(Player_Move)에 있는 move 함수를 재정의 할 수 있다. 키워드-->override
