@@ -17,7 +17,7 @@ public class Down_Platform : MonoBehaviour
     }
     IEnumerator ReturnLayer()
     {
-        yield return new WaitForSeconds(2f); //2초뒤에 
+        yield return new WaitForSeconds(1f); //0.5초뒤에 
         gameObject.layer = 9; //9번 레이어로 돌아옴 (Ground)
     }
 

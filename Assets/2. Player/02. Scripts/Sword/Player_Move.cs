@@ -57,6 +57,8 @@ public class Player_Move : MonoBehaviour
     //하단 점프
     int Player_Layer, Ground_Layer;
 
+    
+
     public int Player_Hp = 100; //플레이어 체력
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -100,7 +102,11 @@ public class Player_Move : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
         {
             Debug.Log("아래점프");
-            GameObject.FindWithTag("Downplatform").GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
+            GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
+            foreach(GameObject layer in Ground_Layer)
+            {
+                layer.GetComponent<Down_Platform>().ChangeLayer();
+            }
             // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
         }
 

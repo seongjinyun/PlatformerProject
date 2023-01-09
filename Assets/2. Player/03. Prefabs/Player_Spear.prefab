@@ -2758,6 +2758,42 @@ Transform:
   m_Father: {fileID: 4810202232934571717}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6525436442078746005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4632167481518330398}
+  m_Layer: 8
+  m_Name: Jump_pos_spear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4632167481518330398
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525436442078746005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2657438444314131828}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6886700270967957606
 GameObject:
   m_ObjectHideFlags: 0
@@ -3814,6 +3850,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8550584349034670057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3009705684756170922}
+  m_Layer: 8
+  m_Name: Dash_pos_spear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3009705684756170922
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8550584349034670057}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2657438444314131828}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8849566811968587435
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,6 +4167,8 @@ RectTransform:
   - {fileID: 5684314115199651619}
   - {fileID: 3342777113000464955}
   - {fileID: 3342777113264304298}
+  - {fileID: 4632167481518330398}
+  - {fileID: 3009705684756170922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
@@ -4229,14 +4303,14 @@ MonoBehaviour:
   unit_Code: 1
   speed: 2
   jumpPower: 5
-  jump_effect: {fileID: 0}
-  effect_Pos: {fileID: 0}
+  jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
+  effect_Pos: {fileID: 4632167481518330398}
   dash_Speed: 7
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 5.08
   Dash_timer: 0
   Time_end: 0
-  Dash_effect: {fileID: 0}
-  dash_transform: {fileID: 0}
+  Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
+  dash_transform: {fileID: 3009705684756170922}
   Player_Hp: 100
