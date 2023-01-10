@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DropItem
+  - Chest
+  - Spear
+  - Weapon
+  - Monster_Ground
+  - Monster
+  - Downplatform
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,13 +22,13 @@ TagManager:
   - 
   - 
   - 
+  - Ground
+  - Player
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - test
+  - Pass
   - 
   - 
   - 
@@ -40,4 +48,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SpeedEft
+    uniqueID: 3011502057
+    locked: 0
+  - name: ShieldEft
+    uniqueID: 3984990129
+    locked: 0
+  - name: HealEft
+    uniqueID: 2362969075
     locked: 0
