@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     public bool UsingActive;
     public float Activecooldown;
 
-    int playerSpeed = 10;
     Rigidbody2D rid2D;
     public int Player_Hp;
     // Start is called before the first frame update
@@ -35,11 +34,13 @@ public class Player : MonoBehaviour
                 {
                     Inventory.instance.RemoveInven();
                     Inventory.instance.onChangeItem();
+                    return;
                 }
                 if (inven.items[0].itemName == "Trash2")
                 {
                     Inventory.instance.RemoveInven();
                     Inventory.instance.onChangeItem();
+                    return;
                 }
                 if (UsingActive == false)
                 {
@@ -48,7 +49,9 @@ public class Player : MonoBehaviour
                         particleObject.Play();
                         Inventory.instance.RemoveInven();
                         Inventory.instance.onChangeItem();
-                        UsingActive = true;
+                        UsingActive = true; 
+                        return;
+
                     }
                     if (inven.items[0].itemName == "Shield")
                     {
@@ -56,6 +59,8 @@ public class Player : MonoBehaviour
                         Inventory.instance.RemoveInven();
                         Inventory.instance.onChangeItem();
                         UsingActive = true;
+                        return;
+
                     }
                 }
             }

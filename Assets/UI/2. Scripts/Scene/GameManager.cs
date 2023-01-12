@@ -41,11 +41,6 @@ public class GameManager : MonoBehaviour
         LoadingSceneController.LoadScene("UI_1_0");
         Debug.Log("게임시작");
     }
-    public void GameOption() //게임 시작 함수 (옵션 버튼을 누르면 실행됨)
-    {
-        LoadingSceneController.LoadScene("UI_Option");
-        Debug.Log("옵션씬으로 이동");
-    }
     public void Quit() //게임 정지 함수 (QUIT 버튼을 누르면 실행)
     {
         Application.Quit();

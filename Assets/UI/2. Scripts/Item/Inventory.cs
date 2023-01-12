@@ -55,7 +55,7 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveInven()
     {
-        items.RemoveRange(0, items.Count);
+        items.Clear();
     }
 
     public void Removeslot()
