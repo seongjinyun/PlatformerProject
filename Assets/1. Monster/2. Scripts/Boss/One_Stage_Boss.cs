@@ -30,7 +30,7 @@ public class One_Stage_Boss : Boss
             if (collider2D)
             {
                 //Debug.Log(!collider2D.gameObject.CompareTag("Player"));
-                if (transform.position.x < Target[0].transform.position.x)
+                if (transform.position.x < Target.transform.position.x)
                 {
                     rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
                     anim.SetBool("Run", true);

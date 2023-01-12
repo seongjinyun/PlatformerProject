@@ -5,6 +5,7 @@ using UnityEngine;
 public class Monster_Bullet : MonoBehaviour
 {
     public float speed;
+    public float dir = 1f;
     public float distance;
     public LayerMask isLayer; // 레이어 지정
     public GameObject Monster;
@@ -29,11 +30,11 @@ public class Monster_Bullet : MonoBehaviour
 
         if (transform.rotation.y == 0)
         {
-            transform.Translate(transform.right * speed * Time.deltaTime);
+            transform.Translate(transform.right * dir * speed * Time.deltaTime);
         }
         else
         {
-            transform.Translate(transform.right * -1 * speed * Time.deltaTime);
+            transform.Translate(transform.right * dir * -1 * speed * Time.deltaTime);
         }
 
         void DestroyBullet()

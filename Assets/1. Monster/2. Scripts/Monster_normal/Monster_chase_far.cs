@@ -49,6 +49,7 @@ public class Monster_chase_far : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         Child_Anim = Child.GetComponent<Animator>();
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -91,14 +92,14 @@ public class Monster_chase_far : MonoBehaviour
 
         Vector2 endPos = castPoint.position + Vector3.right * castDist;
 
-        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Water")); // 플레이어 레이어 설정
+        RaycastHit2D hit = Physics2D.Linecast(castPoint.position, endPos, 1 << LayerMask.NameToLayer("Player")); // 플레이어 레이어 설정
 
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.CompareTag("Player")) // 플레이어일때 원거리 공격.
             {
                 val = true;
-
+                moveSpeed = 0f;
                 if (Vector2.Distance(transform.position, hit.collider.transform.position) < Monster_atkDistance)
                 {
                     if (Monster_cur <= 0)
@@ -113,6 +114,7 @@ public class Monster_chase_far : MonoBehaviour
                     }
                     Monster_cur -= Time.deltaTime;
                     Monster_longAtk = true; // 공격 시 true
+
                 }
                 else
                 {
@@ -130,8 +132,8 @@ public class Monster_chase_far : MonoBehaviour
         {
             Debug.DrawLine(castPoint.position, endPos, Color.blue);
         }
+        moveSpeed = 2f;
         return val;
-
     }
 
     void ChasePlayer()

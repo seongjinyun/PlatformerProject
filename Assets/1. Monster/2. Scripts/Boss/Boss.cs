@@ -10,7 +10,7 @@ public class Boss : MonoBehaviour
     // virtual - 자식 오브젝트가 받을 수 있게 해줌
     // Override - 부모에서 virtual이 선언되면 오버라이드를 해야함
     // protected - 상속된 스크립트에서만 접근 가능
-    public GameObject[] Target;
+    public Transform Target;
     public Transform[] WallCheck;
     public GameObject Child_anim;
     public Animator anim;
@@ -38,6 +38,7 @@ public class Boss : MonoBehaviour
     protected virtual void Start()
     {
         anim = Child_anim.GetComponent<Animator>();
+        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     protected virtual void Update()
@@ -47,9 +48,9 @@ public class Boss : MonoBehaviour
     }
     void Rotate()
     {
-        for (int i = 0; i < Target.Length; i++)
-        {
-            if (transform.position.x < Target[i].transform.position.x)
+        //for (int i = 0; i < Target.Length; i++)
+    
+            if (transform.position.x < Target.transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
@@ -57,7 +58,7 @@ public class Boss : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
-        }
+        
             
         //== 타겟 방향으로 회전함 ==//
         //Vector3 dir = target.position - transform.position;

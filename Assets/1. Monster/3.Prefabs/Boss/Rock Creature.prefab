@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 456473669}
-  m_Layer: 30
+  m_Layer: 6
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1839667444}
   - component: {fileID: 1839667446}
   - component: {fileID: 1839667445}
-  m_Layer: 30
+  m_Layer: 6
   m_Name: Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1934587466}
-  m_Layer: 30
+  m_Layer: 6
   m_Name: WallCheck (1)
   m_TagString: Untagged
   m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 1698383609}
   - component: {fileID: 1698383616}
   - component: {fileID: 1698383613}
-  m_Layer: 30
+  m_Layer: 6
   m_Name: Rock Creature
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -324,8 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9826c7470fd5b43a965f3b0ffc9fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target:
-  - {fileID: 0}
+  Target: {fileID: 0}
   WallCheck:
   - {fileID: 456473669}
   - {fileID: 1934587466}
