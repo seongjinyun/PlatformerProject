@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 4634365911627974762}
   - component: {fileID: 3633918819612701935}
   - component: {fileID: 740505468377667571}
+  - component: {fileID: 8409333082999016292}
   m_Layer: 10
   m_Name: Player_shield
   m_TagString: Player
@@ -796,7 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5958793171bf1b429cbb4174cd27ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit_Code: 2
+  unit_Code: {fileID: 0}
   speed: 5
   jumpPower: 5
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
@@ -826,6 +827,26 @@ CapsuleCollider2D:
   m_Offset: {x: -0.004769217, y: 0.3522643}
   m_Size: {x: 0.5286147, y: 0.7367582}
   m_Direction: 0
+--- !u!95 &8409333082999016292
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197968755758976567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 276ed0f93538aaf4493cabe3635fa777, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2326767795802819087
 GameObject:
   m_ObjectHideFlags: 0

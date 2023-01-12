@@ -4145,6 +4145,7 @@ GameObject:
   - component: {fileID: 7522476713321230295}
   - component: {fileID: 9067762764423288630}
   - component: {fileID: 7356743097825821245}
+  - component: {fileID: 7208729996220655730}
   m_Layer: 10
   m_Name: Player_Spear
   m_TagString: Player
@@ -4300,7 +4301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit_Code: 1
+  unit_Code: {fileID: 0}
   speed: 5
   jumpPower: 9
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
@@ -4314,3 +4315,23 @@ MonoBehaviour:
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3009705684756170922}
   Player_Hp: 100
+--- !u!95 &7208729996220655730
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028496524012394670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fda33645114b8134fac6cb844e96a2b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

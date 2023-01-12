@@ -32,7 +32,7 @@ using UnityEngine;
             this.move_speed = move_speed;
         }
 
-        public Player_Status SetUnitStatus(Unit_Code unitCode)
+        /*public Player_Status SetUnitStatus(Unit_Code unitCode)
         {
         Player_Status status = null;
 
@@ -49,7 +49,7 @@ using UnityEngine;
                 break;
         }
             return status;
-        }
+        }*/
         
     }
 

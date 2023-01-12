@@ -35,6 +35,8 @@ public class Player_Move : MonoBehaviour
     public float dodge_ButtonTime;          // 회피 버튼을 2번 눌러야 되는 시간
     private bool dodge;*/
 
+    Animator move_animator;
+
     // 대쉬 변수
     public float dash_Speed; //대쉬 속도
     protected bool isDash;
@@ -69,9 +71,10 @@ public class Player_Move : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
+        move_animator = GetComponent<Animator>();
 
-        status = new Player_Status();
-        status = status.SetUnitStatus(unit_Code);
+        //status = new Player_Status(); //유닛코드 주석 오류 수정되면 다시 활성화
+        //status = status.SetUnitStatus(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -130,19 +133,37 @@ public class Player_Move : MonoBehaviour
         {
             sprite.flipX = true;
             transform.localEulerAngles = new Vector3(0, 180, 0);
+            //move_animator.SetBool("Run", true);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             sprite.flipX = false;
             transform.localEulerAngles = new Vector3(0, 0, 0);
+            //move_animator.SetBool("Run", true);
         }
     
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);       
+        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);
+        
         
                
+    }
+
+    void Player_anim(float h)
+    {
+        if (h >= 0.1f)
+        {
+            move_animator.SetBool("Run", true);
+        }
+        else if (h <= -0.1f)
+        {
+            move_animator.SetBool("Run", true);
+        }else 
+        {
+            move_animator.SetBool("Run", false);
+        }
     }
 
     protected virtual void Dash()
@@ -209,9 +230,13 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
         move();
         Jump();
         Dash();
+        Player_anim(h);
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
