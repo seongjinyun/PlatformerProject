@@ -39,16 +39,16 @@ public class Player_Move : MonoBehaviour
 
     // 대쉬 변수
     public float dash_Speed; //대쉬 속도
-    protected bool isDash;
+    public bool isDash;
     public float StartDashTimer;
 
-    protected float CurrentDashTimer;
+    protected float CurrentDashTimer = 10f;
     protected float Dashdirection;
     protected float movX;
 
     public bool isDash_Delay = false;
     public float Dash_delayTime = 2f; //대쉬쿨타임
-    public float Dash_timer = 0f;
+    public float Dash_timer = -5f;
 
     public bool Time_end = false;
 
@@ -115,7 +115,7 @@ public class Player_Move : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter2D(Collider2D collision) // 캐릭터에 따로 추가한 박스콜라이더가 벽에 충돌하면 캐릭터가 지닌 캡슐콜라이더 트리거가 true 
+    /*private void OnTriggerEnter2D(Collider2D collision) // 캐릭터에 따로 추가한 박스콜라이더가 벽에 충돌하면 캐릭터가 지닌 캡슐콜라이더 트리거가 true 
     {
         GetComponent<CapsuleCollider2D>().isTrigger = true;
     }
@@ -123,7 +123,7 @@ public class Player_Move : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision) //따로 추가한 박스콜라이더 트리거가 끝나면 캡슐콜라이더 트리거가 false 
     {
         GetComponent<CapsuleCollider2D>().isTrigger = false; 
-    }
+    }*/
 
 
     protected virtual void move() //부모 클래스에서 자식에게 상속하는것 protected virtual--> 가상함수 부모에서 이미 만들었지만 자식클래스에서 수정가능
@@ -133,13 +133,13 @@ public class Player_Move : MonoBehaviour
         {
             sprite.flipX = true;
             transform.localEulerAngles = new Vector3(0, 180, 0);
-            //move_animator.SetBool("Run", true);
+            move_animator.SetBool("Run", true);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             sprite.flipX = false;
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            //move_animator.SetBool("Run", true);
+            move_animator.SetBool("Run", true);
         }
     
 
@@ -169,14 +169,25 @@ public class Player_Move : MonoBehaviour
     protected virtual void Dash()
     {
         movX = Input.GetAxis("Horizontal");
+
         Dash_timer -= Time.deltaTime;
 
         
-
         if (Dash_timer <= 0f)
         {
             if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
             {
+                StartCoroutine(DashCoolTime(5f));
+
+                IEnumerator DashCoolTime(float dash_cool)
+                {
+                    while(dash_cool > 1.0f)
+                    {
+                        dash_cool -= Time.deltaTime;
+                        yield return new WaitForFixedUpdate();
+                    }
+                }
+
                 isDash = true;
                 CurrentDashTimer = StartDashTimer;
                 Player_rigid.velocity = Vector2.zero;
@@ -193,8 +204,7 @@ public class Player_Move : MonoBehaviour
         if (isDash) //대쉬가 true이면
         {
 
-            
-            
+                      
             if (transform.rotation.y <= 0)
             { 
                 Player_rigid.velocity = transform.right * Dashdirection * dash_Speed;
@@ -226,6 +236,8 @@ public class Player_Move : MonoBehaviour
                 isDash_Delay = false; //대쉬딜레이 false
             }
         }*/
+
+        
     }
     // Update is called once per frame
     void Update()

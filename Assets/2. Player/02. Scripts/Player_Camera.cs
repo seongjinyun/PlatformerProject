@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player_Camera : MonoBehaviour
 {
     public float camera_speed = 5.0f;
-    public GameObject target;
+    //public GameObject target;
+
+    GameObject my_target;
 
     [SerializeField]
     Vector2 center;
@@ -21,13 +23,23 @@ public class Player_Camera : MonoBehaviour
     {
         height = Camera.main.orthographicSize;
         width = height * Screen.width / Screen.height;
+
+        my_target = GameObject.FindGameObjectWithTag("Player");
+        if( my_target != null)
+        {
+            Debug.Log("게임오브젝트("+my_target.name + ")을" + "찾음");
+        }
+        else
+        {
+            Debug.Log("못찾음");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //플레이어 카메라 추적
-        Vector3 dir = target.transform.position - this.transform.position; //타겟과 카메라 위치 계산값
+        Vector3 dir = my_target.transform.position - this.transform.position; //타겟과 카메라 위치 계산값
         Vector3 moveVector = new Vector3(dir.x * camera_speed * Time.deltaTime, dir.y * camera_speed * Time.deltaTime, 0.0f);
         this.transform.Translate(moveVector);
 

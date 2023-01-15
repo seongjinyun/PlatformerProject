@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 2059435656}
   - component: {fileID: 8348247135978081382}
   - component: {fileID: 4136376683857386106}
+  - component: {fileID: 2432846849617784867}
   m_Layer: 10
   m_Name: Player_Sword
   m_TagString: Player
@@ -617,6 +618,8 @@ Transform:
   - {fileID: 659194094381573876}
   - {fileID: 1816066508626538704}
   - {fileID: 7209816031491093466}
+  - {fileID: 5570715809892869778}
+  - {fileID: 3879554607680791211}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
@@ -724,16 +727,16 @@ MonoBehaviour:
   unit_Code: {fileID: 0}
   speed: 2
   jumpPower: 5
-  jump_effect: {fileID: 0}
-  effect_Pos: {fileID: 0}
+  jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
+  effect_Pos: {fileID: 5570715809892869778}
   dash_Speed: 3
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 2
   Dash_timer: 0
   Time_end: 0
-  Dash_effect: {fileID: 0}
-  dash_transform: {fileID: 0}
+  Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
+  dash_transform: {fileID: 3879554607680791211}
   Player_Hp: 100
 --- !u!114 &8348247135978081382
 MonoBehaviour:
@@ -769,6 +772,26 @@ MonoBehaviour:
   particleObject2: {fileID: 2594885423108063608}
   UsingActive: 0
   Activecooldown: 0
+--- !u!95 &2432846849617784867
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798746268070547124}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2cdc280fecadb7b49a45035cc46a5c62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1984031467315863517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,6 +1628,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3241533509039564691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5570715809892869778}
+  m_Layer: 10
+  m_Name: Jump_pos_Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5570715809892869778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3241533509039564691}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5066100314870972562}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3293020919925505881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,13 +2341,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a111faaf90e14e4b95b8894c4a4a7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
+  self: {fileID: 1798746268070547124}
   pos: {fileID: 659194094381573876}
   player_boxSize: {x: 1, y: 1.2}
   enemy: {fileID: 0}
   Knockback_speed: 3
   Kb_delayTime: 2
-  Sword_skill: {fileID: 0}
+  Sword_skill: {fileID: 7435615283100214881, guid: fef98364f46c05348beb5a91665f7479, type: 3}
   Skill_gauge: 100
 --- !u!1 &4339244248727921314
 GameObject:
@@ -3297,6 +3351,37 @@ Transform:
   - {fileID: 2054013070757777555}
   m_Father: {fileID: 4171687716930190150}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7618959913752747214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3879554607680791211}
+  m_Layer: 10
+  m_Name: Dash_pos_Sword
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3879554607680791211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7618959913752747214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.328, y: 0.194, z: 0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5066100314870972562}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7727881707381466669
 GameObject:
