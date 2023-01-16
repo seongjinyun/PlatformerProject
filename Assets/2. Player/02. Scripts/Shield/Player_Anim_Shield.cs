@@ -35,6 +35,7 @@ public class Player_Anim_Shield : MonoBehaviour
         //Enemy_Test[0] = enemy;
         Shield_Anim = GetComponent<Animator>();
         float dist = Vector3.Distance(transform.position, enemy.transform.position);
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
         /*foreach (GameObject mob in Enemy_Test)
         {
             float distance = Vector3.Distance(transform.position, mob.transform.position);
@@ -92,7 +93,7 @@ public class Player_Anim_Shield : MonoBehaviour
 
             
             Shield_Anim.SetTrigger("Skill_shield");
-            GameObject She_ =  Instantiate(Shield_Skill, Shield_pos.transform.position, transform.rotation);
+            GameObject She_ =  Instantiate(Shield_Skill, enemy.transform.position, transform.rotation);
             Destroy(She_, 1f);
             Skill_gauge = 0; //게이지 0으로 초기화
             
