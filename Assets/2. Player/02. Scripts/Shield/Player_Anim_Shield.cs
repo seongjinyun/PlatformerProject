@@ -35,7 +35,7 @@ public class Player_Anim_Shield : MonoBehaviour
         //Enemy_Test[0] = enemy;
         Shield_Anim = GetComponent<Animator>();
         float dist = Vector3.Distance(transform.position, enemy.transform.position);
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemy = GameObject.FindGameObjectWithTag("Monster");
         /*foreach (GameObject mob in Enemy_Test)
         {
             float distance = Vector3.Distance(transform.position, mob.transform.position);
@@ -52,7 +52,7 @@ public class Player_Anim_Shield : MonoBehaviour
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
             {
-                if (collider.tag == "Enemy") //Enemy 태그와 충돌하면
+                if (collider.tag == "Monster") //Enemy 태그와 충돌하면
                 {
                     Debug.Log("Enemy Attack");
                     if (transform.position.x >= enemy.transform.position.x && !isKnockback)
