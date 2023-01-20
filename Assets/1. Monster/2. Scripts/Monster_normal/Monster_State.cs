@@ -8,7 +8,7 @@ public class Monster_State : MonoBehaviour
     Rigidbody2D rigid2D;
     Animator animator;
 
-    public Transform Player;
+    public GameObject Player;
 
 
     public bool longAtk = false; // 원거리 공격
@@ -24,7 +24,6 @@ public class Monster_State : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Parent = transform.parent.gameObject;
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
