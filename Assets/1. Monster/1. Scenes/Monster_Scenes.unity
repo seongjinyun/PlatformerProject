@@ -510,14 +510,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1698383613, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1698383613, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
-      propertyPath: Target.Array.data[0]
-      value: 
-      objectReference: {fileID: 756199916}
     - target: {fileID: 5713860511332802690, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -566,8 +558,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock Creature
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
 --- !u!1 &1547476585
 GameObject:
@@ -1104,6 +1095,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 318280216, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
+      propertyPath: Layer_Chase.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 318280216, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
       propertyPath: Target.Array.data[0]
       value: 
