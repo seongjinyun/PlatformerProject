@@ -22,12 +22,12 @@ public class Final_Stage_Boss : Boss
                 //Debug.Log(!collider2D.gameObject.CompareTag("Player"));
                 if (transform.position.x < Target.transform.position.x)
                 {
-                    rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
+                    rb.velocity = new Vector2(transform.localScale.x * speed * MoveSpeed, rb.velocity.y);
                     anim.SetBool("Run", true);
                 }
                 else
                 {
-                    rb.velocity = new Vector2(-transform.localScale.x * speed, rb.velocity.y);
+                    rb.velocity = new Vector2(-transform.localScale.x * speed * MoveSpeed, rb.velocity.y);
                     anim.SetBool("Run", true);
                 }
                 //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);

@@ -18,6 +18,7 @@ public class Boss : MonoBehaviour
     public float JumpPower = 3f;
     public float speed = 0.5f;
     public float Radius = 10f;
+    public float MoveSpeed = 1f;
 
     public LayerMask Layer_Chase;
     public LayerMask Layer_Wall;
