@@ -133,13 +133,13 @@ public class Player_Move : MonoBehaviour
         {
             sprite.flipX = true;
             transform.localEulerAngles = new Vector3(0, 180, 0);
-            move_animator.SetBool("Run", true);
+            //move_animator.SetBool("Run", true);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             sprite.flipX = false;
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            move_animator.SetBool("Run", true);
+            //move_animator.SetBool("Run", true);
         }
     
 
@@ -151,7 +151,7 @@ public class Player_Move : MonoBehaviour
                
     }
 
-    void Player_anim(float h)
+    /*void Player_anim(float h) // 애니메이션 오류
     {
         if (h >= 0.1f)
         {
@@ -164,7 +164,7 @@ public class Player_Move : MonoBehaviour
         {
             move_animator.SetBool("Run", false);
         }
-    }
+    }*/
 
     protected virtual void Dash()
     {
@@ -248,7 +248,7 @@ public class Player_Move : MonoBehaviour
         move();
         Jump();
         Dash();
-        Player_anim(h);
+        //Player_anim(h); //애니메이션
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
