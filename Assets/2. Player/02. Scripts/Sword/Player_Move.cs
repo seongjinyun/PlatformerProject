@@ -35,7 +35,7 @@ public class Player_Move : MonoBehaviour
     public float dodge_ButtonTime;          // 회피 버튼을 2번 눌러야 되는 시간
     private bool dodge;*/
 
-    Animator move_animator;
+    protected Animator move_animator;
 
     // 대쉬 변수
     public float dash_Speed; //대쉬 속도
@@ -133,13 +133,17 @@ public class Player_Move : MonoBehaviour
         {
             sprite.flipX = true;
             transform.localEulerAngles = new Vector3(0, 180, 0);
-            //move_animator.SetBool("Run", true);
+            move_animator.SetBool("Run", true);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
             sprite.flipX = false;
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            //move_animator.SetBool("Run", true);
+            move_animator.SetBool("Run", true);
+        }
+        else
+        {
+            move_animator.SetBool("Run", false);
         }
     
 
@@ -150,6 +154,9 @@ public class Player_Move : MonoBehaviour
         
                
     }
+    
+
+    
 
     /*void Player_anim(float h) // 애니메이션 오류
     {
@@ -242,8 +249,7 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        
 
         move();
         Jump();

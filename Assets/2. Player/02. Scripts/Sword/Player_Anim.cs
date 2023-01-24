@@ -30,6 +30,13 @@ public class Player_Anim : MonoBehaviour
     
 
     protected Rigidbody2D player_rigid;
+
+
+
+
+    public float speed;
+    protected Animator move_animator;
+    protected SpriteRenderer sprite;
     //private float str = 16;
     // Start is called before the first frame update
     void Start()
@@ -37,7 +44,8 @@ public class Player_Anim : MonoBehaviour
         Player_anim = GetComponent<Animator>();
         player_rigid = GetComponent<Rigidbody2D>();
 
-        
+        sprite = GetComponent<SpriteRenderer>();
+        move_animator = GetComponent<Animator>();
     }
 
     protected virtual void Attack()
@@ -106,6 +114,37 @@ public class Player_Anim : MonoBehaviour
         }
 
     }
+
+    protected virtual void move() //부모 클래스에서 자식에게 상속하는것 protected virtual--> 가상함수 부모에서 이미 만들었지만 자식클래스에서 수정가능
+    {
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            sprite.flipX = true;
+            transform.localEulerAngles = new Vector3(0, 180, 0);
+            move_animator.SetBool("Run", true);
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            sprite.flipX = false;
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+            move_animator.SetBool("Run", true);
+        }
+        else
+        {
+            move_animator.SetBool("Run", false);
+        }
+
+
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);
+
+
+
+    }
+
+
     /*public void Nb()
     {
         Vector2 dir = (transform.position - enemy.transform.position).normalized;
@@ -114,6 +153,7 @@ public class Player_Anim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        move();
         //Nb();
         Attack();
     }

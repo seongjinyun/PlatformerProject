@@ -10,6 +10,7 @@ public class Player_Shield : Player_Move
         Player_rigid = GetComponent<Rigidbody2D>();
         Player_tr = GetComponent<Transform>();
         sprite = GetComponent<SpriteRenderer>();
+        move_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
