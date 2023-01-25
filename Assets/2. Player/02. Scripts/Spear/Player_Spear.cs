@@ -17,5 +17,7 @@ public class Player_Spear : Player_Move
     void Update()
     {
         move();
+        Dash();
+        Jump();
     }
 }

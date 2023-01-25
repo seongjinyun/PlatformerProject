@@ -25,7 +25,7 @@ public class Player_Anim_Spear : MonoBehaviour
     //게이지
     public float Skill_gauge = 100;
 
-
+    GameObject[] Enemy_Test;
 
 
     protected Rigidbody2D player_rigid;
@@ -38,6 +38,7 @@ public class Player_Anim_Spear : MonoBehaviour
     {
         Spear_anim = GetComponent<Animator>();
         player_rigid = GetComponent<Rigidbody2D>();
+        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
     }
 
     // Update is called once per frame
@@ -69,21 +70,22 @@ public class Player_Anim_Spear : MonoBehaviour
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
             {
-                if (collider.tag == "Enemy") //Enemy 태그와 충돌하면
+                foreach (GameObject monster in Enemy_Test)
+                if (collider.tag == "Monster") //Enemy 태그와 충돌하면
                 {
                     Debug.Log("Enemy Attack");
-                    if (transform.position.x >= enemy.transform.position.x && !isKnockback)
+                    if (transform.position.x >= monster.transform.position.x && !isKnockback)
 
                     {
                         isKnockback = true;
-                        enemy.transform.Translate(0.5f, 0.2f, 0);
+                        monster.transform.Translate(0.5f, 0.2f, 0);
 
                     }
                     else
 
                     {
                         isKnockback = true;
-                        enemy.transform.Translate(-0.5f, 0.2f, 0);
+                        monster.transform.Translate(-0.5f, 0.2f, 0);
 
                     }
                     if (isKnockback) //넉백 타이머

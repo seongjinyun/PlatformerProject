@@ -26,8 +26,8 @@ public class Player_Anim : MonoBehaviour
     //게이지
     public float Skill_gauge = 100;
 
-    
-    
+
+    GameObject[] Enemy_Test;
 
     protected Rigidbody2D player_rigid;
 
@@ -46,6 +46,7 @@ public class Player_Anim : MonoBehaviour
 
         sprite = GetComponent<SpriteRenderer>();
         move_animator = GetComponent<Animator>();
+        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
     }
 
     protected virtual void Attack()
@@ -56,21 +57,22 @@ public class Player_Anim : MonoBehaviour
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach(Collider2D collider in collider2Ds)
             {
-                if (collider.tag == "Enemy") //Enemy 태그와 충돌하면
+                foreach (GameObject monster in Enemy_Test)
+                if (collider.tag == "Monster") //Enemy 태그와 충돌하면
                 {
                     Debug.Log("Enemy Attack");
-                    if (transform.position.x >= enemy.transform.position.x && !isKnockback)
+                    if (transform.position.x >= monster.transform.position.x && !isKnockback)
 
                     {
                         isKnockback = true;
-                        enemy.transform.Translate(0.5f, 0.2f, 0);
+                        monster.transform.Translate(0.5f, 0.2f, 0);
 
                     }
                     else
 
                     {
                         isKnockback = true;
-                        enemy.transform.Translate(-0.5f, 0.2f, 0);
+                        monster.transform.Translate(-0.5f, 0.2f, 0);
 
                     }
                     if (isKnockback) //넉백 타이머
@@ -115,34 +117,7 @@ public class Player_Anim : MonoBehaviour
 
     }
 
-    protected virtual void move() //부모 클래스에서 자식에게 상속하는것 protected virtual--> 가상함수 부모에서 이미 만들었지만 자식클래스에서 수정가능
-    {
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            sprite.flipX = true;
-            transform.localEulerAngles = new Vector3(0, 180, 0);
-            move_animator.SetBool("Run", true);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            sprite.flipX = false;
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-            move_animator.SetBool("Run", true);
-        }
-        else
-        {
-            move_animator.SetBool("Run", false);
-        }
-
-
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);
-
-
-
-    }
+    
 
 
     /*public void Nb()
@@ -153,7 +128,7 @@ public class Player_Anim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move();
+        
         //Nb();
         Attack();
     }
