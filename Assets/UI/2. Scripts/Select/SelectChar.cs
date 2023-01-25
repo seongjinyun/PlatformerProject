@@ -28,11 +28,11 @@ public class SelectChar : MonoBehaviour
     void OnDeSelect()
     {
         anim.SetBool("run", false);
-        sr.color = new Color(0.5f, 0.5f, 0.5f);
+        sr.material.color = new Color(0.5f, 0.5f, 0.5f);
     }
     void OnSelect()
     {
         anim.SetBool("run", true);
-        sr.color = new Color(1f, 1f, 1f);
+        sr.material.color = new Color(1f, 1f, 1f);
     }
 }
