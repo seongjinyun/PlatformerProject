@@ -20,7 +20,7 @@ public class Boss_Pattern : MonoBehaviour
     void Update()
     {
         
-        Debug.Log(ColTime);
+        //Debug.Log(ColTime);
         if (ColTime <= CurTime)
         {
             ColTime = 5f;
@@ -61,7 +61,7 @@ public class Boss_Pattern : MonoBehaviour
             {
                 whereToAtk = playerPos;
                 isAttacking = true;
-                Debug.Log("감지한 위치 : " + whereToAtk);
+                //Debug.Log("감지한 위치 : " + whereToAtk);
                 Instantiate(warning, whereToAtk, transform.rotation);
                 // 생성 (warning 프리팹에 2초뒤 삭제되는 Destroy를 넣어줌 - pattern스크립트)
                 yield return new WaitForSeconds(2f);
@@ -72,10 +72,10 @@ public class Boss_Pattern : MonoBehaviour
 
     IEnumerator Bottom_Attack() // 공격
     {
-        Debug.Log("그래서 공격중임");
+        //Debug.Log("그래서 공격중임");
         Instantiate(Atk1, whereToAtk, transform.rotation);
         yield return new WaitForSeconds(1f);
-        Debug.Log("공격 끝남");
+        //Debug.Log("공격 끝남");
         isAttacking = false;
     }
 

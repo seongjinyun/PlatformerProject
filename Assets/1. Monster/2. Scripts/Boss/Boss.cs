@@ -28,6 +28,8 @@ public class Boss : MonoBehaviour
     public bool collider2D;
     public bool MonsterDie = false;
 
+    public int Monster_HP = 10;
+
 
 
     /*yield return null;  :  다음 프레임에 실행 됨.
@@ -94,6 +96,18 @@ public class Boss : MonoBehaviour
                     transform.rotation = Quaternion.Euler(0, 180, 0);
                     rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
                 }
+            }
+        }
+    }
+    protected virtual void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.CompareTag("Spear")) // 웨폰 충돌시 HP감소
+        {
+            Monster_HP -= 1;
+            Debug.Log("피격");
+            if (Monster_HP <= 0)
+            {
+                Destroy(gameObject); // 체력 0이 될시 삭제
             }
         }
     }
