@@ -41,14 +41,15 @@ public class Player_Anim_Shield : MonoBehaviour
 
     void Attack()
     {
+        
 
-        //float distance = Vector3.Distance(transform.position, enemy.transform.position);
         if (Input.GetKeyDown(KeyCode.X))
         {
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
             {
                 foreach (GameObject monster in Enemy_Test)
+
                 if (collider.tag == "Monster") //Enemy 태그와 충돌하면
                 {
                     Debug.Log("Enemy Attack");
@@ -85,24 +86,29 @@ public class Player_Anim_Shield : MonoBehaviour
             //Vector2 dir = (transform.position - Enemy.transform.position).normalized;
             //player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
         }
-        if (Input.GetKeyDown(KeyCode.A) /*&& distance <= 13.0f*/ /*&& Skill_gauge >= 100*/ ) //스킬게이지가 100이고 A키를 누르면
-        {
 
-            foreach (GameObject mob in Enemy_Test)
+
+
+
+
+        foreach (GameObject mob in Enemy_Test)
+        {
+            float dist = Vector3.Distance(transform.position, mob.transform.position);
+            if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f /*&& Skill_gauge >= 100*/ ) //스킬게이지가 100이고 A키를 누르면
             {
-                
-                float dist = Vector3.Distance(transform.position, mob.transform.position);
+
+                //float dist = Vector3.Distance(transform.position, mob.transform.position);
                 Shield_Anim.SetTrigger("Skill_shield");
                 GameObject She_ = Instantiate(Shield_Skill, mob.transform.position, transform.rotation);
                 Destroy(She_, 1f);
                 Skill_gauge = 0; //게이지 0으로 초기화
             }
-            
-            
+
 
         }
+        
 
-        Debug.Log("거리 ");
+        Debug.Log("거리 " + "dist");
     }
 
     // Update is called once per frame
