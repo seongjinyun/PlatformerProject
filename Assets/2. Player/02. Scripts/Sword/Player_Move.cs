@@ -222,7 +222,7 @@ public class Player_Move : MonoBehaviour
             {
                 Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * -1;
                 GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
-                Destroy(dash_ef, 1.0f);
+                Destroy(dash_ef, 0.5f);
             }
             CurrentDashTimer -= Time.deltaTime;
 
