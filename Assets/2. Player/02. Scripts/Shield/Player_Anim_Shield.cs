@@ -104,11 +104,11 @@ public class Player_Anim_Shield : MonoBehaviour
                 Skill_gauge = 0; //게이지 0으로 초기화
             }
 
-
+            Debug.Log("거리 " + dist);
         }
         
 
-        Debug.Log("거리 " + "dist");
+        
     }
 
     // Update is called once per frame
