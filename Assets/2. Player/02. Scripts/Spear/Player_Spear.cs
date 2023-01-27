@@ -20,4 +20,17 @@ public class Player_Spear : Player_Move
         Dash();
         Jump();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Mons_weapon"))
+        {
+            Player_Hp -= 10;
+            if (Player_Hp <= 0)
+            {
+                Debug.Log("ÇÇ°Ý");
+                //player die
+            }
+        }
+    }
 }

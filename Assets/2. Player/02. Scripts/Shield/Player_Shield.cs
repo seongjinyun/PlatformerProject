@@ -21,6 +21,19 @@ public class Player_Shield : Player_Move
         Dash();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Mons_weapon"))
+        {
+            Player_Hp -= 10;
+            if (Player_Hp <= 0)
+            {
+                Debug.Log("피격");
+                //player die
+            }
+        }
+    }
+
     /*protected override void move() // 부모클래스(Player_Move)에 있는 move 함수를 재정의 할 수 있다. 키워드-->override
     {
         base.move();

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
+    
 
+    //유닛루트 객체
     public GameObject Unit_anim;
     
 
@@ -36,6 +38,7 @@ public class Player_Move : MonoBehaviour
     public float dodge_ButtonTime;          // 회피 버튼을 2번 눌러야 되는 시간
     private bool dodge;*/
 
+    //유닛루트 애니메이터
     public Animator move_animator;
 
     // 대쉬 변수
@@ -62,7 +65,7 @@ public class Player_Move : MonoBehaviour
 
     
 
-    public int Player_Hp = 100; //플레이어 체력
+    public int Player_Hp = 10; //플레이어 체력
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -74,6 +77,7 @@ public class Player_Move : MonoBehaviour
         Ground_Layer = LayerMask.NameToLayer("Ground");
         move_animator = Unit_anim.GetComponent<Animator>();
 
+        
         //status = new Player_Status(); //유닛코드 주석 오류 수정되면 다시 활성화
         //status = status.SetUnitStatus(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
         DontDestroyOnLoad(this.gameObject);
@@ -106,6 +110,7 @@ public class Player_Move : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
         {
+            //effecter.rotationalOffset = 180;
             Debug.Log("아래점프");
             GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
             foreach(GameObject layer in Ground_Layer)
@@ -114,6 +119,7 @@ public class Player_Move : MonoBehaviour
             }
             // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
         }
+        
 
     }
     /*private void OnTriggerEnter2D(Collider2D collision) // 캐릭터에 따로 추가한 박스콜라이더가 벽에 충돌하면 캐릭터가 지닌 캡슐콜라이더 트리거가 true 
@@ -159,20 +165,7 @@ public class Player_Move : MonoBehaviour
 
     
 
-    /*void Player_anim(float h) // 애니메이션 오류
-    {
-        if (h >= 0.1f)
-        {
-            move_animator.SetBool("Run", true);
-        }
-        else if (h <= -0.1f)
-        {
-            move_animator.SetBool("Run", true);
-        }else 
-        {
-            move_animator.SetBool("Run", false);
-        }
-    }*/
+    
 
     protected virtual void Dash()
     {
@@ -259,7 +252,7 @@ public class Player_Move : MonoBehaviour
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("ENEMY"))
+        if (collision.gameObject.CompareTag("Mons_weapon"))
         {
             Player_Hp -= 10;
             if (Player_Hp <= 0)
