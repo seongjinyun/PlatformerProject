@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
 
+    public GameObject Unit_anim;
     
 
     //스텟
@@ -35,7 +36,7 @@ public class Player_Move : MonoBehaviour
     public float dodge_ButtonTime;          // 회피 버튼을 2번 눌러야 되는 시간
     private bool dodge;*/
 
-    protected Animator move_animator;
+    public Animator move_animator;
 
     // 대쉬 변수
     public float dash_Speed; //대쉬 속도
@@ -71,7 +72,7 @@ public class Player_Move : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
-        move_animator = GetComponent<Animator>();
+        move_animator = Unit_anim.GetComponent<Animator>();
 
         //status = new Player_Status(); //유닛코드 주석 오류 수정되면 다시 활성화
         //status = status.SetUnitStatus(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화

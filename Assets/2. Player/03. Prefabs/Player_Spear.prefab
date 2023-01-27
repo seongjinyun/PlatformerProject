@@ -1485,12 +1485,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3342777113000464954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4520001, y: 0.28200004, z: 0}
+  m_LocalPosition: {x: -0.4520001, y: 0.28200006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5684314115199651619}
-  m_RootOrder: 4
+  m_Father: {fileID: 2657438444314131828}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3342777113264304297
 GameObject:
@@ -2786,8 +2786,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5684314115199651619}
-  m_RootOrder: 2
+  m_Father: {fileID: 2657438444314131828}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2841,10 +2841,9 @@ GameObject:
   - component: {fileID: 3342777113667186687}
   - component: {fileID: 3342777113667186681}
   - component: {fileID: 8239939761566214221}
-  - component: {fileID: 8435964650585353293}
   m_Layer: 10
   m_Name: UnitRoot
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2863,9 +2862,6 @@ Transform:
   m_Children:
   - {fileID: 4590466137589665913}
   - {fileID: 1397632572490143026}
-  - {fileID: 4632167481518330398}
-  - {fileID: 3009705684756170922}
-  - {fileID: 3342777113000464955}
   m_Father: {fileID: 2657438444314131828}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2909,7 +2905,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6997368250977220904}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -3000,16 +2996,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6997368250977220904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9e64f1e8ea94b478735e565a0d9ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Unit_anim: {fileID: 0}
   unit_Code: {fileID: 0}
   speed: 5
   jumpPower: 9
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 4632167481518330398}
+  move_animator: {fileID: 0}
   dash_Speed: 7
   isDash: 0
   StartDashTimer: 0
@@ -3020,22 +3018,6 @@ MonoBehaviour:
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3009705684756170922}
   Player_Hp: 100
---- !u!70 &8435964650585353293
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6997368250977220904}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.004769217, y: 0.3522643}
-  m_Size: {x: 0.5286147, y: 0.7367582}
-  m_Direction: 0
 --- !u!1 &7040630432626823499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,12 +3908,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5684314115199651619}
-  m_RootOrder: 3
+  m_Father: {fileID: 2657438444314131828}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.25, y: 0.13}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8849566811968587435
@@ -4198,7 +4180,7 @@ GameObject:
   - component: {fileID: -2776625801473197083}
   m_Layer: 10
   m_Name: Player_Spear
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4219,6 +4201,9 @@ RectTransform:
   - {fileID: 3342777113264304298}
   - {fileID: 2877547726932589691}
   - {fileID: 1839501202953393053}
+  - {fileID: 3009705684756170922}
+  - {fileID: 4632167481518330398}
+  - {fileID: 3342777113000464955}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
@@ -4345,16 +4330,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9028496524012394670}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Unit_anim: {fileID: 6997368250977220904}
   unit_Code: {fileID: 0}
   speed: 5
   jumpPower: 9
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 4632167481518330398}
+  move_animator: {fileID: 1975779875685421878}
   dash_Speed: 7
   isDash: 0
   StartDashTimer: 0

@@ -134,10 +134,9 @@ GameObject:
   - component: {fileID: 5557219117114761317}
   - component: {fileID: 5557219117114761313}
   - component: {fileID: 8884758210228658017}
-  - component: {fileID: 9050176175114790857}
   m_Layer: 10
   m_Name: UnitRoot
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,9 +155,6 @@ Transform:
   m_Children:
   - {fileID: 6848360963108183025}
   - {fileID: 7159214284248885514}
-  - {fileID: 6075302706591681580}
-  - {fileID: 3433241586592486182}
-  - {fileID: 5557219116328778751}
   m_Father: {fileID: 3526826421527383147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,7 +198,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623221117996090822}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -296,16 +292,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623221117996090822}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5958793171bf1b429cbb4174cd27ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Unit_anim: {fileID: 0}
   unit_Code: {fileID: 0}
   speed: 5
   jumpPower: 5
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
+  move_animator: {fileID: 0}
   dash_Speed: 5
   isDash: 0
   StartDashTimer: 0
@@ -316,22 +314,6 @@ MonoBehaviour:
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3433241586592486182}
   Player_Hp: 100
---- !u!70 &9050176175114790857
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623221117996090822}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.004769217, y: 0.3522643}
-  m_Size: {x: 0.5286147, y: 0.7367582}
-  m_Direction: 0
 --- !u!1 &752957350612141577
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +692,7 @@ GameObject:
   - component: {fileID: -2568622769834347441}
   m_Layer: 10
   m_Name: Player_shield
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -730,6 +712,9 @@ RectTransform:
   - {fileID: 6035862062602365598}
   - {fileID: 2169080230362038183}
   - {fileID: 7781644577554213618}
+  - {fileID: 6075302706591681580}
+  - {fileID: 3433241586592486182}
+  - {fileID: 5557219116328778751}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
@@ -840,16 +825,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2197968755758976567}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5958793171bf1b429cbb4174cd27ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Unit_anim: {fileID: 0}
   unit_Code: {fileID: 0}
   speed: 5
   jumpPower: 5
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
+  move_animator: {fileID: 0}
   dash_Speed: 5
   isDash: 0
   StartDashTimer: 0
@@ -1747,8 +1734,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6035862062602365598}
-  m_RootOrder: 2
+  m_Father: {fileID: 3526826421527383147}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2924,8 +2911,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6035862062602365598}
-  m_RootOrder: 4
+  m_Father: {fileID: 3526826421527383147}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3852,16 +3839,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7972060179250448393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6035862062602365598}
-  m_RootOrder: 3
+  m_Father: {fileID: 3526826421527383147}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.372, y: 0.02}
+  m_AnchoredPosition: {x: 0.25, y: 0.13}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8044361970157911532
