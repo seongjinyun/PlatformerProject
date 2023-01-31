@@ -191,6 +191,7 @@ public class Player_Move : MonoBehaviour
 
                 GameObject[] monster_test = GameObject.FindGameObjectsWithTag("Monster");
                 
+                
                 foreach(GameObject test in monster_test)
                 {
                     test.GetComponent<Dash>().Change_dash();
