@@ -58,7 +58,7 @@ public class Player_Anim : MonoBehaviour
             foreach(Collider2D collider in collider2Ds)
             {
                 foreach (GameObject monster in Enemy_Test)
-                if (collider.tag == "Monster") //Enemy 태그와 충돌하면
+                if (collider.tag=="Monster") //Monster 태그와 충돌하면
                 {
                     Debug.Log("Enemy Attack");
                     if (transform.position.x >= monster.transform.position.x && !isKnockback)
@@ -68,7 +68,7 @@ public class Player_Anim : MonoBehaviour
                         monster.transform.Translate(0.5f, 0.2f, 0);
 
                     }
-                    else
+                    else 
 
                     {
                         isKnockback = true;

@@ -64,8 +64,8 @@ public class Player_Move : MonoBehaviour
     int Player_Layer, Ground_Layer;
 
     
-
     public int Player_Hp = 10; //플레이어 체력
+
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
@@ -178,7 +178,7 @@ public class Player_Move : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
             {
-                StartCoroutine(DashCoolTime(5f));
+                /*StartCoroutine(DashCoolTime(5f));
 
                 IEnumerator DashCoolTime(float dash_cool)
                 {
@@ -187,6 +187,13 @@ public class Player_Move : MonoBehaviour
                         dash_cool -= Time.deltaTime;
                         yield return new WaitForFixedUpdate();
                     }
+                }*/
+
+                GameObject[] monster_test = GameObject.FindGameObjectsWithTag("Monster");
+                
+                foreach(GameObject test in monster_test)
+                {
+                    test.GetComponent<Dash>().Change_dash();
                 }
 
                 isDash = true;
@@ -254,10 +261,11 @@ public class Player_Move : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Mons_weapon"))
         {
-            Player_Hp -= 10;
-            if (Player_Hp <= 0)
+            Player_Hp -= 1;
+            Debug.Log("피격");
+            if (Player_Hp == 0)
             {
-                Debug.Log("피격");
+                move_animator.SetTrigger("Die");
                 //player die
             }
         }
