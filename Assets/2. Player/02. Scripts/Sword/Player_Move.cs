@@ -258,17 +258,17 @@ public class Player_Move : MonoBehaviour
         Dash();
         //Player_anim(h); //애니메이션
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Mons_weapon"))
+        if (collision.gameObject.CompareTag("BossWeapon"))
         {
-            Player_Hp -= 1;
-            Debug.Log("피격");
+            Player_Hp -= 10;
+            Debug.Log("피격" + Player_Hp);
             if (Player_Hp == 0)
             {
                 move_animator.SetTrigger("Die");
                 //player die
             }
         }
-    }*/
+    }
 }
