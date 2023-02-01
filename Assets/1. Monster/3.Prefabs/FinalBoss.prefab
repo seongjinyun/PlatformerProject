@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 1338180848953150780}
   - component: {fileID: 318280216}
   - component: {fileID: 1175764845}
-  - component: {fileID: -2109607855486805955}
+  - component: {fileID: 2095818001}
   m_Layer: 6
   m_Name: FinalBoss
   m_TagString: Monster
@@ -345,7 +345,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2.5
-  m_Material: {fileID: 6200000, guid: 7e467b0d74409c340acc5142319ec3b1, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -420,10 +420,10 @@ MonoBehaviour:
   - {fileID: 1727914543}
   Child_anim: {fileID: 3155111953079768616}
   anim: {fileID: 0}
-  JumpPower: 12
+  JumpPower: 15
   speed: 0.1
-  Radius: 18.82
-  MoveSpeed: 1
+  Radius: 11.18
+  MoveSpeed: 1.4
   Layer_Chase:
     serializedVersion: 2
     m_Bits: 1024
@@ -448,10 +448,10 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: 0.24}
-  m_Size: {x: 0.68, y: 0.0001}
+  m_Offset: {x: 0.02, y: 0.32}
+  m_Size: {x: 0.5, y: 0.84}
   m_Direction: 0
---- !u!114 &-2109607855486805955
+--- !u!114 &2095818001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   - component: {fileID: 1086056642}
   m_Layer: 6
   m_Name: L_Weapon
-  m_TagString: BossWeapon
+  m_TagString: Mons_weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

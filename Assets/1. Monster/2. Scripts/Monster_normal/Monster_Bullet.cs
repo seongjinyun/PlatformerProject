@@ -23,7 +23,7 @@ public class Monster_Bullet : MonoBehaviour
         {
             if (hit.collider.CompareTag("Player"))
             {
-                Debug.Log("발사");
+                Debug.Log("플레이어 피격.");
             }
             DestroyBullet();
         }
@@ -36,10 +36,10 @@ public class Monster_Bullet : MonoBehaviour
         {
             transform.Translate(transform.right * dir * -1 * speed * Time.deltaTime);
         }
-
-        void DestroyBullet()
-        {
-            Destroy(gameObject);
-        }
+        
+    }
+    void DestroyBullet()
+    {
+        Destroy(gameObject);
     }
 }

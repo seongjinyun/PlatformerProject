@@ -101,15 +101,20 @@ public class Boss : MonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.CompareTag("Spear")) // 웨폰 충돌시 HP감소
+        if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
         {
             Monster_HP -= 1;
             Debug.Log("피격");
             if (Monster_HP <= 0)
             {
-                Destroy(gameObject); // 체력 0이 될시 삭제
+                Boss_Die(); // 체력 0이 될시 Boss_Die 실행
             }
         }
+    }
+    protected virtual void Boss_Die()
+    {
+        //Destroy(gameObject,4);
+        //anim.SetTrigger("Die");
     }
 
 }

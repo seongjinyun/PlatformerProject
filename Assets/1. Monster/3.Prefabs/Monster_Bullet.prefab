@@ -137,8 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  dir: 1
   distance: 0.1
   isLayer:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 1024
   Monster: {fileID: 906192620957400677, guid: 91ebd7582b2a51844a4c099ddc616a9e, type: 3}

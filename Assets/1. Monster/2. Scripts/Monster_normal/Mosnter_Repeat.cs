@@ -7,6 +7,7 @@ public class Mosnter_Repeat : MonoBehaviour
     Rigidbody2D rigid;
     public int nextMove;
     public float Speed = 1f;
+    public LayerMask Ground_Layer;
 
     Animator anim;
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class Mosnter_Repeat : MonoBehaviour
 
         Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Ground"));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, Ground_Layer);
         if (rayHit.collider == null)
         {
             nextMove *= -1;

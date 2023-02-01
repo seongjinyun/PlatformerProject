@@ -920,6 +920,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 216061980, guid: 7e11836e0af32f74098d118153eb59f2, type: 3}
+      propertyPath: Ground_Layer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 4122330115421112653, guid: 7e11836e0af32f74098d118153eb59f2, type: 3}
       propertyPath: m_RootOrder
       value: 6
