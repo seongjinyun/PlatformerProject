@@ -113,9 +113,27 @@ public class Player_Move : MonoBehaviour
             //effecter.rotationalOffset = 180;
             Debug.Log("아래점프");
             GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
-            foreach(GameObject layer in Ground_Layer)
+
+            if (Ground_Layer != null)
             {
+                Debug.Log("찾음1");
+            }
+            else
+            {
+                Debug.Log("못찾음1");
+            }
+            foreach (GameObject layer in Ground_Layer)
+            {
+                if (layer.GetComponent<Down_Platform>())
+                {
+                    Debug.Log("찾음2");
+                }
+                else
+                {
+                    Debug.Log("못찾음2");
+                }
                 layer.GetComponent<Down_Platform>().ChangeLayer();
+                
             }
             // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
         }
@@ -189,13 +207,14 @@ public class Player_Move : MonoBehaviour
                     }
                 }*/
 
-                GameObject[] monster_test = GameObject.FindGameObjectsWithTag("Monster");
-                
-                
-                foreach(GameObject test in monster_test)
+                GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
+
+              
+                foreach (GameObject test in monster_change)
                 {
                     test.GetComponent<Dash>().Change_dash();
                 }
+                
 
                 isDash = true;
                 CurrentDashTimer = StartDashTimer;
@@ -258,7 +277,7 @@ public class Player_Move : MonoBehaviour
         Dash();
         //Player_anim(h); //애니메이션
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("BossWeapon"))
         {

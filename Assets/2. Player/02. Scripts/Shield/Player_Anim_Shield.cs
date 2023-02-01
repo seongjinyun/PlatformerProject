@@ -8,7 +8,7 @@ public class Player_Anim_Shield : MonoBehaviour
     GameObject enemy;
     public GameObject Shield_Skill;
     public GameObject player;
-    public GameObject Shield_pos;
+    public GameObject[] Shield_pos;
 
     //넉백
     public float Knockback_speed = 3;
@@ -93,8 +93,9 @@ public class Player_Anim_Shield : MonoBehaviour
 
         foreach (GameObject mob in Enemy_Test)
         {
+            
             float dist = Vector3.Distance(transform.position, mob.transform.position);
-            if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f && Skill_gauge >= 100 ) //스킬게이지가 100이고 A키를 누르면
+            if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
             {
 
                 //float dist = Vector3.Distance(transform.position, mob.transform.position);
@@ -104,7 +105,7 @@ public class Player_Anim_Shield : MonoBehaviour
                 Skill_gauge = 0; //게이지 0으로 초기화
             }
 
-            Debug.Log("거리 " + dist);
+            //Debug.Log("거리 " + dist);
         }
         
 

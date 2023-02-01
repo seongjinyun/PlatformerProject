@@ -724,7 +724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  down_ground: {fileID: 0}
   Unit_anim: {fileID: 4232195497802421768}
   unit_Code: {fileID: 0}
   speed: 2
@@ -841,7 +840,7 @@ GameObject:
   - component: {fileID: 1706520098}
   m_Layer: 10
   m_Name: L_Weapon
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2420,7 +2419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  down_ground: {fileID: 0}
   Unit_anim: {fileID: 0}
   unit_Code: {fileID: 0}
   speed: 2
