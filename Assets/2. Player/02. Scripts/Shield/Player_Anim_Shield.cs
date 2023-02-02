@@ -25,8 +25,8 @@ public class Player_Anim_Shield : MonoBehaviour
 
     //Å×½ºÆ®
     public GameObject[] Enemy_Test;
+    public GameObject[] Enemy_Test1;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +35,9 @@ public class Player_Anim_Shield : MonoBehaviour
         //Enemy_Test[0] = enemy;
         Shield_Anim = GetComponent<Animator>();
         //float dist = Vector3.Distance(transform.position, enemy.transform.position);
-        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
-        
+        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
+        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Player_Skill_Pos");
+
     }
 
     void Attack()
@@ -91,7 +92,7 @@ public class Player_Anim_Shield : MonoBehaviour
 
 
 
-        foreach (GameObject mob in Enemy_Test)
+        foreach (GameObject mob in Enemy_Test1)
         {
             
             float dist = Vector3.Distance(transform.position, mob.transform.position);

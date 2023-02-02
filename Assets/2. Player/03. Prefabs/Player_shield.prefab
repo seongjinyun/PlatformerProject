@@ -276,7 +276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shield_Skill: {fileID: 5893873013301558805, guid: 3c2c6db1742a38645979e8e0afe25f21, type: 3}
   player: {fileID: 2197968755758976567}
-  Shield_pos: {fileID: 0}
+  Shield_pos:
+  - {fileID: 0}
   Knockback_speed: 3
   Kb_delayTime: 2
   Skill_gauge: 100
@@ -285,6 +286,7 @@ MonoBehaviour:
   Enemy_Test:
   - {fileID: 0}
   - {fileID: 0}
+  Enemy_Test1: []
 --- !u!114 &8884758210228658017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,7 +706,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2197968755758976567}
-  m_LocalRotation: {x: -0, y: 0.008726557, z: -0, w: 0.9999619}
+  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
   m_LocalPosition: {x: 0, y: 0, z: 0.36}
   m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -832,12 +834,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 623221117996090822}
   unit_Code: {fileID: 0}
-  speed: 5
-  jumpPower: 5
+  speed: 10
+  jumpPower: 10
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
   move_animator: {fileID: 881880671221513260}
-  dash_Speed: 5
+  dash_Speed: 10
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
