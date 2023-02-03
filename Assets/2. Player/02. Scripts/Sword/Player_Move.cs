@@ -209,11 +209,11 @@ public class Player_Move : MonoBehaviour
 
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
 
-              
+              //대쉬회피
                 foreach (GameObject test in monster_change)
                 {
                     test.GetComponent<Dash>().Change_dash();
-                }
+                } 
                 
 
                 isDash = true;
@@ -279,7 +279,7 @@ public class Player_Move : MonoBehaviour
     }
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("BossWeapon"))
+        if (collision.gameObject.CompareTag("Mons_weapon"))
         {
             Player_Hp -= 10;
             Debug.Log("피격" + Player_Hp);
