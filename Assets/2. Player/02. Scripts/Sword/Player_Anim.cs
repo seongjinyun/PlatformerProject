@@ -65,14 +65,14 @@ public class Player_Anim : MonoBehaviour
 
                     {
                         isKnockback = true;
-                        monster.transform.Translate(0.5f, 0.2f, 0);
+                        collider.transform.Translate(2.0f, 0.4f, 0);
 
                     }
                     else 
 
                     {
                         isKnockback = true;
-                        monster.transform.Translate(-0.5f, 0.2f, 0);
+                        collider.transform.Translate(-2.0f, 0.4f, 0);
 
                     }
                     if (isKnockback) //≥ÀπÈ ≈∏¿Ã∏”

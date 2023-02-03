@@ -53,19 +53,21 @@ public class Player_Anim_Shield : MonoBehaviour
 
                 if (collider.tag == "Monster") //Enemy 태그와 충돌하면
                 {
-                    Debug.Log("Enemy Attack");
+                     Skill_gauge += 5;
+                     Debug.Log("게이지 + 5");
+                        
                     if (transform.position.x >= monster.transform.position.x && !isKnockback)
 
                     {
                         isKnockback = true;
-                        monster.transform.Translate(0.5f, 0.2f, 0);
+                        collider.transform.Translate(2.0f, 0.4f, 0);
 
                     }
                     else
 
                     {
                         isKnockback = true;
-                        monster.transform.Translate(-0.5f, 0.2f, 0);
+                        collider.transform.Translate(-2.0f, 0.4f, 0);
 
                     }
                     if (isKnockback) //넉백 타이머
@@ -78,8 +80,7 @@ public class Player_Anim_Shield : MonoBehaviour
                         }
                     }
 
-                    Skill_gauge += 5;
-                    Debug.Log("게이지 + 5");
+                    
                 }
             }
 
@@ -92,7 +93,7 @@ public class Player_Anim_Shield : MonoBehaviour
 
 
 
-        foreach (GameObject mob in Enemy_Test1)
+        foreach (GameObject mob in Enemy_Test)
         {
             
             float dist = Vector3.Distance(transform.position, mob.transform.position);
