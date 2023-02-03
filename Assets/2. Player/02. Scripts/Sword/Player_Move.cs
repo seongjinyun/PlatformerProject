@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Move : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class Player_Move : MonoBehaviour
     int Player_Layer, Ground_Layer;
 
     
-    public int Player_Hp = 10; //플레이어 체력
+    public static float Player_Hp = 100; //플레이어 체력
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update

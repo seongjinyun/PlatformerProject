@@ -17,7 +17,7 @@ public class Player_Anim_Shield : MonoBehaviour
     protected float Kb_timer = 0f;
 
     //게이지
-    public float Skill_gauge = 100;
+    public float Skill_gauge = 0;
 
     //공격 범위
     public Transform pos;

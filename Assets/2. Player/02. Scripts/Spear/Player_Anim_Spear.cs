@@ -23,7 +23,7 @@ public class Player_Anim_Spear : MonoBehaviour
     public GameObject Spear_skill;
 
     //°ÔÀÌÁö
-    public float Skill_gauge = 100;
+    public float Skill_gauge = 0;
 
     GameObject[] Enemy_Test;
 
