@@ -277,7 +277,7 @@ public class Player_Move : MonoBehaviour
         Dash();
         //Player_anim(h); //애니메이션
     }
-    protected void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Mons_weapon"))
         {
