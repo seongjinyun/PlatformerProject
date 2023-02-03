@@ -870,7 +870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671360009533336263, guid: a3c9fafcea1332f408c69b8e9caa2eba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7671360009533336263, guid: a3c9fafcea1332f408c69b8e9caa2eba, type: 3}
       propertyPath: m_TagString
@@ -1732,6 +1732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice Creature
       objectReference: {fileID: 0}
+    - target: {fileID: 1472928334106585503, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6375149591904379243, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1792,6 +1796,10 @@ PrefabInstance:
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_Name
       value: Rock Creature
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
