@@ -17,6 +17,7 @@ public class Player_Camera : MonoBehaviour
     [SerializeField]    
     float height;
     float width;
+    float smoothing;
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +37,19 @@ public class Player_Camera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         //플레이어 카메라 추적
         Vector3 dir = my_target.transform.position - this.transform.position; //타겟과 카메라 위치 계산값
-        Vector3 moveVector = new Vector3(dir.x * camera_speed * Time.deltaTime, dir.y * camera_speed * Time.deltaTime, 0.0f);
+        Vector3 moveVector = new Vector3(dir.x * camera_speed * Time.deltaTime, dir.y * camera_speed * Time.deltaTime, 0.0f); //카메라 움직임
+
+        dir.x = Mathf.Clamp(dir.x, center.x, mapSize.x);
+        dir.y = Mathf.Clamp(dir.y, center.y, mapSize.y);
+        transform.position = Vector3.Lerp(transform.position, dir, smoothing);
+
         this.transform.Translate(moveVector);
+
+        
 
         //카메라 맵 밖 안보이게
         /*float lx = mapSize.x - width;

@@ -2289,6 +2289,7 @@ GameObject:
   - component: {fileID: 190048714}
   - component: {fileID: 1241218050134559002}
   - component: {fileID: 5047387876659895641}
+  - component: {fileID: 7829444378748180025}
   m_Layer: 10
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -2452,6 +2453,34 @@ MonoBehaviour:
   pos: {fileID: 0}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
+--- !u!114 &7829444378748180025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4232195497802421768}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Unit_anim: {fileID: 0}
+  unit_Code: {fileID: 0}
+  speed: 0
+  jumpPower: 0
+  jump_effect: {fileID: 0}
+  effect_Pos: {fileID: 0}
+  move_animator: {fileID: 0}
+  dash_Speed: 0
+  isDash: 0
+  StartDashTimer: 0
+  isDash_Delay: 0
+  Dash_delayTime: 2
+  Dash_timer: -5
+  Time_end: 0
+  Dash_effect: {fileID: 0}
+  dash_transform: {fileID: 0}
 --- !u!1 &4339244248727921314
 GameObject:
   m_ObjectHideFlags: 0
