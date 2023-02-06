@@ -30,7 +30,7 @@ public class Cooltime : MonoBehaviour
             }
         } 
         
-        if(image_fill.fillAmount == 0)
+        if(Player_Move.Dash_timer < 0)
         {
             image_fill.fillAmount = 1;
         }
