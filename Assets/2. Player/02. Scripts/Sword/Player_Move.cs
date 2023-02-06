@@ -53,7 +53,7 @@ public class Player_Move : MonoBehaviour
 
     public bool isDash_Delay = false;
     public float Dash_delayTime = 2f; //대쉬쿨타임
-    public float Dash_timer = -5f;
+    static public float Dash_timer = -5f;
 
     public bool Time_end = false;
 

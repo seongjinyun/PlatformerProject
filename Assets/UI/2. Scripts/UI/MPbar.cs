@@ -24,7 +24,6 @@ public class MPbar : MonoBehaviour
     {
       //  curmp = Player_Anim.Skill_gauge;
         handleMp();
-
     }
 
     private void handleMp()
