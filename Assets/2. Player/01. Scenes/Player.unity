@@ -1536,6 +1536,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c11d64bbdeb48884f93ed5037ef96c96, type: 3}
+--- !u!1 &1150122080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1472928334106585503, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+  m_PrefabInstance: {fileID: 1590797407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1150122086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150122080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec748f16e17cd744c8343e43f289a0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1194475017
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1775,6 +1792,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 5206189574373212929, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6375149591904379243, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1838,7 +1859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
