@@ -14,7 +14,6 @@ public class MPbar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // curmp = Player_Anim.Skill_gauge;
         mpbar.value = (float)curmp / (float)maxmp;
 
     }
@@ -22,7 +21,7 @@ public class MPbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  curmp = Player_Anim.Skill_gauge;
+        curmp = Player_Attack.Skill_gauge;
         handleMp();
     }
 

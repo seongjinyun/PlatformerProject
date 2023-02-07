@@ -737,7 +737,6 @@ MonoBehaviour:
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 2
-  Dash_timer: 0
   Time_end: 0
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3879554607680791211}
@@ -2450,7 +2449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12dedb44fb227344b5aaccca6370d07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pos: {fileID: 0}
+  pos: {fileID: 4692299767249456658}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
 --- !u!114 &7829444378748180025
@@ -2477,7 +2476,6 @@ MonoBehaviour:
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 2
-  Dash_timer: -5
   Time_end: 0
   Dash_effect: {fileID: 0}
   dash_transform: {fileID: 0}

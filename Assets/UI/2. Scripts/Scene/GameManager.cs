@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     public void GameMain()
     {
         LoadingSceneController.LoadScene("UI_Main");
+
+
         Debug.Log("메인메뉴로 이동");
     }
 }
