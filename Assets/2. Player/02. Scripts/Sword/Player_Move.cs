@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Move : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class Player_Move : MonoBehaviour
 
     public bool isDash_Delay = false;
     public float Dash_delayTime = 2f; //대쉬쿨타임
-    public float Dash_timer = -5f;
+    static public float Dash_timer = -5f;
 
     public bool Time_end = false;
 
@@ -64,7 +65,7 @@ public class Player_Move : MonoBehaviour
     int Player_Layer, Ground_Layer;
 
     
-    public int Player_Hp = 10; //플레이어 체력
+    public static float Player_Hp = 100; //플레이어 체력
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -209,11 +210,11 @@ public class Player_Move : MonoBehaviour
 
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
 
-              
+              //대쉬회피
                 foreach (GameObject test in monster_change)
                 {
                     test.GetComponent<Dash>().Change_dash();
-                }
+                } 
                 
 
                 isDash = true;
@@ -277,9 +278,9 @@ public class Player_Move : MonoBehaviour
         Dash();
         //Player_anim(h); //애니메이션
     }
-    protected void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("BossWeapon"))
+        if (collision.gameObject.CompareTag("Mons_weapon"))
         {
             Player_Hp -= 10;
             Debug.Log("피격" + Player_Hp);

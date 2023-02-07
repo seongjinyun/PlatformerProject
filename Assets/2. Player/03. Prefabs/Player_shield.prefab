@@ -2087,7 +2087,7 @@ GameObject:
   - component: {fileID: 8011312954283713759}
   m_Layer: 10
   m_Name: L_Weapon
-  m_TagString: Weapon
+  m_TagString: Player_Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2677,9 +2677,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8503584922267341332}
   - component: {fileID: 7366074562897953336}
+  - component: {fileID: 3600395689999770464}
   m_Layer: 10
   m_Name: R_Weapon
-  m_TagString: Untagged
+  m_TagString: Player_Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2691,14 +2692,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5044750760472996252}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0010530661, y: 0.0019361806, z: 0.12620406, w: -0.99200183}
+  m_LocalPosition: {x: -0.04576431, y: -0.01377251, z: -0.0012091098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5813066022932009224}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.092, y: -0.235, z: 345.499}
 --- !u!212 &7366074562897953336
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2751,6 +2752,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3600395689999770464
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5044750760472996252}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.033836007, y: 0.07042438}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.30918926, y: 0.41059458}
+  m_EdgeRadius: 0
 --- !u!1 &5179319252193699293
 GameObject:
   m_ObjectHideFlags: 0

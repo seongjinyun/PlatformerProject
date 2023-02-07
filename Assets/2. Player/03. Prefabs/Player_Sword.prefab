@@ -620,6 +620,7 @@ Transform:
   - {fileID: 5570715809892869778}
   - {fileID: 3879554607680791211}
   - {fileID: 659194094381573876}
+  - {fileID: 4692299767249456658}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
@@ -736,11 +737,9 @@ MonoBehaviour:
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 2
-  Dash_timer: 0
   Time_end: 0
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3879554607680791211}
-  Player_Hp: 100
 --- !u!114 &8348247135978081382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,7 +782,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798746268070547124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2cdc280fecadb7b49a45035cc46a5c62, type: 2}
   m_CullingMode: 0
@@ -795,6 +794,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1932025423882934694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4692299767249456658}
+  m_Layer: 10
+  m_Name: Sword_Skill_pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4692299767249456658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932025423882934694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.314, y: 0.55, z: -0.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5066100314870972562}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1984031467315863517
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +870,7 @@ GameObject:
   - component: {fileID: 1706520098}
   m_Layer: 10
   m_Name: L_Weapon
-  m_TagString: Weapon
+  m_TagString: Player_Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2257,7 +2287,8 @@ GameObject:
   - component: {fileID: 190048713}
   - component: {fileID: 190048714}
   - component: {fileID: 1241218050134559002}
-  - component: {fileID: 8790548193166613403}
+  - component: {fileID: 5047387876659895641}
+  - component: {fileID: 7829444378748180025}
   m_Layer: 10
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -2346,14 +2377,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a111faaf90e14e4b95b8894c4a4a7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 1798746268070547124}
-  pos: {fileID: 659194094381573876}
+  pos: {fileID: 4692299767249456658}
   player_boxSize: {x: 1.5, y: 2}
-  enemy: {fileID: 0}
-  Knockback_speed: 3
   Kb_delayTime: 2
+  self: {fileID: 1798746268070547124}
+  Sword_pos: {fileID: 0}
+  Knockback_speed: 3
   Sword_skill: {fileID: 7435615283100214881, guid: fef98364f46c05348beb5a91665f7479, type: 3}
-  Skill_gauge: 100
   speed: 0
 --- !u!212 &1241218050134559002
 SpriteRenderer:
@@ -2407,7 +2437,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8790548193166613403
+--- !u!114 &5047387876659895641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4232195497802421768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12dedb44fb227344b5aaccca6370d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {fileID: 4692299767249456658}
+  player_boxSize: {x: 1.5, y: 2}
+  Kb_delayTime: 2
+--- !u!114 &7829444378748180025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2421,21 +2466,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 0}
   unit_Code: {fileID: 0}
-  speed: 2
-  jumpPower: 5
-  jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
-  effect_Pos: {fileID: 5570715809892869778}
+  speed: 0
+  jumpPower: 0
+  jump_effect: {fileID: 0}
+  effect_Pos: {fileID: 0}
   move_animator: {fileID: 0}
-  dash_Speed: 3
+  dash_Speed: 0
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 2
-  Dash_timer: 0
   Time_end: 0
-  Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
-  dash_transform: {fileID: 3879554607680791211}
-  Player_Hp: 100
+  Dash_effect: {fileID: 0}
+  dash_transform: {fileID: 0}
 --- !u!1 &4339244248727921314
 GameObject:
   m_ObjectHideFlags: 0
