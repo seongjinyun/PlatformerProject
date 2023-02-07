@@ -420,10 +420,11 @@ MonoBehaviour:
   - {fileID: 1727914543}
   Child_anim: {fileID: 3155111953079768616}
   anim: {fileID: 0}
+  Child: {fileID: 0}
   JumpPower: 15
   speed: 0.1
   Radius: 11.18
-  MoveSpeed: 1.4
+  MoveSpeed: 0.8
   Layer_Chase:
     serializedVersion: 2
     m_Bits: 1024
@@ -436,6 +437,7 @@ MonoBehaviour:
   Monster_HP: 10
   Rush_CoolTime: 3
   Laser_CoolTime: 30
+  Chase: 0
   bullet: {fileID: 7715434538156547, guid: b298da61176174b4a954b7782158f474, type: 3}
   bullet_pos: {fileID: 728346665}
 --- !u!70 &1175764845
@@ -1816,6 +1818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   longAtk: 0
+  Attack: 0
 --- !u!1 &3310015579304988957
 GameObject:
   m_ObjectHideFlags: 0

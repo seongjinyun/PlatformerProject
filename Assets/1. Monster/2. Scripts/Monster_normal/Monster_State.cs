@@ -12,11 +12,13 @@ public class Monster_State : MonoBehaviour
 
 
     public bool longAtk = false; // 원거리 공격
+    public bool Attack = false;
 
     float cur = 1f;
     float coolT = 3f;
 
     GameObject Parent;
+    Final_Stage_Boss Parent2;
 
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
@@ -24,39 +26,46 @@ public class Monster_State : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Parent = transform.parent.gameObject;
+        Parent2 = Parent.GetComponent<Final_Stage_Boss>();
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
         {
             //Debug.Log("플레이어 피격");
+            Attack = true;
             animator.SetTrigger("Attack");
-            //animator.SetBool("Run", false);
 
-            if (!collision.gameObject.CompareTag("Player")) // 없으면 다시 Run
-            {
-                animator.SetBool("Run", true);
-            }
+            animator.SetBool("Run", false);
 
             cur -= Time.deltaTime;
             if (cur <= 0) // 넉백
             {
                 if (Parent.transform.position.x > Player.transform.position.x)
                 {
-                    Player.transform.Translate(-0.5f, 0.3f, 0);
+                    Player.transform.Translate(-1f, 0.5f, 0);
                     cur = coolT;
                 }
                 else if (Parent.transform.position.x < Player.transform.position.x)
                 {
-                    Player.transform.Translate(0.5f, 0.3f, 0);
+                    Player.transform.Translate(1f, 0.5f, 0);
                     cur = coolT;
                 }
 
             }
         }
+    }
+    private void OnTriggerExit2D(Collider2D collision) // Radius 수치 변경하면 여기서도 변경해줘야함
+    {
+        if (collision.gameObject.CompareTag("Player")) 
+        {
+            Attack = false;
+            animator.SetBool("Run", true);
+        }
+
     }
 
     // Update is called once per frame
