@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Anim_Shield : MonoBehaviour
+public class Player_Anim_Shield : Player_Attack
 {
     Animator Shield_Anim;
     GameObject enemy;
@@ -12,16 +12,16 @@ public class Player_Anim_Shield : MonoBehaviour
 
     //넉백
     public float Knockback_speed = 3;
-    protected bool isKnockback;
-    public float Kb_delayTime = 2f;
-    protected float Kb_timer = 0f;
+    //protected bool isKnockback;
+    //public float Kb_delayTime = 2f;
+    //protected float Kb_timer = 0f;
 
     //게이지
-    public float Skill_gauge = 0;
+    //public float Skill_gauge = 0;
 
     //공격 범위
-    public Transform pos;
-    public Vector2 player_boxSize;
+    //public Transform pos;
+    //public Vector2 player_boxSize;
 
     //테스트
     public GameObject[] Enemy_Test;
@@ -44,7 +44,7 @@ public class Player_Anim_Shield : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown(KeyCode.X))
+        /*if (Input.GetKeyDown(KeyCode.X))
         {
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
@@ -90,7 +90,7 @@ public class Player_Anim_Shield : MonoBehaviour
             //Vector2 dir = (transform.position - Enemy.transform.position).normalized;
             //player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
         }
-
+        */
 
 
 
