@@ -369,7 +369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9028496524012394670, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
@@ -1278,7 +1278,7 @@ MonoBehaviour:
   playerTransform: {fileID: 1980459699}
   cameraPosition: {x: 0, y: 0, z: 0}
   center: {x: 9.97, y: 0}
-  mapSize: {x: 16, y: 10}
+  mapSize: {x: 20, y: 20}
   cameraMoveSpeed: 5
 --- !u!4 &866563310 stripped
 Transform:
@@ -1330,7 +1330,7 @@ GameObject:
   - component: {fileID: 1035188990}
   m_Layer: 9
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1859,7 +1859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
@@ -2056,7 +2056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1798746268070547124, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4692299767249456658, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_LocalPosition.y

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 5557219117114761317}
   - component: {fileID: 5557219117114761313}
   - component: {fileID: 8884758210228658017}
+  - component: {fileID: 3044852931184766821}
   m_Layer: 10
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -274,15 +275,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a83be4d0f11d714294219790475017b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos: {fileID: 5557219116328778751}
+  player_boxSize: {x: 1.5, y: 2}
+  Kb_delayTime: 2
   Shield_Skill: {fileID: 5893873013301558805, guid: 3c2c6db1742a38645979e8e0afe25f21, type: 3}
   player: {fileID: 2197968755758976567}
   Shield_pos:
   - {fileID: 0}
   Knockback_speed: 3
-  Kb_delayTime: 2
-  Skill_gauge: 100
-  pos: {fileID: 5557219116328778751}
-  player_boxSize: {x: 1.5, y: 2}
   Enemy_Test:
   - {fileID: 0}
   - {fileID: 0}
@@ -302,20 +302,36 @@ MonoBehaviour:
   Unit_anim: {fileID: 0}
   unit_Code: {fileID: 0}
   speed: 5
+  doubleJumpState: 0
+  isGround: 1
   jumpPower: 5
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
+  jump_Count: 2
   move_animator: {fileID: 0}
   dash_Speed: 5
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 2
-  Dash_timer: 0
   Time_end: 0
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3433241586592486182}
-  Player_Hp: 100
+--- !u!114 &3044852931184766821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623221117996090822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12dedb44fb227344b5aaccca6370d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {fileID: 5557219116328778751}
+  player_boxSize: {x: 1.5, y: 2}
+  Kb_delayTime: 2
 --- !u!1 &752957350612141577
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,20 +851,21 @@ MonoBehaviour:
   Unit_anim: {fileID: 623221117996090822}
   unit_Code: {fileID: 0}
   speed: 10
+  doubleJumpState: 0
+  isGround: 1
   jumpPower: 10
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
+  jump_Count: 2
   move_animator: {fileID: 881880671221513260}
   dash_Speed: 10
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
   Dash_delayTime: 2
-  Dash_timer: 0
   Time_end: 0
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3433241586592486182}
-  Player_Hp: 100
 --- !u!70 &740505468377667571
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
