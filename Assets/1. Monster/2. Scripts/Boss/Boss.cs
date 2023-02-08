@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour
     public Transform[] WallCheck;
     public GameObject Child_anim;
     public Animator anim;
+    public Monster_State Child;
 
     public float JumpPower = 3f;
     public float speed = 0.5f;
@@ -42,6 +43,7 @@ public class Boss : MonoBehaviour
     {
         anim = Child_anim.GetComponent<Animator>();
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Child = Child_anim.GetComponent<Monster_State>();
     }
 
     protected virtual void Update()
