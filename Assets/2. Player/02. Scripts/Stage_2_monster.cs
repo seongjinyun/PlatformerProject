@@ -5,32 +5,29 @@ using UnityEngine;
 public class Stage_2_monster : MonoBehaviour
 {
     Animator Mons_animator;
+    Transform Player;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         Mons_animator = GetComponent<Animator>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    
+    // Update is called once per frame
+    void Update()
     {
-        if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
+        if (Vector2.Distance(Player.position, transform.position) <= 10f)
         {
-            //Debug.Log("플레이어 피격");
-            Mons_animator.SetTrigger("2_Attack");
-            //animator.SetBool("Run", false);
-
-            if (!collision.gameObject.CompareTag("Player")) // 없으면 다시 Run
-            {
-                Mons_animator.SetBool("2_Run", true);
-            }
+            Mons_animator.SetBool("2_Run", true);
+        }
+        else
+        {
+            Mons_animator.SetBool("2_Run", false);
         }
     }
-            // Update is called once per frame
-            void Update()
-            {
-
-            }
         
     
 }

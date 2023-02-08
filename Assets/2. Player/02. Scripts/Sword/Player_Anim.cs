@@ -29,7 +29,7 @@ public class Player_Anim : Player_Attack
     //public float Skill_gauge = 0;
 
 
-    GameObject[] Enemy_Test;
+    //GameObject[] Enemy_Test;
 
     protected Rigidbody2D player_rigid;
 
@@ -48,7 +48,7 @@ public class Player_Anim : Player_Attack
 
         sprite = GetComponent<SpriteRenderer>();
         move_animator = GetComponent<Animator>();
-        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
+        //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
     }
 
     protected virtual void Attack()

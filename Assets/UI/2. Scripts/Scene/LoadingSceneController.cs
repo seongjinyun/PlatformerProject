@@ -16,6 +16,7 @@ public class LoadingSceneController : MonoBehaviour //기존 씬을 가리고 다음 씬을
         nextScene = sceneName;
         SceneManager.LoadScene("UI_Loading");
     }
+   
     void Start()
     {
         StartCoroutine(LoadSceneProcess());

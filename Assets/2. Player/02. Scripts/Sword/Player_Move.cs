@@ -25,11 +25,12 @@ public class Player_Move : MonoBehaviour
     
 
     //점프
-    bool doubleJumpState = false;
-    bool isGround = true;
+    public bool doubleJumpState = false;
+    public bool isGround = true;
     public float jumpPower;
     public GameObject jump_effect; //점프 이펙트
     public Transform effect_Pos;
+    public float jump_Count = 2;
 
     //회피 변수
     /*public float dodge_Distance;
@@ -84,15 +85,26 @@ public class Player_Move : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-
+    protected void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag=="Ground"|| collision.gameObject.tag == "Downplatform")
+        {
+            jump_Count = 2;
+        }
+    }
     protected virtual void Jump() 
     {
-        if (Player_rigid.velocity.y == 0)
+        
+        
+        if (jump_Count == 2)
             isGround = true;
         else
             isGround = false;
         if (isGround)
+        {
             doubleJumpState = true;
+            jump_Count = 2;
+        }
 
 
         if (isGround && Input.GetKeyDown(KeyCode.C)) //점프
@@ -100,6 +112,7 @@ public class Player_Move : MonoBehaviour
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
+            jump_Count--;
             
         }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //더블점프
         {
@@ -107,6 +120,7 @@ public class Player_Move : MonoBehaviour
             doubleJumpState = false;
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
+            jump_Count--;
         }
 
         if(Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
