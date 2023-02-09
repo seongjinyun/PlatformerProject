@@ -8,7 +8,6 @@ public enum Character
 }
 public class DataMgr : MonoBehaviour
 {
-    public string presentScene;
 
 
     public static DataMgr instance;
@@ -16,15 +15,10 @@ public class DataMgr : MonoBehaviour
     {
         if (instance == null) instance = this;
         else if (instance != null) return;
-        DontDestroyOnLoad(gameObject);
     }
     public Character currentCharacter;
 
     private void Update()
     {
-        if(presentScene == "UI_Main")
-        {
-            Destroy(this.gameObject);
-        }
     }
 }

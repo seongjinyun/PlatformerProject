@@ -6,8 +6,21 @@ using UnityEngine.EventSystems;
 
 public class Slot : MonoBehaviour
 {
+    public GameObject slot;
     public Item item;
     public Image itemIcon;
+    
+    private void Update()
+    {
+        if (Inventory.instance.items.Contains(item))
+        {
+
+        }
+        else
+        {
+            slot.SetActive(false);
+        }
+    }
 
     public void UpdateSlotUI()
     {   

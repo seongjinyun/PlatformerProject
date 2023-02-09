@@ -8,9 +8,10 @@ public class PauseMenu : MonoBehaviour
 
     public static bool GameIsPaused = false;
     public GameObject pauseMenuCanvas;
-    void Start()
+    void Awake()
     {
-        
+        GameIsPaused = false;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -43,18 +44,13 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void Restart()
+    public void Main()
     {
-
+        LoadingSceneController.LoadScene("UI_Main");
     }
 
     public void Quit()
     {
-
-    }
-
-    public void Option()
-    {
-
+        Application.Quit();
     }
 }

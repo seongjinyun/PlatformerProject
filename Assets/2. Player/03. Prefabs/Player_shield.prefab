@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 8409333082999016292}
   - component: {fileID: -6820837002744603541}
   - component: {fileID: -2568622769834347441}
+  - component: {fileID: 1618397706864079708}
   m_Layer: 10
   m_Name: Player_shield
   m_TagString: Player
@@ -936,6 +937,18 @@ MonoBehaviour:
   particleObject2: {fileID: 6254621196389686106}
   UsingActive: 0
   Activecooldown: 0
+--- !u!114 &1618397706864079708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197968755758976567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2326767795802819087
 GameObject:
   m_ObjectHideFlags: 0
