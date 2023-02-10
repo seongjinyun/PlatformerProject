@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit_Code : MonoBehaviour
+public class Unit_Code
 {
-    /*public enum Unit_Code
+    public enum UnitCode
     {
         Sword,
         Spear,
         Shield
-    }*/
+    }
 
     /*public class Unitdata
     {

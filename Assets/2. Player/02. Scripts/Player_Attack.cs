@@ -12,6 +12,7 @@ public class Player_Attack : MonoBehaviour
     static public float Skill_gauge = 0;
     protected Animator Player_anim;
     public float Kb_delayTime = 2f;
+    protected float Max_Skill_gauge = 101;
 
     // Start is called before the first frame update
     void Start()
@@ -67,9 +68,18 @@ public class Player_Attack : MonoBehaviour
             
         }
     }
+    
+
         // Update is called once per frame
         void Update()
     {
+        if(Skill_gauge >= Max_Skill_gauge)
+        {
+            Skill_gauge = 100;
+            //Debug.Log(Skill_gauge);
+            
+
+        }
             Attack_gauge();
     }
 }

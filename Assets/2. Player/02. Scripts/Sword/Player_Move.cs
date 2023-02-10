@@ -12,8 +12,8 @@ public class Player_Move : MonoBehaviour
     
 
     //½ºÅÝ
-    public Unit_Code unit_Code;
-    public Player_Status status;
+    //public Unit_Code unit_Code;
+    //public Player_Status status;
 
 
 
@@ -297,8 +297,9 @@ public class Player_Move : MonoBehaviour
         {
             Player_Hp -= 10;
             Debug.Log("ÇÇ°Ý" + Player_Hp);
-            if (Player_Hp == 0)
+            if (Player_Hp <= 0)
             {
+                Player_Hp = 100;
                 move_animator.SetTrigger("Die");
                 //player die
             }
