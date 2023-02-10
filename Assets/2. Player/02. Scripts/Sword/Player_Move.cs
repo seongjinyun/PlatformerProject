@@ -82,7 +82,6 @@ public class Player_Move : MonoBehaviour
         
         //status = new Player_Status(); //유닛코드 주석 오류 수정되면 다시 활성화
         //status = status.SetUnitStatus(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
-        DontDestroyOnLoad(this.gameObject);
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)

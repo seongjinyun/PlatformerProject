@@ -15,7 +15,6 @@ public class InventoryUI : MonoBehaviour
 
     public void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
         if(Inventory.instance != null){
             inven = Inventory.instance;
         }
