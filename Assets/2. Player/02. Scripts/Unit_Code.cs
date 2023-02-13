@@ -10,6 +10,7 @@ public class Unit_Code
         Spear,
         Shield
     }
+    UnitCode unitcode = UnitCode.Shield;
 
     /*public class Unitdata
     {

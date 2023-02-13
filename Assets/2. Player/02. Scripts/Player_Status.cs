@@ -5,7 +5,7 @@ using UnityEngine;
 
 
     
-/*
+
     public class Player_Status
 {
         public Unit_Code unitCode { get; } //유닛코드
@@ -32,24 +32,25 @@ using UnityEngine;
             this.move_speed = move_speed;
         }
 
-        public Player_Status SetUnitStatus(Unit_Code unitCode)
+        /*public Player_Status SetUnitStatus(Unit_Code unitCode)
         {
         Player_Status status = null;
 
             switch (unitCode)
             {
-                case Unit_Code.UnitCode.Sword:
+                case Unit_Code:
                     status = new Player_Status(unitCode, "Sword", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
                     break;
-            case Unit_Code.Shield:
+            case Unit_Code.Sword:
                 status = new Player_Status(unitCode, "Shield", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
                 break;
-            case Unit_Code.Spear:
+            case Unit_Code:
                 status = new Player_Status(unitCode, "Spear", 1, 1, 1, 1, 1); //유닛코드, 이름, 공격력, 특수공격력, 공격속도, 체력, 이동속도
                 break;
         }
             return status;
         }
+        */
         
     }
-*/
+

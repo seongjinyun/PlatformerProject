@@ -10,6 +10,9 @@ public class Player_Skill_Shield : MonoBehaviour
     public float skill_speed;
 
     public GameObject enemy;
+    
+
+    GameObject[] Enemys;
     protected bool isKnockback;
     void Start()
     {
@@ -20,27 +23,31 @@ public class Player_Skill_Shield : MonoBehaviour
     void Update()
     {
         //Destroy(gameObject, 0.5f);
+        Enemys = GameObject.FindGameObjectsWithTag("Monster");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Monster"))
         {
-            Debug.Log("Enemy Attack");
-            if (transform.position.x >= enemy.transform.position.x && !isKnockback)
-
+            foreach (GameObject monster in Enemys)
             {
-                isKnockback = true;
-                enemy.transform.Translate(0.5f, 0.2f, 0);
+                if (transform.position.x >= monster.transform.position.x && !isKnockback)
 
+                {
+                    isKnockback = true;
+                    collision.transform.Translate(2.0f, 0.4f, 0);
+
+                }
+                else
+
+                {
+                    isKnockback = true;
+                    collision.transform.Translate(-2.0f, 0.4f, 0);
+
+                }
             }
-            else
 
-            {
-                isKnockback = true;
-                enemy.transform.Translate(-0.5f, 0.2f, 0);
-
-            }
         }
     }
 }
