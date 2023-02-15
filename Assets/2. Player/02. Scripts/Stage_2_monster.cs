@@ -6,7 +6,7 @@ public class Stage_2_monster : MonoBehaviour
 {
     Animator Mons_animator;
     Transform Player;
-    
+    public bool Attack_state = false;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,13 @@ public class Stage_2_monster : MonoBehaviour
         Mons_animator = GetComponent<Animator>();
     }
 
+    void Attack()
+    {
+        if (Attack_state)
+        {
+            Mons_animator.SetTrigger("Attack");
+        }
+    }
     
     // Update is called once per frame
     void Update()
@@ -27,6 +34,9 @@ public class Stage_2_monster : MonoBehaviour
         {
             Mons_animator.SetBool("2_Run", false);
         }
+
+
+        Attack();
     }
         
     

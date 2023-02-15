@@ -13,7 +13,7 @@ public class Player_Move : MonoBehaviour
 
     //스텟
     //public Unit_Code unit_Code;
-    //public Player_Status status;
+    //public Stat status;
 
 
 
@@ -80,8 +80,8 @@ public class Player_Move : MonoBehaviour
         move_animator = Unit_anim.GetComponent<Animator>();
 
         
-        //status = new Player_Status(); //유닛코드 주석 오류 수정되면 다시 활성화
-        //status = status.SetUnitStatus(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
+        //status = new Stat(); //유닛코드 주석 오류 수정되면 다시 활성화
+        //status = status.SetUnitStat(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
     }
 
     protected void OnCollisionEnter2D(Collision2D collision)
