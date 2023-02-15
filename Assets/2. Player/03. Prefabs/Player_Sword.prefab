@@ -640,7 +640,7 @@ Rigidbody2D:
   m_Mass: 1.1253982
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -727,16 +727,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 4232195497802421768}
-  unit_Code: {fileID: 0}
-  speed: 2
+  speed: 7
   doubleJumpState: 0
   isGround: 1
-  jumpPower: 5
+  jumpPower: 18
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 5570715809892869778}
   jump_Count: 2
   move_animator: {fileID: 7254028376279072810}
-  dash_Speed: 3
+  dash_Speed: 9
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
@@ -1899,9 +1898,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1005845744025073519}
   - component: {fileID: 4945710263852781344}
+  - component: {fileID: 1847624175}
+  - component: {fileID: 1847624174}
   m_Layer: 10
   m_Name: 11_Helmet1
-  m_TagString: Untagged
+  m_TagString: Monster_Skill_Pos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1973,6 +1974,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1847624175
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526709359339568128}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &1847624174
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526709359339568128}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000119145916, y: -0.06249994}
+  serializedVersion: 2
+  m_Radius: 0.14
 --- !u!1 &3613827083282638075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,7 +2519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 0}
-  unit_Code: {fileID: 0}
   speed: 0
   doubleJumpState: 0
   isGround: 1
