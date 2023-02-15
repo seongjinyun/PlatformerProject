@@ -2,38 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stat 
+public class Stat : MonoBehaviour
 {
-    public Unit_Code unitCode { get; }
-    public string name { get; set; }
-    public int Damage { get; set; }
 
-    public Stat()
-    {
+    [SerializeField]
+    protected int Attack_power;
+    [SerializeField]
+    protected float Special_Attack;
+    [SerializeField]
+    protected float Move_speed;
 
-    }
-    public Stat(Unit_Code unitCode,string name, int Damage)
-    {
-        this.unitCode = unitCode;
-        this.name = name;
-        this.Damage = Damage;
-    }
-    public Stat SetUnitStat(Unit_Code unitCode)
-    {
-        Stat stat = null;
 
-        switch (unitCode)
-        {
-            case Unit_Code:
-                stat = new Stat(unitCode, "Sword", 5);
-                break;
-        }
-        return stat;
-    }
+    public int Attack { get { return Attack_power; } set { Attack_power = value; } }
+    public float SpecialAttack { get { return Special_Attack; } set { Special_Attack = value; } }
+    public float MoveSpeed { get { return Move_speed; } set { Move_speed = value; } }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Attack_power = 1;
+        Special_Attack = 3.0f;
+        Move_speed = 10.0f;
     }
 
     // Update is called once per frame

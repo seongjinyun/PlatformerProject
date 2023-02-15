@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 0}
-  unit_Code: {fileID: 0}
   speed: 5
   doubleJumpState: 0
   isGround: 1
@@ -709,6 +708,7 @@ GameObject:
   - component: {fileID: -6820837002744603541}
   - component: {fileID: -2568622769834347441}
   - component: {fileID: 1618397706864079708}
+  - component: {fileID: 3764229769748675003}
   m_Layer: 10
   m_Name: Player_shield
   m_TagString: Player
@@ -850,7 +850,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 623221117996090822}
-  unit_Code: {fileID: 0}
   speed: 10
   doubleJumpState: 0
   isGround: 1
@@ -949,6 +948,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3764229769748675003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197968755758976567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9322171b1d154634b96bf6ad50dd68d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack_power: 0
+  Special_Attack: 0
+  Move_speed: 0
 --- !u!1 &2326767795802819087
 GameObject:
   m_ObjectHideFlags: 0
