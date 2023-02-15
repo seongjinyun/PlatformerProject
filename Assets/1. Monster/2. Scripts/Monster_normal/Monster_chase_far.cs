@@ -162,15 +162,15 @@ public class Monster_chase_far : MonoBehaviour
         rb2d.velocity = new Vector2(0, 0);
         Child_Anim.SetBool("Run", false);
     }
-
-    private void OnCollisionEnter(Collision coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.CompareTag("Weapon")) // 웨폰 충돌시 HP감소
+        if (coll.gameObject.CompareTag("Player_Weapon")) // 웨폰 충돌시 HP감소
         {
             Monster_HP -= 10;
             if (Monster_HP <= 0)
             {
-                Destroy(gameObject); // 체력 0이 될시 삭제
+                Child_Anim.SetTrigger("Die");
+                Destroy(gameObject, 3f); // 체력 0이 될시 삭제
             }
         }
     }

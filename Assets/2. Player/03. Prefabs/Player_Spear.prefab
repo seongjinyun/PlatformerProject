@@ -4293,7 +4293,7 @@ Rigidbody2D:
   m_Mass: 1.1253982
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4380,15 +4380,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 6997368250977220904}
-  speed: 5
+  speed: 7
   doubleJumpState: 0
   isGround: 1
-  jumpPower: 9
+  jumpPower: 18
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 4632167481518330398}
   jump_Count: 2
   move_animator: {fileID: 1975779875685421878}
-  dash_Speed: 7
+  dash_Speed: 9
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0

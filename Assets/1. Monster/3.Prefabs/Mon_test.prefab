@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969448078}
   m_LocalRotation: {x: -0, y: -0.008726557, z: -0, w: 0.9999619}
-  m_LocalPosition: {x: -0.96, y: 0.505, z: 0}
+  m_LocalPosition: {x: -2.54, y: 0.505, z: 0}
   m_LocalScale: {x: 1.0001523, y: 1, z: 0.99969554}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2103,7 +2103,7 @@ GameObject:
   - component: {fileID: -3614205981463310187}
   m_Layer: 6
   m_Name: Mon_test
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2142,7 +2142,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2157,7 +2157,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4746272106760716157}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7e467b0d74409c340acc5142319ec3b1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2231,7 +2231,7 @@ MonoBehaviour:
   face: {fileID: 1995053052}
   castPoint: {fileID: 1969448079}
   Player: {fileID: 0}
-  agroRange: 10
+  agroRange: 25
   moveSpeed: 1
   Monster_atkDistance: 6
   Monster_bullet: {fileID: 3743053951820987082, guid: 2e5055cd158f40b499aa803cd22ff858, type: 3}
@@ -2242,7 +2242,7 @@ MonoBehaviour:
   Child_Anim: {fileID: 4896463422062861517}
   Child: {fileID: 8986957976715608428}
   Move_Run: 0
-  Monster_HP: 0
+  Monster_HP: 10
 --- !u!114 &6035189575068848054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2539,10 +2539,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8424818278284691235}
   - component: {fileID: 2614780886294176968}
+  - component: {fileID: 334034109}
   - component: {fileID: 334034105}
   m_Layer: 6
   m_Name: L_Weapon
-  m_TagString: Mons_weapon
+  m_TagString: BossWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2614,6 +2615,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &334034109
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5612014288541841951}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!70 &334034105
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2624,7 +2646,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.09, y: 0.20312405}
@@ -3823,6 +3845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   longAtk: 0
+  Attack: 0
 --- !u!61 &1245563876
 BoxCollider2D:
   m_ObjectHideFlags: 0
