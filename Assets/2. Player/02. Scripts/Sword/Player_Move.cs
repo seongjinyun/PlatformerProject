@@ -18,7 +18,7 @@ public class Player_Move : MonoBehaviour
 
 
     // public SpriteRenderer sr;
-    public float speed;
+    public  float speed;
     
     protected Rigidbody2D Player_rigid;
     protected Transform Player_tr;
@@ -284,7 +284,14 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Player_UsingItem.UsingActiveSpeed == true)
+        {
+            speed = 12;
+        }
+        else
+        {
+            speed = 7;
+        }
 
         move();
         Jump();
