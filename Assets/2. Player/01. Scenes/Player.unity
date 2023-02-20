@@ -1830,7 +1830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
@@ -1854,6 +1854,7 @@ MonoBehaviour:
   pos: {fileID: 866563310}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
+  is_delay: 0
 --- !u!1 &1757413409
 GameObject:
   m_ObjectHideFlags: 0

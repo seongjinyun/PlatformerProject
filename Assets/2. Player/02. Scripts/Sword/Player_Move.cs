@@ -12,8 +12,8 @@ public class Player_Move : MonoBehaviour
 
 
     //스텟
-    public float Max_hp = 100; // 최대 체력
-
+    public static float Max_hp = 101f; // 최대 체력
+    public static float Player_Hp = 100f; //플레이어 체력
 
     // public SpriteRenderer sr;
     public  float speed;
@@ -65,7 +65,7 @@ public class Player_Move : MonoBehaviour
     int Player_Layer, Ground_Layer;
 
     
-    public static float Player_Hp = 100; //플레이어 체력
+    
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -85,7 +85,7 @@ public class Player_Move : MonoBehaviour
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Ground"/*|| collision.gameObject.tag == "Downplatform"*/)
+        if(collision.gameObject.tag=="Ground" || jump_delay == true)
         {
             jump_Count = 2;
             
@@ -97,22 +97,10 @@ public class Player_Move : MonoBehaviour
         if(jump_Count==0)
         StartCoroutine("JumpDelay");
     }*/
-    IEnumerator JumpDelay()
-    {
-
-        if (doubleJumpState == false )
-        {
-            yield return new WaitForSecondsRealtime(1.5f);
-            jump_delay = false;
-        }
-    }
+    
     protected virtual void Jump() 
     {
-        if (jump_Count == 0 && jump_delay == false)
-        {
-            StartCoroutine("JumpDelay");
-            jump_Count = 2;
-        }
+        
 
         if (jump_Count == 2)
         {
@@ -143,12 +131,18 @@ public class Player_Move : MonoBehaviour
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
             jump_Count--;
-            jump_delay = true;
-        }
+            //jump_delay = true;
 
+            if (jump_Count == 0)
+            {
+                StartCoroutine("JumpDelay");
+                //jump_Count = 2;
+            }
+        }
         
 
-        if(Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
+
+        if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
         {
             //effecter.rotationalOffset = 180;
             Debug.Log("아래점프");
@@ -180,8 +174,14 @@ public class Player_Move : MonoBehaviour
         
 
     }
+    IEnumerator JumpDelay()
+    {
+        yield return new WaitForSeconds(1.8f);
+        jump_delay = true;
+        //jump_Count = 2;
+    }
 
-   
+
     /*private void OnTriggerEnter2D(Collider2D collision) // 캐릭터에 따로 추가한 박스콜라이더가 벽에 충돌하면 캐릭터가 지닌 캡슐콜라이더 트리거가 true 
     {
         GetComponent<CapsuleCollider2D>().isTrigger = true;

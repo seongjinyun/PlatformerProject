@@ -7,12 +7,13 @@ public class Player_Attack : MonoBehaviour
     public Transform pos;
     GameObject[] Enemy_Test;
     public Vector2 player_boxSize;
-    protected bool isKnockback;
+    protected bool isKnockback = true;
     protected float Kb_timer = 0f;
     static public float Skill_gauge = 0;
     protected Animator Player_anim;
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
+    public bool is_delay = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class Player_Attack : MonoBehaviour
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
         Player_anim = GetComponent<Animator>();
     }
+
+    
 
     public void Attack_gauge()
     {
@@ -36,20 +39,23 @@ public class Player_Attack : MonoBehaviour
                     Debug.Log("게이지 + 5");
                     foreach (GameObject monster in Enemy_Test)
 
-                        if (transform.position.x >= monster.transform.position.x && !isKnockback)
+                        if (transform.position.x >= monster.transform.position.x && is_delay==false)
 
                         {
-                            isKnockback = true;
+                            //isKnockback = true;
                             collider.transform.Translate(2.0f, 0.4f, 0);
-
+                            is_delay = true;
                         }
                         else
 
                         {
-                            isKnockback = true;
+                            //isKnockback = true;
                             collider.transform.Translate(-2.0f, 0.4f, 0);
-
+                            is_delay = true;
                         }
+                    
+                    StartCoroutine("Kb_Delay");
+                    Debug.Log(is_delay);
                     if (isKnockback) //넉백 타이머
                     {
                         Kb_timer += Time.deltaTime;
@@ -68,10 +74,14 @@ public class Player_Attack : MonoBehaviour
             
         }
     }
-    
+    IEnumerator Kb_Delay()
+    {
+        yield return new WaitForSeconds(1f);
+        is_delay = false;
+    }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
         if(Skill_gauge >= Max_Skill_gauge)
         {
