@@ -899,6 +899,7 @@ GameObject:
   - component: {fileID: 4151983906382792954}
   - component: {fileID: 1401967894328528814}
   - component: {fileID: 1706520098}
+  - component: {fileID: 3397928187842630963}
   m_Layer: 10
   m_Name: L_Weapon
   m_TagString: Player_Weapon
@@ -999,6 +1000,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34375, y: 0.65625}
   m_EdgeRadius: 0
+--- !u!50 &3397928187842630963
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007108591713899308}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2092157718266497717
 GameObject:
   m_ObjectHideFlags: 0

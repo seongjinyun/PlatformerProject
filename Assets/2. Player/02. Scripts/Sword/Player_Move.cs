@@ -9,12 +9,10 @@ public class Player_Move : MonoBehaviour
 
     //유닛루트 객체
     public GameObject Unit_anim;
-    
+
 
     //스텟
-    //public Unit_Code unit_Code;
-    //public Stat status;
-
+    public float Max_hp = 100; // 최대 체력
 
 
     // public SpriteRenderer sr;
@@ -31,6 +29,7 @@ public class Player_Move : MonoBehaviour
     public GameObject jump_effect; //점프 이펙트
     public Transform effect_Pos;
     public float jump_Count = 2;
+    public bool jump_delay;
 
     //회피 변수
     /*public float dodge_Distance;
@@ -78,7 +77,7 @@ public class Player_Move : MonoBehaviour
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
         move_animator = Unit_anim.GetComponent<Animator>();
-
+        
         
         //status = new Stat(); //유닛코드 주석 오류 수정되면 다시 활성화
         //status = status.SetUnitStat(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
@@ -86,24 +85,48 @@ public class Player_Move : MonoBehaviour
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="Ground"|| collision.gameObject.tag == "Downplatform")
+        if(collision.gameObject.tag=="Ground"/*|| collision.gameObject.tag == "Downplatform"*/)
         {
             jump_Count = 2;
+            
+        }
+    }
+
+    /*public void Jump_t()
+    {
+        if(jump_Count==0)
+        StartCoroutine("JumpDelay");
+    }*/
+    IEnumerator JumpDelay()
+    {
+
+        if (doubleJumpState == false )
+        {
+            yield return new WaitForSecondsRealtime(1.5f);
+            jump_delay = false;
         }
     }
     protected virtual void Jump() 
     {
-        
-        
+        if (jump_Count == 0 && jump_delay == false)
+        {
+            StartCoroutine("JumpDelay");
+            jump_Count = 2;
+        }
+
         if (jump_Count == 2)
+        {
             isGround = true;
+            jump_delay = false;
+        }
         else
             isGround = false;
         if (isGround)
         {
             doubleJumpState = true;
-            jump_Count = 2;
+            //jump_Count = 2;
         }
+        
 
 
         if (isGround && Input.GetKeyDown(KeyCode.C)) //점프
@@ -120,7 +143,10 @@ public class Player_Move : MonoBehaviour
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
             jump_Count--;
+            jump_delay = true;
         }
+
+        
 
         if(Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
         {
@@ -154,6 +180,8 @@ public class Player_Move : MonoBehaviour
         
 
     }
+
+   
     /*private void OnTriggerEnter2D(Collider2D collision) // 캐릭터에 따로 추가한 박스콜라이더가 벽에 충돌하면 캐릭터가 지닌 캡슐콜라이더 트리거가 true 
     {
         GetComponent<CapsuleCollider2D>().isTrigger = true;
@@ -302,6 +330,10 @@ public class Player_Move : MonoBehaviour
                 Player_Hp = 100;
                 move_animator.SetTrigger("Die");
                 //player die
+            }
+            if(Player_Hp >= Max_hp)
+            {
+                Player_Hp = 100;
             }
         }
     }

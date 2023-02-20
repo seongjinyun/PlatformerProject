@@ -25,7 +25,7 @@ public class Player_Anim_Shield : Player_Attack
 
     //테스트
     public GameObject[] Enemy_Test;
-    public GameObject[] Enemy_Test1;
+    public GameObject[] Enemy_Test1; // 쉴드 스킬 위치 조정
 
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class Player_Anim_Shield : Player_Attack
         Shield_Anim = GetComponent<Animator>();
         //float dist = Vector3.Distance(transform.position, enemy.transform.position);
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
-        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Player_Skill_Pos");
+        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
 
     }
 
@@ -97,18 +97,19 @@ public class Player_Anim_Shield : Player_Attack
 
         foreach (GameObject mob in Enemy_Test)
         {
-            
-            float dist = Vector3.Distance(transform.position, mob.transform.position);
-            if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
+            foreach (GameObject pos in Enemy_Test1)
             {
+                float dist = Vector3.Distance(transform.position, pos.transform.position);
+                if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
+                {
 
-                //float dist = Vector3.Distance(transform.position, mob.transform.position);
-                Shield_Anim.SetTrigger("Skill_shield");
-                GameObject She_ = Instantiate(Shield_Skill, mob.transform.position, transform.rotation);
-                Destroy(She_, 1f);
-                Skill_gauge = 0; //게이지 0으로 초기화
+                    //float dist = Vector3.Distance(transform.position, mob.transform.position);
+                    Shield_Anim.SetTrigger("Skill_shield");
+                    GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
+                    Destroy(She_, 1f);
+                    Skill_gauge = 0; //게이지 0으로 초기화
+                }
             }
-
             //Debug.Log("거리 " + dist);
         }
         
