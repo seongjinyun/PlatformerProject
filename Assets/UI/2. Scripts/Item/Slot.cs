@@ -14,7 +14,7 @@ public class Slot : MonoBehaviour
     {
         if (Inventory.instance.items.Contains(item))
         {
-
+            slot.SetActive(true);
         }
         else
         {

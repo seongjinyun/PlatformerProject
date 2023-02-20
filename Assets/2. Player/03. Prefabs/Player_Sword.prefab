@@ -728,7 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit_anim: {fileID: 4232195497802421768}
-  speed: 7
+  speed: 0
   doubleJumpState: 0
   isGround: 1
   jumpPower: 18
@@ -776,7 +776,6 @@ MonoBehaviour:
   slots: []
   particleObject: {fileID: 6456790371068788751}
   particleObject2: {fileID: 2594885423108063608}
-  UsingActive: 0
   Activecooldown: 0
 --- !u!95 &2432846849617784867
 Animator:

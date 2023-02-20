@@ -7,7 +7,8 @@ public class Player_UsingItem : MonoBehaviour
     Inventory inven;
     public Slot[] slots;
     public ParticleSystem particleObject, particleObject2;
-    public bool UsingActive;
+    public static bool UsingActiveSpeed;
+    public static bool UsingActiveShield;
     public float Activecooldown;
 
     int playerSpeed = 10;
@@ -17,7 +18,9 @@ public class Player_UsingItem : MonoBehaviour
 
     void Start()
     {
-        UsingActive = false;
+        UsingActiveSpeed = false;
+        UsingActiveShield = false;
+
         inven = Inventory.instance;
         rid2D = GetComponent<Rigidbody2D>();
     }
@@ -39,31 +42,43 @@ public class Player_UsingItem : MonoBehaviour
                     Inventory.instance.RemoveInven();
                     Inventory.instance.onChangeItem();
                 }
-                if (UsingActive == false)
+                if (UsingActiveSpeed == false)
                 {
                     if (inven.items[0].itemName == "Speed")
                     {
                         particleObject.Play();
                         Inventory.instance.RemoveInven();
                         Inventory.instance.onChangeItem();
-                        UsingActive = true;
-                    }
+                        UsingActiveSpeed = true;
+                    }   
+                }
+                if(UsingActiveShield == false)
+                {
                     if (inven.items[0].itemName == "Shield")
                     {
                         particleObject2.Play();
                         Inventory.instance.RemoveInven();
                         Inventory.instance.onChangeItem();
-                        UsingActive = true;
+                        UsingActiveShield = true;
                     }
                 }
             }
         }
-        if(UsingActive == true)
+        if(UsingActiveSpeed == true)
         {
             Activecooldown += Time.deltaTime;
             if(Activecooldown >= 15)
             {
-                UsingActive = false;
+                UsingActiveSpeed = false;
+                Activecooldown = 0;
+            }
+        }
+        if (UsingActiveShield == true)
+        {
+            Activecooldown += Time.deltaTime;
+            if (Activecooldown >= 15)
+            {
+                UsingActiveShield = false;
                 Activecooldown = 0;
             }
         }
