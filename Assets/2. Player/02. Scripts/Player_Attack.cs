@@ -7,7 +7,7 @@ public class Player_Attack : MonoBehaviour
     public Transform pos;
     GameObject[] Enemy_Test;
     public Vector2 player_boxSize;
-    protected bool isKnockback =false;
+    public bool isKnockback;
     protected float Kb_timer = 0f;
     static public float Skill_gauge = 0;
     protected Animator Player_anim;
@@ -28,7 +28,7 @@ public class Player_Attack : MonoBehaviour
     public void Attack_gauge()
     {
 
-        if (Input.GetKeyDown(KeyCode.X) && isKnockback == false)
+        if (Input.GetKeyDown(KeyCode.X) && !isKnockback)
         {
 
 
@@ -41,11 +41,9 @@ public class Player_Attack : MonoBehaviour
     IEnumerator Kb_Delay()
     {
         isKnockback = true;
-        float culltime = 0;
-        while(culltime < 3f)
-        {
-            
-            Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
+        yield return new WaitForSeconds(0.2f);
+
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
             {
 
@@ -77,9 +75,9 @@ public class Player_Attack : MonoBehaviour
 
                 }
             }
-            culltime += Time.deltaTime;
-            yield return null;
-        }
+            
+            yield return new WaitForSeconds(1f);
+        
         
 
         isKnockback = false;

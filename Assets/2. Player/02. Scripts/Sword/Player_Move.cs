@@ -92,15 +92,21 @@ public class Player_Move : MonoBehaviour
         }
     }
 
-    /*public void Jump_t()
-    {
-        if(jump_Count==0)
-        StartCoroutine("JumpDelay");
-    }*/
+    
     
     protected virtual void Jump() 
     {
-        
+        /*RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, LayerMask.GetMask("Ground"));
+        Debug.DrawRay(gameObject.transform.position, Vector2.down * hit.distance, Color.red);
+
+        if (hit.collider != null)
+        {
+            if (hit.distance <= 0.01f)
+            {
+                jump_Count = 2;
+            }
+            //jump_delay = true;
+        }*/
 
         if (jump_Count == 2)
         {
@@ -182,15 +188,7 @@ public class Player_Move : MonoBehaviour
     }
 
 
-    /*private void OnTriggerEnter2D(Collider2D collision) // 캐릭터에 따로 추가한 박스콜라이더가 벽에 충돌하면 캐릭터가 지닌 캡슐콜라이더 트리거가 true 
-    {
-        GetComponent<CapsuleCollider2D>().isTrigger = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision) //따로 추가한 박스콜라이더 트리거가 끝나면 캡슐콜라이더 트리거가 false 
-    {
-        GetComponent<CapsuleCollider2D>().isTrigger = false; 
-    }*/
+    
 
 
     protected virtual void move() //부모 클래스에서 자식에게 상속하는것 protected virtual--> 가상함수 부모에서 이미 만들었지만 자식클래스에서 수정가능
@@ -297,15 +295,7 @@ public class Player_Move : MonoBehaviour
             }
             
         }
-        /*if (isDash_Delay == true) //대쉬딜레이가 true면
-        {
-                                             // 대쉬타이머는 Time.deltaTime 만큼 증가
-            if (Dash_timer >= Dash_delayTime) //대쉬타이머가 대쉬 딜레이타임보다 커지거나 같아지면
-            {
-                Dash_timer = 0f; //초기화
-                isDash_Delay = false; //대쉬딜레이 false
-            }
-        }*/
+        
 
         
     }
@@ -321,6 +311,8 @@ public class Player_Move : MonoBehaviour
             speed = 7;
         }
 
+        
+        
         move();
         Jump();
         Dash();

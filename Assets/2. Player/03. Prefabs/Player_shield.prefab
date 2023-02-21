@@ -278,6 +278,7 @@ MonoBehaviour:
   pos: {fileID: 5557219116328778751}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
+  is_delay: 0
   Shield_Skill: {fileID: 5893873013301558805, guid: 3c2c6db1742a38645979e8e0afe25f21, type: 3}
   player: {fileID: 2197968755758976567}
   Shield_pos:
@@ -307,6 +308,7 @@ MonoBehaviour:
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
   jump_Count: 2
+  jump_delay: 0
   move_animator: {fileID: 0}
   dash_Speed: 5
   isDash: 0
@@ -331,6 +333,7 @@ MonoBehaviour:
   pos: {fileID: 5557219116328778751}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
+  is_delay: 0
 --- !u!1 &752957350612141577
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +860,7 @@ MonoBehaviour:
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
   jump_Count: 2
+  jump_delay: 0
   move_animator: {fileID: 881880671221513260}
   dash_Speed: 9
   isDash: 0
@@ -934,7 +938,6 @@ MonoBehaviour:
   slots: []
   particleObject: {fileID: 2562362521240177778}
   particleObject2: {fileID: 6254621196389686106}
-  UsingActive: 0
   Activecooldown: 0
 --- !u!114 &1618397706864079708
 MonoBehaviour:
