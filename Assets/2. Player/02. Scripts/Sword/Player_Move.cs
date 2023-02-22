@@ -96,18 +96,23 @@ public class Player_Move : MonoBehaviour
     
     protected virtual void Jump() 
     {
-        /*RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, LayerMask.GetMask("Ground"));
+        //점프 착지 체크
+        RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(gameObject.transform.position, Vector2.down * hit.distance, Color.red);
-
-        if (hit.collider != null)
+        if (Player_rigid.velocity.y < 0)
         {
-            if (hit.distance <= 0.01f)
-            {
-                jump_Count = 2;
-            }
-            //jump_delay = true;
-        }*/
 
+            if (hit.collider != null)
+            {
+                if (hit.distance <= 0.01f)
+                {
+                    jump_Count = 2;
+                }
+                //jump_delay = true;
+            }
+        }
+
+        // 점프 카운트
         if (jump_Count == 2)
         {
             isGround = true;
@@ -141,7 +146,7 @@ public class Player_Move : MonoBehaviour
 
             if (jump_Count == 0)
             {
-                StartCoroutine("JumpDelay");
+                //StartCoroutine("JumpDelay");
                 //jump_Count = 2;
             }
         }

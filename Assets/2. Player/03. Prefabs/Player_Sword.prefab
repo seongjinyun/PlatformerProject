@@ -735,6 +735,7 @@ MonoBehaviour:
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 5570715809892869778}
   jump_Count: 2
+  jump_delay: 0
   move_animator: {fileID: 7254028376279072810}
   dash_Speed: 9
   isDash: 0
@@ -2470,7 +2471,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 4692299767249456658}
   player_boxSize: {x: 1.5, y: 2}
+  isKnockback: 0
   Kb_delayTime: 2
+  is_delay: 0
+  Parent: {fileID: 0}
   self: {fileID: 1798746268070547124}
   Sword_pos: {fileID: 0}
   Knockback_speed: 3
@@ -2542,7 +2546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 659194094381573876}
   player_boxSize: {x: 1.5, y: 2}
+  isKnockback: 0
   Kb_delayTime: 2
+  is_delay: 0
+  Parent: {fileID: 5066100314870972562}
 --- !u!114 &7829444378748180025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2563,6 +2570,7 @@ MonoBehaviour:
   jump_effect: {fileID: 0}
   effect_Pos: {fileID: 0}
   jump_Count: 2
+  jump_delay: 0
   move_animator: {fileID: 0}
   dash_Speed: 0
   isDash: 0

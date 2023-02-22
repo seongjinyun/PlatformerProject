@@ -277,8 +277,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 5557219116328778751}
   player_boxSize: {x: 1.5, y: 2}
+  isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
+  Parent: {fileID: 0}
   Shield_Skill: {fileID: 5893873013301558805, guid: 3c2c6db1742a38645979e8e0afe25f21, type: 3}
   player: {fileID: 2197968755758976567}
   Shield_pos:
@@ -332,8 +334,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 5557219116328778751}
   player_boxSize: {x: 1.5, y: 2}
+  isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
+  Parent: {fileID: 3526826421527383147}
 --- !u!1 &752957350612141577
 GameObject:
   m_ObjectHideFlags: 0

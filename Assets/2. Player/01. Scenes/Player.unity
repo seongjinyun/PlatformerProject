@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3044852931184766821, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
+      propertyPath: Parent
+      value: 
+      objectReference: {fileID: 923810500}
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -434,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.36
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_LocalRotation.w
@@ -454,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.01
+      value: 10.49
       objectReference: {fileID: 0}
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1838,7 +1842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 561374907576553083, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6033414857541211011, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
       propertyPath: m_RootOrder
@@ -1973,6 +1977,7 @@ MonoBehaviour:
   isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
+  Parent: {fileID: 0}
 --- !u!1 &1757413409
 GameObject:
   m_ObjectHideFlags: 0

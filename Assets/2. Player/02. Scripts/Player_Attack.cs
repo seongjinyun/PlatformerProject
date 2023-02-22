@@ -14,6 +14,8 @@ public class Player_Attack : MonoBehaviour
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
     public bool is_delay = false;
+    public Transform Parent;
+
     
 
     // Start is called before the first frame update
@@ -41,7 +43,7 @@ public class Player_Attack : MonoBehaviour
     IEnumerator Kb_Delay()
     {
         isKnockback = true;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
 
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
@@ -54,18 +56,18 @@ public class Player_Attack : MonoBehaviour
                     Debug.Log("게이지 + 5");
                     foreach (GameObject monster in Enemy_Test)
 
-                        if (transform.position.x >= monster.transform.position.x)
+                        if (Parent.transform.position.x > monster.transform.position.x /*&& monster.transform.rotation.y <= 0*/) //플레이어 위치가 몬스터위치보다 오른쪽
 
                         {
                             //isKnockback = true;
-                            collider.transform.Translate(2.0f, 0.4f, 0);
+                            collider.transform.Translate(2.0f, 0.4f, 0); // 왼쪽 튕겨나감
                             is_delay = true;
                         }
-                        else
+                        else if(Parent.transform.position.x < monster.transform.position.x /*&& monster.transform.rotation.y > 0*/) //플레이어 위치가 몬스터위치보다 왼쪽
 
                         {
                             //isKnockback = true;
-                            collider.transform.Translate(-2.0f, 0.4f, 0);
+                            collider.transform.Translate(-2.0f, 0.4f, 0); //오른쪽으로 튕겨나감
                             is_delay = true;
                         }
 
@@ -76,7 +78,7 @@ public class Player_Attack : MonoBehaviour
                 }
             }
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         
         
 
