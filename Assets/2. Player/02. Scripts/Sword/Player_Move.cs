@@ -83,28 +83,30 @@ public class Player_Move : MonoBehaviour
         //status = status.SetUnitStat(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
     }
 
-    protected void OnCollisionEnter2D(Collision2D collision)
+    /*protected void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag=="Ground" || jump_delay == true)
         {
             jump_Count = 2;
             
         }
-    }
+    }*/
 
     
     
     protected virtual void Jump() 
     {
         //점프 착지 체크
-        RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, LayerMask.GetMask("Ground"));
+        int layer_mask = (1 << 6) | (1 << 9); // Ground, Monster 레이어
+
+        RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 0.5f, layer_mask); 
         Debug.DrawRay(gameObject.transform.position, Vector2.down * hit.distance, Color.red);
         if (Player_rigid.velocity.y < 0)
         {
 
             if (hit.collider != null)
             {
-                if (hit.distance <= 0.01f)
+                if (hit.distance <= 0f)
                 {
                     jump_Count = 2;
                 }
