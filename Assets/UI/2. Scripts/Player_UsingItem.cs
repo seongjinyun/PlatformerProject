@@ -10,6 +10,7 @@ public class Player_UsingItem : MonoBehaviour
     public static bool UsingActiveSpeed;
     public static bool UsingActiveShield;
     public float Activecooldown;
+    public static bool ShieldOn;
 
     int playerSpeed = 10;
     Rigidbody2D rid2D;
@@ -60,6 +61,7 @@ public class Player_UsingItem : MonoBehaviour
                         Inventory.instance.RemoveInven();
                         Inventory.instance.onChangeItem();
                         UsingActiveShield = true;
+                        ShieldOn = true;
                     }
                 }
             }
@@ -79,6 +81,8 @@ public class Player_UsingItem : MonoBehaviour
             if (Activecooldown >= 15)
             {
                 UsingActiveShield = false;
+                ShieldOn = false;
+
                 Activecooldown = 0;
             }
         }

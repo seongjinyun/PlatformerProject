@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Button btnStart; //시작 버튼   
     public Button btnOption; //옵션 버튼
     public Button btnBack; //메인씬이동 버튼
+    public GameObject LevelSel;
+    public GameObject char1, char2, char3;
 
     private void Awake() 
     {
@@ -35,7 +37,13 @@ public class GameManager : MonoBehaviour
         LoadingSceneController.LoadScene("UI_Select");
         Debug.Log("게임시작");
     }
-
+    public void CharSel()
+    {
+        LevelSel.SetActive(true);
+        char1.SetActive(false);
+        char2.SetActive(false);
+        char3.SetActive(false);
+    }
     public void TutorialStart() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
     {
         LoadingSceneController.LoadScene("1_Stage");
