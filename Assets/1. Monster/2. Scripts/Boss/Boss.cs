@@ -30,7 +30,7 @@ public class Boss : MonoBehaviour
     public bool MonsterDie = false;
 
     public int Monster_HP = 10;
-
+    bool MonCool = false;
 
 
     /*yield return null;  :  다음 프레임에 실행 됨.
@@ -103,16 +103,35 @@ public class Boss : MonoBehaviour
     }
     protected virtual void OnTriggerEnter2D(Collider2D coll)
     {
+        
         if (coll.gameObject.CompareTag("Player_Weapon")) // 웨폰 충돌시 HP감소
         {
-            Monster_HP -= 1;
-            Debug.Log(Monster_HP);
-            if (Monster_HP <= 0)
+            if (!MonCool)
             {
-                Boss_Die(); // 체력 0이 될시 Boss_Die 실행
+                Monster_HP -= 1;
+                MonCool = true;
+
+                Debug.Log(Monster_HP);
             }
+            else
+            {
+                StartCoroutine(MonsterHP());
+            }
+            //StartCoroutine(MonsterHP());
         }
     }
+
+    IEnumerator MonsterHP()
+    {
+        yield return new WaitForSeconds(1f);
+        MonCool = false;
+        if (Monster_HP <= 0)
+        {
+            Boss_Die(); // 체력 0이 될시 Boss_Die 실행
+            MonsterDie = true;
+        }
+    }
+
     protected virtual void Boss_Die()
     {
         //Destroy(gameObject,4);

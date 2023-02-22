@@ -27,7 +27,7 @@ public class Final_Stage_Boss : Boss
                 StartCoroutine(Rush());
                 Rush_CoolTime = 15f;
             }
-            if (Laser_CoolTime <= 2f)
+            if (Laser_CoolTime <= 0.1f)
             {
                 StartCoroutine(Laser());
                 if (Laser_CoolTime <= 0f)

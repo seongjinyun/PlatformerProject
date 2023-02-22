@@ -14,9 +14,6 @@ public class Monster_State : MonoBehaviour
     public bool longAtk = false; // 원거리 공격
     public bool Attack = false;
 
-    float cur = 1f;
-    float coolT = 3f;
-
     GameObject Parent;
     Final_Stage_Boss Parent2;
 
@@ -41,21 +38,7 @@ public class Monster_State : MonoBehaviour
 
             animator.SetBool("Run", false);
 
-            cur -= Time.deltaTime;
-            if (cur <= 0) // 넉백
-            {
-                if (Parent.transform.position.x > Player.transform.position.x)
-                {
-                    Player.transform.Translate(-1f, 0.5f, 0);
-                    cur = coolT;
-                }
-                else if (Parent.transform.position.x < Player.transform.position.x)
-                {
-                    Player.transform.Translate(1f, 0.5f, 0);
-                    cur = coolT;
-                }
-
-            }
+            StartCoroutine(Knockback());
         }
     }
     private void OnTriggerExit2D(Collider2D collision) // Radius 수치 변경하면 여기서도 변경해줘야함
@@ -65,7 +48,19 @@ public class Monster_State : MonoBehaviour
             Attack = false;
             animator.SetBool("Run", true);
         }
+    }
 
+    IEnumerator Knockback()
+    {
+        yield return new WaitForSeconds(1f);
+        if (Parent.transform.position.x < Player.transform.position.x && Player.transform.rotation.y == 0)
+        {
+            Player.transform.Translate(0.02f, 0.1f, 0);
+        }
+        else
+        {
+            Player.transform.Translate(0.02f, 0.1f, 0);
+        }
     }
 
     // Update is called once per frame
