@@ -3024,6 +3024,7 @@ MonoBehaviour:
   pos: {fileID: 3342777113000464955}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
+  is_delay: 0
   Skill_pos: {fileID: 3342777113264304298}
   enemy: {fileID: 0}
   Knockback_speed: 3
@@ -3043,6 +3044,7 @@ MonoBehaviour:
   pos: {fileID: 3342777113000464955}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
+  is_delay: 0
 --- !u!114 &8239939761566214221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,6 +3065,7 @@ MonoBehaviour:
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 4632167481518330398}
   jump_Count: 2
+  jump_delay: 0
   move_animator: {fileID: 0}
   dash_Speed: 7
   isDash: 0
@@ -3349,7 +3352,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.015570071, y: 0.3125}
@@ -4448,6 +4451,7 @@ MonoBehaviour:
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 4632167481518330398}
   jump_Count: 2
+  jump_delay: 0
   move_animator: {fileID: 1975779875685421878}
   dash_Speed: 9
   isDash: 0
@@ -4509,7 +4513,6 @@ MonoBehaviour:
   slots: []
   particleObject: {fileID: 2599264455203643464}
   particleObject2: {fileID: 1936000541516991955}
-  UsingActive: 0
   Activecooldown: 0
 --- !u!114 &52384781171574270
 MonoBehaviour:
