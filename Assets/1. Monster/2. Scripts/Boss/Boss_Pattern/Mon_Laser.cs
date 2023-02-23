@@ -16,7 +16,7 @@ public class Mon_Laser : MonoBehaviour
     {
 
         sca += 5f * Time.deltaTime;
-        transform.localScale = new Vector2(sca, 2);
+        transform.localScale = new Vector2(sca, 10);
 
 
         if (sca >= 20f)
