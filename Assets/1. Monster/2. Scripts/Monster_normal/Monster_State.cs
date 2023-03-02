@@ -72,6 +72,7 @@ public class Monster_State : MonoBehaviour
         Debug.Log("플레이어 공격");
         animator.SetTrigger("Attack");
         StartCoroutine(ResetAttack());
+        StartCoroutine(Knockback());
 
     }
 
@@ -82,6 +83,7 @@ public class Monster_State : MonoBehaviour
             animator.SetTrigger("Attack");
             // 이동 중지
             animator.SetBool("Run", false);
+            StartCoroutine(Knockback());
         }
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -111,14 +113,14 @@ public class Monster_State : MonoBehaviour
 
     IEnumerator Knockback()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         if (Parent.transform.position.x < Player.transform.position.x && Player.transform.rotation.y == 0)
         {
-            Player.transform.Translate(0.02f, 0.1f, 0);
+            Player.transform.Translate(1.4f, 0.5f, 0);
         }
         else
         {
-            Player.transform.Translate(0.02f, 0.1f, 0);
+            Player.transform.Translate(1.4f, 0.5f, 0);
         }
     }
 
