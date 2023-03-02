@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Move : MonoBehaviour
+public class Player_Move : AllUnits.Unit
 {
     
 
@@ -16,7 +16,7 @@ public class Player_Move : MonoBehaviour
     public static float Player_Hp = 100f; //플레이어 체력
 
     // public SpriteRenderer sr;
-    public  float speed;
+    //public  float speed;
     
     protected Rigidbody2D Player_rigid;
     protected Transform Player_tr;
@@ -69,7 +69,7 @@ public class Player_Move : MonoBehaviour
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {       
         Player_rigid = GetComponent<Rigidbody2D>();
         Player_tr = GetComponent<Transform>();       
@@ -307,7 +307,7 @@ public class Player_Move : MonoBehaviour
         
     }
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         if (Player_UsingItem.UsingActiveSpeed == true)
         {

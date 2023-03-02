@@ -56,18 +56,18 @@ public class Player_Attack : MonoBehaviour
                     Debug.Log("게이지 + 5");
                     foreach (GameObject monster in Enemy_Test)
 
-                        if (Parent.transform.position.x > monster.transform.position.x /*&& monster.transform.rotation.y <= 0*/) //플레이어 위치가 몬스터위치보다 오른쪽
+                        if (Parent.transform.position.x > monster.transform.position.x && monster.transform.rotation.y == 0) //플레이어 위치가 몬스터위치보다 오른쪽
 
                         {
                             //isKnockback = true;
-                            collider.transform.Translate(2.0f, 0.4f, 0); // 왼쪽 튕겨나감
+                            collider.transform.Translate(-2.0f, 0.4f, 0); // 왼쪽 튕겨나감
                             is_delay = true;
                         }
-                        else if(Parent.transform.position.x < monster.transform.position.x /*&& monster.transform.rotation.y > 0*/) //플레이어 위치가 몬스터위치보다 왼쪽
+                        else if (Parent.transform.position.x < monster.transform.position.x && monster.transform.rotation.y == 180 && monster.transform.rotation.y == -180) //플레이어 위치가 몬스터위치보다 왼쪽
 
                         {
                             //isKnockback = true;
-                            collider.transform.Translate(-2.0f, 0.4f, 0); //오른쪽으로 튕겨나감
+                            collider.transform.Translate(2.0f, 0.4f, 0); //오른쪽으로 튕겨나감
                             is_delay = true;
                         }
 
