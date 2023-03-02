@@ -92,7 +92,7 @@ public class Final_Stage_Boss : Boss
                 //rb.AddForce(transform.right * 10000);
                 speed = 3f;
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f); //rb.velocity = Vector2.zero;
             speed = 0.3f;
             if (Chase == false)
             {

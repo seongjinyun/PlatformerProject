@@ -17,6 +17,9 @@ public class Monster_State : MonoBehaviour
     GameObject Parent;
     Final_Stage_Boss Parent2;
 
+    float AttackDelay = 1f; // 공격 딜레이
+    float nextAttackTime = 0f; // 다음 공격 시간
+
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
     void Start()
@@ -28,26 +31,82 @@ public class Monster_State : MonoBehaviour
 
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
+/*    public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // 플레이어 태그면 어택 애니메이션 실행
+        if (collision.gameObject.CompareTag("Player") ) // 플레이어 태그면 어택 애니메이션 실행
         {
+            
             //Debug.Log("플레이어 피격");
-            Attack = true;
-            animator.SetTrigger("Attack");
+            if (Time.time >= nextAttackTime)
+            {
+                if (!Attack)
+                {
+                    animator.SetTrigger("Attack");
+                    animator.SetBool("Run", false);
+                    Attack = true;
+                    Debug.Log("플레이어 공격");
+                    StartCoroutine(Knockback());
+                }
+            }
+            else
+            {
+                Attack = false;
 
-            animator.SetBool("Run", false);
+                nextAttackTime = Time.time + AttackDelay;
 
-            StartCoroutine(Knockback());
+            }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision) // Radius 수치 변경하면 여기서도 변경해줘야함
+    private void OnTriggerExit2D(Collider2D collision) 
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Attack = false;
+            //Attack = true;
             animator.SetBool("Run", true);
         }
+    }*/
+    private void isAttack()
+    {
+        // 공격 애니메이션 시작
+        
+        Debug.Log("플레이어 공격");
+        animator.SetTrigger("Attack");
+        StartCoroutine(ResetAttack());
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            animator.SetTrigger("Attack");
+            // 이동 중지
+            animator.SetBool("Run", false);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && !Attack)
+        {
+            animator.SetBool("Run", false);
+            Attack = true;
+            Invoke("isAttack",AttackDelay);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Attack = false;
+            CancelInvoke("isAttack");
+            animator.SetBool("Run", true);
+        }
+    }
+
+    private IEnumerator ResetAttack()
+    {
+        yield return new WaitForSeconds(AttackDelay);
+        Attack = false;
     }
 
     IEnumerator Knockback()

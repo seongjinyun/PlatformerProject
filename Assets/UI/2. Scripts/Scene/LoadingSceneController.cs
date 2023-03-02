@@ -9,7 +9,7 @@ public class LoadingSceneController : MonoBehaviour //기존 씬을 가리고 다음 씬을
     static string nextScene;
 
     [SerializeField]
-    Image progressBar;
+    Slider progressBar;
 
     public static void LoadScene(string sceneName)
     {
@@ -34,12 +34,12 @@ public class LoadingSceneController : MonoBehaviour //기존 씬을 가리고 다음 씬을
 
             if(op.progress < 0.9f)
             {
-                progressBar.fillAmount = op.progress;
+                progressBar.value = op.progress;
             }
            else
             timer += Time.unscaledDeltaTime;
-            progressBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer);
-            if (progressBar.fillAmount >= 1.0f)
+            progressBar.value = Mathf.Lerp(0.9f, 1f, timer);
+            if (progressBar.value >= 1.0f)
             {
                 op.allowSceneActivation = true;
                 yield break;
