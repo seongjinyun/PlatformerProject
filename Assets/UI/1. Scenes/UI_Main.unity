@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: btnStart
       objectReference: {fileID: 0}
+    - target: {fileID: 1488114173074532, guid: 462064254a3fbb4448fde9ed204381c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114151841194083396, guid: 462064254a3fbb4448fde9ed204381c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -903,6 +907,10 @@ PrefabInstance:
     - target: {fileID: 1488114173074532, guid: 462064254a3fbb4448fde9ed204381c4, type: 3}
       propertyPath: m_Name
       value: btnQuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488114173074532, guid: 462064254a3fbb4448fde9ed204381c4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114151841194083396, guid: 462064254a3fbb4448fde9ed204381c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
