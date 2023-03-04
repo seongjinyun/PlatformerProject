@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5206189574373212929}
   - component: {fileID: 6375149591904379243}
   - component: {fileID: 2900780026966400653}
+  - component: {fileID: 7762043725294540939}
   m_Layer: 6
   m_Name: Ice Creature
   m_TagString: Monster
@@ -148,7 +149,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2900780026966400653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +157,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472928334106585503}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca9826c7470fd5b43a965f3b0ffc9fa6, type: 3}
   m_Name: 
@@ -172,15 +173,51 @@ MonoBehaviour:
   MoveSpeed: 1
   Layer_Chase:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   Layer_Wall:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   rb: {fileID: 0}
   collider2D: 0
   MonsterDie: 0
   Monster_HP: 10
   Attack_State: 0
+--- !u!114 &7762043725294540939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472928334106585503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec748f16e17cd744c8343e43f289a0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  WallCheck:
+  - {fileID: 6721646671947237870}
+  - {fileID: 827620615193011952}
+  Child_anim: {fileID: 1472928334106585503}
+  anim: {fileID: 0}
+  Child: {fileID: 0}
+  JumpPower: 20
+  speed: 0.2
+  Radius: 52
+  MoveSpeed: 1
+  Layer_Chase:
+    serializedVersion: 2
+    m_Bits: 1024
+  Layer_Wall:
+    serializedVersion: 2
+    m_Bits: 512
+  rb: {fileID: 6375149591904379243}
+  collider2D: 0
+  MonsterDie: 0
+  Monster_HP: 10
+  Attack_State: 0
+  Second_Attack_State: 5
+  Chase: 0
 --- !u!1 &2518665066927698420
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3148390811402539245}
   - component: {fileID: 1545573348077182734}
-  - component: {fileID: 6036453869197815714}
+  - component: {fileID: 4920076370050426995}
   m_Layer: 6
   m_Name: Pos
   m_TagString: BossWeapon
@@ -240,7 +277,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.43}
   m_EdgeRadius: 0
---- !u!114 &6036453869197815714
+--- !u!114 &4920076370050426995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,10 +286,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2518665066927698420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f372c07b174b38458bcff249fd605fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dbf7483d4915ce49a2591602bcef6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent_Boss: {fileID: 0}
+  parent_Boss: {fileID: 1472928334106585503}
 --- !u!1 &6653623392400860270
 GameObject:
   m_ObjectHideFlags: 0
