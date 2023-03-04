@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Spear : Player_Move
 {
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         Player_rigid = GetComponent<Rigidbody2D>();
         Player_tr = GetComponent<Transform>();
@@ -14,7 +14,7 @@ public class Player_Spear : Player_Move
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         move();
         Dash();

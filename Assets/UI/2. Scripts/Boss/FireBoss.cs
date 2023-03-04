@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage_2_monster : Boss
+public class FireBoss : Boss
 {
     //public BoxCollider2D HitBox;
     public bool Attack_State = false;
-    public float Second_Attack_State = 5f;
-    public bool Chase = false;
 
     protected override void Start()
     {
@@ -17,24 +15,10 @@ public class Stage_2_monster : Boss
     protected override void Update()
     {
         base.Update();
-        StartCoroutine(MonsterChase());
         Attack();
-        //StartCoroutine(Second_Attack());
-
-        if (Chase == true) // ∏ÛΩ∫≈Õ∞° √ﬂ¿˚«œ¡ˆ æ ¿∏∏È ∑ØΩ¨ ƒ≈∏¿”¿∫ ∏ÿ√„
-        {
-            Second_Attack_State -= Time.deltaTime;
-
-
-            if (Second_Attack_State <= 0f)
-            {
-                StartCoroutine(Second_Attack());
-                Second_Attack_State = 5f;
-            }
-        }
     }
-
-    IEnumerator MonsterChase() // π¸¿ß ≥ª «√∑π¿ÃæÓ √ﬂ¿˚
+    /*
+    IEnumerator MonsterChase() // Î≤îÏúÑ ÎÇ¥ ÌîåÎ†àÏù¥Ïñ¥ Ï∂îÏ†Å
     {
         yield return null;
         if (!Attack_State)
@@ -46,7 +30,6 @@ public class Stage_2_monster : Boss
                 //if (true)
                 if (collider2D)
                 {
-                    Chase = true;
                     //Debug.Log(!collider2D.gameObject.CompareTag("Player"));
                     if (transform.position.x < Target.transform.position.x)
                     {
@@ -62,19 +45,12 @@ public class Stage_2_monster : Boss
                 }
                 else
                 {
-                    Chase = false;
                     anim.SetBool("Run", false);
                 }
             }
         }
-
-
-    }
-    IEnumerator Second_Attack()
-    {
-        yield return new WaitForSeconds(0.1f);
-        anim.SetTrigger("Attack2");
-    }
+   }
+ */
 
     protected virtual void Attack()
     {
@@ -85,12 +61,12 @@ public class Stage_2_monster : Boss
         }
         else
         {
-
+            
         }
 
 
     }
-    private void OnDrawGizmos() // √ﬂ¿˚ π¸¿ß
+    private void OnDrawGizmos() // Ï∂îÏ†Å Î≤îÏúÑ
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Radius);

@@ -24,7 +24,7 @@ public class Player_Anim_Shield : Player_Attack
     //public Vector2 player_boxSize;
 
     //테스트
-    public GameObject[] Enemy_Test;
+    //public GameObject[] Enemy_Test;
     public GameObject[] Enemy_Test1; // 쉴드 스킬 위치 조정
 
 
@@ -35,7 +35,7 @@ public class Player_Anim_Shield : Player_Attack
         //Enemy_Test[0] = enemy;
         Shield_Anim = GetComponent<Animator>();
         //float dist = Vector3.Distance(transform.position, enemy.transform.position);
-        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
+        //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
         Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
 
     }
@@ -95,7 +95,7 @@ public class Player_Anim_Shield : Player_Attack
 
 
 
-        foreach (GameObject mob in Enemy_Test)
+        //foreach (GameObject mob in Enemy_Test)
         {
             foreach (GameObject pos in Enemy_Test1)
             {

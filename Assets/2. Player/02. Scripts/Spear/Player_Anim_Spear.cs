@@ -25,7 +25,7 @@ public class Player_Anim_Spear : Player_Attack
     //∞‘¿Ã¡ˆ
     //public float Skill_gauge = 0;
 
-    GameObject[] Enemy_Test;
+    //GameObject[] Enemy_Test;
 
 
     protected Rigidbody2D player_rigid;
@@ -38,7 +38,7 @@ public class Player_Anim_Spear : Player_Attack
     {
         Spear_anim = GetComponent<Animator>();
         player_rigid = GetComponent<Rigidbody2D>();
-        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
+        //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
     }
 
     // Update is called once per frame
