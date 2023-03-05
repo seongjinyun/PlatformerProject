@@ -30,7 +30,7 @@ public class Player_Attack : MonoBehaviour
     public void Attack_gauge()
     {
 
-        if (Input.GetKeyDown(KeyCode.X) && !isKnockback)
+        if (Input.GetKeyDown(KeyCode.X) /*&& !isKnockback*/)
         {
 
 
@@ -43,7 +43,7 @@ public class Player_Attack : MonoBehaviour
     IEnumerator Kb_Delay()
     {
         isKnockback = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.41f);
 
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
