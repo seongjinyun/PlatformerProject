@@ -280,15 +280,11 @@ MonoBehaviour:
   isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
-  Parent: {fileID: 0}
   Shield_Skill: {fileID: 5893873013301558805, guid: 3c2c6db1742a38645979e8e0afe25f21, type: 3}
   player: {fileID: 2197968755758976567}
   Shield_pos:
   - {fileID: 0}
   Knockback_speed: 3
-  Enemy_Test:
-  - {fileID: 0}
-  - {fileID: 0}
   Enemy_Test1: []
 --- !u!114 &8884758210228658017
 MonoBehaviour:
@@ -302,8 +298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5958793171bf1b429cbb4174cd27ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit_anim: {fileID: 0}
   speed: 5
+  maxHealth: 50
+  currentHealth: 0
+  damage: 5
+  damageDelay: 2
+  isDamage: 0
+  Unit_anim: {fileID: 0}
   doubleJumpState: 0
   isGround: 1
   jumpPower: 5
@@ -337,7 +338,6 @@ MonoBehaviour:
   isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
-  Parent: {fileID: 3526826421527383147}
 --- !u!1 &752957350612141577
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +715,6 @@ GameObject:
   - component: {fileID: -6820837002744603541}
   - component: {fileID: -2568622769834347441}
   - component: {fileID: 1618397706864079708}
-  - component: {fileID: 3764229769748675003}
   m_Layer: 10
   m_Name: Player_shield
   m_TagString: Player
@@ -856,8 +855,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5958793171bf1b429cbb4174cd27ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit_anim: {fileID: 623221117996090822}
   speed: 7
+  maxHealth: 50
+  currentHealth: 0
+  damage: 5
+  damageDelay: 2
+  isDamage: 0
+  Unit_anim: {fileID: 623221117996090822}
   doubleJumpState: 0
   isGround: 1
   jumpPower: 18
@@ -955,21 +959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3764229769748675003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2197968755758976567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9322171b1d154634b96bf6ad50dd68d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack_power: 0
-  Special_Attack: 0
-  Move_speed: 0
 --- !u!1 &2326767795802819087
 GameObject:
   m_ObjectHideFlags: 0

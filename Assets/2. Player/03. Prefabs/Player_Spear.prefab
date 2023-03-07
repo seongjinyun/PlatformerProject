@@ -3023,6 +3023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 3342777113000464955}
   player_boxSize: {x: 1.5, y: 2}
+  isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
   Skill_pos: {fileID: 3342777113264304298}
@@ -3043,6 +3044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 3342777113000464955}
   player_boxSize: {x: 1.5, y: 2}
+  isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
 --- !u!114 &8239939761566214221
@@ -3057,8 +3059,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e9e64f1e8ea94b478735e565a0d9ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit_anim: {fileID: 0}
   speed: 5
+  maxHealth: 50
+  currentHealth: 0
+  damage: 5
+  damageDelay: 2
+  isDamage: 0
+  Unit_anim: {fileID: 0}
   doubleJumpState: 0
   isGround: 1
   jumpPower: 9
@@ -4285,7 +4292,6 @@ GameObject:
   - component: {fileID: -1653036124824107800}
   - component: {fileID: -2776625801473197083}
   - component: {fileID: 52384781171574270}
-  - component: {fileID: 5140085011542215517}
   m_Layer: 10
   m_Name: Player_Spear
   m_TagString: Player
@@ -4443,8 +4449,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit_anim: {fileID: 6997368250977220904}
   speed: 7
+  maxHealth: 50
+  currentHealth: 0
+  damage: 5
+  damageDelay: 2
+  isDamage: 0
+  Unit_anim: {fileID: 6997368250977220904}
   doubleJumpState: 0
   isGround: 1
   jumpPower: 18
@@ -4526,21 +4537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5140085011542215517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9028496524012394670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93265c9ac68b2414aa3da3bb8c99f728, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack_power: 0
-  Special_Attack: 0
-  Move_speed: 0
 --- !u!1001 &432922868443779099
 PrefabInstance:
   m_ObjectHideFlags: 0

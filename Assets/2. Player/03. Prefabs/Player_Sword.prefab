@@ -596,7 +596,6 @@ GameObject:
   - component: {fileID: 4136376683857386106}
   - component: {fileID: 2432846849617784867}
   - component: {fileID: -987018567872591314}
-  - component: {fileID: 2002303566919305036}
   m_Layer: 10
   m_Name: Player_Sword
   m_TagString: Player
@@ -727,8 +726,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit_anim: {fileID: 4232195497802421768}
   speed: 0
+  maxHealth: 50
+  currentHealth: 0
+  damage: 5
+  damageDelay: 2
+  isDamage: 0
+  Unit_anim: {fileID: 4232195497802421768}
   doubleJumpState: 0
   isGround: 1
   jumpPower: 18
@@ -810,21 +814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2002303566919305036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798746268070547124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc2f9116f79678419af0b3afdb8dcbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Attack_power: 0
-  Special_Attack: 0
-  Move_speed: 0
 --- !u!1 &1932025423882934694
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,7 +2463,6 @@ MonoBehaviour:
   isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
-  Parent: {fileID: 0}
   self: {fileID: 1798746268070547124}
   Sword_pos: {fileID: 0}
   Knockback_speed: 3
@@ -2549,7 +2537,6 @@ MonoBehaviour:
   isKnockback: 0
   Kb_delayTime: 2
   is_delay: 0
-  Parent: {fileID: 5066100314870972562}
 --- !u!114 &7829444378748180025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2562,8 +2549,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Unit_anim: {fileID: 0}
   speed: 0
+  maxHealth: 50
+  currentHealth: 0
+  damage: 5
+  damageDelay: 2
+  isDamage: 0
+  Unit_anim: {fileID: 0}
   doubleJumpState: 0
   isGround: 1
   jumpPower: 0
