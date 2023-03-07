@@ -7,18 +7,32 @@ public class FireBoss_new : Boss3
     static bool FireBossRoom;
     public bool isDash, isLook;
     public float DashCool = 0;
+    public float BreathCool = 0;
+    public Transform BreathPos;
+    public GameObject BreathPrepab;
   
     protected override void Start()
     {
         base.Start();
-
+        StartCoroutine(RandomPattern());
         FireBossRoom = true; //보스 방 입장 시 true로 변경할꺼임
     }
     protected override void Update()
     {
-        Debug.Log(Vector2.Distance(transform.position, Target.transform.position));
         DashCool += Time.deltaTime;
+        BreathCool += Time.deltaTime;
 
+        if(isDash == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
+            anim.SetBool("Dash", true);
+        }
+        /*
+        if(BreathCool >= 10)
+        {
+            StartCoroutine(BossBreath());
+
+        }
         if (Vector2.Distance(transform.position, Target.transform.position) >= 20)
         {
             isDash = true;
@@ -27,31 +41,48 @@ public class FireBoss_new : Boss3
         {
             StartCoroutine(BossDash());
         }
+        */
+    }
+
+    IEnumerator RandomPattern()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        int ranPattern = Random.Range(0, 2);
+        switch (ranPattern)
+        {
+            case 0:
+                StartCoroutine(BossBreath());
+                break;
+            case 1:
+                StartCoroutine(BossDash());
+                break;
+        }
     }
 
     IEnumerator BossDash()
-    {
-        if (isLook == false)
-        {
-            LookPlayer();
-        }
-        else
-        {
-            anim.SetBool("Dash", true);
-            yield return new WaitForSeconds(1f); //1초 대기
-            transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
-            yield return new WaitForSeconds(4f);
-            anim.SetBool("Dash", false);
-            DashCool = 0;
-            isDash = false;
-            isLook = false;
-            yield break;
-        }
+    {   
+
+        LookPlayer();
+        isDash = true;
+        yield return new WaitForSeconds(4f);
+        anim.SetBool("Dash", false);
+        isDash = false;
+        StartCoroutine(RandomPattern());
     }
 
-    IEnumerator PlayerEnemyDistance()
+    IEnumerator BossBreath()
     {
-        yield return null;
+        LookPlayer();
+        yield return new WaitForSeconds(0.5f);
+        anim.SetTrigger("Breath");
+        yield return new WaitForSeconds(0.5f);
+        GameObject Breath = Instantiate(BreathPrepab);
+        Breath.transform.position = BreathPos.transform.position;
+        yield return new WaitForSeconds(4f);
+
+        StartCoroutine(RandomPattern());
+     
     }
 
     void LookPlayer()
@@ -59,13 +90,16 @@ public class FireBoss_new : Boss3
         if (transform.position.x < Target.transform.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            isLook = true;
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            isLook = true;
         }
         
+    }
+
+    void TelpoPlayer()
+    {
+        transform.position = Target.transform.position;
     }
 }
