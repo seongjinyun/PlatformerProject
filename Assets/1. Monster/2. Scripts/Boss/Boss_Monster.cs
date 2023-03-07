@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rock_Test : Status_test
+public class Boss_Monster : Monster_Status
 {
 
     public Transform Monster_Pos;

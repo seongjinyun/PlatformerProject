@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Status_test : MonoBehaviour
+public class Monster_Status : MonoBehaviour
 {
 
     public float Monster_Hp = 10f;
-    public float Monster_Damage = 1f;
-    public float atkSpeed = 4f;
+    public float Monster_Damage = 1f; // 공격력
+    public float atkSpeed = 4f; // 공격 딜레이
 
     public bool Die = false;
 
