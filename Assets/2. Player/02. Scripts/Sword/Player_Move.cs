@@ -79,8 +79,7 @@ public class Player_Move : AllUnits.Unit
         move_animator = Unit_anim.GetComponent<Animator>();
         
         
-        //status = new Stat(); //유닛코드 주석 오류 수정되면 다시 활성화
-        //status = status.SetUnitStat(unit_Code); //유닛코드 주석 오류 수정되면 다시 활성화
+        
     }
 
     /*protected void OnCollisionEnter2D(Collision2D collision)
@@ -99,16 +98,16 @@ public class Player_Move : AllUnits.Unit
         //점프 착지 체크
         int layer_mask = (1 << 6) | (1 << 9); // Ground, Monster 레이어
 
-        RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 0.5f, layer_mask); 
-        Debug.DrawRay(gameObject.transform.position, Vector2.down * hit.distance, Color.red);
-        if (Player_rigid.velocity.y < 0)
+        RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, layer_mask);
+        Debug.DrawRay(gameObject.transform.position, Vector2.down * hit.distance, Color.green);
+        //Player_rigid.velocity.y == 0
+        if (hit.collider != null) // 
         {
-
-            if (hit.collider != null)
+            if (Player_rigid.velocity.y == 0) // 
             {
-                if (hit.distance <= 0f)
+                if (hit.distance <= 0) // hit 거리가 0보다 작거나 같으면
                 {
-                    jump_Count = 2;
+                    jump_Count = 2; // 점프카운트 2 
                 }
                 //jump_delay = true;
             }
@@ -144,7 +143,7 @@ public class Player_Move : AllUnits.Unit
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
             jump_Count--;
-            //jump_delay = true;
+            
 
             
         }
@@ -183,12 +182,7 @@ public class Player_Move : AllUnits.Unit
         
 
     }
-    IEnumerator JumpDelay()
-    {
-        yield return new WaitForSeconds(1.8f);
-        jump_delay = true;
-        //jump_Count = 2;
-    }
+    
 
 
     

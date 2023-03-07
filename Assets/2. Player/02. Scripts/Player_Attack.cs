@@ -55,7 +55,7 @@ public class Player_Attack : MonoBehaviour
 
                 if (collider.tag == "Monster") //Monster 태그와 충돌하면
                 {
-                    //Skill_gauge += 5;
+                    Skill_gauge += 5;
                     Debug.Log("게이지 + 5");
                     foreach (GameObject monster in Enemy_Test)
 
