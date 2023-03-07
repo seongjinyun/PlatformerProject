@@ -146,11 +146,7 @@ public class Player_Move : AllUnits.Unit
             jump_Count--;
             //jump_delay = true;
 
-            if (jump_Count == 0)
-            {
-                //StartCoroutine("JumpDelay");
-                //jump_Count = 2;
-            }
+            
         }
         
 
@@ -278,20 +274,11 @@ public class Player_Move : AllUnits.Unit
         }
         if (isDash) //대쉬가 true이면
         {
-
-                      
-            if (transform.rotation.y <= 0)
-            { 
-                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed;
-                GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
-                Destroy(dash_ef, 0.5f);
-            }
-            else
-            {
-                Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * -1;
-                GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
-                Destroy(dash_ef, 0.5f);
-            }
+            Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * movX * -1;
+            GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
+            Destroy(dash_ef, 0.5f);
+        }
+           
             CurrentDashTimer -= Time.deltaTime;
 
             if(CurrentDashTimer <= 0)
@@ -302,10 +289,10 @@ public class Player_Move : AllUnits.Unit
             }
             
         }
-        
 
-        
-    }
+
+
+
     // Update is called once per frame
     protected override void Update()
     {
