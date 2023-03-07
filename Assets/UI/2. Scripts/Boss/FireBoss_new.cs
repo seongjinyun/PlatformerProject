@@ -6,8 +6,6 @@ public class FireBoss_new : Boss3
 {
     static bool FireBossRoom;
     public bool isDash, isLook;
-    public float DashCool = 0;
-    public float BreathCool = 0;
     public Transform BreathPos;
     public GameObject BreathPrepab;
   
@@ -19,34 +17,16 @@ public class FireBoss_new : Boss3
     }
     protected override void Update()
     {
-        DashCool += Time.deltaTime;
-        BreathCool += Time.deltaTime;
-
         if(isDash == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
             anim.SetBool("Dash", true);
-        }
-        /*
-        if(BreathCool >= 10)
-        {
-            StartCoroutine(BossBreath());
-
-        }
-        if (Vector2.Distance(transform.position, Target.transform.position) >= 20)
-        {
-            isDash = true;
-        }
-        if(isDash == true && DashCool >= 20 && FireBossRoom == true)
-        {
-            StartCoroutine(BossDash());
-        }
-        */
+        }   
     }
 
     IEnumerator RandomPattern()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2.0f); //경직시간
 
         int ranPattern = Random.Range(0, 2);
         switch (ranPattern)
@@ -62,24 +42,23 @@ public class FireBoss_new : Boss3
 
     IEnumerator BossDash()
     {   
-
         LookPlayer();
         isDash = true;
-        yield return new WaitForSeconds(4f);
-        anim.SetBool("Dash", false);
+        transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
+        yield return new WaitForSeconds(4.0f);
         isDash = false;
+        anim.SetBool("Dash", false);
         StartCoroutine(RandomPattern());
     }
 
     IEnumerator BossBreath()
     {
         LookPlayer();
-        yield return new WaitForSeconds(0.5f);
+        
         anim.SetTrigger("Breath");
-        yield return new WaitForSeconds(0.5f);
-        GameObject Breath = Instantiate(BreathPrepab);
-        Breath.transform.position = BreathPos.transform.position;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1.0f);
+        GameObject Breath = Instantiate(BreathPrepab, BreathPos.position, BreathPos.rotation);
+        yield return new WaitForSeconds(2.0f);
 
         StartCoroutine(RandomPattern());
      
