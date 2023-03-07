@@ -392,7 +392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9028496524012394670, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5140085011542215517, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
@@ -2282,7 +2282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 561374907576553083, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6033414857541211011, guid: 27e34153186a3e047be5042c672fce5f, type: 3}
       propertyPath: m_RootOrder
@@ -2527,6 +2527,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 1798746268070547124, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047387876659895641, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+      propertyPath: Parent
+      value: 
+      objectReference: {fileID: 1502957785}
     - target: {fileID: 5066100314870972562, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2604,6 +2612,11 @@ Transform:
   m_Father: {fileID: 1884185685}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1502957785 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5066100314870972562, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+  m_PrefabInstance: {fileID: 1417778988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1527228932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 827620615193011952, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
@@ -3312,7 +3325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802695, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
