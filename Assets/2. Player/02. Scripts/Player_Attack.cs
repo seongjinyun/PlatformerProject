@@ -94,7 +94,7 @@ public class Player_Attack : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
 
 
-        Skill_gauge += 5;
+        
         isKnockback = false;
     }
 

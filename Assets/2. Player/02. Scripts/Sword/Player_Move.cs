@@ -65,7 +65,7 @@ public class Player_Move : AllUnits.Unit
     int Player_Layer, Ground_Layer;
 
     
-    
+
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -77,8 +77,6 @@ public class Player_Move : AllUnits.Unit
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
         move_animator = Unit_anim.GetComponent<Animator>();
-        
-        
         
     }
 
@@ -98,17 +96,14 @@ public class Player_Move : AllUnits.Unit
         //점프 착지 체크
         int layer_mask = (1 << 6) | (1 << 9); // Ground, Monster 레이어
 
-        RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, layer_mask);
-        Debug.DrawRay(gameObject.transform.position, Vector2.down * hit.distance, Color.green);
-        //Player_rigid.velocity.y == 0
-        if (hit.collider != null) // 
+        if (Player_rigid.velocity.y <= 0) // 떨어지는 중일때
         {
-            if (Player_rigid.velocity.y == 0) // 
+            RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, layer_mask);
+            Debug.DrawRay(gameObject.transform.position, Vector2.down, Color.green); // 레이저 쏘고
+            if (hit.collider != null && hit.distance <= 0.5) // 레이저가 레이어에 닿으면
             {
-                if (hit.distance <= 0) // hit 거리가 0보다 작거나 같으면
-                {
-                    jump_Count = 2; // 점프카운트 2 
-                }
+                //Debug.Log("레이저 거리" + hit.distance);
+                jump_Count = 2; // 점프카운트 2 
                 //jump_delay = true;
             }
         }
