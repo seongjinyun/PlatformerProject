@@ -16,8 +16,10 @@ public class Player_Attack : MonoBehaviour
     public Transform Parent;
 
     protected float Atk_curTime;
+
+    [SerializeField]
     public float Atk_coolTime = 1f;
-    public float Atk_speed = 1.5f;
+    //public float Atk_speed = 1f;
     
 
     // Start is called before the first frame update
@@ -67,6 +69,7 @@ public class Player_Attack : MonoBehaviour
         Skill_gauge += 5;
         Debug.Log("∞‘¿Ã¡ˆ + " + Skill_gauge);
     }
+    
     
        
         
@@ -123,7 +126,7 @@ public class Player_Attack : MonoBehaviour
         }
 
         Attack_gauge();
-        Player_anim.SetFloat("Attack_speed", Atk_speed);
+       // Player_anim.SetFloat("Attack_speed", Atk_speed);
         
     }
 }

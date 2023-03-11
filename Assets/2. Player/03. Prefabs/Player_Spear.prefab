@@ -3023,10 +3023,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 3342777113000464955}
   player_boxSize: {x: 1.5, y: 2}
-  isKnockback: 0
   Kb_delayTime: 2
-  is_delay: 0
   Parent: {fileID: 0}
+  Atk_coolTime: 1.3
   Skill_pos: {fileID: 3342777113264304298}
   enemy: {fileID: 0}
   Knockback_speed: 3
@@ -3045,10 +3044,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {fileID: 3342777113000464955}
   player_boxSize: {x: 1.5, y: 2}
-  isKnockback: 0
   Kb_delayTime: 2
-  is_delay: 0
   Parent: {fileID: 2657438444314131828}
+  Atk_coolTime: 1
 --- !u!114 &8239939761566214221
 MonoBehaviour:
   m_ObjectHideFlags: 0
