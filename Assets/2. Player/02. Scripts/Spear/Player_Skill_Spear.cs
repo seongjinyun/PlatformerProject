@@ -23,7 +23,7 @@ public class Player_Skill_Spear : MonoBehaviour
         rigid_spear = GetComponent<Rigidbody2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision) // 넉백 스크립트
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
@@ -47,7 +47,7 @@ public class Player_Skill_Spear : MonoBehaviour
 
         }
     }
-
+    */
     // Update is called once per frame
     void Update()
     {
