@@ -7,7 +7,7 @@ public class DestroyBreath : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Destroy(gameObject, 2f); 
+        Destroy(gameObject, 2); 
     }
 
     // Update is called once per frame
