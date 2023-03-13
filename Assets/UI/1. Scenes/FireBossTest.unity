@@ -441,7 +441,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &826552050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826552051}
+  m_Layer: 6
+  m_Name: MeteorPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &826552051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826552050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.114, y: 0.69, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1958502291}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304457458
 GameObject:
@@ -633,30 +664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3abce8372eddfb469b546bd173d1bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss_State: 0
-  Target: {fileID: 0}
-  Child_anim: {fileID: 1536293772}
-  anim: {fileID: 1536293775}
-  Child: {fileID: 0}
-  DashDir: {fileID: 0}
-  speed: 20
-  Radius: 1
-  MoveSpeed: 1
-  Layer_Chase:
-    m_Bits: 0
-  Layer_Wall:
-    m_Bits: 0
-  rb: {fileID: 1536293777}
-  collider2D: 0
-  MonsterDie: 1
-  Monster_HP: 10
-  MonCool: 0
-  isDash: 0
-  isLook: 0
-  isBreath: 0
-  BreathPos: {fileID: 1304457459}
-  BreathPrepab: {fileID: 6089995053668032491, guid: 034f95b1977064f4cb237a2bc5a98f11, type: 3}
-  DashPos: {fileID: 0}
 --- !u!1 &1628953066
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +956,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1958502291 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
+  m_PrefabInstance: {fileID: 1373582926536494565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1373582926536494565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,13 +968,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1373582925121726030, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
+      propertyPath: MeteorPos
+      value: 
+      objectReference: {fileID: 826552051}
+    - target: {fileID: 1373582925121726030, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
+      propertyPath: MeteorPrepab
+      value: 
+      objectReference: {fileID: 1160670614112988814, guid: 2b7e6da502bad0b40876135e14ccef7e, type: 3}
     - target: {fileID: 1373582925121726031, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
       propertyPath: m_Name
       value: FireBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 1373582925121726031, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
       propertyPath: m_LocalPosition.x

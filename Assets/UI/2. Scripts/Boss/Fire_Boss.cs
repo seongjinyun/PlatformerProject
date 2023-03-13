@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Fire_Boss : Basic_Boss
 {
-    public Transform BreathPos;
-    public GameObject BreathPrepab;
+    public Transform BreathPos, MeteorPos;
+    public GameObject BreathPrepab, MeteorPrepab;
 
     protected override void Start()
     {
@@ -36,7 +36,7 @@ public class Fire_Boss : Basic_Boss
     {
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
 
-        int ranPattern = Random.Range(0, 2);
+        int ranPattern = Random.Range(0, 3);
         switch (ranPattern)
         {
             case 0:
@@ -44,6 +44,9 @@ public class Fire_Boss : Basic_Boss
                 break;
             case 1:
                 StartCoroutine(BossDash());
+                break;
+            case 2:
+                StartCoroutine(FireMeteor());
                 break;
         }
     }
@@ -57,6 +60,17 @@ public class Fire_Boss : Basic_Boss
         yield return new WaitForSeconds(2.0f);
         anim.SetBool("Breath", false);
         StartCoroutine(RandomPattern());
+
+    }
+
+    IEnumerator FireMeteor()
+    {
+        anim.SetBool("Meteor", true);
+        GameObject Breath = Instantiate(MeteorPrepab, MeteorPos.position, MeteorPos.rotation);
+        yield return new WaitForSeconds(2.0f);
+        anim.SetBool("Meteor", false);
+        StartCoroutine(RandomPattern());
+
 
     }
 }
