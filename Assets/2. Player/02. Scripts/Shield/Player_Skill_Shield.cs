@@ -9,7 +9,7 @@ public class Player_Skill_Shield : MonoBehaviour
     private Rigidbody2D rigid_shield;
     public float skill_speed;
 
-    public GameObject enemy;
+    public GameObject enemy; 
     
 
     GameObject[] Enemys;
@@ -26,7 +26,7 @@ public class Player_Skill_Shield : MonoBehaviour
         Enemys = GameObject.FindGameObjectsWithTag("Monster");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision) // 넉백 스크립트
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
@@ -50,4 +50,5 @@ public class Player_Skill_Shield : MonoBehaviour
 
         }
     }
+    */
 }

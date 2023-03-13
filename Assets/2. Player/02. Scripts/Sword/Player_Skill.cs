@@ -6,17 +6,17 @@ public class Player_Skill : MonoBehaviour
 {
     private Rigidbody2D rigid_bullet;
     public float skill_speed = 5.0f;
-    GameObject[] Enemys;
     protected bool isKnockback;
+    GameObject[] Enemys; //³Ë¹é º¯¼ö
 
     // Start is called before the first frame update
     void Start()
     {
         rigid_bullet = GetComponent<Rigidbody2D>();
-        Enemys = GameObject.FindGameObjectsWithTag("Monster");
+        Enemys = GameObject.FindGameObjectsWithTag("Monster"); // ³Ë¹é
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision) // ³Ë¹é ½ºÅ©¸³Æ®
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
@@ -40,7 +40,7 @@ public class Player_Skill : MonoBehaviour
 
         }
     }
-
+    */
     // Update is called once per frame
     void Update()
     {
