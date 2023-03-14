@@ -32,6 +32,8 @@ public class Monster_Unit : MonoBehaviour
     public int Monster_HP = 10;
     bool MonCool = false;
 
+    public bool far_Monster = false;
+
 
     /*yield return null;  :  다음 프레임에 실행 됨.
     yield return new WaitForSeconds(float );  :  매개변수로 입력한 숫자에 해당하는 초만 큼 기다렸다가 실행됨.
@@ -44,12 +46,12 @@ public class Monster_Unit : MonoBehaviour
         anim = Child_anim.GetComponent<Animator>();
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Child = Child_anim.GetComponent<Monster_State>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     protected virtual void Update()
     {
         Rotate();
-        StartCoroutine(Boss_Jump());
     }
     void Rotate()
     {
@@ -72,35 +74,7 @@ public class Monster_Unit : MonoBehaviour
         //transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
     }
 
-    IEnumerator Boss_Jump() // 점프
-    {
-        if (!MonsterDie) {
-            yield return null;
-
-            if (!Physics2D.OverlapCircle(WallCheck[0].position, 0.01f, Layer_Wall) &&
-                 Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall) &&
-                !Physics2D.Raycast(transform.position, -transform.localScale.x * transform.right, 1f, Layer_Wall))
-            {
-                //Debug.Log("벽 충돌");
-                boss_State = Boss_State.Jump;
-                rb.velocity = new Vector2(rb.velocity.x, JumpPower);
-            }
-
-            else if (Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall))
-            {
-                if (WallCheck[1].position.x < transform.position.x)
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                    rb.velocity = new Vector2(-transform.localScale.x * speed, rb.velocity.y);
-                }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
-                    rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
-                }
-            }
-        }
-    }
+    
     protected virtual void OnTriggerEnter2D(Collider2D coll)
     {
         
