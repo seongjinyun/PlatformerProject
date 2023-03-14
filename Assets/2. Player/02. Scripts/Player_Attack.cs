@@ -17,7 +17,7 @@ public class Player_Attack : MonoBehaviour
 
     protected float Atk_curTime;
 
-    [SerializeField]
+    
     public float Atk_coolTime = 1f;
     //public float Atk_speed = 1f;
     
