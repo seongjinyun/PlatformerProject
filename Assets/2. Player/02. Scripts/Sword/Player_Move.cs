@@ -303,7 +303,7 @@ public class Player_Move : AllUnits.Unit
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Mons_weapon"))
+        if (collision.gameObject.CompareTag("Monster_Attack"))
         {
             Player_Hp -= 10;
             Debug.Log("ÇÇ°Ý" + Player_Hp);
