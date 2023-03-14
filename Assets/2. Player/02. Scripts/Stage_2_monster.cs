@@ -8,6 +8,9 @@ public class Stage_2_monster : Boss
     public bool Attack_State = false;
     public float Second_Attack_State = 5f;
     public bool Chase = false;
+    public GameObject Attack_Skill_2;
+    public Transform self;
+    public Transform Skill_pos_2;
 
     protected override void Start()
     {
@@ -72,8 +75,24 @@ public class Stage_2_monster : Boss
     }
     IEnumerator Second_Attack()
     {
-        yield return new WaitForSeconds(0.1f);
-        anim.SetTrigger("Attack2");
+        
+        if (self.transform.rotation.eulerAngles.y == 0)
+        {
+            anim.SetTrigger("Attack2");
+            yield return new WaitForSeconds(1f);
+            GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Quaternion.Euler(0,0,0));
+
+            Destroy(Skill_2, 1f);
+        }
+        else if(self.transform.rotation.eulerAngles.y <= -180)
+        {
+            anim.SetTrigger("Attack2");
+            yield return new WaitForSeconds(1f);
+            GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Quaternion.Euler(0, 180, 0));
+            Destroy(Skill_2, 1f);
+        }
+        
+
     }
 
     protected virtual void Attack()
