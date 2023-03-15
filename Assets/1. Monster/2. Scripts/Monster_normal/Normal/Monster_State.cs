@@ -15,7 +15,6 @@ public class Monster_State : MonoBehaviour
     public bool Attack = false;
 
     GameObject Parent;
-    Final_Stage_Boss Parent2;
 
     float AttackDelay = 1f; // 공격 딜레이
     float nextAttackTime = 0f; // 다음 공격 시간
@@ -26,7 +25,6 @@ public class Monster_State : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Parent = transform.parent.gameObject;
-        Parent2 = Parent.GetComponent<Final_Stage_Boss>();
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
