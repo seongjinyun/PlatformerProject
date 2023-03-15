@@ -8,14 +8,16 @@ public class Stage_2_monster : Basic_Boss
     public bool Attack_State = false;
     public float Second_Attack_State = 5f;
     public bool Chase = false;
-    public GameObject Attack_Skill_2;
+    public GameObject Attack_Skill_2, Ice_Arrow, Pre_Ice_Spike;
     public Transform self;
-    public Transform Skill_pos_2;
+    public Transform Skill_pos_2, Ice_Arrow_pos;
+    
 
     protected override void Start()
     {
         base.Start();
         StartCoroutine(RandomPattern());
+        Ice_Arrow_pos = GameObject.FindGameObjectWithTag("Monster_Skill_Pos").GetComponent<Transform>();
     }
 
     protected override void Update()
@@ -30,17 +32,7 @@ public class Stage_2_monster : Basic_Boss
             anim.SetBool("Run", true);
         }
 
-        if (Chase == true) // 몬스터가 추적하지 않으면 러쉬 쿨타임은 멈춤
-        {
-            Second_Attack_State -= Time.deltaTime;
-
-
-            if (Second_Attack_State <= 0f)
-            {
-                StartCoroutine(Second_Attack());
-                Second_Attack_State = 5f;
-            }
-        }
+        
     }
 
 
@@ -69,30 +61,27 @@ public class Stage_2_monster : Basic_Boss
     IEnumerator Ice_Bullet()
     {
         base.LookPlayer();
-        yield return new WaitForSeconds(1f);
-
+        anim.SetBool("Attack_2", true); // 애니메이션 실행
+        yield return new WaitForSeconds(1f); // 1초뒤에
+        GameObject Skill_1_pos = Instantiate(Pre_Ice_Spike, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
+        yield return new WaitForSeconds(1f); // 1초뒤에
+        Destroy(Skill_1_pos); // 준비 스킬 삭제
+        GameObject Skill_1 = Instantiate(Ice_Arrow, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
+        Destroy(Skill_1, 1f); // 1초뒤에 삭제
+        anim.SetBool("Attack_2", false); // 애니메이션 Idle로
     }
 
     IEnumerator Second_Attack()
     {
         base.LookPlayer();
-        if (self.transform.rotation.eulerAngles.y == 0)
-        {
-            anim.SetTrigger("Attack2");
+        
+            anim.SetBool("Attack_2", true);
             yield return new WaitForSeconds(1f);
             GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Quaternion.Euler(0,0,0));
-
             Destroy(Skill_2, 1f);
-        }
-        else if(self.transform.rotation.eulerAngles.y <= -180)
-        {
-            anim.SetTrigger("Attack2");
-            yield return new WaitForSeconds(1f);
-            GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Quaternion.Euler(0, 180, 0));
-            Destroy(Skill_2, 1f);
-        }
+            anim.SetBool("Attack_2", false);
+            StartCoroutine(RandomPattern());
         
-
     }
     IEnumerator TeleAttack()
     {
