@@ -32,8 +32,6 @@ public class Monster_Unit : MonoBehaviour
     public int Monster_HP = 10;
     bool MonCool = false;
 
-    public bool far_Monster = false;
-
 
     /*yield return null;  :  다음 프레임에 실행 됨.
     yield return new WaitForSeconds(float );  :  매개변수로 입력한 숫자에 해당하는 초만 큼 기다렸다가 실행됨.
