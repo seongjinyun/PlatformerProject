@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Wind_Boss : Basic_Boss
-{   
+{
+    public Transform Tornado1, Tornado2, Tornado3, Tornado4, BulletPos; 
+    public GameObject TornadoPrefab;
+    public GameObject bullet;
     protected override void Start()
     {
         base.Start();
@@ -18,6 +21,8 @@ public class Wind_Boss : Basic_Boss
             transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
             anim.SetBool("Dash", true);
         }
+
+        BulletPos.transform.rotation = transform.rotation;
     }
 
     IEnumerator BossDash()
@@ -39,7 +44,7 @@ public class Wind_Boss : Basic_Boss
         yield return new WaitForSeconds(0.5f);
         base.LookPlayer();
         anim.SetBool("Attack", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         anim.SetBool("Attack", false);
         StartCoroutine(RandomPattern());
     }
@@ -47,7 +52,7 @@ public class Wind_Boss : Basic_Boss
     {
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
 
-        int ranPattern = Random.Range(0, 2);
+        int ranPattern = Random.Range(0, 4);
         switch (ranPattern)
         {
             case 0:
@@ -56,6 +61,56 @@ public class Wind_Boss : Basic_Boss
             case 1:
                 StartCoroutine(TeleAttack());
                 break;
+            case 2:
+                StartCoroutine(SpawnTornado());
+                break;
+            case 3:
+                StartCoroutine(SpawnTornado());
+                break;
         }
+    }
+
+    IEnumerator SpawnTornado()
+    {
+        anim.SetBool("Tornado", true);
+        yield return new WaitForSeconds(1f);
+        GameObject Tor1 = Instantiate(TornadoPrefab, Tornado1.position, Tornado1.rotation);
+        GameObject Tor2 = Instantiate(TornadoPrefab, Tornado2.position, Tornado1.rotation);
+        GameObject Tor3 = Instantiate(TornadoPrefab, Tornado3.position, Tornado1.rotation);
+        GameObject Tor4 = Instantiate(TornadoPrefab, Tornado4.position, Tornado1.rotation);
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("Tornado", false);
+        yield return new WaitForSeconds(3.5f);
+
+        StartCoroutine(SpawnBullet());
+
+
+    }
+
+    IEnumerator SpawnBullet()
+    {
+        base.LookPlayer();
+        anim.SetBool("Bullet", true);
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < 360; i += 13)
+        {
+            GameObject temp = Instantiate(bullet);
+            Destroy(temp, 2f);
+            temp.transform.position = BulletPos.transform.position;
+            temp.transform.rotation = Quaternion.Euler(0, 0, i);
+        }
+        yield return new WaitForSeconds(0.5f);
+
+        for (int i = 0; i < 360; i += 13)
+        {
+            GameObject temp = Instantiate(bullet);
+            Destroy(temp, 2f);
+            temp.transform.position = BulletPos.transform.position;
+            temp.transform.rotation = Quaternion.Euler(0, 0, i+5);
+        }
+        yield return new WaitForSeconds(3f);
+        anim.SetBool("Bullet", false);
+        StartCoroutine(RandomPattern());
+
     }
 }
