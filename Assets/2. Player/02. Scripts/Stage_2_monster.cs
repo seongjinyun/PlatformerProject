@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage_2_monster : Boss
+public class Stage_2_monster : Basic_Boss
 {
     //public BoxCollider2D HitBox;
     public bool Attack_State = false;
@@ -15,14 +15,20 @@ public class Stage_2_monster : Boss
     protected override void Start()
     {
         base.Start();
+        StartCoroutine(RandomPattern());
     }
 
     protected override void Update()
     {
         base.Update();
-        StartCoroutine(MonsterChase());
-        Attack();
-        //StartCoroutine(Second_Attack());
+        //StartCoroutine(MonsterChase());
+        
+
+        if (isDash == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
+            anim.SetBool("Run", true);
+        }
 
         if (Chase == true) // 몬스터가 추적하지 않으면 러쉬 쿨타임은 멈춤
         {
@@ -37,45 +43,39 @@ public class Stage_2_monster : Boss
         }
     }
 
-    IEnumerator MonsterChase() // 범위 내 플레이어 추적
-    {
-        yield return null;
-        if (!Attack_State)
-        {
-            if (!MonsterDie)
-            {
-                collider2D = Physics2D.OverlapCircle(transform.position, Radius, Layer_Chase);
-                //Debug.Log($"{Time.time}"+collider2D); 
-                //if (true)
-                if (collider2D)
-                {
-                    Chase = true;
-                    //Debug.Log(!collider2D.gameObject.CompareTag("Player"));
-                    if (transform.position.x < Target.transform.position.x)
-                    {
-                        rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
-                        anim.SetBool("Run", true);
-                    }
-                    else
-                    {
-                        rb.velocity = new Vector2(-transform.localScale.x * speed, rb.velocity.y);
-                        anim.SetBool("Run", true);
-                    }
-                    //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
-                }
-                else
-                {
-                    Chase = false;
-                    anim.SetBool("Run", false);
-                }
-            }
-        }
 
+    IEnumerator RandomPattern()
+    {
+        yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
+
+        int ranPattern = Random.Range(0, 4);
+        switch (ranPattern)
+        {
+            case 0:
+                StartCoroutine(Second_Attack());
+                break;
+            case 1:
+                StartCoroutine(BossDash());
+                break;
+            case 2:
+                StartCoroutine(Ice_Bullet());
+                break;
+            case 3:
+                StartCoroutine(TeleAttack());
+                break;
+        }
+    }
+
+    IEnumerator Ice_Bullet()
+    {
+        base.LookPlayer();
+        yield return new WaitForSeconds(1f);
 
     }
+
     IEnumerator Second_Attack()
     {
-        
+        base.LookPlayer();
         if (self.transform.rotation.eulerAngles.y == 0)
         {
             anim.SetTrigger("Attack2");
@@ -94,25 +94,35 @@ public class Stage_2_monster : Boss
         
 
     }
-
-    protected virtual void Attack()
+    IEnumerator TeleAttack()
     {
-        if (Attack_State)
-        {
-            anim.SetTrigger("Attack");
-            anim.SetBool("Run", false);
-        }
-        else
-        {
-
-        }
-
-
+        transform.position = Target.transform.position;
+        yield return new WaitForSeconds(0.5f);
+        base.LookPlayer();
+        anim.SetBool("Attack", true);
+        yield return new WaitForSeconds(1.5f);
+        anim.SetBool("Attack", false);
+        StartCoroutine(RandomPattern());
     }
+
+    IEnumerator BossDash()
+    {
+        base.LookPlayer();//플레이어 방향 바라보기
+        isDash = true;
+        DashPos.SetActive(true);
+        yield return new WaitForSeconds(1.5f); //패턴 피할 시간
+        transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime); // 보스전방에 DashDir라는 빈 오브젝트 생성해서 추적(전방으로 돌진하게끔) 타겟 포지션으로 하면 이상하게 안됨
+        yield return new WaitForSeconds(2.5f);
+        isDash = false;
+        anim.SetBool("Run", false);
+        DashPos.SetActive(false);
+        StartCoroutine(RandomPattern());
+    }
+    
     private void OnDrawGizmos() // 추적 범위
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Radius);
+        //Gizmos.DrawWireSphere(transform.position, Radius);
 
     }
 }
