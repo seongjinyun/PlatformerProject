@@ -1,36 +1,25 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Mon_Laser : MonoBehaviour
 {
-    public float sca = 0.1f;
+    Rigidbody2D rigidbody;
+    public float bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody2D>();
+        //rigidbody.velocity = transform.position * bulletSpeed;
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
-        sca += 5f * Time.deltaTime;
-        transform.localScale = new Vector2(sca, 10);
-
-
-        if (sca >= 20f)
-        {
-            Destroy(gameObject);
-        }
-
-        if (transform.rotation.y == 0)
-        {
-            transform.Translate(transform.right * 8 * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(transform.right * -8 * Time.deltaTime);
-        }
+        float angle = Mathf.Atan2(rigidbody.velocity.y, rigidbody.velocity.x)
+            * Mathf.Rad2Deg ;
+        transform.eulerAngles = new Vector3(0, 0, angle);
     }
+
 }
