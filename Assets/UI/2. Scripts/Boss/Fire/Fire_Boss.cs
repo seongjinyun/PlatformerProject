@@ -18,7 +18,7 @@ public class Fire_Boss : Basic_Boss
         {
             transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
             anim.SetBool("Dash", true);
-        }
+        } 
     }
     IEnumerator BossDash()
     {
