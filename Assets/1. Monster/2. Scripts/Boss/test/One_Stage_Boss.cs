@@ -19,8 +19,12 @@ public class One_Stage_Boss : Basic_Boss
     protected override void Update()
     {
         base.Update();
-        
-        
+        if (isDash == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
+            anim.SetBool("Run", true);
+        }
+
     }
 
     IEnumerator RandomPattern()
@@ -31,13 +35,13 @@ public class One_Stage_Boss : Basic_Boss
         switch (ranPattern)
         {
             case 0:
-                StartCoroutine(EarthGrow());
+                StartCoroutine(TeleAttack());
                 break;
             case 1:
                 StartCoroutine(BossDash());
                 break;
             case 2:
-                StartCoroutine(TeleAttack());
+                StartCoroutine(EarthGrow());
                 break;
         }
     }
@@ -73,8 +77,9 @@ public class One_Stage_Boss : Basic_Boss
         yield return new WaitForSeconds(1f); // 1초뒤에
         GameObject Skill_1_pos = Instantiate(Pre_EarthGrow, Player_Head.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
         yield return new WaitForSeconds(1f); // 1초뒤에
-        Destroy(Skill_1_pos); // 준비 스킬 삭제
-        GameObject Skill_1 = Instantiate(EarthGrowSkill, Player_Head.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
+        //Destroy(Skill_1_pos); // 준비 스킬 삭제
+        GameObject Skill_1 = Instantiate(EarthGrowSkill, Skill_1_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
+        Destroy(Skill_1_pos);
         Destroy(Skill_1, 1f); // 1초뒤에 삭제
         anim.SetBool("Attack_2", false); // 애니메이션 Idle로
         StartCoroutine(RandomPattern());
