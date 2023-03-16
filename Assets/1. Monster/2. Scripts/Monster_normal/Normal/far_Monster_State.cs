@@ -10,7 +10,8 @@ public class far_Monster_State : MonoBehaviour
     Transform Player;
 
     GameObject Parent;
-    Far_Monster far_monster;
+    
+    Far_Monster far;
 
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
@@ -18,9 +19,15 @@ public class far_Monster_State : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Parent = transform.parent.gameObject;
-        far_monster = Parent.GetComponent<Far_Monster>();
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        far = Player.GetComponent<Far_Monster>();
 
+    }
+
+    void AtkAct()
+    {
+        Debug.Log("f");
+        far.AtkAction.Invoke();
     }
     /*void Update()
     {

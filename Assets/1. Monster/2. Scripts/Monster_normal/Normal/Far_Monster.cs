@@ -65,11 +65,20 @@ public class Far_Monster : Monster_Unit
     private Transform playerTransform; // 플레이어의 트랜스폼
     public bool canAttack = true; // 몬스터가 공격할 수 있는지 여부
 
+    public System.Action AtkAction = null;
+
     //far_Monster_State far_state;
+
+    private void Awake()
+    {
+        AtkAction -= farAttack;
+        AtkAction += farAttack;
+    }
     protected override void Start()
     {
         base.Start();
         playerTransform = GameObject.FindGameObjectWithTag("Player_Hit").transform;
+        
         //far_state = GetComponent<far_Monster_State>();
     }
 
@@ -78,7 +87,7 @@ public class Far_Monster : Monster_Unit
         base.Update();
         if (!MonsterDie)
         {
-            farAttack();
+            //farAttack();
         }
     }
 
