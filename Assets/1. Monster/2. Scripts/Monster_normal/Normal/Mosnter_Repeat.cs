@@ -56,7 +56,7 @@ public class Mosnter_Repeat : Monster_Stats
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player")) // 플레이어가 데미지를 입는 것
         {
             // Health 스크립트 가져오기
             AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
@@ -66,6 +66,12 @@ public class Mosnter_Repeat : Monster_Stats
                 // 체력 감소
                 
             }
+            /*Monster_Stats stat = collision.gameObject.GetComponent<Monster_Stats>(); // 보스, 몬스터가 데미지 입는 것
+            if (stat != null)
+            {
+                stat.Monster_TakeDamage(damage);
+            }*/
+
         }
     }
     /*void Think()

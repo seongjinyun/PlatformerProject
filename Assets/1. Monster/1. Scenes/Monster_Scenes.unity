@@ -331,7 +331,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.03
+  orthographic size: 14.31
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52669c6e95b865d4785f0a6fef8ced87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  far_Parent: {fileID: 0}
 --- !u!1001 &586831033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,6 +674,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b01b486e71cd5644aa2f3db127c53ad, type: 3}
+--- !u!1 &1001841406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1061239860656685046, guid: 209a79edefb8b1d45bc2200591796f3b, type: 3}
+  m_PrefabInstance: {fileID: 1252665216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099625848
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +947,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1146918205, guid: 209a79edefb8b1d45bc2200591796f3b, type: 3}
+      propertyPath: far_Parent
+      value: 
+      objectReference: {fileID: 1001841406}
     - target: {fileID: 1061239860656685046, guid: 209a79edefb8b1d45bc2200591796f3b, type: 3}
       propertyPath: m_Name
       value: Rock_2
