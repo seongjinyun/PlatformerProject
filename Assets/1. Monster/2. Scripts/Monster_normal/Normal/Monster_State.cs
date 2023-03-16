@@ -15,7 +15,7 @@ public class Monster_State : MonoBehaviour
     public bool Attack = false;
 
     GameObject Parent;
-
+    public bool Damage_chk = false;
     float AttackDelay = 1f; // 공격 딜레이
     float nextAttackTime = 0f; // 다음 공격 시간
 
@@ -25,6 +25,7 @@ public class Monster_State : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Parent = transform.parent.gameObject;
+        
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
@@ -107,11 +108,13 @@ public class Monster_State : MonoBehaviour
     {
         yield return new WaitForSeconds(AttackDelay);
         Attack = false;
+
     }
 
     IEnumerator Knockback()
     {
         yield return new WaitForSeconds(0.5f);
+        Damage_chk = true;
         if (Parent.transform.position.x < Player.transform.position.x && Player.transform.rotation.y == 0)
         {
             Player.transform.Translate(1.4f, 0.5f, 0);
@@ -120,8 +123,9 @@ public class Monster_State : MonoBehaviour
         {
             Player.transform.Translate(1.4f, 0.5f, 0);
         }
+        
     }
-
+    
     // Update is called once per frame
     void Update()
     {

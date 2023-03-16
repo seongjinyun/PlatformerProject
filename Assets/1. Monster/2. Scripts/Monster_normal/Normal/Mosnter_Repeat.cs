@@ -2,27 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mosnter_Repeat : MonoBehaviour
+public class Mosnter_Repeat : Monster_Stats
 {
+    //반복 몬스터는 바로 스탯으로 연결
+
     Rigidbody2D rigid;
     public int nextMove;
     public float Speed = 1f;
     public LayerMask Ground_Layer;
 
-    Animator anim;
+    
     // Start is called before the first frame update
-    void Start()
+   protected override void Start()
     {
-        anim = GetComponentInChildren<Animator>();
+        base.Start();
     }
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
 
-        Invoke("Think", 5);
+        //Invoke("Think", 5);
     }
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         anim.SetBool("Run", true);
     }
 
@@ -36,9 +39,10 @@ public class Mosnter_Repeat : MonoBehaviour
         RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, Ground_Layer);
         if (rayHit.collider == null)
         {
-            nextMove *= -1;
+            nextMove *= -1; 
             CancelInvoke();
-            Invoke("Think", 5);
+
+            //Invoke("Think", 5);
 
         }
         if (nextMove > 0)
@@ -50,10 +54,25 @@ public class Mosnter_Repeat : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
-    void Think()
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Health 스크립트 가져오기
+            AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
+            if (player_Hp != null)
+            {
+                player_Hp.TakeDamage(Monster_Damage);
+                // 체력 감소
+                
+            }
+        }
+    }
+    /*void Think()
     {
         nextMove = Random.Range(-1, 2);
+        Debug.Log(nextMove = Random.Range(-1, 2));
 
-        Think();
-    }
+        //Think();
+    }*/
 }
