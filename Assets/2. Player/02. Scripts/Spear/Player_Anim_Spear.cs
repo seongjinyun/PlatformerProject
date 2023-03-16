@@ -34,16 +34,18 @@ public class Player_Anim_Spear : Player_Attack
     Quaternion quaternion = Quaternion.Euler(0, 0, -90);
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         Spear_anim = GetComponent<Animator>();
         player_rigid = GetComponent<Rigidbody2D>();
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         Attack();
         //Spear_skill(); //상속 사용 안할 시 함수
     }

@@ -70,7 +70,8 @@ public class Player_Move : AllUnits.Unit
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
     protected override void Start()
-    {       
+    {
+        base.Start();
         Player_rigid = GetComponent<Rigidbody2D>();
         Player_tr = GetComponent<Transform>();       
         sprite = GetComponent<SpriteRenderer>();
@@ -285,6 +286,7 @@ public class Player_Move : AllUnits.Unit
     // Update is called once per frame
     protected override void Update()
     {
+        base.Update();
         if (Player_UsingItem.UsingActiveSpeed == true)
         {
             speed = 12;

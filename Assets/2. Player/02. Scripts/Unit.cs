@@ -38,5 +38,14 @@ namespace AllUnits
                 }
             }
         }
+        public void TakeDamage(int Monster_Damage) // 피격 
+        {
+            currentHealth -= Monster_Damage;
+            if (currentHealth <= 0)
+            {
+                //DIe 애님 실행 및 삭제
+                Debug.Log("사망");
+            }
+        }
     }
 }

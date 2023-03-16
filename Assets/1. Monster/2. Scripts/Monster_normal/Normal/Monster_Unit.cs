@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster_Unit : MonoBehaviour
+public class Monster_Unit : Monster_Stats
 {
+    //  원거리, 근거리 몬스터
     public enum Boss_State { Idle, Atk, Run, Jump, Die };
     Boss_State boss_State = Boss_State.Idle;
 
@@ -12,9 +13,7 @@ public class Monster_Unit : MonoBehaviour
     // protected - 상속된 스크립트에서만 접근 가능
     public Transform Target;
     public Transform[] WallCheck;
-    public GameObject Child_anim;
-    public Animator anim;
-    public Monster_State Child;
+
 
     public float JumpPower = 3f;
     public float speed = 0.5f;
@@ -27,9 +26,9 @@ public class Monster_Unit : MonoBehaviour
     public Rigidbody2D rb;
 
     public bool collider2D;
-    public bool MonsterDie = false;
+    //public bool MonsterDie = false;
 
-    public int Monster_HP = 10;
+    //public int Monster_HP = 10;
     bool MonCool = false;
 
 
@@ -39,16 +38,17 @@ public class Monster_Unit : MonoBehaviour
     그외 : yield return + new WaitForFixedUpdate / WaitForEndOfFrame 등...
     yield break;*/
 
-    protected virtual void Start()
+    protected override void Start()
     {
-        anim = Child_anim.GetComponent<Animator>();
+        base.Start();
+
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Child = Child_anim.GetComponent<Monster_State>();
         rb = GetComponent<Rigidbody2D>();
     }
 
-    protected virtual void Update()
+    protected override void Update()
     {
+        base.Update();
         Rotate();
     }
     void Rotate()
@@ -73,7 +73,7 @@ public class Monster_Unit : MonoBehaviour
     }
 
     
-    protected virtual void OnTriggerEnter2D(Collider2D coll)
+    /*protected virtual void OnTriggerEnter2D(Collider2D coll)
     {
         
         if (coll.gameObject.CompareTag("Player_Weapon")) // 웨폰 충돌시 HP감소
@@ -91,9 +91,9 @@ public class Monster_Unit : MonoBehaviour
             }
             //StartCoroutine(MonsterHP());
         }
-    }
+    }*/
 
-    IEnumerator MonsterHP()
+    /*IEnumerator MonsterHP()
     {
         yield return new WaitForSeconds(1f);
         MonCool = false;
@@ -102,12 +102,12 @@ public class Monster_Unit : MonoBehaviour
             Boss_Die(); // 체력 0이 될시 Boss_Die 실행
             MonsterDie = true;
         }
-    }
+    }*/
 
-    protected virtual void Boss_Die()
+    /*protected virtual void Boss_Die()
     {
         //Destroy(gameObject,4);
         anim.SetTrigger("Die");
-    }
+    }*/
 
 }

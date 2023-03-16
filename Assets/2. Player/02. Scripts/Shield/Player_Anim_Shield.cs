@@ -29,8 +29,9 @@ public class Player_Anim_Shield : Player_Attack
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Enemy"); 
         //Enemy_Test[0] = enemy;
         Shield_Anim = GetComponent<Animator>();
@@ -118,8 +119,9 @@ public class Player_Anim_Shield : Player_Attack
     }
 
     // Update is called once per frame
-    void Update()
+   protected override void Update()
     {
+        base.Update();
         Attack();
         
         //Debug.Log("°Å¸®" + distance);

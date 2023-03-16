@@ -76,8 +76,10 @@ public class Far_Monster : Monster_Unit
     protected override void Update()
     {
         base.Update();
-        farAttack();
-        
+        if (!MonsterDie)
+        {
+            farAttack();
+        }
     }
 
 
@@ -99,11 +101,11 @@ public class Far_Monster : Monster_Unit
                 // 공격 각도 계산
                 float attackAngle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg - 90f;
                 // 몬스터 위치에서 발사체 생성
-                GameObject projectile = Instantiate(projectilePrefab, Bul_Pos.position, Bul_Pos.rotation);
+                GameObject projectile = Instantiate(projectilePrefab, Bul_Pos.position, Quaternion.Euler(0f,0f,attackAngle));
 
                 // 발사체에 힘을 가해 공격 방향으로 이동시킴
                 projectile.GetComponent<Rigidbody2D>().AddForce(attackDirection * attackForce);
-
+                
                 // 일정 시간이 지난 후 발사체 제거
                 Destroy(projectile, 5f);
                 // 다음 공격을 위한 딜레이 코루틴 실행

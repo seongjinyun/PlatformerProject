@@ -20,10 +20,10 @@ public class Player_Attack : MonoBehaviour
     
     public float Atk_coolTime = 1f;
     //public float Atk_speed = 1f;
-    
+
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
         Player_anim = GetComponent<Animator>();
@@ -69,11 +69,11 @@ public class Player_Attack : MonoBehaviour
         Skill_gauge += 5;
         Debug.Log("°ÔÀÌÁö + " + Skill_gauge);
     }
-    
-    
-       
-        
-    
+
+
+
+
+
 
     /*IEnumerator Kb_Delay()
     {
@@ -114,10 +114,10 @@ public class Player_Attack : MonoBehaviour
             isKnockback = false;
     }
     */
-   
+
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(Skill_gauge >= Max_Skill_gauge)
         {

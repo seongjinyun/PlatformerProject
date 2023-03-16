@@ -41,8 +41,9 @@ public class Player_Anim : Player_Attack
     protected SpriteRenderer sprite;
     //private float str = 16;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         Player_anim = GetComponent<Animator>();
         player_rigid = GetComponent<Rigidbody2D>();
 
@@ -122,7 +123,7 @@ public class Player_Anim : Player_Attack
 
     }
 
-    
+
 
 
     /*public void Nb()
@@ -131,9 +132,9 @@ public class Player_Anim : Player_Attack
         player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
     }*/
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
         //Nb();
         Attack();
     }
