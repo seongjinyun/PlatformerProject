@@ -6,7 +6,6 @@ public class Stage_2_monster : Basic_Boss
 {
     //public BoxCollider2D HitBox;
     public bool Attack_State = false;
-    public float Second_Attack_State = 5f;
     public bool Chase = false;
     public GameObject Attack_Skill_2, Ice_Arrow, Pre_Ice_Spike;
     public Transform self;
@@ -65,10 +64,12 @@ public class Stage_2_monster : Basic_Boss
         yield return new WaitForSeconds(1f); // 1초뒤에
         GameObject Skill_1_pos = Instantiate(Pre_Ice_Spike, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
         yield return new WaitForSeconds(1f); // 1초뒤에
+        
+        GameObject Skill_1 = Instantiate(Ice_Arrow, Skill_1_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
         Destroy(Skill_1_pos); // 준비 스킬 삭제
-        GameObject Skill_1 = Instantiate(Ice_Arrow, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
         Destroy(Skill_1, 1f); // 1초뒤에 삭제
         anim.SetBool("Attack_2", false); // 애니메이션 Idle로
+        StartCoroutine(RandomPattern());
     }
 
     IEnumerator Second_Attack()
@@ -77,7 +78,7 @@ public class Stage_2_monster : Basic_Boss
         
             anim.SetBool("Attack_2", true);
             yield return new WaitForSeconds(1f);
-            GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Quaternion.Euler(0,0,0));
+            GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Skill_pos_2.rotation);
             Destroy(Skill_2, 1f);
             anim.SetBool("Attack_2", false);
             StartCoroutine(RandomPattern());
