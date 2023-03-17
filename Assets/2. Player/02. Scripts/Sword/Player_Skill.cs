@@ -9,43 +9,37 @@ public class Player_Skill : MonoBehaviour
     protected bool isKnockback;
     GameObject[] Enemys; //넉백 변수
 
+    public GameObject Player;
+    AllUnits.Unit Pl_Dam;
+
     // Start is called before the first frame update
     void Start()
     {
         rigid_bullet = GetComponent<Rigidbody2D>();
         Enemys = GameObject.FindGameObjectsWithTag("Monster"); // 넉백
+        Pl_Dam = Player.GetComponent<AllUnits.Unit>();
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision) // 넉백 스크립트
-    {
-        if (collision.gameObject.CompareTag("Monster"))
-        {
-            foreach (GameObject monster in Enemys)
-            {
-                if (transform.position.x >= monster.transform.position.x && !isKnockback)
-
-                {
-                    isKnockback = true;
-                    monster.transform.Translate(2.0f, 0.4f, 0);
-
-                }
-                else
-
-                {
-                    isKnockback = true;
-                    monster.transform.Translate(-2.0f, 0.4f, 0);
-
-                }
-            }
-
-        }
-    }
-    */
-    // Update is called once per frame
+    
     void Update()
     {
         //rigid_bullet.velocity = transform.right *-1 * skill_speed;
         Destroy(gameObject,0.5f);
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Monster") //Monster 태그와 충돌하면
+        {
+            
+            // Health 스크립트 가져오기
+            Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
+            if (Monster_Hp != null)
+            {
+                Debug.Log("몬스터 스킬 피격" + (Monster_Hp.Monster_currentHp - Pl_Dam.SkillDamage));
+                Monster_Hp.Monster_TakeDamage(Pl_Dam.SkillDamage);
+                // 체력 감소
+            }
+        }
+    }
 }

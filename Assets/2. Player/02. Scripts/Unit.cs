@@ -12,6 +12,7 @@ namespace AllUnits
         [SerializeField] internal float maxHealth = 50f;
         [SerializeField] internal float currentHealth;
         [SerializeField] internal int damage = 1;
+        [SerializeField] internal int SkillDamage = 3;
         [SerializeField] internal float damageDelay = 2f;
         private float initialDamageDelay;
         [SerializeField] protected bool isDamage = false;
@@ -44,7 +45,7 @@ namespace AllUnits
             if (currentHealth <= 0)
             {
                 //DIe ¾Ö´Ô ½ÇÇà ¹× »èÁ¦
-                Debug.Log("»ç¸Á");
+                //Debug.Log("»ç¸Á");
             }
         }
     }

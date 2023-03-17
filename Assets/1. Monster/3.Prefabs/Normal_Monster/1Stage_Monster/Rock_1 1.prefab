@@ -3363,6 +3363,7 @@ GameObject:
   - component: {fileID: 1000912434}
   - component: {fileID: 1000912433}
   - component: {fileID: 1000912437}
+  - component: {fileID: 8949268107068777402}
   m_Layer: 6
   m_Name: Rock_1 1
   m_TagString: Monster
@@ -3513,6 +3514,18 @@ MonoBehaviour:
   rb: {fileID: 1000912435}
   collider2D: 0
   Chase: 0
+--- !u!114 &8949268107068777402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587265410899133157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643848829709ea942a61e2b33366d77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7952763028408483493
 GameObject:
   m_ObjectHideFlags: 0
