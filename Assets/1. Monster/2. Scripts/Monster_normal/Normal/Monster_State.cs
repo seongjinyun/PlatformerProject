@@ -19,6 +19,7 @@ public class Monster_State : MonoBehaviour
     float AttackDelay = 1f; // 공격 딜레이
     float nextAttackTime = 0f; // 다음 공격 시간
 
+
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,8 @@ public class Monster_State : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
+
+
 
 /*    public void OnTriggerStay2D(Collider2D collision)
     {

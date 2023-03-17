@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1823698538}
   m_Layer: 6
   m_Name: AttackCol
-  m_TagString: Untagged
+  m_TagString: Monster_Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.024316352, y: 0.059685826}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.014078617, y: 0.35008788}
   m_EdgeRadius: 0
 --- !u!1 &1373582925008273767
 GameObject:
@@ -134,13 +134,14 @@ GameObject:
   - component: {fileID: 1373582925121726024}
   - component: {fileID: 1373582925121726025}
   - component: {fileID: 1373582925121726030}
+  - component: {fileID: 5414043040651619425}
   m_Layer: 6
   m_Name: FireBoss
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1373582925121726037
 Transform:
   m_ObjectHideFlags: 0
@@ -295,6 +296,18 @@ MonoBehaviour:
   MeteorPos: {fileID: 826552051}
   BreathPrepab: {fileID: 6089995053668032491, guid: 034f95b1977064f4cb237a2bc5a98f11, type: 3}
   MeteorPrepab: {fileID: 1160670614112988814, guid: 2b7e6da502bad0b40876135e14ccef7e, type: 3}
+--- !u!114 &5414043040651619425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373582925121726031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643848829709ea942a61e2b33366d77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373582926594520059
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,8 +319,8 @@ GameObject:
   - component: {fileID: 1373582926594520005}
   - component: {fileID: 1373582926594520058}
   m_Layer: 6
-  m_Name: DashPos
-  m_TagString: Untagged
+  m_Name: DashCol
+  m_TagString: Monster_Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

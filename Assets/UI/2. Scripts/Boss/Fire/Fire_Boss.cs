@@ -39,7 +39,7 @@ public class Fire_Boss : Basic_Boss
         yield return new WaitForSeconds(0.5f);
         base.LookPlayer();
         anim.SetBool("Attack", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.8f);
         anim.SetBool("Attack", false);
         StartCoroutine(RandomPattern());
     }

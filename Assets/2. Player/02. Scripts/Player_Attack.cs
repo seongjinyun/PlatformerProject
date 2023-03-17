@@ -12,61 +12,51 @@ public class Player_Attack : MonoBehaviour
     protected Animator Player_anim;
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
-    
+
     public Transform Parent;
 
     protected float Atk_curTime;
 
-    
+
     public float Atk_coolTime = 1f;
     //public float Atk_speed = 1f;
 
+    AllUnits.Unit Player_Dam;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
         Player_anim = GetComponent<Animator>();
+        Player_Dam = GetComponentInParent<AllUnits.Unit>();
     }
 
-    
+
 
     public void Attack_gauge()
     {
-        if(Atk_curTime <= 0)
+
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
+        foreach (Collider2D collider in collider2Ds)
+
+        if (collider.tag == "Monster") //Monster 태그와 충돌하면
         {
-            
-            if (Input.GetKeyDown(KeyCode.X))
+            Gauge();
+            // Health 스크립트 가져오기
+            Monster_Stats Monster_Hp = collider.gameObject.GetComponent<Monster_Stats>();
+            if (Monster_Hp != null)
             {
-                
-                
-                Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
-                foreach (Collider2D collider in collider2Ds)
-
-
-                    if (collider.tag == "Monster") //Monster 태그와 충돌하면
-                    {
-                        Gauge();
-                        
-                    }
-
-                Player_anim.SetTrigger("Attack");
-                
-                Atk_curTime = Atk_coolTime;
-
+                 Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage));
+                 Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
+                  // 체력 감소
             }
         }
-        else
-        {
-            Atk_curTime -= Time.deltaTime;
-        }
-            
     }
 
-    
+
     public void Gauge()
     {
-        Skill_gauge += 5;
+        Skill_gauge += 10;
         Debug.Log("게이지 + " + Skill_gauge);
     }
 
@@ -119,14 +109,20 @@ public class Player_Attack : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(Skill_gauge >= Max_Skill_gauge)
+        if (Skill_gauge >= Max_Skill_gauge)
         {
             Skill_gauge = 100;
             //Debug.Log(Skill_gauge);
         }
+        atk_Anim();
+    }
+    void atk_Anim()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Player_anim.SetTrigger("Attack");
 
-        Attack_gauge();
-       // Player_anim.SetFloat("Attack_speed", Atk_speed);
-        
+        }
+
     }
 }

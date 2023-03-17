@@ -92,7 +92,7 @@ public class Wind_Boss : Basic_Boss
         base.LookPlayer();
         anim.SetBool("Bullet", true);
         yield return new WaitForSeconds(1f);
-        for (int i = 0; i < 360; i += 13)
+        for (int i = 0; i < 360; i += 25)
         {
             GameObject temp = Instantiate(bullet);
             Destroy(temp, 2f);
@@ -100,14 +100,30 @@ public class Wind_Boss : Basic_Boss
             temp.transform.rotation = Quaternion.Euler(0, 0, i);
         }
         yield return new WaitForSeconds(0.5f);
-
-        for (int i = 0; i < 360; i += 13)
+        for (int i = 0; i < 360; i += 25)
         {
             GameObject temp = Instantiate(bullet);
             Destroy(temp, 2f);
             temp.transform.position = BulletPos.transform.position;
-            temp.transform.rotation = Quaternion.Euler(0, 0, i+5);
+            temp.transform.rotation = Quaternion.Euler(0, 0, i+10);
         }
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < 360; i += 25)
+        {
+            GameObject temp = Instantiate(bullet);
+            Destroy(temp, 2f);
+            temp.transform.position = BulletPos.transform.position;
+            temp.transform.rotation = Quaternion.Euler(0, 0, i + 17);
+        }
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < 360; i += 25)
+        {
+            GameObject temp = Instantiate(bullet);
+            Destroy(temp, 2f);
+            temp.transform.position = BulletPos.transform.position;
+            temp.transform.rotation = Quaternion.Euler(0, 0, i + 24);
+        }
+
         yield return new WaitForSeconds(3f);
         anim.SetBool("Bullet", false);
         StartCoroutine(RandomPattern());

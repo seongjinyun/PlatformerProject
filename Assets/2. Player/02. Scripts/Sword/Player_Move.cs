@@ -69,6 +69,8 @@ public class Player_Move : AllUnits.Unit
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
+
+
     protected override void Start()
     {
         base.Start();
@@ -303,7 +305,24 @@ public class Player_Move : AllUnits.Unit
         Dash();
         //Player_anim(h); //애니메이션
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            // Health 스크립트 가져오기
+            Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
+            if (Monster_Hp != null)
+            {
+                Debug.Log("몬스터 피격" + Monster_Hp.Monster_currentHp);
+                Monster_Hp.Monster_TakeDamage(damage);
+                // 체력 감소
+
+            }
+        }
+    }*/
+
+    /*public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Monster_Attack"))
         {
@@ -320,5 +339,5 @@ public class Player_Move : AllUnits.Unit
                 Player_Hp = 100;
             }
         }
-    }
+    }*/
 }
