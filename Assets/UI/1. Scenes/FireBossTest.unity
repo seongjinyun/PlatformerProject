@@ -1263,57 +1263,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1823698536, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_Name
-      value: AttackCol
-      objectReference: {fileID: 0}
-    - target: {fileID: 1823698536, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1823698536, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_TagString
-      value: Monster_Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1823698538, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_Size.x
-      value: 0.014078617
-      objectReference: {fileID: 0}
-    - target: {fileID: 1823698538, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_Size.y
-      value: 0.35008788
-      objectReference: {fileID: 0}
-    - target: {fileID: 1823698538, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.024316352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1823698538, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.059685826
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373582925121726027, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1373582925121726031, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
       propertyPath: m_Name
       value: FireBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 1373582925121726031, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1354,22 +1310,6 @@ PrefabInstance:
     - target: {fileID: 1373582925121726037, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373582926594520059, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_Name
-      value: DashCol
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373582926594520059, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373582926594520059, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_TagString
-      value: Monster_Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1373582926617099738, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba2a7c4f91498db478a4d0fe51e6d442, type: 3}
