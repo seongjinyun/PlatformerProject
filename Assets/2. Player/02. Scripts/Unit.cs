@@ -11,7 +11,7 @@ namespace AllUnits
         [SerializeField] protected float speed = 3f;
         [SerializeField] internal float maxHealth = 50f;
         [SerializeField] internal float currentHealth;
-        [SerializeField] internal float damage = 5f;
+        [SerializeField] internal int damage = 1;
         [SerializeField] internal float damageDelay = 2f;
         private float initialDamageDelay;
         [SerializeField] protected bool isDamage = false;

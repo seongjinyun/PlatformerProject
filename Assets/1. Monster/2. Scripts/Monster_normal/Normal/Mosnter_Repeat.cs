@@ -62,6 +62,7 @@ public class Mosnter_Repeat : Monster_Stats
             AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
             if (player_Hp != null)
             {
+                
                 player_Hp.TakeDamage(Monster_Damage);
                 // 체력 감소
                 
