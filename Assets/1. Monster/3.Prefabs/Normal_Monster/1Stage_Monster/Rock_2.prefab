@@ -1012,11 +1012,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 807d22d665ca53144a2a2dd3805ff0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  WallCheck: []
   Child_anim: {fileID: 6424435378196876399}
   anim: {fileID: 0}
   Child: {fileID: 0}
+  Monster_Damage: 1
+  Monster_hpMax: 10
+  Monster_currentHp: 0
+  MonsterDie: 0
+  Target: {fileID: 0}
+  WallCheck: []
   JumpPower: 3
   speed: 0.5
   Radius: 13.22
@@ -1029,8 +1033,6 @@ MonoBehaviour:
     m_Bits: 0
   rb: {fileID: 0}
   collider2D: 0
-  MonsterDie: 0
-  Monster_HP: 10
   Bul_Pos: {fileID: 757339162}
   attackRange: 18.8
   attackForce: 1200
@@ -3418,6 +3420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52669c6e95b865d4785f0a6fef8ced87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  far_Parent: {fileID: 1061239860656685046}
 --- !u!1 &6503201731252224376
 GameObject:
   m_ObjectHideFlags: 0
