@@ -60,7 +60,7 @@ public class Stage_2_monster : Basic_Boss
     IEnumerator Ice_Bullet()
     {
         base.LookPlayer();
-        anim.SetBool("Attack_2", true); // 애니메이션 실행
+        anim.SetBool("Attack", true); // 애니메이션 실행
         yield return new WaitForSeconds(1f); // 1초뒤에
         GameObject Skill_1_pos = Instantiate(Pre_Ice_Spike, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
         yield return new WaitForSeconds(1f); // 1초뒤에
@@ -68,7 +68,7 @@ public class Stage_2_monster : Basic_Boss
         GameObject Skill_1 = Instantiate(Ice_Arrow, Skill_1_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
         Destroy(Skill_1_pos); // 준비 스킬 삭제
         Destroy(Skill_1, 1f); // 1초뒤에 삭제
-        anim.SetBool("Attack_2", false); // 애니메이션 Idle로
+        anim.SetBool("Attack", false); // 애니메이션 Idle로
         StartCoroutine(RandomPattern());
     }
 
