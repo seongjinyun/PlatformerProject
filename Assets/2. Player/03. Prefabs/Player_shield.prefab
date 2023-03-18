@@ -338,6 +338,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damage: 5
+  SkillDamage: 3
   damageDelay: 2
   isDamage: 0
   Unit_anim: {fileID: 0}
@@ -757,7 +758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3526826421527383147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -893,9 +894,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  maxHealth: 50
+  maxHealth: 100
   currentHealth: 0
   damage: 1
+  SkillDamage: 3
   damageDelay: 2
   isDamage: 0
   Unit_anim: {fileID: 623221117996090822}

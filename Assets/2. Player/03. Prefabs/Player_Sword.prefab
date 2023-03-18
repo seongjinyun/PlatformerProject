@@ -764,9 +764,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  maxHealth: 50
+  maxHealth: 100
   currentHealth: 0
   damage: 1
+  SkillDamage: 3
   damageDelay: 2
   isDamage: 0
   Unit_anim: {fileID: 4232195497802421768}
@@ -2572,6 +2573,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damage: 5
+  SkillDamage: 3
   damageDelay: 2
   isDamage: 0
   Unit_anim: {fileID: 0}

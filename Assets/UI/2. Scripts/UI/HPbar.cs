@@ -7,6 +7,8 @@ using TMPro;
 
 public class HPbar : MonoBehaviour
 {
+    AllUnits.Unit CurHp;
+    public GameObject HP;
     public TMP_Text hp;
     public Slider hpbar;
 
@@ -14,8 +16,11 @@ public class HPbar : MonoBehaviour
 
     public float curhp;
     void Start()
-    {   
-        curhp = Player_Move.Player_Hp;
+    {
+        HP = GameObject.FindWithTag("Player");
+
+        CurHp = HP.GetComponent<AllUnits.Unit>();
+        curhp = CurHp.currentHealth;
         hpbar.value = (float)curhp / (float)maxhp;
     }
 
@@ -23,7 +28,7 @@ public class HPbar : MonoBehaviour
     void Update()
     {
         hp.text = curhp + "/ 100";
-        curhp = Player_Move.Player_Hp;
+        curhp = CurHp.currentHealth;
 
         handleHp();
     }
