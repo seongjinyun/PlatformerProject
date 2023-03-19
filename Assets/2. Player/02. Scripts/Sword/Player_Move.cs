@@ -28,16 +28,11 @@ public class Player_Move : AllUnits.Unit
     public float jumpPower;
     public GameObject jump_effect; //점프 이펙트
     public Transform effect_Pos;
-    public float jump_Count = 2;
+    public float jump_Count = 2; // 점프 횟수
     public bool jump_delay;
+    public float downjump_Power;
 
-    //회피 변수
-    /*public float dodge_Distance;
-    public float dodge_Time;
-    public float dodge_NeedEnergy;
-    private float dodge_TimeCheck;
-    public float dodge_ButtonTime;          // 회피 버튼을 2번 눌러야 되는 시간
-    private bool dodge;*/
+    
 
     //유닛루트 애니메이터
     public Animator move_animator;
@@ -63,7 +58,7 @@ public class Player_Move : AllUnits.Unit
 
     //하단 점프
     int Player_Layer, Ground_Layer;
-
+    
     
 
 
@@ -146,13 +141,16 @@ public class Player_Move : AllUnits.Unit
             
         }
         
-
+        
 
         if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
         {
+
             //effecter.rotationalOffset = 180;
             Debug.Log("아래점프");
             GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
+
+            Player_rigid.AddForce(Vector2.down * downjump_Power, ForceMode2D.Impulse);
 
             if (Ground_Layer != null)
             {

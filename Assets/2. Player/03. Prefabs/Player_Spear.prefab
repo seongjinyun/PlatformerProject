@@ -3117,7 +3117,9 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   damage: 5
-  SkillDamage: 3
+  SkillDamage_Sword: 3
+  SkillDamage_Spear: 3
+  SkillDamage_Shield: 5
   damageDelay: 2
   isDamage: 0
   Unit_anim: {fileID: 0}
@@ -3128,6 +3130,7 @@ MonoBehaviour:
   effect_Pos: {fileID: 4632167481518330398}
   jump_Count: 2
   jump_delay: 0
+  downjump_Power: 0
   move_animator: {fileID: 0}
   dash_Speed: 7
   isDash: 0
@@ -4510,7 +4513,9 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   damage: 1
-  SkillDamage: 3
+  SkillDamage_Sword: 3
+  SkillDamage_Spear: 3
+  SkillDamage_Shield: 5
   damageDelay: 2
   isDamage: 0
   Unit_anim: {fileID: 6997368250977220904}
@@ -4521,6 +4526,7 @@ MonoBehaviour:
   effect_Pos: {fileID: 4632167481518330398}
   jump_Count: 2
   jump_delay: 0
+  downjump_Power: 10
   move_animator: {fileID: 1975779875685421878}
   dash_Speed: 9
   isDash: 0

@@ -70,8 +70,8 @@ public class Player_Skill_Spear : MonoBehaviour
             Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
             if (Monster_Hp != null)
             {
-                Debug.Log("몬스터 스킬 피격" + (Monster_Hp.Monster_currentHp - Pl_Dam.SkillDamage));
-                Monster_Hp.Monster_TakeDamage(Pl_Dam.SkillDamage);
+                Debug.Log("몬스터 스킬 피격" + (Monster_Hp.Monster_currentHp - Pl_Dam.SkillDamage_Spear));
+                Monster_Hp.Monster_TakeDamage(Pl_Dam.SkillDamage_Spear);
                 // 체력 감소
             }
         }
