@@ -3122,6 +3122,7 @@ MonoBehaviour:
   SkillDamage_Shield: 5
   damageDelay: 2
   isDamage: 0
+  CharCode: 0
   Unit_anim: {fileID: 0}
   doubleJumpState: 0
   isGround: 1
@@ -3130,7 +3131,6 @@ MonoBehaviour:
   effect_Pos: {fileID: 4632167481518330398}
   jump_Count: 2
   jump_delay: 0
-  downjump_Power: 0
   move_animator: {fileID: 0}
   dash_Speed: 7
   isDash: 0
@@ -4518,6 +4518,7 @@ MonoBehaviour:
   SkillDamage_Shield: 5
   damageDelay: 2
   isDamage: 0
+  CharCode: 1
   Unit_anim: {fileID: 6997368250977220904}
   doubleJumpState: 0
   isGround: 1
@@ -4526,7 +4527,6 @@ MonoBehaviour:
   effect_Pos: {fileID: 4632167481518330398}
   jump_Count: 2
   jump_delay: 0
-  downjump_Power: 10
   move_animator: {fileID: 1975779875685421878}
   dash_Speed: 9
   isDash: 0

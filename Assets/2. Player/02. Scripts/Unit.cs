@@ -19,6 +19,8 @@ namespace AllUnits
         private float initialDamageDelay;
         [SerializeField] protected bool isDamage = false;
 
+        public int CharCode;
+
         // 자식 클래스들도 사용될 수 있도록
         virtual protected void Start()
         {
