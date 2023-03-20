@@ -10,6 +10,8 @@ public class Player_Skill_Spear : MonoBehaviour
     protected bool isKnockback;
     //public GameObject explo;
 
+    public GameObject Player;
+    AllUnits.Unit Pl_Dam;
 
 
     //float x = 1;
@@ -21,6 +23,7 @@ public class Player_Skill_Spear : MonoBehaviour
     {
         Enemys = GameObject.FindGameObjectsWithTag("Monster");
         rigid_spear = GetComponent<Rigidbody2D>();
+        Pl_Dam = Player.GetComponent<AllUnits.Unit>();
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision) // 넉백 스크립트
@@ -58,6 +61,20 @@ public class Player_Skill_Spear : MonoBehaviour
         //rigid_spear.AddForce(Vector2.left * skill_speed);
         
     }
-    
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Monster") //Monster 태그와 충돌하면
+        {
+
+            // Health 스크립트 가져오기
+            Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
+            if (Monster_Hp != null)
+            {
+                Debug.Log("몬스터 스킬 피격" + (Monster_Hp.Monster_currentHp - Pl_Dam.SkillDamage_Spear));
+                Monster_Hp.Monster_TakeDamage(Pl_Dam.SkillDamage_Spear);
+                // 체력 감소
+            }
+        }
+    }
+
 }
