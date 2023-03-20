@@ -153,7 +153,7 @@ public class Player_Move : AllUnits.Unit
             //effecter.rotationalOffset = 180;
             Debug.Log("아래점프");
             GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
-
+            Debug.Log("22");
             if (Ground_Layer != null)
             {
                 Debug.Log("찾음1");
