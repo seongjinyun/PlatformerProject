@@ -10,15 +10,16 @@ public class Monster_State : MonoBehaviour
 
     Transform Player;
 
-
-    public bool longAtk = false; // 원거리 공격
     public bool Attack = false;
 
     GameObject Parent;
-    public bool Damage_chk = false;
-    float AttackDelay = 1f; // 공격 딜레이
-    float nextAttackTime = 0f; // 다음 공격 시간
 
+    Normal_Monster normalMonster;
+    public GameObject normal_Parent;
+    AllUnits.Unit player_Hp;
+
+    public Transform Attpos;
+    public float AttSize;
 
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
@@ -28,96 +29,56 @@ public class Monster_State : MonoBehaviour
         Parent = transform.parent.gameObject;
         
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        normalMonster = normal_Parent.GetComponent<Normal_Monster>();
+        player_Hp = Player.GetComponent<AllUnits.Unit>();
 
     }
 
-
-
-/*    public void OnTriggerStay2D(Collider2D collision)
+    void AtkAct()
     {
-        if (collision.gameObject.CompareTag("Player") ) // 플레이어 태그면 어택 애니메이션 실행
+        Debug.Log("공격");
+        Collider2D coll = Physics2D.OverlapCircle(Attpos.position, AttSize,normalMonster.Layer_Chase);
+
+        if (coll)
         {
-            
-            //Debug.Log("플레이어 피격");
-            if (Time.time >= nextAttackTime)
+            if (player_Hp != null)
             {
-                if (!Attack)
-                {
-                    animator.SetTrigger("Attack");
-                    animator.SetBool("Run", false);
-                    Attack = true;
-                    Debug.Log("플레이어 공격");
-                    StartCoroutine(Knockback());
-                }
+                StartCoroutine(Knockback());
+                Debug.Log("PlayerHP" + (player_Hp.currentHealth - normalMonster.Monster_Damage));
+                player_Hp.TakeDamage(normalMonster.Monster_Damage);
+                // 체력 감소
+            }
+        }
+       // normalMonster.AtkAction.Invoke();
+
+    }
+
+    void Anim_start()
+    {
+        if (normalMonster.Chase == true)
+        {
+            animator.SetBool("Run", true);
+            if (Attack)
+            {
+                animator.SetBool("Run", false);
             }
             else
             {
-                Attack = false;
-
-                nextAttackTime = Time.time + AttackDelay;
-
+                animator.SetBool("Run", true);
             }
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision) 
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //Attack = true;
-            animator.SetBool("Run", true);
-        }
-    }*/
-    private void isAttack()
-    {
-        // 공격 애니메이션 시작
-        
-        Debug.Log("플레이어 공격");
-        animator.SetTrigger("Attack");
-        StartCoroutine(ResetAttack());
-        StartCoroutine(Knockback());
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            animator.SetTrigger("Attack");
-            // 이동 중지
-            animator.SetBool("Run", false);
-            StartCoroutine(Knockback());
         }
-    }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.CompareTag("Player") && !Attack)
+        else
         {
             animator.SetBool("Run", false);
-            Attack = true;
-            Invoke("isAttack",AttackDelay);
+            
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Attack = false;
-            CancelInvoke("isAttack");
-            animator.SetBool("Run", true);
-        }
-    }
-
-    private IEnumerator ResetAttack()
-    {
-        yield return new WaitForSeconds(AttackDelay);
-        Attack = false;
-
-    }
-
+    
     IEnumerator Knockback()
     {
-        yield return new WaitForSeconds(0.5f);
-        Damage_chk = true;
+        yield return null;
+        
         if (Parent.transform.position.x < Player.transform.position.x && Player.transform.rotation.y == 0)
         {
             Player.transform.Translate(1.4f, 0.5f, 0);
@@ -128,22 +89,10 @@ public class Monster_State : MonoBehaviour
         }
         
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        long_Atk();
-        //melee_Atk();
-    }
-    void long_Atk()
-    {
-        if (longAtk == true)
-        { 
-            Monster_chase_far monster_chase_far = GameObject.Find("Monster2").GetComponent<Monster_chase_far>(); // 오브젝트를 찾아 스크립트를 가져옴
-            if (monster_chase_far.Monster_longAtk == true)  // 몬스터 longAtk가 true시 공격 애니메이션 발동
-            {
-                animator.SetTrigger("Attack");
-            }
-        }
+        Anim_start();
     }
 }
