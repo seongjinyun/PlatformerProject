@@ -677,7 +677,7 @@ Rigidbody2D:
   m_Mass: 1.1253982
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3.4
+  m_GravityScale: 9
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a409340260c2334ba39ddebb0a3994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 9
   maxHealth: 100
   currentHealth: 0
   damage: 1
@@ -772,17 +772,18 @@ MonoBehaviour:
   SkillDamage_Shield: 5
   damageDelay: 2
   isDamage: 0
+  CharCode: 0
   Unit_anim: {fileID: 4232195497802421768}
   doubleJumpState: 0
   isGround: 1
-  jumpPower: 18
+  jumpPower: 34
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 5570715809892869778}
   jump_Count: 2
   jump_delay: 0
-  downjump_power: 10
+  downjump_power: 20
   move_animator: {fileID: 7254028376279072810}
-  dash_Speed: 9
+  dash_Speed: 20
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
@@ -2581,6 +2582,7 @@ MonoBehaviour:
   SkillDamage_Shield: 5
   damageDelay: 2
   isDamage: 0
+  CharCode: 0
   Unit_anim: {fileID: 0}
   doubleJumpState: 0
   isGround: 1

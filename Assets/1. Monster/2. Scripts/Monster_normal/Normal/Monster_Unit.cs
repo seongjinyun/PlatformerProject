@@ -15,7 +15,6 @@ public class Monster_Unit : Monster_Stats
     public float JumpPower = 3f;
     public float speed = 0.5f;
     public float Radius = 10f;
-    public float MoveSpeed = 1f;
 
     public LayerMask Layer_Chase;
     public LayerMask Layer_Wall;
@@ -51,7 +50,8 @@ public class Monster_Unit : Monster_Stats
     void Rotate()
     {
         //for (int i = 0; i < Target.Length; i++)
-    
+        if (!MonsterDie)
+        {
             if (transform.position.x < Target.transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -60,51 +60,12 @@ public class Monster_Unit : Monster_Stats
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
-        
-            
+        }
         //== 타겟 방향으로 회전함 ==//
         //Vector3 dir = target.position - transform.position;
         //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         //transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
     }
-
-    
-    /*protected virtual void OnTriggerEnter2D(Collider2D coll)
-    {
-        
-        if (coll.gameObject.CompareTag("Player_Weapon")) // 웨폰 충돌시 HP감소
-        {
-            if (!MonCool)
-            {
-                Monster_HP -= 1;
-                MonCool = true;
-
-                Debug.Log(Monster_HP);
-            }
-            else
-            {
-                StartCoroutine(MonsterHP());
-            }
-            //StartCoroutine(MonsterHP());
-        }
-    }*/
-
-    /*IEnumerator MonsterHP()
-    {
-        yield return new WaitForSeconds(1f);
-        MonCool = false;
-        if (Monster_HP <= 0)
-        {
-            Boss_Die(); // 체력 0이 될시 Boss_Die 실행
-            MonsterDie = true;
-        }
-    }*/
-
-    /*protected virtual void Boss_Die()
-    {
-        //Destroy(gameObject,4);
-        anim.SetTrigger("Die");
-    }*/
 
 }

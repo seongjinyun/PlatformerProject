@@ -293,11 +293,11 @@ public class Player_Move : AllUnits.Unit
         base.Update();
         if (Player_UsingItem.UsingActiveSpeed == true)
         {
-            speed = 12;
+            speed = 13;
         }
         else
         {
-            speed = 7;
+            speed = 9;
         }
 
         

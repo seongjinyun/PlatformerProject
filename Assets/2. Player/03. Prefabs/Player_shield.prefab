@@ -352,6 +352,7 @@ MonoBehaviour:
   effect_Pos: {fileID: 6075302706591681580}
   jump_Count: 2
   jump_delay: 0
+  downjump_power: 0
   move_animator: {fileID: 0}
   dash_Speed: 5
   isDash: 0
@@ -878,7 +879,7 @@ Rigidbody2D:
   m_Mass: 1.1253982
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3.4
+  m_GravityScale: 9
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -896,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5958793171bf1b429cbb4174cd27ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 9
   maxHealth: 100
   currentHealth: 0
   damage: 1
@@ -909,13 +910,14 @@ MonoBehaviour:
   Unit_anim: {fileID: 623221117996090822}
   doubleJumpState: 0
   isGround: 1
-  jumpPower: 18
+  jumpPower: 34
   jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
   effect_Pos: {fileID: 6075302706591681580}
   jump_Count: 2
   jump_delay: 0
+  downjump_power: 20
   move_animator: {fileID: 881880671221513260}
-  dash_Speed: 9
+  dash_Speed: 20
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0

@@ -32,48 +32,56 @@ public class Mosnter_Repeat : Monster_Stats
     // Update is called once per frame
     void FixedUpdate()
     {
-        rigid.velocity = new Vector2(nextMove * Speed, rigid.velocity.y); // move
-
-        Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y);
-        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, Ground_Layer);
-        if (rayHit.collider == null)
+        if (!MonsterDie)
         {
-            nextMove *= -1; 
-            CancelInvoke();
+            rigid.velocity = new Vector2(nextMove * Speed, rigid.velocity.y); // move
 
-            //Invoke("Think", 5);
+            Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y);
+            Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
+            RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, Ground_Layer);
+            if (rayHit.collider == null)
+            {
+                nextMove *= -1;
+                CancelInvoke();
 
+                //Invoke("Think", 5);
+
+            }
+            if (nextMove > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
-        if (nextMove > 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // 플레이어가 데미지를 입는 것
+        if (!MonsterDie)
         {
-            // Health 스크립트 가져오기
-            AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
-            if (player_Hp != null)
+            if (collision.gameObject.CompareTag("Player")) // 플레이어가 데미지를 입는 것
             {
-                
-                player_Hp.TakeDamage(Monster_Damage);
-                // 체력 감소
-                
-            }
-            /*Monster_Stats stat = collision.gameObject.GetComponent<Monster_Stats>(); // 보스, 몬스터가 데미지 입는 것
-            if (stat != null)
-            {
-                stat.Monster_TakeDamage(damage);
-            }*/
+                // Health 스크립트 가져오기
+                AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
+                if (player_Hp != null)
+                {
 
+                    player_Hp.TakeDamage(Monster_Damage);
+                    // 체력 감소
+
+                }
+                /*Monster_Stats stat = collision.gameObject.GetComponent<Monster_Stats>(); // 보스, 몬스터가 데미지 입는 것
+                if (stat != null)
+                {
+                    stat.Monster_TakeDamage(damage);
+                }*/
+
+            }
         }
+        
     }
     /*void Think()
     {

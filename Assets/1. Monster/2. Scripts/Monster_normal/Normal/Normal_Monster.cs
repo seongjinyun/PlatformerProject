@@ -38,12 +38,12 @@ public class Normal_Monster : Monster_Unit
                     //Debug.Log(!collider2D.gameObject.CompareTag("Player"));
                     if (transform.position.x < Target.transform.position.x)
                     {
-                        rb.velocity = new Vector2(transform.localScale.x * speed * MoveSpeed, rb.velocity.y);
+                        rb.velocity = new Vector2(transform.localScale.x * speed * 0.1f, rb.velocity.y);
                         //anim.SetBool("Run", true);
                     }
                     else
                     {
-                        rb.velocity = new Vector2(-transform.localScale.x * speed * MoveSpeed, rb.velocity.y);
+                        rb.velocity = new Vector2(-transform.localScale.x * speed * 0.1f, rb.velocity.y);
                         //anim.SetBool("Run", true);
                     }
                     //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
@@ -93,17 +93,21 @@ public class Normal_Monster : Monster_Unit
     {
         Collider2D coll = Physics2D.OverlapCircle(Attpos.position, AttSize, Layer_Chase);
 
-        if (coll)
+        if (!MonsterDie)
         {
-            Child.Attack = true;
-            anim.SetTrigger("Attack");
+            if (coll)
+            {
+                Child.Attack = true;
+                anim.SetTrigger("Attack");
 
-        } // 범위 안에 들어오면 어택 - > 
-        else
-        {
-            Child.Attack = false;
-            anim.ResetTrigger("Attack");
+            } // 범위 안에 들어오면 어택 - > 
+            else
+            {
+                Child.Attack = false;
+                anim.ResetTrigger("Attack");
+            }
         }
+        
     }
 
     private void OnDrawGizmos()
