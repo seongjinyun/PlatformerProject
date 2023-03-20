@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Normal_Monster : Monster_Unit
 {
-    
-    float Stun_CoolTime = 5f;
     public bool Chase = false; // 추적
-    
+    public Transform Attpos;
+    public float AttSize;
 
+
+    protected override void Start()
+    {
+        base.Start();
+        
+    }
     protected override void Update()
     {
         base.Update();
         StartCoroutine(MonsterChase());
         StartCoroutine(Boss_Jump());
-
-
+        Attack_anim();
     }
     public IEnumerator MonsterChase() // 범위 내 플레이어 추적
     {
@@ -25,36 +29,32 @@ public class Normal_Monster : Monster_Unit
             collider2D = Physics2D.OverlapCircle(transform.position, Radius, Layer_Chase);
 
             //Debug.Log($"{Time.time}"+collider2D); // �ð����� �浹Ȯ��
-            if (Child.Attack == false)
+
+            if (collider2D)
             {
-                if (collider2D)
+                if (!Child.Attack)
                 {
                     Chase = true;
                     //Debug.Log(!collider2D.gameObject.CompareTag("Player"));
                     if (transform.position.x < Target.transform.position.x)
                     {
                         rb.velocity = new Vector2(transform.localScale.x * speed * MoveSpeed, rb.velocity.y);
-                        anim.SetBool("Run", true);
+                        //anim.SetBool("Run", true);
                     }
                     else
                     {
                         rb.velocity = new Vector2(-transform.localScale.x * speed * MoveSpeed, rb.velocity.y);
-                        anim.SetBool("Run", true);
+                        //anim.SetBool("Run", true);
                     }
                     //transform.position = Vector3.Lerp(transform.position, Target[0].transform.position, speed * Time.deltaTime);
                 }
-                else
-                {
-                    Chase = false;
-                    anim.SetBool("Run", false);
-                }
+
             }
             else
             {
-                //Chase = false;
+                Chase = false;
                 //anim.SetBool("Run", false);
             }
-
         }
     }
 
@@ -89,13 +89,29 @@ public class Normal_Monster : Monster_Unit
         }
     }
 
+    void Attack_anim() // 몬스터 공격 애님 실행되면 -> Monster_State의 AtkAct()함수가 실행됨
+    {
+        Collider2D coll = Physics2D.OverlapCircle(Attpos.position, AttSize, Layer_Chase);
+
+        if (coll)
+        {
+            Child.Attack = true;
+            anim.SetTrigger("Attack");
+
+        } // 범위 안에 들어오면 어택 - > 
+        else
+        {
+            Child.Attack = false;
+            anim.ResetTrigger("Attack");
+        }
+    }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Radius);
 
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(Attpos.position, AttSize);
     }
-
-
 }

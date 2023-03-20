@@ -26,7 +26,7 @@ public class far_Monster_State : MonoBehaviour
 
     void AtkAct()
     {
-        Debug.Log("f");
+        Debug.Log("원거리 공격");
         far.AtkAction.Invoke();
     }
     /*void Update()
