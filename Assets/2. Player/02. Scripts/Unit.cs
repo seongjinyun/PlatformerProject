@@ -9,8 +9,8 @@ namespace AllUnits
     {
         // 플레이어와 적 유닛이 공통으로 사용할 변수
         [SerializeField] protected float speed = 3f;
-        [SerializeField] internal float maxHealth = 50f;
-        [SerializeField] internal float currentHealth;
+        [SerializeField] internal int maxHealth = 50;
+        [SerializeField] internal int currentHealth;
         [SerializeField] internal int damage = 1;
         [SerializeField] internal int SkillDamage_Sword = 3;
         [SerializeField] internal int SkillDamage_Spear = 3;

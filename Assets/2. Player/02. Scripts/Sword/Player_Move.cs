@@ -30,6 +30,7 @@ public class Player_Move : AllUnits.Unit
     public Transform effect_Pos;
     public float jump_Count = 2;
     public bool jump_delay;
+    public float downjump_power;
 
     //회피 변수
     /*public float dodge_Distance;
@@ -153,6 +154,7 @@ public class Player_Move : AllUnits.Unit
             //effecter.rotationalOffset = 180;
             Debug.Log("아래점프");
             GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
+            Player_rigid.AddForce(Vector2.down * downjump_power, ForceMode2D.Impulse);
             Debug.Log("22");
             if (Ground_Layer != null)
             {
