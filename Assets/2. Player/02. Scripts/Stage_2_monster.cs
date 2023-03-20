@@ -10,7 +10,9 @@ public class Stage_2_monster : Basic_Boss
     public GameObject Attack_Skill_2, Ice_Arrow, Pre_Ice_Spike;
     public Transform self;
     public Transform Skill_pos_2, Ice_Arrow_pos;
-    
+    //public Transform self_tr;
+    //public Vector2 monster_boxSize;
+    //public BoxCollider2D mon_attack;
 
     protected override void Start()
     {
@@ -23,7 +25,7 @@ public class Stage_2_monster : Basic_Boss
     {
         base.Update();
         //StartCoroutine(MonsterChase());
-        
+       
 
         if (isDash == true)
         {
@@ -108,7 +110,35 @@ public class Stage_2_monster : Basic_Boss
         DashPos.SetActive(false);
         StartCoroutine(RandomPattern());
     }
+
     
+    /*public void en_Attack()
+    {
+        mon_attack.enabled = true;
+    }
+    public void de_Attack()
+    {
+        mon_attack.enabled = false;
+    }*/
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(self_tr.position, monster_boxSize, 0);
+        foreach (Collider2D collider in collider2Ds)
+            if (collider.tag == "Player")
+            {
+                AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
+                if (player_Hp != null)
+                {
+
+                    player_Hp.TakeDamage(Monster_Damage);
+                    // 체력 감소
+
+                }
+            }
+
+    }*/
+
     private void OnDrawGizmos() // 추적 범위
     {
         Gizmos.color = Color.red;
