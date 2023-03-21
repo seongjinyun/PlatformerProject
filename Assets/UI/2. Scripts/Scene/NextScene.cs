@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-    public string NextSceneName;
+    public string NextMapName;
 
-    private HeroKnight player;
+    public CurMapName Player;
     void Start()
     {
-        player = FindObjectOfType<HeroKnight>(); 
+        Player = FindObjectOfType<CurMapName>();
 
     }
 
@@ -24,8 +24,8 @@ public class NextScene : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player.currentmapname = NextSceneName;
-            SceneManager.LoadScene(NextSceneName);
+            Player.CurMapname = NextMapName;
+            LoadingSceneController.LoadScene(NextMapName);
             Destroy(this.gameObject);
         }
     }

@@ -5,13 +5,13 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public string Spawnpoint;
-    private HeroKnight player;
+    public CurMapName Player;
     void Start()
     {
-        player = FindObjectOfType<HeroKnight>();
-        if (Spawnpoint == player.currentmapname)
+        Player = FindObjectOfType<CurMapName>();
+        if (Spawnpoint == Player.CurMapname)
         {
-            player.transform.position = this.transform.position;
+            Player.transform.position = this.transform.position;
         }
     }
 
