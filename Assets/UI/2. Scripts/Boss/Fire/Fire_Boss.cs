@@ -12,6 +12,7 @@ public class Fire_Boss : Basic_Boss
         base.Start();
         StartCoroutine(RandomPattern());
 
+
     }
     protected override void Update()
     {
@@ -22,6 +23,8 @@ public class Fire_Boss : Basic_Boss
             anim.SetBool("Dash", true);
         } 
     }
+    
+
     IEnumerator BossDash()
     {
         base.LookPlayer();//플레이어 방향 바라보기

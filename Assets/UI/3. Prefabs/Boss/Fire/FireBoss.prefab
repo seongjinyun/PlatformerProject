@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1373582925121726037
 Transform:
   m_ObjectHideFlags: 0
@@ -284,15 +284,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981096bde5bca8542bcfd1f2bc061256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster_Hp: 10
+  Child_anim: {fileID: 1373582925121726031}
+  anim: {fileID: 0}
+  Child: {fileID: 0}
   Monster_Damage: 1
+  Monster_hpMax: 10
+  Monster_currentHp: 0
+  MonsterDie: 0
   DashPos: {fileID: 1373582926594520059}
   speed: 20
-  Child_anim: {fileID: 1373582925121726031}
   isDash: 0
-  anim: {fileID: 0}
+  Dash_Damage: 1
+  FireMeteor_Damage: 1
+  FireBreath_Damage: 1
+  Attack_Pos: {fileID: 0}
+  Attack_Radius: 0
+  P_Layer:
+    serializedVersion: 2
+    m_Bits: 0
   Target: {fileID: 0}
   DashDir: {fileID: 1373582926617099685}
+  player_Hp: {fileID: 0}
   BreathPos: {fileID: 1373582925008273766}
   MeteorPos: {fileID: 826552051}
   BreathPrepab: {fileID: 6089995053668032491, guid: 034f95b1977064f4cb237a2bc5a98f11, type: 3}
