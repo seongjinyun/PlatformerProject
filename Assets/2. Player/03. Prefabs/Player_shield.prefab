@@ -169,8 +169,6 @@ GameObject:
   - component: {fileID: 5557219117114761314}
   - component: {fileID: 5557219117114761317}
   - component: {fileID: 5557219117114761313}
-  - component: {fileID: 8884758210228658017}
-  - component: {fileID: 3044852931184766821}
   m_Layer: 10
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -314,71 +312,12 @@ MonoBehaviour:
   pos: {fileID: 5557219116328778751}
   player_boxSize: {x: 1.5, y: 2}
   Kb_delayTime: 2
-  Parent: {fileID: 0}
-  Atk_coolTime: 1
   Shield_Skill: {fileID: 5893873013301558805, guid: 3c2c6db1742a38645979e8e0afe25f21, type: 3}
   player: {fileID: 2197968755758976567}
   Shield_pos:
   - {fileID: 0}
   Knockback_speed: 3
   Enemy_Test1: []
---- !u!114 &8884758210228658017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623221117996090822}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5958793171bf1b429cbb4174cd27ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  maxHealth: 50
-  currentHealth: 0
-  damage: 5
-  SkillDamage_Sword: 3
-  SkillDamage_Spear: 3
-  SkillDamage_Shield: 5
-  damageDelay: 2
-  isDamage: 0
-  CharCode: 0
-  Unit_anim: {fileID: 0}
-  doubleJumpState: 0
-  isGround: 1
-  jumpPower: 5
-  jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
-  effect_Pos: {fileID: 6075302706591681580}
-  jump_Count: 2
-  jump_delay: 0
-  downjump_power: 0
-  move_animator: {fileID: 0}
-  dash_Speed: 5
-  isDash: 0
-  StartDashTimer: 0
-  isDash_Delay: 0
-  Dash_delayTime: 2
-  Time_end: 0
-  Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
-  dash_transform: {fileID: 3433241586592486182}
---- !u!114 &3044852931184766821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623221117996090822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a12dedb44fb227344b5aaccca6370d07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pos: {fileID: 5557219116328778751}
-  player_boxSize: {x: 1.5, y: 2}
-  Kb_delayTime: 2
-  Parent: {fileID: 3526826421527383147}
-  Atk_coolTime: 1
 --- !u!1 &752957350612141577
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +865,7 @@ MonoBehaviour:
   Time_end: 0
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3433241586592486182}
+  shadow: {fileID: 7650155042430000967}
 --- !u!70 &740505468377667571
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1554,9 +1494,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3278393303421348943}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0028448, y: 1.0028448, z: 1.0028448}
+  m_LocalScale: {x: 1.0028454, y: 1.0028452, z: 1.0028448}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5171907505764901073}

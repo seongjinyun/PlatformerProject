@@ -65,8 +65,8 @@ public class Player_Move : AllUnits.Unit
     //하단 점프
     int Player_Layer, Ground_Layer;
 
-    
 
+    public GameObject shadow;
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -143,8 +143,6 @@ public class Player_Move : AllUnits.Unit
             Destroy(jump_ef, 0.5f);
             jump_Count--;
             
-
-            
         }
         
 
@@ -211,10 +209,11 @@ public class Player_Move : AllUnits.Unit
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);
-        
-        
-               
+        transform.position += speed * Time.deltaTime * new Vector3(h, 0, 0);
+        shadow.transform.position = new Vector3(transform.position.x, 0, 0);
+
+
+
     }
     
 

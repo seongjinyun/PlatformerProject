@@ -13,13 +13,7 @@ public class Player_Attack : MonoBehaviour
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
 
-    public Transform Parent;
-
-    protected float Atk_curTime;
-
-
-    public float Atk_coolTime = 1f;
-    //public float Atk_speed = 1f;
+    
 
     AllUnits.Unit Player_Dam;
 
