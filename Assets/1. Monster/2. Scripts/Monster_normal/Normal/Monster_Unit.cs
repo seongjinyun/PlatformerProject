@@ -46,6 +46,10 @@ public class Monster_Unit : Monster_Stats
     {
         base.Update();
         Rotate();
+        if (MonsterDie)
+        {
+            Destroy(gameObject, 1.5f);
+        }
     }
     void Rotate()
     {

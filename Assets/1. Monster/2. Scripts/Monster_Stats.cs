@@ -35,8 +35,9 @@ public class Monster_Stats : MonoBehaviour
         Monster_currentHp -= damage;
         if (Monster_currentHp <= 0)
         {
+            MonsterDie = true;
             anim.SetTrigger("Die");
-            Destroy(gameObject, 1.2f);
+            //Destroy(gameObject, 1.2f);
             //DIe ¾Ö´Ô ½ÇÇà ¹× »èÁ¦
             Debug.Log("»ç¸Á");
         }
