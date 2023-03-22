@@ -5,8 +5,6 @@ using UnityEngine;
 public class Stage_2_monster : Basic_Boss
 {
     //public BoxCollider2D HitBox;
-    public bool Attack_State = false;
-    public bool Chase = false;
     public GameObject Attack_Skill_2, Ice_Arrow, Pre_Ice_Spike;
     public Transform self;
     public Transform Skill_pos_2, Ice_Arrow_pos;

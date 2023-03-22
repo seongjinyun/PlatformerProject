@@ -53,7 +53,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1839667444}
   - component: {fileID: 1839667446}
-  - component: {fileID: 1839667445}
   m_Layer: 6
   m_Name: Pos
   m_TagString: BossWeapon
@@ -102,19 +101,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.43}
   m_EdgeRadius: 0
---- !u!114 &1839667445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839667443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f372c07b174b38458bcff249fd605fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent_Boss: {fileID: 5713860511332802695}
 --- !u!1 &1934587465
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +144,64 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
+--- !u!1 &502968072349512395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5474341156918364712}
+  - component: {fileID: 2108011683598304849}
+  m_Layer: 6
+  m_Name: Attack_Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5474341156918364712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502968072349512395}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5713860511332802690}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2108011683598304849
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502968072349512395}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1017263668812293214
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +305,7 @@ Transform:
   - {fileID: 1864480671346987219}
   - {fileID: 1114349195517514056}
   - {fileID: 5750910989362599642}
+  - {fileID: 5474341156918364712}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -369,16 +414,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9826c7470fd5b43a965f3b0ffc9fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster_Hp: 10
+  Child_anim: {fileID: 5713860511332802695}
+  anim: {fileID: 0}
+  Child: {fileID: 0}
   Monster_Damage: 1
+  Monster_hpMax: 10
+  Monster_currentHp: 0
+  MonsterDie: 0
   DashPos: {fileID: 6246096216042164371}
   speed: 20
-  Child_anim: {fileID: 5713860511332802695}
   isDash: 0
-  anim: {fileID: 0}
+  Dash_Damage: 1
+  FireBreath_Damage: 1
+  FireMeteor_Damage: 1
+  WindTornado_Damage: 1
+  WindBullet_Damage: 1
+  Attack_Pos: {fileID: 5474341156918364712}
+  Attack_Radius: 0
+  P_Layer:
+    serializedVersion: 2
+    m_Bits: 0
   Target: {fileID: 0}
   DashDir: {fileID: 1864480671346987219}
-  Attack_State: 0
+  player_Hp: {fileID: 0}
   EarthGrowSkill: {fileID: 7737431757278319029, guid: b8fdb0f5337e82f46a47ed335aacfe6e, type: 3}
   Pre_EarthGrow: {fileID: 122596793138762460, guid: 313b4e1534ce3c64fbe1c5b04aba14cb, type: 3}
   Player_Head: {fileID: 5750910989362599642}

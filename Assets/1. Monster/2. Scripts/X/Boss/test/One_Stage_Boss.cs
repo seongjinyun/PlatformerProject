@@ -5,9 +5,8 @@ using UnityEngine;
 public class One_Stage_Boss : Basic_Boss
 {
     //public BoxCollider2D HitBox;
-    public bool Attack_State = false;
     public GameObject EarthGrowSkill, Pre_EarthGrow;
-    public Transform Player_Head;
+    Transform Player_Head;
 
     protected override void Start()
     {

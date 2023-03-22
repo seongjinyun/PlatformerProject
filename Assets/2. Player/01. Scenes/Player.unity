@@ -1464,6 +1464,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2925426732888119082, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1944357
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925426732888119082, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.33783114
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925426732888119082, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.14729792
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925426732888119082, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.041733384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2925426732888119082, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7762043725294540939, guid: 2a21556be4b9b9e46bf6c41a86ac58e1, type: 3}
       propertyPath: Attack_Pos
       value: 
@@ -1516,6 +1536,22 @@ PrefabInstance:
     - target: {fileID: 1864480671346987219, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108011683598304849, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108011683598304849, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108011683598304849, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108011683598304849, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5713860511332802690, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_RootOrder
@@ -1571,7 +1607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5750910989362599642, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6246096216042164371, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
       propertyPath: m_IsActive
