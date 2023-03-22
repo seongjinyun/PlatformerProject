@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCTri2 : MonoBehaviour
 {
     public GameObject TalkPannel;
-
+    public bool istalk;
     void Update()
     {
 
@@ -17,6 +17,7 @@ public class NPCTri2 : MonoBehaviour
         {
             TalkPannel.SetActive(true);
             Time.timeScale = 0f;
+
         }
     }
 }
