@@ -21,7 +21,7 @@ public class One_Stage_Atk_State : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //GameObject.FindGameObjectWithTag("Monster").GetComponent<One_Stage_Boss>().Attack_State = true;
-            parent_Boss.GetComponent<One_Stage_Boss>().Attack_State = true;
+            //parent_Boss.GetComponent<One_Stage_Boss>().Attack_State = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -29,7 +29,7 @@ public class One_Stage_Atk_State : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //GameObject.FindGameObjectWithTag("Monster").GetComponent<One_Stage_Boss>().Attack_State = false;
-            parent_Boss.GetComponent<One_Stage_Boss>().Attack_State = false;
+            //parent_Boss.GetComponent<One_Stage_Boss>().Attack_State = false;
 
         }
     }

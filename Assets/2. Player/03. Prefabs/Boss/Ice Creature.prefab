@@ -165,15 +165,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec748f16e17cd744c8343e43f289a0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster_Hp: 10
+  Child_anim: {fileID: 1472928334106585503}
+  anim: {fileID: 0}
+  Child: {fileID: 0}
   Monster_Damage: 1
+  Monster_hpMax: 10
+  Monster_currentHp: 0
+  MonsterDie: 0
   DashPos: {fileID: 6400354604305848752}
   speed: 15
-  Child_anim: {fileID: 1472928334106585503}
   isDash: 0
-  anim: {fileID: 0}
+  Dash_Damage: 1
+  FireBreath_Damage: 1
+  FireMeteor_Damage: 1
+  WindTornado_Damage: 1
+  WindBullet_Damage: 1
+  Attack_Pos: {fileID: 0}
+  Attack_Radius: 0
+  P_Layer:
+    serializedVersion: 2
+    m_Bits: 0
   Target: {fileID: 0}
   DashDir: {fileID: 8163816882240921871}
+  player_Hp: {fileID: 0}
   Attack_State: 0
   Chase: 0
   Attack_Skill_2: {fileID: 2192852321311539694, guid: 4247fe2d02bf9a5489fa1be5616f84bc, type: 3}
@@ -204,7 +218,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3148390811402539245}
   - component: {fileID: 1545573348077182734}
-  - component: {fileID: 4920076370050426995}
   m_Layer: 6
   m_Name: Pos
   m_TagString: BossWeapon
@@ -253,19 +266,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18, y: 0.43}
   m_EdgeRadius: 0
---- !u!114 &4920076370050426995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2518665066927698420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dbf7483d4915ce49a2591602bcef6bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent_Boss: {fileID: 1472928334106585503}
 --- !u!1 &4550483536467947346
 GameObject:
   m_ObjectHideFlags: 0
