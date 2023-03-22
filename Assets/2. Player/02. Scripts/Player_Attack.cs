@@ -13,13 +13,7 @@ public class Player_Attack : MonoBehaviour
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
 
-    public Transform Parent;
-
-    protected float Atk_curTime;
-
-
-    public float Atk_coolTime = 1f;
-    //public float Atk_speed = 1f;
+    
 
     AllUnits.Unit Player_Dam;
 
@@ -35,20 +29,24 @@ public class Player_Attack : MonoBehaviour
 
     public void Attack_gauge()
     {
-
+        
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
         foreach (Collider2D collider in collider2Ds)
-
-        if (collider.tag == "Monster") //Monster 태그와 충돌하면
         {
-            Gauge();
-            // Health 스크립트 가져오기
             Monster_Stats Monster_Hp = collider.gameObject.GetComponent<Monster_Stats>();
-            if (Monster_Hp != null)
+            if (collider.tag == "Monster" && Monster_Hp.Monster_currentHp > 0) //Monster 태그와 충돌하면
             {
-                 Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage));
-                 Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
-                  // 체력 감소
+
+                // Health 스크립트 가져오기
+                //Monster_Stats Monster_Hp = collider.gameObject.GetComponent<Monster_Stats>();
+                if (Monster_Hp != null)
+                {
+                    Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage));
+                    Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
+                    Gauge();
+                    // 체력 감소
+                }
+
             }
         }
     }
@@ -56,8 +54,10 @@ public class Player_Attack : MonoBehaviour
 
     public void Gauge()
     {
+        
         Skill_gauge += 10;
         Debug.Log("게이지 + " + Skill_gauge);
+        
     }
 
 

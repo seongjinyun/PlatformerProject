@@ -9,6 +9,7 @@ public class Player_Anim_Shield : Player_Attack
     public GameObject Shield_Skill;
     public GameObject player;
     public GameObject[] Shield_pos;
+    protected Rigidbody2D player_rigid;
 
     //넉백
     public float Knockback_speed = 3;
@@ -23,6 +24,7 @@ public class Player_Anim_Shield : Player_Attack
     //public Transform pos;
     //public Vector2 player_boxSize;
 
+
     //테스트
     //public GameObject[] Enemy_Test;
     public GameObject[] Enemy_Test1; // 쉴드 스킬 위치 조정
@@ -34,6 +36,7 @@ public class Player_Anim_Shield : Player_Attack
         base.Start();
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Enemy"); 
         //Enemy_Test[0] = enemy;
+        player_rigid = GetComponent<Rigidbody2D>();
         Shield_Anim = GetComponent<Animator>();
         //float dist = Vector3.Distance(transform.position, enemy.transform.position);
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
@@ -101,7 +104,7 @@ public class Player_Anim_Shield : Player_Attack
             foreach (GameObject pos in Enemy_Test1)
             {
                 float dist = Vector3.Distance(transform.position, pos.transform.position);
-                if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
+                if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f && Skill_gauge >= 100) //스킬게이지가 100이고 A키를 누르면
                 {
 
                     //float dist = Vector3.Distance(transform.position, mob.transform.position);

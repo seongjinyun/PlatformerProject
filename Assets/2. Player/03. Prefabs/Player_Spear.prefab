@@ -1,41 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1210284435
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1210284436}
-  m_Layer: 10
-  m_Name: Player_Hit
-  m_TagString: Player_Hit
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1210284436
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210284435}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.35}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2657438444314131828}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.01, y: 0.4599998}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &68018563278523713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,7 +2915,6 @@ GameObject:
   - component: {fileID: 3342777113667186680}
   - component: {fileID: 3342777113667186687}
   - component: {fileID: 3342777113667186681}
-  - component: {fileID: 8239939761566214221}
   m_Layer: 10
   m_Name: UnitRoot
   m_TagString: Untagged
@@ -3101,46 +3064,6 @@ MonoBehaviour:
   enemy: {fileID: 0}
   Knockback_speed: 3
   Spear_skill: {fileID: 8628470640604114127, guid: 5790db4f437c16640a9647cb2ac2cb16, type: 3}
---- !u!114 &8239939761566214221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6997368250977220904}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e9e64f1e8ea94b478735e565a0d9ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  maxHealth: 50
-  currentHealth: 0
-  damage: 5
-  SkillDamage_Sword: 3
-  SkillDamage_Spear: 3
-  SkillDamage_Shield: 5
-  damageDelay: 2
-  isDamage: 0
-  CharCode: 0
-  Unit_anim: {fileID: 0}
-  doubleJumpState: 0
-  isGround: 1
-  jumpPower: 9
-  jump_effect: {fileID: 1043217395584677672, guid: b101b0f35d314694fb1852787bfef841, type: 3}
-  effect_Pos: {fileID: 4632167481518330398}
-  jump_Count: 2
-  jump_delay: 0
-  downjump_power: 0
-  move_animator: {fileID: 0}
-  dash_Speed: 7
-  isDash: 0
-  StartDashTimer: 0
-  isDash_Delay: 0
-  Dash_delayTime: 2
-  Time_end: 0
-  Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
-  dash_transform: {fileID: 3009705684756170922}
 --- !u!1 &7040630432626823499
 GameObject:
   m_ObjectHideFlags: 0
@@ -4379,7 +4302,6 @@ RectTransform:
   - {fileID: 4632167481518330398}
   - {fileID: 3342777113000464955}
   - {fileID: 3195534590762374200}
-  - {fileID: 1210284436}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
@@ -4539,6 +4461,7 @@ MonoBehaviour:
   Time_end: 0
   Dash_effect: {fileID: 5655155049375518704, guid: 5ec89853dc6a8a842a68f6d83871880c, type: 3}
   dash_transform: {fileID: 3009705684756170922}
+  shadow: {fileID: 5797425555756224725}
 --- !u!95 &7208729996220655730
 Animator:
   serializedVersion: 4

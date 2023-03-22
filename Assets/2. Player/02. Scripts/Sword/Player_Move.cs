@@ -64,9 +64,10 @@ public class Player_Move : AllUnits.Unit
 
     //하단 점프
     int Player_Layer, Ground_Layer;
-
     
 
+
+    public GameObject shadow;
 
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
@@ -116,7 +117,6 @@ public class Player_Move : AllUnits.Unit
         if (jump_Count == 2)
         {
             isGround = true;
-            jump_delay = false;
         }
         else
             isGround = false;
@@ -143,44 +143,43 @@ public class Player_Move : AllUnits.Unit
             Destroy(jump_ef, 0.5f);
             jump_Count--;
             
-
-            
         }
-        
 
 
-        if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
+        if (isGround == true)
         {
-            //effecter.rotationalOffset = 180;
-            Debug.Log("아래점프");
-            GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
-            Player_rigid.AddForce(Vector2.down * downjump_power, ForceMode2D.Impulse);
-            Debug.Log("22");
-            if (Ground_Layer != null)
+            if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
             {
-                Debug.Log("찾음1");
-            }
-            else
-            {
-                Debug.Log("못찾음1");
-            }
-            foreach (GameObject layer in Ground_Layer)
-            {
-                if (layer.GetComponent<Down_Platform>())
+                //effecter.rotationalOffset = 180;
+                Debug.Log("아래점프");
+                GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
+                Player_rigid.AddForce(Vector2.down * downjump_power, ForceMode2D.Impulse);
+                Debug.Log("22");
+                if (Ground_Layer != null)
                 {
-                    Debug.Log("찾음2");
+                    Debug.Log("찾음1");
                 }
                 else
                 {
-                    Debug.Log("못찾음2");
+                    Debug.Log("못찾음1");
                 }
-                layer.GetComponent<Down_Platform>().ChangeLayer();
-                
-            }
-            // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
-        }
-        
+                foreach (GameObject layer in Ground_Layer)
+                {
+                    if (layer.GetComponent<Down_Platform>())
+                    {
+                        Debug.Log("찾음2");
+                    }
+                    else
+                    {
+                        Debug.Log("못찾음2");
+                    }
+                    layer.GetComponent<Down_Platform>().ChangeLayer();
 
+                }
+                // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
+            }
+
+        }
     }
     
 
@@ -211,10 +210,11 @@ public class Player_Move : AllUnits.Unit
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        transform.position += speed * Time.deltaTime * new Vector3(h, v, 0);
-        
-        
-               
+        transform.position += speed * Time.deltaTime * new Vector3(h, 0, 0);
+        shadow.transform.position = new Vector3(transform.position.x, 0, 0);
+
+
+
     }
     
 
