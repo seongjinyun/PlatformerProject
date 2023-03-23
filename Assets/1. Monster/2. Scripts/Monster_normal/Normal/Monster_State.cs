@@ -21,6 +21,9 @@ public class Monster_State : MonoBehaviour
     public Transform Attpos;
     public float AttSize;
 
+    
+
+
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
     void Start()

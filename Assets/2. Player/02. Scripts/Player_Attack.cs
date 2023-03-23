@@ -36,12 +36,11 @@ public class Player_Attack : MonoBehaviour
             Monster_Stats Monster_Hp = collider.gameObject.GetComponent<Monster_Stats>();
             if (collider.tag == "Monster" && Monster_Hp.Monster_currentHp > 0) //Monster 태그와 충돌하면
             {
-
                 // Health 스크립트 가져오기
                 //Monster_Stats Monster_Hp = collider.gameObject.GetComponent<Monster_Stats>();
                 if (Monster_Hp != null)
                 {
-                    Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage));
+                    Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage)); // 몬스터hp - 플레이어 데미지
                     Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
                     Gauge();
                     // 체력 감소
