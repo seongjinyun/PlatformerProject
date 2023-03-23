@@ -104,7 +104,7 @@ public class Player_Anim_Shield : Player_Attack
             foreach (GameObject pos in Enemy_Test1)
             {
                 float dist = Vector3.Distance(transform.position, pos.transform.position);
-                if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f && Skill_gauge >= 100) //스킬게이지가 100이고 A키를 누르면
+                if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
                 {
 
                     //float dist = Vector3.Distance(transform.position, mob.transform.position);

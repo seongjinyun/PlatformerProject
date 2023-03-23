@@ -69,11 +69,11 @@ public class Mosnter_Repeat : Monster_Stats
                 AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
                 if (player_Hp != null)
                 {
-<<<<<<< Updated upstream
+
                     Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
                     player_Hp.TakeDamage(Monster_Damage);
                     // 체력 감소
-=======
+
                     if(testAttacked == false)
                     {
                         player_Hp.TakeDamage(Monster_Damage);
@@ -86,7 +86,7 @@ public class Mosnter_Repeat : Monster_Stats
                         player_Hp.TakeDamage(test_damage);
                         StartCoroutine(test());
                     }
->>>>>>> Stashed changes
+
 
                 }
                 /*Monster_Stats stat = collision.gameObject.GetComponent<Monster_Stats>(); // 보스, 몬스터가 데미지 입는 것

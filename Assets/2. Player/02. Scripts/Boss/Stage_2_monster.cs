@@ -8,6 +8,7 @@ public class Stage_2_monster : Basic_Boss
     public GameObject Attack_Skill_2, Ice_Arrow, Pre_Ice_Spike;
     public Transform self;
     public Transform Skill_pos_2, Ice_Arrow_pos;
+     
     //public Transform self_tr;
     //public Vector2 monster_boxSize;
     //public BoxCollider2D mon_attack;
@@ -39,7 +40,7 @@ public class Stage_2_monster : Basic_Boss
     {
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
 
-        int ranPattern = Random.Range(0, 4);
+        int ranPattern = Random.Range(0, 1);
         switch (ranPattern)
         {
             case 0:
@@ -72,16 +73,17 @@ public class Stage_2_monster : Basic_Boss
         StartCoroutine(RandomPattern());
     }
 
+    
     IEnumerator Second_Attack()
     {
         base.LookPlayer();
         
-            anim.SetBool("Attack_2", true);
-            yield return new WaitForSeconds(1f);
-            GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Skill_pos_2.rotation);
-            Destroy(Skill_2, 1f);
-            anim.SetBool("Attack_2", false);
-            StartCoroutine(RandomPattern());
+        anim.SetBool("Attack_2", true);
+        yield return new WaitForSeconds(1f); // 1초 뒤에
+        GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Skill_pos_2.rotation); //인스턴시에이트
+        Destroy(Skill_2, 1f);
+        anim.SetBool("Attack_2", false);
+        StartCoroutine(RandomPattern());
         
     }
     IEnumerator TeleAttack()

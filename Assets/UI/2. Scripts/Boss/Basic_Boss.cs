@@ -11,6 +11,11 @@ public class Basic_Boss : Monster_Stats
     //public GameObject Child_anim;
     public bool isDash;
 
+    public int EarthBullet_Damage = 1;
+
+    public int IceBullet_Damage = 1;
+    public int IceWave_Damage = 1;
+
     public int Dash_Damage = 1;
     public int FireBreath_Damage = 1;
     public int FireMeteor_Damage = 1;
