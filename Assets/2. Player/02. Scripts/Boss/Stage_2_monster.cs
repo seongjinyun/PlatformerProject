@@ -81,7 +81,7 @@ public class Stage_2_monster : Basic_Boss
         anim.SetBool("Attack_2", true);
         yield return new WaitForSeconds(1f); // 1초 뒤에
         GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Skill_pos_2.rotation); //인스턴시에이트
-        Destroy(Skill_2, 1f);
+        Destroy(Skill_2, 2f);
         anim.SetBool("Attack_2", false);
         StartCoroutine(RandomPattern());
         
