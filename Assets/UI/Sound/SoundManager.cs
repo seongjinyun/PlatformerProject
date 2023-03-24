@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
     public void SetBgmVolume(float volume)
     {
         BgmSource.volume = volume;
+    
     }
 
     public void SfxVolume(float sfxvolume)
