@@ -22,6 +22,9 @@ public class Far_Monster_Bullet : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, angle);
     }*/
     public int Monster_Damage = 1;
+    public int Zero_Damage = 0;
+    public bool Attacked = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // 충돌한 오브젝트가 플레이어인 경우
@@ -31,9 +34,19 @@ public class Far_Monster_Bullet : MonoBehaviour
             AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
             if (player_Hp != null)
             {
-                Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
-                player_Hp.TakeDamage(Monster_Damage);
-                // 체력 감소
+                if (Attacked == false)
+                {
+                    Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
+                    player_Hp.TakeDamage(Monster_Damage);
+                    // 체력 감소
+                    Attacked = true;
+                }
+                else
+                {
+                    player_Hp.TakeDamage(Zero_Damage);
+                    Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Zero_Damage));
+                    StartCoroutine(Zero());
+                }
 
             }
             // 투사체 파괴
@@ -43,5 +56,11 @@ public class Far_Monster_Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator Zero()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Attacked = false;
     }
 }

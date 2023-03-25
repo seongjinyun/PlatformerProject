@@ -21,6 +21,8 @@ public class Monster_State : MonoBehaviour
     public Transform Attpos;
     public float AttSize;
 
+    public bool Attacked = false;
+
     
 
 
@@ -46,10 +48,20 @@ public class Monster_State : MonoBehaviour
         {
             if (player_Hp != null)
             {
-                StartCoroutine(Knockback());
-                Debug.Log("PlayerHP" + (player_Hp.currentHealth - normalMonster.Monster_Damage));
-                player_Hp.TakeDamage(normalMonster.Monster_Damage);
-                // 체력 감소
+                if(Attacked == false)
+                {
+                    StartCoroutine(Knockback());
+                    Debug.Log("PlayerHP" + (player_Hp.currentHealth - normalMonster.Monster_Damage));
+                    player_Hp.TakeDamage(normalMonster.Monster_Damage);
+                    // 체력 감소
+                    Attacked = true;
+                }
+                else
+                {
+                    Debug.Log("PlayerHP" + (player_Hp.currentHealth - normalMonster.Zero_damage));
+                    player_Hp.TakeDamage(normalMonster.Zero_damage);
+                    StartCoroutine(Zero());
+                }
             }
         }
        // normalMonster.AtkAction.Invoke();
@@ -77,7 +89,7 @@ public class Monster_State : MonoBehaviour
             
         }
     }
-    
+
     IEnumerator Knockback()
     {
         yield return null;
@@ -91,6 +103,12 @@ public class Monster_State : MonoBehaviour
             Player.transform.Translate(1.4f, 0.5f, 0);
         }
         
+    }
+
+    IEnumerator Zero()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Attacked = false;
     }
 
     // Update is called once per frame

@@ -70,12 +70,13 @@ public class Mosnter_Repeat : Monster_Stats
                 if (player_Hp != null)
                 {
 
-                    Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
-                    player_Hp.TakeDamage(Monster_Damage);
+                    //Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
+                    //player_Hp.TakeDamage(Monster_Damage);
                     // 체력 감소
 
                     if(testAttacked == false)
                     {
+                        Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
                         player_Hp.TakeDamage(Monster_Damage);
                         
                         // 체력 감소
@@ -83,8 +84,9 @@ public class Mosnter_Repeat : Monster_Stats
                     }
                     else
                     {
-                        player_Hp.TakeDamage(test_damage);
-                        StartCoroutine(test());
+                        Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Zero_damage));
+                        player_Hp.TakeDamage(Zero_damage);
+                        StartCoroutine(Zero());
                     }
 
 
@@ -100,9 +102,9 @@ public class Mosnter_Repeat : Monster_Stats
         
     }
 
-    IEnumerator test()
+    IEnumerator Zero()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
         testAttacked = false;
     }
     /*void Think()
