@@ -417,6 +417,7 @@ MonoBehaviour:
   Child_anim: {fileID: 5713860511332802695}
   anim: {fileID: 0}
   Child: {fileID: 0}
+  test_damage: 0
   Monster_Damage: 1
   Monster_hpMax: 10
   Monster_currentHp: 0
@@ -424,22 +425,24 @@ MonoBehaviour:
   DashPos: {fileID: 6246096216042164371}
   speed: 20
   isDash: 0
+  EarthBullet_Damage: 1
+  IceBullet_Damage: 1
+  IceWave_Damage: 1
   Dash_Damage: 1
   FireBreath_Damage: 1
   FireMeteor_Damage: 1
   WindTornado_Damage: 1
   WindBullet_Damage: 1
   Attack_Pos: {fileID: 5474341156918364712}
-  Attack_Radius: 0
+  Attack_Radius: 2.19
   P_Layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   Target: {fileID: 0}
   DashDir: {fileID: 1864480671346987219}
   player_Hp: {fileID: 0}
   EarthGrowSkill: {fileID: 7737431757278319029, guid: b8fdb0f5337e82f46a47ed335aacfe6e, type: 3}
   Pre_EarthGrow: {fileID: 122596793138762460, guid: 313b4e1534ce3c64fbe1c5b04aba14cb, type: 3}
-  Player_Head: {fileID: 5750910989362599642}
 --- !u!70 &2073460378
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -510,7 +513,7 @@ GameObject:
   - component: {fileID: 1864480671346987219}
   m_Layer: 6
   m_Name: DashDir
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -10,6 +10,12 @@ public class Basic_Boss : Monster_Stats
     public float speed; //대쉬 속도 변수 
     //public GameObject Child_anim;
     public bool isDash;
+    
+    // 스킬 공격력 변수
+    public int EarthBullet_Damage = 1;
+
+    public int IceBullet_Damage = 1;
+    public int IceWave_Damage = 1;
 
     public int Dash_Damage = 1;
     public int FireBreath_Damage = 1;

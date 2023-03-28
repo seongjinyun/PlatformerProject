@@ -12,7 +12,6 @@ public class Fire_Boss : Basic_Boss
         base.Start();
         StartCoroutine(RandomPattern());
 
-
     }
     protected override void Update()
     {

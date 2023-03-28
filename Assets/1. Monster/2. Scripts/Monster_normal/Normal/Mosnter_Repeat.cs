@@ -11,6 +11,7 @@ public class Mosnter_Repeat : Monster_Stats
     public float Speed = 1f;
     public LayerMask Ground_Layer;
 
+    public bool testAttacked = false;
     
     // Start is called before the first frame update
    protected override void Start()
@@ -68,9 +69,26 @@ public class Mosnter_Repeat : Monster_Stats
                 AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
                 if (player_Hp != null)
                 {
-                    Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
-                    player_Hp.TakeDamage(Monster_Damage);
+
+                    //Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
+                    //player_Hp.TakeDamage(Monster_Damage);
                     // 체력 감소
+
+                    if(testAttacked == false)
+                    {
+                        Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
+                        player_Hp.TakeDamage(Monster_Damage);
+                        
+                        // 체력 감소
+                        testAttacked = true;
+                    }
+                    else
+                    {
+                        Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Zero_damage));
+                        player_Hp.TakeDamage(Zero_damage);
+                        StartCoroutine(Zero());
+                    }
+
 
                 }
                 /*Monster_Stats stat = collision.gameObject.GetComponent<Monster_Stats>(); // 보스, 몬스터가 데미지 입는 것
@@ -82,6 +100,12 @@ public class Mosnter_Repeat : Monster_Stats
             }
         }
         
+    }
+
+    IEnumerator Zero()
+    {
+        yield return new WaitForSeconds(0.2f);
+        testAttacked = false;
     }
     /*void Think()
     {

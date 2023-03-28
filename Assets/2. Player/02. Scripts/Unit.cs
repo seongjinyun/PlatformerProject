@@ -52,5 +52,11 @@ namespace AllUnits
                 //Debug.Log("사망");
             }
         }
+
+        public void NotDamage(int Zero_Damage) //무적 피격
+        {
+            currentHealth -= Zero_Damage;
+            
+        }
     }
 }
