@@ -2434,6 +2434,7 @@ MonoBehaviour:
   normal_Parent: {fileID: 7587265410899133157}
   Attpos: {fileID: 1370077490}
   AttSize: 1.5
+  Attacked: 0
 --- !u!1 &5311105629056829820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,7 +3439,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3.4
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3527,8 +3528,9 @@ MonoBehaviour:
   Child_anim: {fileID: 5255749461413138084}
   anim: {fileID: 0}
   Child: {fileID: 0}
+  Zero_damage: 0
   Monster_Damage: 1
-  Monster_hpMax: 1000
+  Monster_hpMax: 7
   Monster_currentHp: 0
   MonsterDie: 0
   Target: {fileID: 0}
