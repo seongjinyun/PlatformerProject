@@ -317,6 +317,7 @@ MonoBehaviour:
   Shield_pos:
   - {fileID: 0}
   Knockback_speed: 3
+  Enemy_Test: []
   Enemy_Test1: []
 --- !u!1 &752957350612141577
 GameObject:
@@ -4621,6 +4622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speed
       objectReference: {fileID: 0}
+    - target: {fileID: 3411590264550693258, guid: 4f93229014eb77c4cb141e4d5e7937e7, type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f93229014eb77c4cb141e4d5e7937e7, type: 3}
 --- !u!4 &2169080230362038183 stripped
@@ -4640,6 +4645,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3526826421527383147}
     m_Modifications:
+    - target: {fileID: 2079540642004442568, guid: ab0527b63ef1cf447aeef9b4899fa53f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079540642004442568, guid: ab0527b63ef1cf447aeef9b4899fa53f, type: 3}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2079540642004442568, guid: ab0527b63ef1cf447aeef9b4899fa53f, type: 3}
       propertyPath: moveWithTransform
       value: 0

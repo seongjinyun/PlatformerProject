@@ -45,11 +45,18 @@ namespace AllUnits
         }
         public void TakeDamage(int Monster_Damage) // ÇÇ°Ý 
         {
-            currentHealth -= Monster_Damage;
-            if (currentHealth <= 0)
+            if (Player_UsingItem.UsingActiveShield == false)
             {
-                //DIe ¾Ö´Ô ½ÇÇà ¹× »èÁ¦
-                //Debug.Log("»ç¸Á");
+                currentHealth -= Monster_Damage;
+                if (currentHealth <= 0)
+                {
+                    //DIe ¾Ö´Ô ½ÇÇà ¹× »èÁ¦
+                    //Debug.Log("»ç¸Á");
+                }
+            }
+            else
+            {
+
             }
         }
 

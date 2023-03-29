@@ -55,11 +55,11 @@ public class TalkManager : MonoBehaviour
             CharSprite = Shield;
         }
 
-        if (Input.GetMouseButtonDown(0) && TalkPannel.activeSelf == true)
+        if (Input.GetKeyDown(KeyCode.Space) && TalkPannel.activeSelf == true)
         {
             StartCoroutine(ActTalk());
         }
-        if (Input.GetMouseButtonDown(0) && TalkPannel2.activeSelf == true)
+        if (Input.GetKeyDown(KeyCode.Space) && TalkPannel2.activeSelf == true)
         {
             StartCoroutine(ActTalk2());
         }

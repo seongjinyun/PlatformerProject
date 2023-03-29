@@ -15,7 +15,7 @@ public class Postion : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Player_Move.Player_Hp += 20;
+            Player_Move.Player_Hp += 5;
 
             Destroy(gameObject);
         }

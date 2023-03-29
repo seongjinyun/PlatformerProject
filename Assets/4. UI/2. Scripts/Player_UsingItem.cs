@@ -69,7 +69,7 @@ public class Player_UsingItem : MonoBehaviour
         if(UsingActiveSpeed == true)
         {
             Activecooldown += Time.deltaTime;
-            if(Activecooldown >= 15)
+            if(Activecooldown >= 5)
             {
                 UsingActiveSpeed = false;
                 Activecooldown = 0;
@@ -78,7 +78,7 @@ public class Player_UsingItem : MonoBehaviour
         if (UsingActiveShield == true)
         {
             Activecooldown += Time.deltaTime;
-            if (Activecooldown >= 15)
+            if (Activecooldown >= 3)
             {
                 UsingActiveShield = false;
                 ShieldOn = false;
