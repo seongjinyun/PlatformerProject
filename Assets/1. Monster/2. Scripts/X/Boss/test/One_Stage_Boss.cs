@@ -34,7 +34,7 @@ public class One_Stage_Boss : Basic_Boss
     {
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
 
-        int ranPattern = Random.Range(0, 1);
+        int ranPattern = Random.Range(0, 3);
         switch (ranPattern)
         {
             case 0:
@@ -63,10 +63,10 @@ public class One_Stage_Boss : Basic_Boss
     {
         base.LookPlayer();//플레이어 방향 바라보기
         isDash = true;
+        SfxManger.instance.SfxPlay("Rock_Rush", clip[0]);
         DashPos.SetActive(true);
         yield return new WaitForSeconds(1.5f); //패턴 피할 시간
         transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime); // 보스전방에 DashDir라는 빈 오브젝트 생성해서 추적(전방으로 돌진하게끔) 타겟 포지션으로 하면 이상하게 안됨
-        SfxManger.instance.SfxPlay("Rock_Rush", clip[0]);
         yield return new WaitForSeconds(2.5f);
         isDash = false;
         anim.SetBool("Run", false);
