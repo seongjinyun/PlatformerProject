@@ -17,6 +17,12 @@ public class TalkManager : MonoBehaviour
     public GameObject PL;
     public int CharCodecopy;
     public static int DataNum,DataNum2;
+
+
+    private void Start()
+    {
+        
+    }
     void Awake()
     {
         talkData = new Dictionary<int, string>();
@@ -25,11 +31,18 @@ public class TalkManager : MonoBehaviour
         DataNum2 = 1;
         GenerateData();
 
+        
+
+    }
+
+    void Update()
+    {
+
         PL = GameObject.FindWithTag("Player");
 
         unit = PL.GetComponent<AllUnits.Unit>();
 
-        if(unit.CharCode == 0)
+        if (unit.CharCode == 0)
         {
             CharSprite = Sword;
         }
@@ -39,13 +52,9 @@ public class TalkManager : MonoBehaviour
         }
         if (unit.CharCode == 2)
         {
-            CharSprite = Shield ;
+            CharSprite = Shield;
         }
 
-    }
-
-    void Update()
-    {
         if (Input.GetMouseButtonDown(0) && TalkPannel.activeSelf == true)
         {
             StartCoroutine(ActTalk());

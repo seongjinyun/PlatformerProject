@@ -32,7 +32,6 @@ public class Stage_2_monster : Basic_Boss
             anim.SetBool("Run", true);
         }
 
-        
     }
 
 

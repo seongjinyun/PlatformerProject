@@ -23,6 +23,7 @@ public class Wind_Boss : Basic_Boss
         }
 
         BulletPos.transform.rotation = transform.rotation;
+
     }
 
     IEnumerator BossDash()
