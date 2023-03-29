@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemDatabase : MonoBehaviour
 {
     public static ItemDatabase instance;
+    public AudioClip clip;
     private void Awake()
     {
         instance = this;
@@ -17,6 +18,7 @@ public class ItemDatabase : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player") 
         {
+            SfxManger.instance.SfxPlay("Get_Item", clip);
             GameObject go = Instantiate(DropItemPrefab ,transform.position, Quaternion.identity);
             go.GetComponent<DropItem>().DropItems(itemDB[Random.Range(0, 4)]);
 

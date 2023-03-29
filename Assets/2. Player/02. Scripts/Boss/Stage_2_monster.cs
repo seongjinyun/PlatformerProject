@@ -8,7 +8,8 @@ public class Stage_2_monster : Basic_Boss
     public GameObject Attack_Skill_2, Ice_Arrow, Pre_Ice_Spike;
     public Transform self;
     public Transform Skill_pos_2, Ice_Arrow_pos;
-     
+    public AudioClip[] clip; // 0 = 얼음 강타, 1 = 얼음 슬램
+
     //public Transform self_tr;
     //public Vector2 monster_boxSize;
     //public BoxCollider2D mon_attack;
@@ -61,6 +62,7 @@ public class Stage_2_monster : Basic_Boss
     {
         base.LookPlayer();
         anim.SetBool("Attack", true); // 애니메이션 실행
+        SfxManger.instance.SfxPlay("Ice_Skill_1", clip[0]);
         yield return new WaitForSeconds(1f); // 1초뒤에
         GameObject Skill_1_pos = Instantiate(Pre_Ice_Spike, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
         yield return new WaitForSeconds(1f); // 1초뒤에
@@ -78,6 +80,7 @@ public class Stage_2_monster : Basic_Boss
         base.LookPlayer();
         
         anim.SetBool("Attack_2", true);
+        SfxManger.instance.SfxPlay("Ice_Skill_explosion", clip[1]);
         yield return new WaitForSeconds(1f); // 1초 뒤에
         GameObject Skill_2 = Instantiate(Attack_Skill_2, Skill_pos_2.position, Skill_pos_2.rotation); //인스턴시에이트
         Destroy(Skill_2, 2f);

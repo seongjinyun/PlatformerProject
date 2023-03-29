@@ -319,6 +319,7 @@ MonoBehaviour:
   Child_anim: {fileID: 1373582925121726031}
   anim: {fileID: 0}
   Child: {fileID: 0}
+  Zero_damage: 0
   Monster_Damage: 1
   Monster_hpMax: 10
   Monster_currentHp: 0
@@ -326,9 +327,14 @@ MonoBehaviour:
   DashPos: {fileID: 1373582926594520059}
   speed: 20
   isDash: 0
+  EarthBullet_Damage: 1
+  IceBullet_Damage: 1
+  IceWave_Damage: 1
   Dash_Damage: 1
-  FireMeteor_Damage: 1
   FireBreath_Damage: 1
+  FireMeteor_Damage: 1
+  WindTornado_Damage: 1
+  WindBullet_Damage: 1
   Attack_Pos: {fileID: 1121109114}
   Attack_Radius: 2.19
   P_Layer:
@@ -341,6 +347,10 @@ MonoBehaviour:
   MeteorPos: {fileID: 826552051}
   BreathPrepab: {fileID: 6089995053668032491, guid: 034f95b1977064f4cb237a2bc5a98f11, type: 3}
   MeteorPrepab: {fileID: 1160670614112988814, guid: 2b7e6da502bad0b40876135e14ccef7e, type: 3}
+  clip:
+  - {fileID: 8300000, guid: aabc89fd8f025be4ebb794464ee049be, type: 3}
+  - {fileID: 8300000, guid: 351820be2b01fec4a9d1201d0d2fe34f, type: 3}
+  - {fileID: 8300000, guid: e2d8bf3e165e7f640bb8d608df9cfe5b, type: 3}
 --- !u!114 &5414043040651619425
 MonoBehaviour:
   m_ObjectHideFlags: 0

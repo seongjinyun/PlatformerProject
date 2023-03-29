@@ -14,6 +14,8 @@ public class far_Monster_State : MonoBehaviour
     Far_Monster far;
     public GameObject far_Parent;
 
+    public AudioClip clip;
+
     //gameObject.GetComponent<Monster_chase_Test>().enabled = false; // 스크립트 비활성화
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class far_Monster_State : MonoBehaviour
     {
         Debug.Log("원거리 공격");
         far.AtkAction.Invoke();
+        SfxManger.instance.SfxPlay("Shooting", clip);
     }
     /*void Update()
     {

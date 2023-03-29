@@ -12,6 +12,8 @@ public class Player_UsingItem : MonoBehaviour
     public float Activecooldown;
     public static bool ShieldOn;
 
+    public AudioClip[] clip; // 사운드 클립 0 = Invisibility, 1 = Speed_Item
+
     int playerSpeed = 10;
     Rigidbody2D rid2D;
     // Start is called before the first frame update
@@ -48,6 +50,7 @@ public class Player_UsingItem : MonoBehaviour
                     if (inven.items[0].itemName == "Speed")
                     {
                         particleObject.Play();
+                        SfxManger.instance.SfxPlay("Speed_Item", clip[1]);
                         Inventory.instance.RemoveInven();
                         Inventory.instance.onChangeItem();
                         UsingActiveSpeed = true;
@@ -58,6 +61,7 @@ public class Player_UsingItem : MonoBehaviour
                     if (inven.items[0].itemName == "Shield")
                     {
                         particleObject2.Play();
+                        SfxManger.instance.SfxPlay("Invisibility", clip[0]);
                         Inventory.instance.RemoveInven();
                         Inventory.instance.onChangeItem();
                         UsingActiveShield = true;

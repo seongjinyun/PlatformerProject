@@ -7,6 +7,7 @@ public class Fire_Boss : Basic_Boss
     public Transform BreathPos, MeteorPos;
     public GameObject BreathPrepab, MeteorPrepab;
 
+    public AudioClip[] clip; // 0 = 불 평타, 1 = 브레스, 2 = 메테오
     protected override void Start()
     {
         base.Start();
@@ -48,6 +49,7 @@ public class Fire_Boss : Basic_Boss
         yield return new WaitForSeconds(0.5f);
         base.LookPlayer();
         anim.SetBool("Attack", true);
+        SfxManger.instance.SfxPlay("Fire_Attack", clip[0]);
         yield return new WaitForSeconds(0.8f);
         anim.SetBool("Attack", false);
         StartCoroutine(RandomPattern());
@@ -81,6 +83,7 @@ public class Fire_Boss : Basic_Boss
         LookPlayer();
 
         anim.SetBool("Breath", true);
+        SfxManger.instance.SfxPlay("Fire_Skill_breath", clip[1]);
         yield return new WaitForSeconds(0.3f);
         GameObject Breath = Instantiate(BreathPrepab, BreathPos.position, BreathPos.rotation);
         yield return new WaitForSeconds(2.0f);
@@ -92,6 +95,7 @@ public class Fire_Boss : Basic_Boss
     IEnumerator FireMeteor()
     {
         anim.SetBool("Meteor", true);
+        SfxManger.instance.SfxPlay("Fire_Skill_Meteor", clip[2]);
         GameObject Breath = Instantiate(MeteorPrepab, MeteorPos.position, MeteorPos.rotation);
         yield return new WaitForSeconds(2.0f);
         anim.SetBool("Meteor", false);

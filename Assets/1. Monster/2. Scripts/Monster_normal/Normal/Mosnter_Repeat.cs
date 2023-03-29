@@ -104,7 +104,7 @@ public class Mosnter_Repeat : Monster_Stats
 
     IEnumerator Zero()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.03f);
         testAttacked = false;
     }
     /*void Think()

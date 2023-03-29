@@ -538,15 +538,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4a217d7cf453a408b495c3527e5fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster_Hp: 10
+  Child_anim: {fileID: 614974777994533246}
+  anim: {fileID: 614974777994533123}
+  Child: {fileID: 0}
+  Zero_damage: 0
   Monster_Damage: 1
+  Monster_hpMax: 10
+  Monster_currentHp: 0
+  MonsterDie: 0
   DashPos: {fileID: 614974777023263077}
   speed: 20
-  Child_anim: {fileID: 614974777994533246}
   isDash: 0
-  anim: {fileID: 614974777994533123}
+  EarthBullet_Damage: 1
+  IceBullet_Damage: 1
+  IceWave_Damage: 1
+  Dash_Damage: 1
+  FireBreath_Damage: 1
+  FireMeteor_Damage: 1
+  WindTornado_Damage: 1
+  WindBullet_Damage: 1
+  Attack_Pos: {fileID: 0}
+  Attack_Radius: 0
+  P_Layer:
+    serializedVersion: 2
+    m_Bits: 0
   Target: {fileID: 0}
   DashDir: {fileID: 614974777712648029}
+  player_Hp: {fileID: 0}
   Tornado1: {fileID: 614974776953949989}
   Tornado2: {fileID: 614974777567078697}
   Tornado3: {fileID: 614974776535222548}
@@ -554,6 +572,9 @@ MonoBehaviour:
   BulletPos: {fileID: 614974776523021137}
   TornadoPrefab: {fileID: 2484364988957290317, guid: ad0b221b017508e48926f02e67b6d267, type: 3}
   bullet: {fileID: 1091533816232650872, guid: 468fe3d71e6def347a193527e7711d45, type: 3}
+  clip:
+  - {fileID: 8300000, guid: cfdcbb0d0aaf6d848a08c93928bcaa94, type: 3}
+  - {fileID: 8300000, guid: 3c2d9d28b90473b4a878935c5b833afb, type: 3}
 --- !u!114 &1026781329743631231
 MonoBehaviour:
   m_ObjectHideFlags: 0

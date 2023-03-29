@@ -7,6 +7,8 @@ public class Wind_Boss : Basic_Boss
     public Transform Tornado1, Tornado2, Tornado3, Tornado4, BulletPos; 
     public GameObject TornadoPrefab;
     public GameObject bullet;
+
+    public AudioClip[] clip; // 0 = 토네이도, 1 = 탄막
     protected override void Start()
     {
         base.Start();
@@ -76,6 +78,7 @@ public class Wind_Boss : Basic_Boss
     IEnumerator SpawnTornado()
     {
         anim.SetBool("Tornado", true);
+        SfxManger.instance.SfxPlay("Wind_Skill_Tornado", clip[0]);
         yield return new WaitForSeconds(1f);
         GameObject Tor1 = Instantiate(TornadoPrefab, Tornado1.position, Tornado1.rotation);
         GameObject Tor2 = Instantiate(TornadoPrefab, Tornado2.position, Tornado1.rotation);
@@ -94,6 +97,7 @@ public class Wind_Boss : Basic_Boss
     {
         base.LookPlayer();
         anim.SetBool("Bullet", true);
+        SfxManger.instance.SfxPlay("Wind_Skill_smallTor", clip[1]);
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < 360; i += 25)
         {

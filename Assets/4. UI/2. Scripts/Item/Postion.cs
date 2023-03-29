@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Postion : MonoBehaviour
 {
-    
+    public AudioClip clip;
     // Update is called once per frame
     void Update()
     {
@@ -15,6 +15,7 @@ public class Postion : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            SfxManger.instance.SfxPlay("Heal_Item", clip);
             Player_Move.Player_Hp += 5;
 
             Destroy(gameObject);

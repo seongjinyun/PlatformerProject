@@ -61,6 +61,8 @@ public class Player_Move : AllUnits.Unit
     public GameObject Dash_effect; // 대쉬이펙트
     public Transform dash_transform;
 
+    //사운드
+    public AudioClip[] clip;
 
     //하단 점프
     int Player_Layer, Ground_Layer;
@@ -133,6 +135,7 @@ public class Player_Move : AllUnits.Unit
 
         if (isGround && Input.GetKeyDown(KeyCode.C)) //점프
         {
+            SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
@@ -140,6 +143,7 @@ public class Player_Move : AllUnits.Unit
             
         }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //더블점프
         {
+            SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             doubleJumpState = false;
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
@@ -153,6 +157,7 @@ public class Player_Move : AllUnits.Unit
         {
             if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
             {
+                SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
                 //effecter.rotationalOffset = 180;
                 Debug.Log("아래점프");
                 GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
@@ -233,16 +238,7 @@ public class Player_Move : AllUnits.Unit
         {
             if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
             {
-                /*StartCoroutine(DashCoolTime(5f));
-
-                IEnumerator DashCoolTime(float dash_cool)
-                {
-                    while(dash_cool > 1.0f)
-                    {
-                        dash_cool -= Time.deltaTime;
-                        yield return new WaitForFixedUpdate();
-                    }
-                }*/
+                SfxManger.instance.SfxPlay("Player_Dash", clip[1]);
 
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
 

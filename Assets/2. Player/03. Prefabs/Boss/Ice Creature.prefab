@@ -169,7 +169,7 @@ MonoBehaviour:
   Child_anim: {fileID: 1472928334106585503}
   anim: {fileID: 0}
   Child: {fileID: 0}
-  test_damage: 0
+  Zero_damage: 0
   Monster_Damage: 1
   Monster_hpMax: 10
   Monster_currentHp: 0
@@ -177,6 +177,9 @@ MonoBehaviour:
   DashPos: {fileID: 6400354604305848752}
   speed: 15
   isDash: 0
+  EarthBullet_Damage: 1
+  IceBullet_Damage: 1
+  IceWave_Damage: 1
   Dash_Damage: 1
   FireBreath_Damage: 1
   FireMeteor_Damage: 1
@@ -196,6 +199,9 @@ MonoBehaviour:
   self: {fileID: 1472928334106585488}
   Skill_pos_2: {fileID: 1753987691178269662}
   Ice_Arrow_pos: {fileID: 6063032521119976200}
+  clip:
+  - {fileID: 8300000, guid: d3d614796e4dd7343a6c80ac6fd10f45, type: 3}
+  - {fileID: 8300000, guid: c7c827aa80cb3b745932874036ee2eac, type: 3}
 --- !u!114 &3726336109623012156
 MonoBehaviour:
   m_ObjectHideFlags: 0

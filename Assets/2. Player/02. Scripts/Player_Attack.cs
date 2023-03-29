@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Attack : MonoBehaviour
 {
     public Transform pos;
-    GameObject[] Enemy_Test;
+    protected GameObject[] Enemy_Test;
     public Vector2 player_boxSize;
     protected float Kb_timer = 0f;
     static public float Skill_gauge = 0;
@@ -13,7 +13,7 @@ public class Player_Attack : MonoBehaviour
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
 
-    
+    public AudioClip[] clip; // 0 = Sword_Attack, 1 = Spear_Attack, 2 = Shield_Attack, 3 = Monster_Attacked
 
     AllUnits.Unit Player_Dam;
 
@@ -23,6 +23,7 @@ public class Player_Attack : MonoBehaviour
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
         Player_anim = GetComponent<Animator>();
         Player_Dam = GetComponentInParent<AllUnits.Unit>();
+
     }
 
 
@@ -42,6 +43,7 @@ public class Player_Attack : MonoBehaviour
                 {
                     Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage)); // 몬스터hp - 플레이어 데미지
                     Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
+                    SfxManger.instance.SfxPlay("Monster_Attacked", clip[3]);
                     Gauge();
                     // 체력 감소
                 }
@@ -119,8 +121,22 @@ public class Player_Attack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Player_anim.SetTrigger("Attack");
-
+            if (GameObject.Find("Player_Sword"))
+            {
+                Player_anim.SetTrigger("Attack");
+                SfxManger.instance.SfxPlay("Sword_Attack", clip[0]);
+            }
+            else if (GameObject.Find("Player_Spear"))
+            {
+                Player_anim.SetTrigger("Attack");
+                SfxManger.instance.SfxPlay("Spear_Attack", clip[1]);
+            }
+            else if (GameObject.Find("Player_shield"))
+            {
+                Player_anim.SetTrigger("Attack");
+                SfxManger.instance.SfxPlay("Shield_Attack", clip[2]);
+            }
+            
         }
 
     }
