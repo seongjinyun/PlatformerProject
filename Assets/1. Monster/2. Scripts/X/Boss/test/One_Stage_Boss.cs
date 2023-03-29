@@ -7,6 +7,7 @@ public class One_Stage_Boss : Basic_Boss
     //public BoxCollider2D HitBox;
     public GameObject EarthGrowSkill, Pre_EarthGrow;
     Transform Player_Head;
+    public Transform Earth_skill_pos;
 
     protected override void Start()
     {
@@ -30,7 +31,7 @@ public class One_Stage_Boss : Basic_Boss
     {
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
 
-        int ranPattern = Random.Range(0, 3);
+        int ranPattern = Random.Range(2, 3);
         switch (ranPattern)
         {
             case 0:
@@ -74,7 +75,7 @@ public class One_Stage_Boss : Basic_Boss
         base.LookPlayer();
         anim.SetBool("Attack_2", true); // 애니메이션 실행
         yield return new WaitForSeconds(1f); // 1초뒤에
-        GameObject Skill_1_pos = Instantiate(Pre_EarthGrow, Player_Head.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
+        GameObject Skill_1_pos = Instantiate(Pre_EarthGrow, Earth_skill_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
         yield return new WaitForSeconds(1f); // 1초뒤에
         //Destroy(Skill_1_pos); // 준비 스킬 삭제
         GameObject Skill_1 = Instantiate(EarthGrowSkill, Skill_1_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
