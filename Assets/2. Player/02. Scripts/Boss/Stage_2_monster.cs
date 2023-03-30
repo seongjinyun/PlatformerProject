@@ -32,7 +32,10 @@ public class Stage_2_monster : Basic_Boss
             transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
             anim.SetBool("Run", true);
         }
-
+        if (MonsterDie)
+        {
+            BoolManager.SecondStageBossDie = true;
+        }
     }
 
 
