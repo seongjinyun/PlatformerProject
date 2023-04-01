@@ -27,7 +27,10 @@ public class One_Stage_Boss : Basic_Boss
             transform.position = Vector2.MoveTowards(transform.position, DashDir.position, speed * Time.deltaTime);
             anim.SetBool("Run", true);
         }
-
+        if (MonsterDie)
+        {
+            BoolManager.FirstStageBossDie = true;
+        }
     }
 
     IEnumerator RandomPattern()

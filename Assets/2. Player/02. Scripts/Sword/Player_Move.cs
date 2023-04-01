@@ -296,7 +296,10 @@ public class Player_Move : AllUnits.Unit
             speed = 9;
         }
 
-        
+        if(currentHealth < 1)
+        {
+            BoolManager.PlayerDie = true;
+        }
         
         move();
         Jump();
