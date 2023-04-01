@@ -125,25 +125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7861e7510ac5a914996fa503fda32034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 50861ff83c3a47142bb397f7cf079c06, type: 3}
   itemDB:
   - itemType: 0
     itemName: Speed
     itemImage: {fileID: 21300000, guid: 93607aef2d6d04ee8925cb5d8d356449, type: 3}
-    efts:
-    - {fileID: 11400000, guid: 9047d627016ec4746b525baa5d1bc922, type: 2}
   - itemType: 0
     itemName: Shield
     itemImage: {fileID: 21300000, guid: 25cc219f0f5b942b9a4cb8ef05b0b280, type: 3}
-    efts:
-    - {fileID: 11400000, guid: 527d3bb6c138dfd42828f519245daaaf, type: 2}
   - itemType: 2
     itemName: Trash1
     itemImage: {fileID: 21300000, guid: af79522ba22ed4d5fa85501bccc0b894, type: 3}
-    efts: []
   - itemType: 2
     itemName: Trash2
     itemImage: {fileID: 21300000, guid: 526b8356a614f442694b8a3288c4494f, type: 3}
-    efts: []
   DropItemPrefab: {fileID: 6804027271939533115, guid: 8f4ba5c88d1d273419ac08ccf857fcbc, type: 3}
 --- !u!1 &8031268508285646844
 GameObject:
