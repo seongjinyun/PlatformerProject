@@ -43,13 +43,13 @@ public class SfxManger : MonoBehaviour
     }
     public void SetBGMVolume() // 배경음 사운드 조절
     {
-        mixer.SetFloat("BGM", Mathf.Log10(Sfx_Slider.value) * 20);
+        mixer.SetFloat("BGM", Mathf.Log10(Bgm_Slider.value) * 20);
     }
     public void SfxPlay(string sfxName, AudioClip clip) // 사운드 매개변수 사운드 이름, 사운드 클립
     {
         GameObject sound = new GameObject(sfxName + "Sound");
         AudioSource audiosource = sound.AddComponent<AudioSource>();
-        audiosource.outputAudioMixerGroup = mixer.FindMatchingGroups("SFX")[0];
+        audiosource.outputAudioMixerGroup = mixer.FindMatchingGroups("SFX")[0]; // 오디오 믹서 그룹 가져오기
         audiosource.clip = clip;
         audiosource.Play();
 
@@ -58,6 +58,7 @@ public class SfxManger : MonoBehaviour
 
      public void BgmPlay(AudioClip clip) // 배경음
      {
+        bgm.outputAudioMixerGroup = mixer.FindMatchingGroups("BGM")[0]; // 오디오 믹서 그룹 가져오기
         bgm.clip = clip;
         bgm.loop = true; // 계속 반복 되게
         bgm.volume = 0.1f; 

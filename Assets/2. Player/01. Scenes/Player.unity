@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 2067162980}
   m_HandleRect: {fileID: 1679529646}
   m_Direction: 0
-  m_MinValue: 0.0001
+  m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -3082,8 +3082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1f71f45972b1842aa2d55c0a787ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmlist: []
-  bgm: {fileID: 0}
+  bgmlist:
+  - {fileID: 8300000, guid: f6c855322bb42b845a909e04f52497d7, type: 3}
+  bgm: {fileID: 1069093713}
   mixer: {fileID: 24100000, guid: 5c9b07dfbb4b8024f875700995a7614a, type: 2}
   Sfx_Slider: {fileID: 1750064490}
   Bgm_Slider: {fileID: 709399662}
@@ -4191,7 +4192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7587265410899133157, guid: 31922b3ed9645fe459228e9febc01e96, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31922b3ed9645fe459228e9febc01e96, type: 3}

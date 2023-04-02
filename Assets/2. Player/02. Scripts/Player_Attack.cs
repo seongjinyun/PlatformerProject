@@ -121,23 +121,24 @@ public class Player_Attack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            if (GameObject.Find("Player_Sword"))
-            {
-                Player_anim.SetTrigger("Attack");
-                SfxManger.instance.SfxPlay("Sword_Attack", clip[0]);
-            }
-            else if (GameObject.Find("Player_Spear"))
-            {
-                Player_anim.SetTrigger("Attack");
-                SfxManger.instance.SfxPlay("Spear_Attack", clip[1]);
-            }
-            else if (GameObject.Find("Player_shield"))
-            {
-                Player_anim.SetTrigger("Attack");
-                SfxManger.instance.SfxPlay("Shield_Attack", clip[2]);
-            }
-            
+            Player_anim.SetTrigger("Attack");
         }
 
+    }
+
+    void atk_Sound()
+    {
+        if (GameObject.Find("Player_Sword"))
+        {
+            SfxManger.instance.SfxPlay("Sword_Attack", clip[0]);
+        }
+        else if (GameObject.Find("Player_Spear"))
+        {
+            SfxManger.instance.SfxPlay("Spear_Attack", clip[1]);
+        }
+        else if (GameObject.Find("Player_shield"))
+        {
+            SfxManger.instance.SfxPlay("Shield_Attack", clip[2]);
+        }
     }
 }
