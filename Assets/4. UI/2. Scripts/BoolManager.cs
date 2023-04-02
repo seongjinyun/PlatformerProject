@@ -6,6 +6,8 @@ public class BoolManager : MonoBehaviour
 {   
     public static bool FirstStageBossDie, SecondStageBossDie, ThirdStageBossDie, FourthStageBossDie; //보스가 죽을 경우 true로 변경
     public static bool IsTutorial;
+    public static bool IsBongin;
+    public static bool PlayerDie;
 
     private void Awake()
     {
@@ -17,6 +19,9 @@ public class BoolManager : MonoBehaviour
         SecondStageBossDie = false;
         ThirdStageBossDie = false;
         FourthStageBossDie = false;
+        IsBongin = false;
+        PlayerDie = false;
+
     }
     void Update()
     {

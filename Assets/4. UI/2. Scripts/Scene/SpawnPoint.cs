@@ -8,7 +8,7 @@ public class SpawnPoint : MonoBehaviour
     public CurMapName Player;
     public GameObject player;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindWithTag("Player");
         Player = player.GetComponent<CurMapName>();

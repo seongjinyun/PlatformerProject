@@ -10,14 +10,13 @@ public class NextScene : MonoBehaviour
     public CurMapName Player;
     void Start()
     {
-        Player = FindObjectOfType<CurMapName>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Player = FindObjectOfType<CurMapName>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -65044,7 +65044,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &579209758
 CapsuleCollider2D:
@@ -76102,6 +76102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 6787386915073832322, guid: 32685e026629a0b4d95e98874db8861a, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
     - target: {fileID: 6787386915073832324, guid: 32685e026629a0b4d95e98874db8861a, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -76134,7 +76138,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7661956071938221661, guid: 3bbc36e597580f8408762699e1f0a848, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7661956071938221661, guid: 3bbc36e597580f8408762699e1f0a848, type: 3}
       propertyPath: m_LocalPosition.x
