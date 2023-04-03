@@ -42,22 +42,24 @@ public class Stage_2_monster : Basic_Boss
     IEnumerator RandomPattern()
     {
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
-
-        int ranPattern = Random.Range(0, 4);
-        switch (ranPattern)
+        if (!MonsterDie)
         {
-            case 0:
-                StartCoroutine(Second_Attack());
-                break;
-            case 1:
-                StartCoroutine(BossDash());
-                break;
-            case 2:
-                StartCoroutine(Ice_Bullet());
-                break;
-            case 3:
-                StartCoroutine(TeleAttack());
-                break;
+            int ranPattern = Random.Range(0, 4);
+            switch (ranPattern)
+            {
+                case 0:
+                    StartCoroutine(Second_Attack());
+                    break;
+                case 1:
+                    StartCoroutine(BossDash());
+                    break;
+                case 2:
+                    StartCoroutine(Ice_Bullet());
+                    break;
+                case 3:
+                    StartCoroutine(TeleAttack());
+                    break;
+            }
         }
     }
 

@@ -36,19 +36,21 @@ public class One_Stage_Boss : Basic_Boss
     IEnumerator RandomPattern()
     {
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
-
-        int ranPattern = Random.Range(0, 3);
-        switch (ranPattern)
+        if (!MonsterDie)
         {
-            case 0:
-                StartCoroutine(TeleAttack());
-                break;
-            case 1:
-                StartCoroutine(BossDash());
-                break;
-            case 2:
-                StartCoroutine(EarthGrow());
-                break;
+            int ranPattern = Random.Range(0, 3);
+            switch (ranPattern)
+            {
+                case 0:
+                    StartCoroutine(TeleAttack());
+                    break;
+                case 1:
+                    StartCoroutine(BossDash());
+                    break;
+                case 2:
+                    StartCoroutine(EarthGrow());
+                    break;
+            }
         }
     }
     IEnumerator TeleAttack()
