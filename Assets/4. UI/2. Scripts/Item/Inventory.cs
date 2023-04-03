@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour
     public void Removeslot()
     {   
         onChangeItem.Invoke();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

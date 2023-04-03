@@ -8,31 +8,33 @@ using TMPro;
 public class TalkManager : MonoBehaviour
 {
     AllUnits.Unit unit;
-    Dictionary<int, string> talkData, talkData2;
-    public GameObject TalkPannel, TalkPannel2;
-    public Image Portrait, Portrait2;
-    public Text talk, talk2;
+    Dictionary<int, string> talkData, talkData2, talkData3;
+    public GameObject TalkPannel, TalkPannel2, TalkPannel3;
+    public Image Portrait, Portrait2, Portrait3;
+    public Text talk, talk2, talk3;
     public Sprite God, Sword, Spear, Shield;
     Sprite CharSprite;
     public GameObject PL;
     public int CharCodecopy;
-    public static int DataNum,DataNum2;
+    public static int DataNum,DataNum2, DataNum3;
 
 
     private void Start()
     {
-        
+        TalkPannel3.SetActive(true);
+        Time.timeScale = 0f;
     }
     void Awake()
     {
         talkData = new Dictionary<int, string>();
         talkData2 = new Dictionary<int, string>();
+        talkData3 = new Dictionary<int, string>();
+
         DataNum = 1;
         DataNum2 = 1;
+        DataNum3 = 1;
+
         GenerateData();
-
-        
-
     }
 
     void Update()
@@ -63,6 +65,10 @@ public class TalkManager : MonoBehaviour
         {
             StartCoroutine(ActTalk2());
         }
+        if (Input.GetKeyDown(KeyCode.Space) && TalkPannel3.activeSelf == true)
+        {
+            StartCoroutine(ActTalk3());
+        }
 
         if (DataNum == 14)
         {
@@ -71,6 +77,10 @@ public class TalkManager : MonoBehaviour
         if (DataNum2 == 4)
         {
             PannelOff2();
+        }
+        if (DataNum3 == 3)
+        {
+            PannelOff3();
         }
 
         if (DataNum == 2 || DataNum == 5 || DataNum == 9 || DataNum == 11 || DataNum == 13 || DataNum2 == 2)
@@ -90,6 +100,10 @@ public class TalkManager : MonoBehaviour
         else
         {
             Portrait2.sprite = God;
+        }
+        if (DataNum3 == 1 || DataNum3 == 2)
+        {
+            Portrait3.sprite = CharSprite;
         }
     }
 
@@ -112,6 +126,9 @@ public class TalkManager : MonoBehaviour
         talkData2.Add(1, "뭐, 조금은요. 이제.. 뭘 더 하면 되죠?");
         talkData2.Add(2, "이제 옆에 보이는 포탈을 통해 크레아토르로 가서 마왕의 하수인을 물리치고 타락한 정령들을 원래의 모습으로 돌려놓아주세요.");
         talkData2.Add(3, "");
+
+        talkData3.Add(1, "앞에 누군가 있어, 여기가 어딘지 물어보자");
+        talkData3.Add(2, "");
     }
 
 
@@ -119,7 +136,6 @@ public class TalkManager : MonoBehaviour
     IEnumerator ActTalk()
     {
         talk.text = talkData[DataNum];
-        Debug.Log(DataNum);
 
         DataNum++;
         yield return new WaitForSeconds(0.5f);
@@ -129,9 +145,17 @@ public class TalkManager : MonoBehaviour
     IEnumerator ActTalk2()
     {
         talk2.text = talkData2[DataNum2];
-        Debug.Log(DataNum);
 
         DataNum2++;
+        yield return new WaitForSeconds(0.5f);
+
+    }
+
+    IEnumerator ActTalk3()
+    {
+        talk3.text = talkData3[DataNum3];
+
+        DataNum3++;
         yield return new WaitForSeconds(0.5f);
 
     }
@@ -148,6 +172,13 @@ public class TalkManager : MonoBehaviour
         Time.timeScale = 1f;
         TalkPannel2.SetActive(false);
         DataNum2++;
+
+    }
+    void PannelOff3()
+    {
+        Time.timeScale = 1f;
+        TalkPannel3.SetActive(false);
+        DataNum3++;
 
     }
 
