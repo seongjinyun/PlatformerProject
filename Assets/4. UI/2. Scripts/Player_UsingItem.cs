@@ -77,6 +77,10 @@ public class Player_UsingItem : MonoBehaviour
             {
                 UsingActiveSpeed = false;
                 Activecooldown = 0;
+                if(UsingActiveSpeed == false) // 파티클이 꺼지면 소리 안나게
+                {
+                    
+                }
             }
         }
         if (UsingActiveShield == true)
@@ -88,6 +92,10 @@ public class Player_UsingItem : MonoBehaviour
                 ShieldOn = false;
 
                 Activecooldown = 0;
+                if (UsingActiveShield == false) // 파티클이 꺼지면 소리 안나게
+                {
+                    
+                }
             }
         }
     }

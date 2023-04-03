@@ -153,6 +153,7 @@ public class Player_Move : AllUnits.Unit
         }
 
 
+
         if (isGround == true)
         {
             if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //하단 점프
@@ -190,7 +191,14 @@ public class Player_Move : AllUnits.Unit
         }
     }
     
+    void NotJump()
+    {
+        if (GameObject.FindGameObjectWithTag("JumpNot"))
+        {
+            doubleJumpState = false;
+        }
 
+    }
 
     
 
@@ -300,7 +308,7 @@ public class Player_Move : AllUnits.Unit
         {
             BoolManager.PlayerDie = true;
         }
-        
+        NotJump();
         move();
         Jump();
         Dash();
