@@ -28,6 +28,11 @@ public class Mosnter_Repeat : Monster_Stats
     {
         base.Update();
         anim.SetBool("Run", true);
+
+        if (MonsterDie)
+        {
+            Destroy(gameObject, 1.5f);
+        }
     }
 
     // Update is called once per frame

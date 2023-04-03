@@ -20,6 +20,7 @@ public class Normal_Monster : Monster_Unit
         StartCoroutine(MonsterChase());
         StartCoroutine(Boss_Jump());
         Attack_anim();
+
     }
     public IEnumerator MonsterChase() // 범위 내 플레이어 추적
     {
