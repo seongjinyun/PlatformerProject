@@ -99,8 +99,7 @@ public class Player_Anim_Shield : Player_Attack
 
 
 
-        //foreach (GameObject mob in Enemy_Test)
-        {
+        
             foreach (GameObject pos in Enemy_Test1)
             {
                 foreach (GameObject monster in Enemy_Test)
@@ -109,8 +108,6 @@ public class Player_Anim_Shield : Player_Attack
                     Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
                     if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f && Skill_gauge >= 100 && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
                     {
-
-                        //float dist = Vector3.Distance(transform.position, mob.transform.position);
                         Shield_Anim.SetTrigger("Skill_shield");
                         GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
                         Destroy(She_, 1f);
@@ -119,7 +116,7 @@ public class Player_Anim_Shield : Player_Attack
                 }
             }
             //Debug.Log("거리 " + dist);
-        }
+        
         
 
         

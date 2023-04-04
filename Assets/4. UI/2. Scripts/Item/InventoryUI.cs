@@ -27,6 +27,11 @@ public class InventoryUI : MonoBehaviour
         if(inven)inven.onChangeItem += RedrawSlotUI;
     }
 
+    public void Update()
+    {
+        RedrawSlotUI();
+    }
+
 
     void RedrawSlotUI()
     {   

@@ -21,6 +21,8 @@ namespace AllUnits
 
         public int CharCode;
 
+        protected bool Player_Die = false;
+
         // 자식 클래스들도 사용될 수 있도록
         virtual protected void Start()
         {
