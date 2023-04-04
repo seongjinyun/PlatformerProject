@@ -8,6 +8,7 @@ public class BoolManager : MonoBehaviour
     public static bool IsTutorial;
     public static bool IsBongin;
     public static bool PlayerDie;
+    public static bool BonginCom;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class BoolManager : MonoBehaviour
         FourthStageBossDie = false;
         IsBongin = false;
         PlayerDie = false;
+        BonginCom = false;
 
     }
     void Update()

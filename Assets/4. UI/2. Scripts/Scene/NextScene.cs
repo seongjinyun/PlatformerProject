@@ -25,7 +25,6 @@ public class NextScene : MonoBehaviour
         {
             Player.CurMapname = NextMapName;
             LoadingSceneController.LoadScene(NextMapName);
-            Destroy(this.gameObject);
         }
     }
 }

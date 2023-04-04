@@ -14,11 +14,14 @@ public class NPCTri2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-        {   
-            TalkPannel.SetActive(true);
-            Time.timeScale = 0f;
+        {
+            if (TalkManager.DataNum2 < 4)
+            {
+                TalkPannel.SetActive(true);
+                Time.timeScale = 0f;
 
-            Destroy(this.gameObject);
+                Destroy(this.gameObject);
+            }
         }
     }
 }
