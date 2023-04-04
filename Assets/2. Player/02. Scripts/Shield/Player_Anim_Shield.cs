@@ -96,26 +96,28 @@ public class Player_Anim_Shield : Player_Attack
         */
 
 
-        for (int i = 0; i < Enemy_Test1.Length; i++)
-
-        {
-            Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
-            
-        }
 
 
+
+
+
+
+        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
         foreach (GameObject pos in Enemy_Test1)
         {
                 foreach (GameObject monster in Enemy_Test)
                 {
                     float dist = Vector3.Distance(transform.position, pos.transform.position);
-                    Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
-                    if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f && Skill_gauge >= 100 && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
+                    if(monster != null)
                     {
-                        Shield_Anim.SetTrigger("Skill_shield");
-                        GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
-                        Destroy(She_, 1f);
-                        Skill_gauge = 0; //게이지 0으로 초기화
+                        Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
+                        if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f && Skill_gauge >= 100 && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
+                        {
+                            Shield_Anim.SetTrigger("Skill_shield");
+                            GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
+                            Destroy(She_, 1f);
+                            Skill_gauge = 0; //게이지 0으로 초기화
+                        }
                     }
                 }
         }
