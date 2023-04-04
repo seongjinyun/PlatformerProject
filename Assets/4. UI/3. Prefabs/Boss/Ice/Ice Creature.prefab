@@ -85,7 +85,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_Sprite: {fileID: 4723107735738678597, guid: 419da44b0e2f1924087221d3b979c363, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,8 +130,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
-  m_Size: {x: 0.35, y: 0.5}
+  m_Offset: {x: 0.00587225, y: -0.03398099}
+  m_Size: {x: 0.2284115, y: 0.46796244}
   m_Direction: 0
 --- !u!50 &6375149591904379243
 Rigidbody2D:
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -185,7 +185,7 @@ MonoBehaviour:
   FireMeteor_Damage: 1
   WindTornado_Damage: 1
   WindBullet_Damage: 1
-  Attack_Pos: {fileID: 4673187711303326811}
+  Attack_Pos: {fileID: 6798944556742794862}
   Attack_Radius: 2.19
   P_Layer:
     serializedVersion: 2
@@ -376,7 +376,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.21665792, y: -0.026189476}
@@ -470,7 +470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4673187711303326811
 Transform:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.14729792, y: -0.041733384}
