@@ -18,6 +18,7 @@ public class Far_Monster : Monster_Unit
     public bool canAttack = true; // 몬스터가 공격할 수 있는지 여부
 
     public System.Action AtkAction = null;
+    public float Angle = 80f;
 
     //far_Monster_State far_state;
 
@@ -59,7 +60,7 @@ public class Far_Monster : Monster_Unit
         // 공격 방향 계산
         Vector2 attackDirection = (playerTransform.position - transform.position).normalized;
         // 공격 각도 계산
-        float attackAngle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg - 90f;
+        float attackAngle = Mathf.Atan2(attackDirection.y, attackDirection.x) * Mathf.Rad2Deg - Angle;
         // 몬스터 위치에서 발사체 생성
         GameObject projectile = Instantiate(projectilePrefab, Bul_Pos.position, Quaternion.Euler(0f, 0f, attackAngle));
 

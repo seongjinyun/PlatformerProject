@@ -173,7 +173,7 @@ MonoBehaviour:
   Bul_Pos: {fileID: 380944359}
   attackRange: 18.8
   attackForce: 1200
-  projectilePrefab: {fileID: 2166714350914551810, guid: a08d2e841f568154c862880025a994f8, type: 3}
+  projectilePrefab: {fileID: 3599186301993960585, guid: a0468227782085447a0f7b2496325e19, type: 3}
   projectileSpeed: 10
   attackDelay: 1
   playerLayer:
@@ -181,6 +181,7 @@ MonoBehaviour:
     m_Bits: 1024
   angle_dd: 1
   canAttack: 1
+  Angle: 80
 --- !u!114 &910717831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1303,6 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   far_Parent: {fileID: 354169778496777074}
+  clip: {fileID: 0}
 --- !u!1 &2690644212765467086
 GameObject:
   m_ObjectHideFlags: 0
