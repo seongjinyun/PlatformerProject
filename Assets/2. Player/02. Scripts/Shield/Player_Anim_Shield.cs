@@ -38,15 +38,14 @@ public class Player_Anim_Shield : Player_Attack
         //Enemy_Test[0] = enemy;
         player_rigid = GetComponent<Rigidbody2D>();
         Shield_Anim = GetComponent<Animator>();
-        //float dist = Vector3.Distance(transform.position, enemy.transform.position);
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
-        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
+        
 
     }
 
     void Attack()
     {
-        
+
 
         /*if (Input.GetKeyDown(KeyCode.X))
         {
@@ -97,11 +96,16 @@ public class Player_Anim_Shield : Player_Attack
         */
 
 
+        for (int i = 0; i < Enemy_Test1.Length; i++)
+
+        {
+            Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
+            
+        }
 
 
-        
-            foreach (GameObject pos in Enemy_Test1)
-            {
+        foreach (GameObject pos in Enemy_Test1)
+        {
                 foreach (GameObject monster in Enemy_Test)
                 {
                     float dist = Vector3.Distance(transform.position, pos.transform.position);
@@ -114,11 +118,11 @@ public class Player_Anim_Shield : Player_Attack
                         Skill_gauge = 0; //게이지 0으로 초기화
                     }
                 }
-            }
+        }
             //Debug.Log("거리 " + dist);
         
         
-
+            
         
     }
 
