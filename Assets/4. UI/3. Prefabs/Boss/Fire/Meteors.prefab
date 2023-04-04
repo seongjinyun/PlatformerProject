@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4321271860624426283}
   - component: {fileID: 3391183700953142848}
+  - component: {fileID: -2374456772897985650}
   m_Layer: 0
   m_Name: Meteors
   m_TagString: Untagged
@@ -57,6 +58,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!210 &-2374456772897985650
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160670614112988814}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 41
 --- !u!1001 &696999674605191516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d9886ce0f27ad489f7280c71abbdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireboss: {fileID: 0}
 --- !u!1001 &1959780894853995997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -263,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d9886ce0f27ad489f7280c71abbdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireboss: {fileID: 0}
 --- !u!1001 &5947153483854989164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,6 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d9886ce0f27ad489f7280c71abbdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireboss: {fileID: 0}
 --- !u!4 &7182399298746726911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3541389025446690451, guid: bfd76049dba696142be23023e04f1fde, type: 3}
@@ -469,3 +484,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d9886ce0f27ad489f7280c71abbdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireboss: {fileID: 0}
