@@ -8,19 +8,18 @@ public class Bongin : MonoBehaviour
     public GameObject BonginPortal;
     void Start()
     {
-        BoolManager.FirstStageBossDie = true;
-        BoolManager.SecondStageBossDie = true;
-        BoolManager.ThirdStageBossDie = true;
-        BoolManager.FourthStageBossDie = true;
+        
 
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (BoolManager.IsBongin == true && BoolManager.FirstStageBossDie == true && BoolManager.SecondStageBossDie == true && BoolManager.ThirdStageBossDie == true && BoolManager.FourthStageBossDie == true && Input.GetKeyDown(KeyCode.B))
+    {   
+        if (BoolManager.IsBongin == true && BoolManager.FirstStageBossDie == true && BoolManager.SecondStageBossDie == true && BoolManager.ThirdStageBossDie == true &&  Input.GetKeyDown(KeyCode.B)) // 4스테 보스잡는거 제외해둠 
         {
             BonginPortal.SetActive(true);
+
+            BoolManager.BonginCom = true;
         }   
     }
 
