@@ -13,6 +13,11 @@ public class Respawn : MonoBehaviour
         player.transform.position = transform.position;
     }
 
+    private void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
