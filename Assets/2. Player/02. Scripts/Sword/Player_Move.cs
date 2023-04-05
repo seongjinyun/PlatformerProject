@@ -32,13 +32,6 @@ public class Player_Move : AllUnits.Unit
     public bool jump_delay;
     public float downjump_power;
 
-    //회피 변수
-    /*public float dodge_Distance;
-    public float dodge_Time;
-    public float dodge_NeedEnergy;
-    private float dodge_TimeCheck;
-    public float dodge_ButtonTime;          // 회피 버튼을 2번 눌러야 되는 시간
-    private bool dodge;*/
 
     //유닛루트 애니메이터
     public Animator move_animator;
@@ -174,16 +167,7 @@ public class Player_Move : AllUnits.Unit
                 }
                 foreach (GameObject layer in Ground_Layer)
                 {
-                    if (layer.GetComponent<Down_Platform>())
-                    {
-                        Debug.Log("찾음2");
-                    }
-                    else
-                    {
-                        Debug.Log("못찾음2");
-                    }
                     layer.GetComponent<Down_Platform>().ChangeLayer();
-
                 }
                 // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
             }

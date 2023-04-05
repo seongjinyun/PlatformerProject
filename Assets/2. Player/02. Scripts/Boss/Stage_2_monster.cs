@@ -14,18 +14,24 @@ public class Stage_2_monster : Basic_Boss
     //public Vector2 monster_boxSize;
     //public BoxCollider2D mon_attack;
 
+    
+    
+
     protected override void Start()
     {
         base.Start();
         StartCoroutine(RandomPattern());
         Ice_Arrow_pos = GameObject.FindGameObjectWithTag("Monster_Skill_Pos").GetComponent<Transform>();
+
+        
+        
     }
 
     protected override void Update()
     {
         base.Update();
         //StartCoroutine(MonsterChase());
-       
+        
 
         if (isDash == true)
         {

@@ -31,37 +31,36 @@ namespace AllUnits
         }
         virtual protected void Update()
         {
-            DamageDelay();
+           
         }
-        protected void DamageDelay()
-        {
-            if (isDamage && damageDelay > 0)
-            {
-                damageDelay -= Time.deltaTime;
-                if (damageDelay <= 0)
-                {
-                    isDamage = false;
-                    damageDelay = initialDamageDelay;
-                }
-            }
-        }
+        
         public void TakeDamage(int Monster_Damage) // 피격 
         {
+            
             if (Player_UsingItem.UsingActiveShield == false)
             {
-                currentHealth -= Monster_Damage;
-                if (currentHealth <= 0)
+                if (!isDamage)
                 {
-                    //DIe 애님 실행 및 삭제
-                    //Debug.Log("사망");
+                    currentHealth -= Monster_Damage;
+                    if (currentHealth <= 0)
+                    {
+                        //DIe 애님 실행 및 삭제
+                        //Debug.Log("사망");
+                    }
+                    StartCoroutine(NotDam());
+                }
+                else
+                {
+                    currentHealth -= 0;
                 }
             }
-            else
-            {
-
-            }
         }
-
+        IEnumerator NotDam()
+        {
+            isDamage = true;
+            yield return new WaitForSeconds(0.2f);
+            isDamage = false;
+        }
         public void NotDamage(int Zero_Damage) //무적 피격
         {
             currentHealth -= Zero_Damage;
