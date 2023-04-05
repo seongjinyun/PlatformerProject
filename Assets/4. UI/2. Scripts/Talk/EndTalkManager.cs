@@ -18,10 +18,12 @@ public class EndTalkManager : MonoBehaviour
     public int CharCodecopy;
     public static int DataNum,DataNum2;
 
+    public CanvasGroup Endingpannel;
+    public float fadeCount;
 
     private void Start()
     {
-        
+        fadeCount = 0f;
     }
     void Awake()
     {
@@ -71,6 +73,8 @@ public class EndTalkManager : MonoBehaviour
         if (DataNum2 == 4)
         {
             PannelOff2();
+
+            BoolManager.Ending = true;
         }
 
         if (DataNum == 1 || DataNum == 2)
@@ -90,6 +94,11 @@ public class EndTalkManager : MonoBehaviour
         else
         {
             Portrait2.sprite = CharSprite;
+        }
+
+        if (BoolManager.Ending == true)
+        {
+            StartCoroutine(Ending());
         }
     }
 
@@ -123,6 +132,18 @@ public class EndTalkManager : MonoBehaviour
         DataNum2++;
         yield return new WaitForSeconds(0.5f);
 
+    }
+
+    IEnumerator Ending()
+    {
+        while(fadeCount < 1.0f)
+        {
+            fadeCount += 0.0001f;
+            yield return new WaitForSeconds(0.1f);
+            Endingpannel.alpha = fadeCount;
+
+        }
+ 
     }
 
     void PannelOff()
