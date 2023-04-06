@@ -12,14 +12,14 @@ public class Slot : MonoBehaviour
     
     private void Update()
     {
-        if (Inventory.instance.items.Contains(item))
+/*        if (Inventory.instance.items.Contains(item))
         {
             slot.SetActive(true);
         }
         else
         {
             slot.SetActive(false);
-        }
+        }*/
     }
 
     public void UpdateSlotUI(Item item)

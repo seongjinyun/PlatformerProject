@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DropItem : MonoBehaviour
 {
-    bool isDie = false;
     public Item item;
     public SpriteRenderer image;
 
@@ -21,22 +20,20 @@ public class DropItem : MonoBehaviour
     {
         return item;
     }
-    public void DestroyItem()
-    {
-        Destroy(gameObject);
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isDie)
-            Destroy(gameObject);
 
         if (collision.CompareTag("Player"))
         {
-            Inventory.instance.AddItem(GetItem());
-
-            isDie = true;
-            if (isDie)
+            if (Inventory.instance.items.Count < 1)
+            {
+                Inventory.instance.AddItem(GetItem());
                 Destroy(gameObject);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
