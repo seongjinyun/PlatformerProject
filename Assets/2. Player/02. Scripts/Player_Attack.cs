@@ -136,9 +136,9 @@ public class Player_Attack : MonoBehaviour
         {
             SfxManger.instance.SfxPlay("Spear_Attack", clip[1]);
         }
-        else if (GameObject.Find("Player_shield"))
+        else if (GameObject.Find("Player_Shield(Clone)"))
         {
-            SfxManger.instance.SfxPlay("Shield_Attack(Clone)", clip[2]);
+            SfxManger.instance.SfxPlay("Shield_Attack", clip[2]);
         }
     }
 }

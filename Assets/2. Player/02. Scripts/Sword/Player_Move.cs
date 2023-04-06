@@ -167,7 +167,10 @@ public class Player_Move : AllUnits.Unit
                 }
                 foreach (GameObject layer in Ground_Layer)
                 {
-                    layer.GetComponent<Down_Platform>().ChangeLayer();
+                    if(layer != null)
+                    {
+                        layer.GetComponent<Down_Platform>().ChangeLayer();
+                    }
                 }
                 // 플레이어는 Downplatform 태그를 붙은 오브젝트를 찾아서 그 오브젝트에 안에 스크립트에 있는 ChangeLayer함수를 가져온다
             }
