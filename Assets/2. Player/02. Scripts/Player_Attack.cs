@@ -128,17 +128,17 @@ public class Player_Attack : MonoBehaviour
 
     void atk_Sound()
     {
-        if (GameObject.Find("Player_Sword"))
+        if (GameObject.Find("Player_Sword(Clone)"))
         {
             SfxManger.instance.SfxPlay("Sword_Attack", clip[0]);
         }
-        else if (GameObject.Find("Player_Spear"))
+        else if (GameObject.Find("Player_Spear(Clone)"))
         {
             SfxManger.instance.SfxPlay("Spear_Attack", clip[1]);
         }
         else if (GameObject.Find("Player_shield"))
         {
-            SfxManger.instance.SfxPlay("Shield_Attack", clip[2]);
+            SfxManger.instance.SfxPlay("Shield_Attack(Clone)", clip[2]);
         }
     }
 }
