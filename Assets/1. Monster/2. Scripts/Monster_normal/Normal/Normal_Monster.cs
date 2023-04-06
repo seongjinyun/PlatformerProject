@@ -67,14 +67,14 @@ public class Normal_Monster : Monster_Unit
             yield return null;
 
             if (!Physics2D.OverlapCircle(WallCheck[0].position, 0.01f, Layer_Wall) &&
-                 Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall) &&
-                !Physics2D.Raycast(transform.position, -transform.localScale.x * transform.right, 1f, Layer_Wall))
+                 Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall) )
+                //!Physics2D.Raycast(transform.position, -transform.localScale.x * transform.right, 1f, Layer_Wall))
             {
-                //Debug.Log("벽 충돌");
+                Debug.Log("벽 충돌");
                 rb.velocity = new Vector2(rb.velocity.x, JumpPower);
             }
 
-            else if (Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall))
+            /*else if (Physics2D.OverlapCircle(WallCheck[1].position, 0.01f, Layer_Wall))
             {
                 if (WallCheck[1].position.x < transform.position.x)
                 {
@@ -86,7 +86,7 @@ public class Normal_Monster : Monster_Unit
                     transform.rotation = Quaternion.Euler(0, 180, 0);
                     rb.velocity = new Vector2(transform.localScale.x * speed, rb.velocity.y);
                 }
-            }
+            }*/
         }
     }
 
