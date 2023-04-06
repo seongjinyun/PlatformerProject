@@ -22,10 +22,13 @@ public class Slot : MonoBehaviour
         }
     }
 
-    public void UpdateSlotUI()
-    {   
-        itemIcon.sprite = item.itemImage;
-        itemIcon.gameObject.SetActive(true);
+    public void UpdateSlotUI(Item item)
+    {
+        if(itemIcon.sprite == null)
+        {
+            itemIcon.sprite = item.itemImage;
+            itemIcon.gameObject.SetActive(true);
+        }
     }
 
     public void RemoveSlot()

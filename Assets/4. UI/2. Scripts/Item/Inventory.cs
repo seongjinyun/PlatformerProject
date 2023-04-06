@@ -63,15 +63,19 @@ public class Inventory : MonoBehaviour
         onChangeItem.Invoke();
 
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+/*    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("DropItem"))
         {
             DropItem dropItem = collision.GetComponent<DropItem>();
             if (AddItem(dropItem.GetItem()))
+            {
+                Debug.Log("1");
                 dropItem.DestroyItem();
+                Debug.Log("2");
+            }
         }
-    }
+    }*/
 
 }

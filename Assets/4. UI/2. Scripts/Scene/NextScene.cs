@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
     public string NextMapName;
-
     public CurMapName Player;
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -18,7 +18,6 @@ public class NextScene : MonoBehaviour
         Player = FindObjectOfType<CurMapName>();
 
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")

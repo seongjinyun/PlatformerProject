@@ -11,8 +11,10 @@ public class LoadingSceneController : MonoBehaviour //기존 씬을 가리고 다음 씬을
     [SerializeField]
     Slider progressBar;
 
+
     public static void LoadScene(string sceneName)
-    {
+    {   
+        
         nextScene = sceneName;
         SceneManager.LoadScene("UI_Loading");
     }
@@ -24,7 +26,7 @@ public class LoadingSceneController : MonoBehaviour //기존 씬을 가리고 다음 씬을
 
     IEnumerator LoadSceneProcess()
     {
-        yield return null;
+        //yield return null;
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = false;
         float timer = 0f;
@@ -46,4 +48,5 @@ public class LoadingSceneController : MonoBehaviour //기존 씬을 가리고 다음 씬을
             }
         }
     }
+
 }

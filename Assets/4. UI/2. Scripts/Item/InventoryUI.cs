@@ -34,8 +34,7 @@ public class InventoryUI : MonoBehaviour
 
 
     void RedrawSlotUI()
-    {   
-
+    {
         for (int i = 0; i < slots.Length; i++)
         {   
             if (inven.items.Count == 0)
@@ -43,16 +42,12 @@ public class InventoryUI : MonoBehaviour
                 slots[i].itemIcon.sprite = null;
                 break;
             }
-            if (inven.items[i].itemType == ItemType.Consumables)
-            {
 
-                slots[i].item = inven.items[i];
-                slots[i].UpdateSlotUI();
-            }     
-            if (inven.items[i].itemType == ItemType.etc)
+            if (inven.items[i].itemType == ItemType.Consumables || inven.items[i].itemType == ItemType.etc)
             {
                 slots[i].item = inven.items[i];
-                slots[i].UpdateSlotUI();
+                slots[i].UpdateSlotUI(slots[i].item);
+                return;
             }
         }
     }

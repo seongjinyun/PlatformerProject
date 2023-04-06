@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DropItem : MonoBehaviour
-{   
+{
+    bool isDie = false;
     public Item item;
     public SpriteRenderer image;
 
@@ -24,5 +25,18 @@ public class DropItem : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isDie)
+            Destroy(gameObject);
 
+        if (collision.CompareTag("Player"))
+        {
+            Inventory.instance.AddItem(GetItem());
+
+            isDie = true;
+            if (isDie)
+                Destroy(gameObject);
+        }
+    }
 }
