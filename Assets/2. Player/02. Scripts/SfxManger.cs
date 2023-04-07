@@ -67,7 +67,7 @@ public class SfxManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Bgm_Slider.CompareTag("test");
+        
     }
 
     // Update is called once per frame
