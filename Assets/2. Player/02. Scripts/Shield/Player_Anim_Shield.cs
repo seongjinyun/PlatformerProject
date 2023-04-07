@@ -40,7 +40,7 @@ public class Player_Anim_Shield : Player_Attack
         Shield_Anim = GetComponent<Animator>();
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
 
-        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //½¯µå ½ºÅ³ À§Ä¡ ¸ó½ºÅÍ Çï¸ä¿¡ ÅÂ±×
+       
     }
 
     void Attack()
@@ -101,8 +101,8 @@ public class Player_Anim_Shield : Player_Attack
 
 
 
+        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //½¯µå ½ºÅ³ À§Ä¡ ¸ó½ºÅÍ Çï¸ä¿¡ ÅÂ±×
 
-        
         foreach (GameObject pos in Enemy_Test1)
         {
                 foreach (GameObject monster in Enemy_Test)
