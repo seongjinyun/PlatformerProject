@@ -116,6 +116,7 @@ public class Player_Attack : MonoBehaviour
             //Debug.Log(Skill_gauge);
         }
         atk_Anim();
+        
     }
     void atk_Anim()
     {
