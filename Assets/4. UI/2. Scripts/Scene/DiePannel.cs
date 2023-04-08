@@ -8,7 +8,7 @@ public class DiePannel : MonoBehaviour
 
     void Start()
     {
-        
+        Diepannel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,6 +19,12 @@ public class DiePannel : MonoBehaviour
             Diepannel.SetActive(true);
 
             Time.timeScale = 0f;
+        }
+        else
+        {
+            Diepannel.SetActive(false);
+            Time.timeScale = 1f;
+
         }
     }
 }

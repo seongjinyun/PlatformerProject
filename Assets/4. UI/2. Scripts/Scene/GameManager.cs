@@ -45,21 +45,13 @@ public class GameManager : MonoBehaviour
         char3.SetActive(false);
     }
     public void TutorialStart() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
-    {   if (BoolManager.IsTutorial == true)
-        {
-            LoadingSceneController.LoadScene("1_Stage");
-        }
-        else
-        {
-            LoadingSceneController.LoadScene("Tutorial");
-            Debug.Log("게임시작");
-        }
+    {   
+        LoadingSceneController.LoadScene("Tutorial");
+        Debug.Log("게임시작");
+        BoolManager.PlayerDie = false;
+
     }
-    public void GameOption() //게임 시작 함수 (옵션 버튼을 누르면 실행됨)
-    {
-        LoadingSceneController.LoadScene("UI_Option");
-        Debug.Log("옵션씬으로 이동");
-    }
+
     public void Quit() //게임 정지 함수 (QUIT 버튼을 누르면 실행)
     {
         Application.Quit();
