@@ -17,13 +17,10 @@ public class DiePannel : MonoBehaviour
         if(BoolManager.PlayerDie == true)
         {
             Diepannel.SetActive(true);
-
-            Time.timeScale = 0f;
         }
         else
         {
             Diepannel.SetActive(false);
-            Time.timeScale = 1f;
 
         }
     }
