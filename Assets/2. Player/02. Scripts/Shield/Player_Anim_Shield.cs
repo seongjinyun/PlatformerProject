@@ -40,7 +40,7 @@ public class Player_Anim_Shield : Player_Attack
         Shield_Anim = GetComponent<Animator>();
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
 
-        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
+       
     }
 
     void Attack()
@@ -96,22 +96,17 @@ public class Player_Anim_Shield : Player_Attack
         */
 
 
+        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
 
-
-
-
-
-
-        
         foreach (GameObject pos in Enemy_Test1)
         {
                 foreach (GameObject monster in Enemy_Test)
                 {
-                    float dist = Vector3.Distance(transform.position, pos.transform.position);
+                    float dist = Vector2.Distance(transform.position, pos.transform.position);
                     if(monster != null)
                     {
                         Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
-                        if (Input.GetKeyDown(KeyCode.A) && dist <= 13.0f /*&& Skill_gauge >= 100 */&& Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
+                        if (Input.GetKeyDown(KeyCode.A) &&  dist <= 20.0f /*&& Skill_gauge >= 100*/ && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
                         {
                             Shield_Anim.SetTrigger("Skill_shield");
                             GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
@@ -122,10 +117,6 @@ public class Player_Anim_Shield : Player_Attack
                 }
         }
             //Debug.Log("거리 " + dist);
-        
-        
-            
-        
     }
 
     // Update is called once per frame
@@ -138,6 +129,7 @@ public class Player_Anim_Shield : Player_Attack
     }
     void OnDrawGizmos()
     {
+        
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, player_boxSize);
     }
