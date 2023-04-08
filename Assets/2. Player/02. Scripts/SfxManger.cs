@@ -15,6 +15,8 @@ public class SfxManger : MonoBehaviour
     public Slider Sfx_Slider; // 유아이 효과음 슬라이더
     public Slider Bgm_Slider; // 유아이 배경음 슬라이더
 
+    private GameObject Music_Check;
+
     private void Awake()
     {
         if(instance == null)
@@ -27,14 +29,23 @@ public class SfxManger : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
     }
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1) 
     {
+        
         for (int i = 0; i < bgmlist.Length; i++)
         {
             if(arg0.name == bgmlist[i].name) // 씬의 이름은 매개변수를 통해서 알수있음 그리고 씬의 이름과 클립의 이름이 같은것을
                 BgmPlay(bgmlist[i]); // 재생
+            if (GameObject.Find("Music_Chk")) // Music_Chk 게임오브젝트 찾으면
+            {
+                StopMusic(bgmlist[i]); // 배경음 정지
+            }
         }
+
+        
     }
 
     public void SetSFXVolume() // 효과음 사운드 조절
@@ -63,11 +74,20 @@ public class SfxManger : MonoBehaviour
         bgm.loop = true; // 계속 반복 되게
         bgm.volume = 0.1f; 
         bgm.Play(); // 플레이 함수 호출
-     }
+        
+
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        Music_Check = GameObject.FindGameObjectWithTag("Sfx_Manager");
+    }
+    public void StopMusic(AudioClip clip)
+    {
+        bgm.outputAudioMixerGroup = mixer.FindMatchingGroups("BGM")[0]; // 오디오 믹서 그룹 가져오기
+        bgm.clip = clip;
+        bgm.volume = 0.1f;
+        bgm.Stop();
     }
 
     // Update is called once per frame
