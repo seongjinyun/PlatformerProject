@@ -13,7 +13,7 @@ public class Player_Move : AllUnits.Unit
 
     //스텟
     public static float Max_hp = 101f; // 최대 체력
-    public static float Player_Hp = 100f; //플레이어 체력
+    public static float Player_Hp; //플레이어 체력
 
     // public SpriteRenderer sr;
     //public  float speed;
@@ -75,7 +75,6 @@ public class Player_Move : AllUnits.Unit
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
         move_animator = Unit_anim.GetComponent<Animator>();
-        
     }
 
     /*protected void OnCollisionEnter2D(Collision2D collision)
@@ -282,6 +281,7 @@ public class Player_Move : AllUnits.Unit
     protected override void Update()
     {
         base.Update();
+
         if (Player_UsingItem.UsingActiveSpeed == true)
         {
             speed = 13;
