@@ -6,7 +6,8 @@ public class EarthGrow : MonoBehaviour
 {
     
     Basic_Boss Earth_Damage;
-    
+    float delay = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class EarthGrow : MonoBehaviour
     }
     
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         
         if (collision.gameObject.CompareTag("Player"))
@@ -24,16 +25,19 @@ public class EarthGrow : MonoBehaviour
 
             if (player_Hp != null)
             {
-                Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Earth_Damage.EarthBullet_Damage));
-                player_Hp.TakeDamage(Earth_Damage.EarthBullet_Damage);
-                // 체력 감소
-
+                if (delay <= 0f)
+                {
+                    Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Earth_Damage.EarthBullet_Damage));
+                    player_Hp.TakeDamage(Earth_Damage.EarthBullet_Damage);
+                    // 체력 감소
+                    delay = 0.8f;
+                }
             }
         }
     }
     // Update is called once per frame
     void Update()
     {
-        
+        delay -= Time.deltaTime;
     }
 }

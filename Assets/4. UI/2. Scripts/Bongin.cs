@@ -15,7 +15,7 @@ public class Bongin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if (BoolManager.IsBongin == true && BoolManager.FirstStageBossDie == true && BoolManager.SecondStageBossDie == true && BoolManager.ThirdStageBossDie == true &&  Input.GetKeyDown(KeyCode.B)) // 4스테 보스잡는거 제외해둠 
+        if (/*BoolManager.IsBongin == true && BoolManager.FirstStageBossDie == true && BoolManager.SecondStageBossDie == true && BoolManager.ThirdStageBossDie == true &&  */ Input.GetKeyDown(KeyCode.B)) // 4스테 보스잡는거 제외해둠 
         {
             BonginPortal.SetActive(true);
 
