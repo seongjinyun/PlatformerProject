@@ -18,7 +18,6 @@ public class NPCTri4 : MonoBehaviour
             TalkPannel.SetActive(true);
             Time.timeScale = 0f;
 
-            Destroy(this.gameObject);
         }
     }
 }

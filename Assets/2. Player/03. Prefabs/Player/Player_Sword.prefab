@@ -631,8 +631,8 @@ GameObject:
   - component: {fileID: 8348247135978081382}
   - component: {fileID: 4136376683857386106}
   - component: {fileID: 2432846849617784867}
-  - component: {fileID: -987018567872591314}
   - component: {fileID: -7782497679903272826}
+  - component: {fileID: -212600490443936672}
   m_Layer: 10
   m_Name: Player_Sword
   m_TagString: Player
@@ -852,18 +852,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-987018567872591314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798746268070547124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-7782497679903272826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,6 +865,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurMapname: 
+--- !u!114 &-212600490443936672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798746268070547124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4013c93593079a046819d53594ea8958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1932025423882934694
 GameObject:
   m_ObjectHideFlags: 0

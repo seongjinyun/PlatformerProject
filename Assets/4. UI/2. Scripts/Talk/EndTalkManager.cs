@@ -20,7 +20,7 @@ public class EndTalkManager : MonoBehaviour
 
     public CanvasGroup Endingpannel;
     public float fadeCount;
-
+    public GameObject endingpannel;
     private void Start()
     {
         fadeCount = 0f;
@@ -98,7 +98,9 @@ public class EndTalkManager : MonoBehaviour
 
         if (BoolManager.Ending == true)
         {
+            endingpannel.SetActive(true);
             StartCoroutine(Ending());
+           
         }
     }
 

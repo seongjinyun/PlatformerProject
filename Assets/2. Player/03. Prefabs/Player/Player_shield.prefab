@@ -699,8 +699,8 @@ GameObject:
   - component: {fileID: 8409333082999016292}
   - component: {fileID: -6820837002744603541}
   - component: {fileID: -2568622769834347441}
-  - component: {fileID: 1618397706864079708}
   - component: {fileID: -3643429004017517763}
+  - component: {fileID: -2084034457664959320}
   m_Layer: 10
   m_Name: Player_shield
   m_TagString: Player
@@ -946,18 +946,6 @@ MonoBehaviour:
   clip:
   - {fileID: 8300000, guid: 34c557a37cfc285439f66e9a594be9cc, type: 3}
   - {fileID: 8300000, guid: c91fcf414acc0344cb03b13996f1bf3b, type: 3}
---- !u!114 &1618397706864079708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2197968755758976567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-3643429004017517763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,6 +959,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurMapname: 
+--- !u!114 &-2084034457664959320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197968755758976567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4013c93593079a046819d53594ea8958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2326767795802819087
 GameObject:
   m_ObjectHideFlags: 0
