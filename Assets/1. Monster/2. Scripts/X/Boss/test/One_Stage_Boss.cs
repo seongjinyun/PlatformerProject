@@ -90,7 +90,7 @@ public class One_Stage_Boss : Basic_Boss
         //Destroy(Skill_1_pos); // 준비 스킬 삭제
         GameObject Skill_1 = Instantiate(EarthGrowSkill, Skill_1_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
         Destroy(Skill_1_pos);
-        Destroy(Skill_1, 1f); // 1초뒤에 삭제
+        Destroy(Skill_1, 2f); // 1초뒤에 삭제
         anim.SetBool("Attack_2", false); // 애니메이션 Idle로
         StartCoroutine(RandomPattern());
 
