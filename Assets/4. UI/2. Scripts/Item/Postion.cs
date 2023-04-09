@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class Postion : MonoBehaviour
 {
+    AllUnits.Unit CurHp;
+    public GameObject player;
+    Player_Move player_Move;
     public AudioClip clip;
+    public float curhp;
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        player = GameObject.FindWithTag("Player");
+
+        player_Move = player.GetComponent<Player_Move>();
+
+
     }
 
-     void OnCollisionEnter2D(Collision2D collision)
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.tag == "Player")
         {
+            
             SfxManger.instance.SfxPlay("Heal_Item", clip);
-            Player_Move.Player_Hp += 5;
+            player_Move.currentHealth += 5;
 
             Destroy(gameObject);
         }

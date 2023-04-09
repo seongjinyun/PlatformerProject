@@ -31,7 +31,10 @@ namespace AllUnits
         }
         virtual protected void Update()
         {
-           
+           if(currentHealth > 20)
+            {
+                currentHealth = 20;
+            }
         }
         
         public void TakeDamage(int Monster_Damage) // ÇÇ°Ý 
