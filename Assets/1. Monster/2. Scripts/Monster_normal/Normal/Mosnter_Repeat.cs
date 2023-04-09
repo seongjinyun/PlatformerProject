@@ -10,6 +10,8 @@ public class Mosnter_Repeat : Monster_Stats
     public int nextMove;
     public float Speed = 1f;
     public LayerMask Ground_Layer;
+    public Transform WallCheck;
+
 
     public bool testAttacked = false;
     
@@ -45,7 +47,8 @@ public class Mosnter_Repeat : Monster_Stats
             Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y);
             Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
             RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, Ground_Layer);
-            if (rayHit.collider == null)
+            
+            if (rayHit.collider == null || Physics2D.OverlapCircle(WallCheck.position, 0.01f, Ground_Layer))
             {
                 nextMove *= -1;
                 CancelInvoke();
