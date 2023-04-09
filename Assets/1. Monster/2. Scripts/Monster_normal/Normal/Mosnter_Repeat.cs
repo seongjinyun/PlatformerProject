@@ -12,11 +12,9 @@ public class Mosnter_Repeat : Monster_Stats
     public LayerMask Ground_Layer;
     public Transform WallCheck;
 
-
-    public bool testAttacked = false;
-    
+    float delay = 0;
     // Start is called before the first frame update
-   protected override void Start()
+    protected override void Start()
     {
         base.Start();
     }
@@ -35,6 +33,9 @@ public class Mosnter_Repeat : Monster_Stats
         {
             Destroy(gameObject, 1.5f);
         }
+
+        delay -= Time.deltaTime;
+
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class Mosnter_Repeat : Monster_Stats
             Vector2 frontVec = new Vector2(rigid.position.x + nextMove, rigid.position.y);
             Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
             RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, Ground_Layer);
-            
+
             if (rayHit.collider == null || Physics2D.OverlapCircle(WallCheck.position, 0.01f, Ground_Layer))
             {
                 nextMove *= -1;
@@ -65,9 +66,8 @@ public class Mosnter_Repeat : Monster_Stats
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
-        
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (!MonsterDie)
         {
@@ -77,44 +77,26 @@ public class Mosnter_Repeat : Monster_Stats
                 AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
                 if (player_Hp != null)
                 {
-
                     //Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
                     //player_Hp.TakeDamage(Monster_Damage);
                     // 체력 감소
-
-                    if(testAttacked == false)
+                    if (delay <= 0f)
                     {
                         Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Monster_Damage));
                         player_Hp.TakeDamage(Monster_Damage);
-                        
-                        // 체력 감소
-                        testAttacked = true;
+                        delay = 1f;
                     }
-                    else
-                    {
-                        Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Zero_damage));
-                        player_Hp.TakeDamage(Zero_damage);
-                        StartCoroutine(Zero());
-                    }
-
-
                 }
                 /*Monster_Stats stat = collision.gameObject.GetComponent<Monster_Stats>(); // 보스, 몬스터가 데미지 입는 것
                 if (stat != null)
                 {
                     stat.Monster_TakeDamage(damage);
                 }*/
-
             }
         }
-        
+
     }
 
-    IEnumerator Zero()
-    {
-        yield return new WaitForSeconds(0.03f);
-        testAttacked = false;
-    }
     /*void Think()
     {
         nextMove = Random.Range(-1, 2);
