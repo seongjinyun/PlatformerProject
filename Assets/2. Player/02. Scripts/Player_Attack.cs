@@ -23,9 +23,11 @@ public class Player_Attack : MonoBehaviour
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
         Player_anim = GetComponent<Animator>();
         Player_Dam = GetComponentInParent<AllUnits.Unit>();
-
+        if (GameObject.FindGameObjectWithTag("Gauge_Chk"))
+        {
+            Skill_gauge = 0;
+        }
     }
-
 
 
     public void Attack_gauge()
@@ -61,7 +63,7 @@ public class Player_Attack : MonoBehaviour
         
     }
 
-
+    
 
 
 
@@ -116,7 +118,6 @@ public class Player_Attack : MonoBehaviour
             //Debug.Log(Skill_gauge);
         }
         atk_Anim();
-        
     }
     void atk_Anim()
     {

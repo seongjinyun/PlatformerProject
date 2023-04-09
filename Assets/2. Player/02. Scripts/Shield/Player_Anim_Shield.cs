@@ -5,10 +5,8 @@ using UnityEngine;
 public class Player_Anim_Shield : Player_Attack
 {
     Animator Shield_Anim;
-    GameObject enemy;
     public GameObject Shield_Skill;
     public GameObject player;
-    public GameObject[] Shield_pos;
     protected Rigidbody2D player_rigid;
 
     //넉백
@@ -38,23 +36,15 @@ public class Player_Anim_Shield : Player_Attack
         //Enemy_Test[0] = enemy;
         player_rigid = GetComponent<Rigidbody2D>();
         Shield_Anim = GetComponent<Animator>();
-        //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster"); 
-
-       
     }
 
     void Attack()
     {
-
-
         /*if (Input.GetKeyDown(KeyCode.X))
         {
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, player_boxSize, 0); //박스안에 놓여진 모든 오브젝트들을 collider2d[] 배열에 담음
             foreach (Collider2D collider in collider2Ds)
             {
-                
-                
-
                 if (collider.tag == "Monster") //Monster 태그와 충돌하면
                 {
                     Skill_gauge += 5;
@@ -66,14 +56,11 @@ public class Player_Anim_Shield : Player_Attack
                     {
                         isKnockback = true;
                         collider.transform.Translate(2.0f, 0.4f, 0);
-
                     }
                     else
-
                     {
                         isKnockback = true;
                         collider.transform.Translate(-2.0f, 0.4f, 0);
-
                     }
                     if (isKnockback) //넉백 타이머
                     {
@@ -84,11 +71,8 @@ public class Player_Anim_Shield : Player_Attack
                             isKnockback = false;
                         }
                     }
-
-                    
                 }
             }
-
             Shield_Anim.SetTrigger("Attack_shield");
             //Vector2 dir = (transform.position - Enemy.transform.position).normalized;
             //player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
@@ -96,17 +80,17 @@ public class Player_Anim_Shield : Player_Attack
         */
 
 
-        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 헬멧에 태그
+        Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 태그
 
-        foreach (GameObject pos in Enemy_Test1)
+        foreach (GameObject pos in Enemy_Test1) // 쉴드 스킬 위치 오브젝트 배열
         {
-                foreach (GameObject monster in Enemy_Test)
+                foreach (GameObject monster in Enemy_Test) // 몬스터 오브젝트 배열
                 {
-                    float dist = Vector2.Distance(transform.position, pos.transform.position);
                     if(monster != null)
                     {
+                        float dist = Vector2.Distance(transform.position, pos.transform.position); // 플레이어와 쉴드 스킬 위치 오브젝트 사이 거리
                         Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
-                        if (Input.GetKeyDown(KeyCode.A) &&  dist <= 20.0f /*&& Skill_gauge >= 100*/ && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
+                        if (Input.GetKeyDown(KeyCode.A) &&  dist <= 20.0f /*&& Skill_gauge >= 100 */&& Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
                         {
                             Shield_Anim.SetTrigger("Skill_shield");
                             GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);

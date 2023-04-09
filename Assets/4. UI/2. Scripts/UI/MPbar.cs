@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class MPbar : MonoBehaviour
 {
 
@@ -15,16 +15,16 @@ public class MPbar : MonoBehaviour
     void Start()
     {
         mpbar.value = (float)curmp / (float)maxmp;
-
+        
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         curmp = Player_Attack.Skill_gauge;
         handleMp();
     }
-
+   
     private void handleMp()
     {
         mpbar.value = (float)curmp / (float)maxmp;
