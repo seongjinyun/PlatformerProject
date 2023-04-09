@@ -166,6 +166,7 @@ MonoBehaviour:
   CharCodecopy: 0
   Endingpannel: {fileID: 627546080}
   fadeCount: 0
+  endingpannel: {fileID: 627546076}
 --- !u!4 &162226122
 Transform:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185411972
 GameObject:
@@ -61181,7 +61182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &627546077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -61263,7 +61264,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 643635956344148650, guid: 685df52526ecd4e4aa354d5fe706934b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 643635956344148650, guid: 685df52526ecd4e4aa354d5fe706934b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74138,8 +74139,6 @@ GameObject:
   - component: {fileID: 2059381724}
   - component: {fileID: 2059381723}
   - component: {fileID: 2059381722}
-  - component: {fileID: 2059381721}
-  - component: {fileID: 2059381720}
   - component: {fileID: 2059381726}
   m_Layer: 5
   m_Name: Canvas
@@ -74148,35 +74147,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2059381720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059381719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd80bbfd4070c742ac813cae695b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropitem: {fileID: 0}
-  inventoryPannel: {fileID: 0}
-  slots: []
-  slotHolder: {fileID: 0}
---- !u!114 &2059381721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059381719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4af51bc385f1bb048a7a53cebc5c585b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuCanvas: {fileID: 0}
 --- !u!114 &2059381722
 MonoBehaviour:
   m_ObjectHideFlags: 0
