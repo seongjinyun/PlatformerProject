@@ -12,9 +12,9 @@ namespace AllUnits
         [SerializeField] internal int maxHealth = 50;
         [SerializeField] internal int currentHealth;
         [SerializeField] internal int damage = 1;
-        [SerializeField] internal int SkillDamage_Sword = 3;
-        [SerializeField] internal int SkillDamage_Spear = 3;
-        [SerializeField] internal int SkillDamage_Shield = 5;
+        [SerializeField] internal int SkillDamage_Sword = 2;
+        [SerializeField] internal int SkillDamage_Spear = 2;
+        [SerializeField] internal int SkillDamage_Shield = 3;
         [SerializeField] internal float damageDelay = 2f;
         private float initialDamageDelay;
         [SerializeField] protected bool isDamage = false;

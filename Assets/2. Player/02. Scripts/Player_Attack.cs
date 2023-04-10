@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Attack : MonoBehaviour
 {
     public Transform pos;
-    protected GameObject[] Enemy_Test;
+    static protected GameObject[] Enemy_Test;
     public Vector2 player_boxSize;
     protected float Kb_timer = 0f;
     static public float Skill_gauge = 0;
@@ -20,7 +20,7 @@ public class Player_Attack : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
+        
         Player_anim = GetComponent<Animator>();
         Player_Dam = GetComponentInParent<AllUnits.Unit>();
         if (GameObject.FindGameObjectWithTag("Gauge_Chk"))
@@ -118,6 +118,7 @@ public class Player_Attack : MonoBehaviour
             //Debug.Log(Skill_gauge);
         }
         atk_Anim();
+        Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
     }
     void atk_Anim()
     {

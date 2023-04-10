@@ -32,8 +32,7 @@ public class Player_Anim_Shield : Player_Attack
     protected override void Start()
     {
         base.Start();
-        //Enemy_Test = GameObject.FindGameObjectsWithTag("Enemy"); 
-        //Enemy_Test[0] = enemy;
+        //Enemy_Test = GameObject.FindGameObjectsWithTag("Enemy");
         player_rigid = GetComponent<Rigidbody2D>();
         Shield_Anim = GetComponent<Animator>();
     }
@@ -98,6 +97,12 @@ public class Player_Anim_Shield : Player_Attack
                             Skill_gauge = 0; //게이지 0으로 초기화
                         }
                     }
+                    else
+                    {
+                        Debug.Log(monster + "못찾음");
+
+                    }
+
                 }
         }
             //Debug.Log("거리 " + dist);
@@ -113,7 +118,6 @@ public class Player_Anim_Shield : Player_Attack
     }
     void OnDrawGizmos()
     {
-        
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, player_boxSize);
     }
