@@ -272,8 +272,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   Child: {fileID: 0}
   Zero_damage: 0
-  Monster_Damage: 1
-  Monster_hpMax: 10
+  Monster_Damage: 2
+  Monster_hpMax: 60
   Monster_currentHp: 0
   MonsterDie: 0
   DashPos: {fileID: 6246096216042164371}
@@ -314,8 +314,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
-  m_Size: {x: 0.41, y: 0.59}
+  m_Offset: {x: 0, y: -0.031011447}
+  m_Size: {x: 0.41000012, y: 0.5520228}
   m_Direction: 0
 --- !u!114 &4818160369739949293
 MonoBehaviour:

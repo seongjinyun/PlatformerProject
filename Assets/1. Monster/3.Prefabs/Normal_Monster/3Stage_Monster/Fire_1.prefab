@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685094828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 0.367, z: -0.65}
+  m_LocalPosition: {x: 0.55, y: 0.32, z: -0.65}
   m_LocalScale: {x: -2.5, y: 2.5000002, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3202,7 +3202,7 @@ MonoBehaviour:
   Child: {fileID: 0}
   Zero_damage: 0
   Monster_Damage: 1
-  Monster_hpMax: 6
+  Monster_hpMax: 10
   Monster_currentHp: 0
   MonsterDie: 0
   Target: {fileID: 0}
@@ -3210,8 +3210,8 @@ MonoBehaviour:
   - {fileID: 1748147501}
   - {fileID: 1685094829}
   JumpPower: 18
-  speed: 3.4
-  Radius: 10
+  speed: 7
+  Radius: 12
   Layer_Chase:
     serializedVersion: 2
     m_Bits: 1024

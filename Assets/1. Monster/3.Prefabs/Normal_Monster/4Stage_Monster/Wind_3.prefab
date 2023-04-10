@@ -2343,7 +2343,7 @@ Transform:
   m_GameObject: {fileID: 5192728455813508732}
   m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
   m_LocalPosition: {x: 0, y: -170, z: 0.00015256465}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9078031657182737816}
@@ -2410,12 +2410,11 @@ MonoBehaviour:
   Monster_currentHp: 0
   MonsterDie: 0
   nextMove: 1
-  Speed: 2.5
+  Speed: 7
   Ground_Layer:
     serializedVersion: 2
     m_Bits: 512
   WallCheck: {fileID: 4218478783497964071}
-  testAttacked: 0
 --- !u!114 &1148227364
 MonoBehaviour:
   m_ObjectHideFlags: 0

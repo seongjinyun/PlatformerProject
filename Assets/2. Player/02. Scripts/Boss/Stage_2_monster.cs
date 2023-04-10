@@ -54,7 +54,8 @@ public class Stage_2_monster : Basic_Boss
             switch (ranPattern)
             {
                 case 0:
-                    StartCoroutine(TeleAttack());
+                    StartCoroutine(Ice_Bullet());
+                    
                     break;
                 case 1:
                     StartCoroutine(Second_Attack());
@@ -63,7 +64,7 @@ public class Stage_2_monster : Basic_Boss
                     StartCoroutine(BossDash());
                     break;
                 case 3:
-                    StartCoroutine(Ice_Bullet());
+                    StartCoroutine(TeleAttack());
                     break;
                
             }
@@ -75,14 +76,17 @@ public class Stage_2_monster : Basic_Boss
         base.LookPlayer();
         anim.SetBool("Attack", true); // 애니메이션 실행
         SfxManger.instance.SfxPlay("Ice_Skill_1", clip[0]);
+
         yield return new WaitForSeconds(1f); // 1초뒤에
+
         GameObject Skill_1_pos = Instantiate(Pre_Ice_Spike, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
+        anim.SetBool("Attack", false); // 애니메이션 Idle로
+
         yield return new WaitForSeconds(1f); // 1초뒤에
-        
+
         GameObject Skill_1 = Instantiate(Ice_Arrow, Skill_1_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
         Destroy(Skill_1_pos); // 준비 스킬 삭제
         Destroy(Skill_1, 1f); // 1초뒤에 삭제
-        anim.SetBool("Attack", false); // 애니메이션 Idle로
         StartCoroutine(RandomPattern());
     }
 

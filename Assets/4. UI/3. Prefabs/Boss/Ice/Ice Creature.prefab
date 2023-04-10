@@ -130,8 +130,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00587225, y: -0.03398099}
-  m_Size: {x: 0.2284115, y: 0.46796244}
+  m_Offset: {x: 0.00587225, y: -0.022295762}
+  m_Size: {x: 0.22841156, y: 0.44459206}
   m_Direction: 0
 --- !u!50 &6375149591904379243
 Rigidbody2D:
@@ -170,12 +170,12 @@ MonoBehaviour:
   anim: {fileID: 0}
   Child: {fileID: 0}
   Zero_damage: 0
-  Monster_Damage: 1
-  Monster_hpMax: 10
+  Monster_Damage: 2
+  Monster_hpMax: 74
   Monster_currentHp: 0
   MonsterDie: 0
   DashPos: {fileID: 6400354604305848752}
-  speed: 15
+  speed: 20
   isDash: 0
   EarthBullet_Damage: 1
   IceBullet_Damage: 1
@@ -193,7 +193,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   DashDir: {fileID: 8163816882240921871}
   player_Hp: {fileID: 0}
-  Attack_Skill_2: {fileID: 2192852321311539694, guid: 4247fe2d02bf9a5489fa1be5616f84bc, type: 3}
+  Attack_Skill_2: {fileID: 5196628716336605572, guid: 35424895b23fb51498ff67c99b2ecd2f, type: 3}
   Ice_Arrow: {fileID: 8977083973080917644, guid: e1e4217da0714ec408ec1411f27f48b5, type: 3}
   Pre_Ice_Spike: {fileID: 2419762173191588633, guid: 1ce46813734c6124c9e2396d3a5bb157, type: 3}
   self: {fileID: 1472928334106585488}

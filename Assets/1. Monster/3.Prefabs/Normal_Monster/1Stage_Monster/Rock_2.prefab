@@ -1019,7 +1019,7 @@ MonoBehaviour:
   Child: {fileID: 0}
   Zero_damage: 0
   Monster_Damage: 1
-  Monster_hpMax: 2
+  Monster_hpMax: 4
   Monster_currentHp: 0
   MonsterDie: 0
   Target: {fileID: 0}
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   attackForce: 1200
   projectilePrefab: {fileID: 7789904967022927889, guid: 6cd41855afd8715469e64ff43567444a, type: 3}
   projectileSpeed: 10
-  attackDelay: 1
+  attackDelay: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
