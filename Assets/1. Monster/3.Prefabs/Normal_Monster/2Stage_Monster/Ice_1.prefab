@@ -2588,7 +2588,7 @@ MonoBehaviour:
   Child: {fileID: 0}
   Zero_damage: 0
   Monster_Damage: 1
-  Monster_hpMax: 5
+  Monster_hpMax: 8
   Monster_currentHp: 0
   MonsterDie: 0
   Target: {fileID: 0}
@@ -2596,8 +2596,8 @@ MonoBehaviour:
   - {fileID: 239895916}
   - {fileID: 755614234}
   JumpPower: 18
-  speed: 3.4
-  Radius: 10
+  speed: 7
+  Radius: 12
   Layer_Chase:
     serializedVersion: 2
     m_Bits: 1024

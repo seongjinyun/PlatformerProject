@@ -319,8 +319,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f066f3ebedc79dc429b921d5076e5491, type: 3}
   Shield_Skill: {fileID: 5893873013301558805, guid: 3c2c6db1742a38645979e8e0afe25f21, type: 3}
   player: {fileID: 2197968755758976567}
-  Shield_pos:
-  - {fileID: 0}
   Knockback_speed: 3
   Enemy_Test1: []
 --- !u!1 &752957350612141577
@@ -845,7 +843,7 @@ MonoBehaviour:
   speed: 9
   maxHealth: 20
   currentHealth: 0
-  damage: 2
+  damage: 3
   SkillDamage_Sword: 3
   SkillDamage_Spear: 3
   SkillDamage_Shield: 5
@@ -3059,7 +3057,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5557219116328778750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3068,7 +3066,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.525, y: 0.321}
+  m_AnchoredPosition: {x: -0.42, y: 0.321}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5628188484259173190

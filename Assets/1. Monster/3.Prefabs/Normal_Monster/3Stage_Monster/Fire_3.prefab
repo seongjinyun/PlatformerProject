@@ -617,16 +617,15 @@ MonoBehaviour:
   Child: {fileID: 0}
   Zero_damage: 0
   Monster_Damage: 1
-  Monster_hpMax: 4
+  Monster_hpMax: 8
   Monster_currentHp: 0
   MonsterDie: 0
   nextMove: 1
-  Speed: 2.5
+  Speed: 7
   Ground_Layer:
     serializedVersion: 2
     m_Bits: 512
   WallCheck: {fileID: 7905259960730783929}
-  testAttacked: 0
 --- !u!114 &685281136
 MonoBehaviour:
   m_ObjectHideFlags: 0
