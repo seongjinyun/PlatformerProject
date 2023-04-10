@@ -130,8 +130,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00587225, y: -0.03398099}
-  m_Size: {x: 0.2284115, y: 0.46796244}
+  m_Offset: {x: 0.00587225, y: -0.022295762}
+  m_Size: {x: 0.22841156, y: 0.44459206}
   m_Direction: 0
 --- !u!50 &6375149591904379243
 Rigidbody2D:
@@ -170,12 +170,12 @@ MonoBehaviour:
   anim: {fileID: 0}
   Child: {fileID: 0}
   Zero_damage: 0
-  Monster_Damage: 1
-  Monster_hpMax: 10
+  Monster_Damage: 2
+  Monster_hpMax: 74
   Monster_currentHp: 0
   MonsterDie: 0
   DashPos: {fileID: 6400354604305848752}
-  speed: 15
+  speed: 20
   isDash: 0
   EarthBullet_Damage: 1
   IceBullet_Damage: 1

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708530574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.467, z: -0}
+  m_LocalPosition: {x: 0.4, y: 0.246, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3380,7 +3380,7 @@ Transform:
   m_GameObject: {fileID: 7994453876325699860}
   m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
   m_LocalPosition: {x: 0, y: -170, z: 0.00015256465}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4678701469667452262}
@@ -3447,7 +3447,7 @@ MonoBehaviour:
   Monster_currentHp: 0
   MonsterDie: 0
   nextMove: 1
-  Speed: 7
+  Speed: 5
   Ground_Layer:
     serializedVersion: 2
     m_Bits: 512
