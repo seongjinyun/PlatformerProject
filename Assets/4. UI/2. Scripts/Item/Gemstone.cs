@@ -9,10 +9,14 @@ public class Gemstone : MonoBehaviour
     public Image GroundGemimg, IceGemimg, FireGemimg ,WindGemimg;
     // Update is called once per frame
     void Update()
-    {
-        if (BoolManager.FirstStageBossDie)
+    {   
+        if (BoolManager.FirstStageBossDie == true)
         {
             GroundGemimg.sprite = GroundGem;
+        }
+        else
+        {
+            GroundGemimg.sprite = null;
         }
         if (BoolManager.SecondStageBossDie)
         {

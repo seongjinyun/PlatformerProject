@@ -27,7 +27,7 @@ public class Postion : MonoBehaviour
         {
             
             SfxManger.instance.SfxPlay("Heal_Item", clip);
-            player_Move.currentHealth += 3;
+            player_Move.currentHealth += 5;
 
             Destroy(gameObject);
         }
