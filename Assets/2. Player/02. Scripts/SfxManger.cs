@@ -30,12 +30,9 @@ public class SfxManger : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-
     }
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1) 
-    {
-        
+    {   
         for (int i = 0; i < bgmlist.Length; i++)
         {
             if(arg0.name == bgmlist[i].name) // 씬의 이름은 매개변수를 통해서 알수있음 그리고 씬의 이름과 클립의 이름이 같은것을
@@ -71,7 +68,7 @@ public class SfxManger : MonoBehaviour
 
      public void BgmPlay(AudioClip clip) // 배경음
      {
-        bgm.outputAudioMixerGroup = mixer.FindMatchingGroups("BGM")[0]; // 오디오 믹서 그룹 가져오기
+        bgm.outputAudioMixerGroup = Bgm.instance1.mixer1.FindMatchingGroups("BGM")[0]; // 오디오 믹서 그룹 가져오기
         bgm.clip = clip;
         bgm.loop = true; // 계속 반복 되게
         bgm.volume = 0.1f; 
@@ -96,9 +93,6 @@ public class SfxManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (SceneManager.GetActiveScene().name == "UI_Main")
-        {
-            Destroy(gameObject);
-        }*/
+        
     }
 }
