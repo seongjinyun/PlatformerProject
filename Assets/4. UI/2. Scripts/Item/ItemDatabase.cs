@@ -14,9 +14,9 @@ public class ItemDatabase : MonoBehaviour
 
     public GameObject DropItemPrefab;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player") 
+        if (collision.tag == "Player") 
         {
             SfxManger.instance.SfxPlay("Get_Item", clip);
             GameObject go = Instantiate(DropItemPrefab ,transform.position, Quaternion.identity);
