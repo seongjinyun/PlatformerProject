@@ -8,9 +8,10 @@ public class Player_Anim_Shield : Player_Attack
     public GameObject Shield_Skill;
     public GameObject player;
     protected Rigidbody2D player_rigid;
+    
 
     //넉백
-    public float Knockback_speed = 3;
+    //public float Knockback_speed = 3;
     //protected bool isKnockback;
     //public float Kb_delayTime = 2f;
     //protected float Kb_timer = 0f;
@@ -77,48 +78,67 @@ public class Player_Anim_Shield : Player_Attack
             //player_rigid.AddForce(dir * str, ForceMode2D.Impulse);
         }
         */
+        
 
 
         Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 태그
+        //List<GameObject> targets = new List<GameObject>(); // 범위 안에 들어온 게임오브젝트 리스트
 
         foreach (GameObject pos in Enemy_Test1) // 쉴드 스킬 위치 오브젝트 배열
         {
-                foreach (GameObject monster in Enemy_Test) // 몬스터 오브젝트 배열
+            foreach (GameObject monster in Enemy_Test) // 몬스터 오브젝트 배열
+            {
+                float dist = Vector2.Distance(transform.position, pos.transform.position);
+                
+                if (monster != null) // 몬스터 오브젝트 배열이 null이 아니면
                 {
-                    if(monster != null)
+                    Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
+                    if (Input.GetKeyDown(KeyCode.A) /*&& dist <= 13.0f*/ && Skill_gauge >= 100 && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
                     {
-                        float dist = Vector2.Distance(transform.position, pos.transform.position); // 플레이어와 쉴드 스킬 위치 오브젝트 사이 거리
-                        Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
-                        if (Input.GetKeyDown(KeyCode.A) &&  dist <= 20.0f && Skill_gauge >= 100 && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
+                        Collider[] colliders = Physics.OverlapSphere(transform.position, 13.0f); // 일정 범위 내에 있는 Collider들을 찾음
+                        foreach (Collider collider in colliders)
                         {
+                            if (collider.CompareTag("Monster"))
+                            {
+                                GameObject monster1 = collider.gameObject;
+                            }
+                        }
                             Shield_Anim.SetTrigger("Skill_shield");
+                        
                             GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
                             Destroy(She_, 1f);
                             Skill_gauge = 0; //게이지 0으로 초기화
-                        }
+                        
+                        //Debug.Log("거리 " + dist);
+                        
+                        
                     }
-                    else
-                    {
-                        Debug.Log(monster + "못찾음");
-
-                    }
+                }
+                else
+                {
+                    Debug.Log(monster + "못찾음");
 
                 }
+            }
         }
-            //Debug.Log("거리 " + dist);
+
+    
     }
+            //Debug.Log("거리 " + dist);
+
+
 
     // Update is called once per frame
    protected override void Update()
     {
         base.Update();
         Attack();
-        
         //Debug.Log("거리" + distance);
     }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, player_boxSize);
+        
     }
 }
