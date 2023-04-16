@@ -8,8 +8,8 @@ public class Player_Anim_Shield : Player_Attack
     public GameObject Shield_Skill;
     public GameObject player;
     protected Rigidbody2D player_rigid;
-    
 
+    public float skillRange = 13f;
     //넉백
     //public float Knockback_speed = 3;
     //protected bool isKnockback;
@@ -83,53 +83,57 @@ public class Player_Anim_Shield : Player_Attack
 
         Enemy_Test1 = GameObject.FindGameObjectsWithTag("Shield_Skill_pos"); //쉴드 스킬 위치 몬스터 태그
         //List<GameObject> targets = new List<GameObject>(); // 범위 안에 들어온 게임오브젝트 리스트
-
-        foreach (GameObject pos in Enemy_Test1) // 쉴드 스킬 위치 오브젝트 배열
+        if (Input.GetKeyDown(KeyCode.A) && Skill_gauge >= 100)
         {
-            foreach (GameObject monster in Enemy_Test) // 몬스터 오브젝트 배열
+            bool skillApplied = false; // 스킬이 적용됐는지 확인하는 변수
+
+            foreach (GameObject pos in Enemy_Test1)
             {
                 float dist = Vector2.Distance(transform.position, pos.transform.position);
-                
-                if (monster != null) // 몬스터 오브젝트 배열이 null이 아니면
+
+                if (dist <= 13.0f)
                 {
-                    Monster_Stats Monster_Hp = monster.gameObject.GetComponent<Monster_Stats>();
-                    if (Input.GetKeyDown(KeyCode.A) /*&& dist <= 13.0f*/ && Skill_gauge >= 100 && Monster_Hp.Monster_currentHp > 0) //스킬게이지가 100이고 A키를 누르면
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, skillRange); // 스킬 범위
+
+                    foreach (Collider2D collider in colliders)
                     {
-                        Collider[] colliders = Physics.OverlapSphere(transform.position, 13.0f); // 일정 범위 내에 있는 Collider들을 찾음
-                        foreach (Collider collider in colliders)
+                        if (collider.CompareTag("Monster"))
                         {
-                            if (collider.CompareTag("Monster"))
+                            Monster_Stats Monster_Hp = collider.gameObject.GetComponent<Monster_Stats>();
+                            if (Monster_Hp.Monster_currentHp > 0)
                             {
-                                GameObject monster1 = collider.gameObject;
+                                Shield_Anim.SetTrigger("Skill_shield");
+                                GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
+                                Destroy(She_, 1f);
+                                skillApplied = true; // 스킬이 적용됐음을 표시
                             }
                         }
-                            Shield_Anim.SetTrigger("Skill_shield");
-                        
-                            GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
-                            Destroy(She_, 1f);
-                            Skill_gauge = 0; //게이지 0으로 초기화
-                        
-                        //Debug.Log("거리 " + dist);
-                        
-                        
                     }
                 }
-                else
-                {
-                    Debug.Log(monster + "못찾음");
+            }
 
-                }
+            if (skillApplied)
+            {
+                Skill_gauge = 0; // 스킬이 한 번 이상 적용됐을 때에만 게이지 초기화
             }
         }
 
-    
+
+
+
+
+
     }
-            //Debug.Log("거리 " + dist);
+
+
+
+
+    //Debug.Log("거리 " + dist);
 
 
 
     // Update is called once per frame
-   protected override void Update()
+    protected override void Update()
     {
         base.Update();
         Attack();
@@ -139,6 +143,7 @@ public class Player_Anim_Shield : Player_Attack
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, player_boxSize);
-        
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(pos.position, skillRange);
     }
 }
