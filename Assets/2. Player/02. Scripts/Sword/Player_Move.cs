@@ -284,11 +284,11 @@ public class Player_Move : AllUnits.Unit
 
         if (Player_UsingItem.UsingActiveSpeed == true)
         {
-            speed = 13;
+            speed = 14;
         }
         else
         {
-            speed = 9;
+            speed = 11;
         }
 
         if(currentHealth < 1)
