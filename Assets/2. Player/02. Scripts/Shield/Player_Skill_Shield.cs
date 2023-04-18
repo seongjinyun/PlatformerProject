@@ -26,8 +26,7 @@ public class Player_Skill_Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Destroy(gameObject, 0.5f);
-        Enemys = GameObject.FindGameObjectsWithTag("Monster");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

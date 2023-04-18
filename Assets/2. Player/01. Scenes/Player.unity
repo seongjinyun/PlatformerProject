@@ -849,6 +849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Sword(Clone)
       objectReference: {fileID: 0}
+    - target: {fileID: 1798746268070547124, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5066100314870972562, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3269,6 +3273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmlist:
   - {fileID: 8300000, guid: f6c855322bb42b845a909e04f52497d7, type: 3}
+  bgm: {fileID: 0}
   mixer: {fileID: 24100000, guid: 5c9b07dfbb4b8024f875700995a7614a, type: 2}
   Sfx_Slider: {fileID: 1750064490}
   Bgm_Slider: {fileID: 709399662}
@@ -3726,7 +3731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2197968755758976567, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_Pivot.x
@@ -3811,6 +3816,14 @@ PrefabInstance:
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557219117114761313, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
+      propertyPath: Skill_Range
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557219117114761313, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
+      propertyPath: Layer_Chase.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
