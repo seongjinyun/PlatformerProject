@@ -127,7 +127,7 @@ public class TalkManager : MonoBehaviour
         talkData2.Add(2, "이제 옆에 보이는 포탈을 통해 크레아토르로 가서 마왕의 하수인을 물리치고 타락한 정령들을 원래의 모습으로 돌려놓아주세요.");
         talkData2.Add(3, "");
 
-        talkData3.Add(1, "앞에 누군가 있어, 여기가 어딘지 물어보자");
+        talkData3.Add(1, "앞에 저 여자는 누구지..? 여기가 어딘지 물어봐야겠어");
         talkData3.Add(2, "");
     }
 

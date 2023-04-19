@@ -91,7 +91,7 @@ public class Player_Anim_Shield : Player_Attack
             {
                 float dist = Vector2.Distance(transform.position, pos.transform.position);
 
-                if (dist <= 13.0f)
+                if (dist <= skillRange)
                 {
                     Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, skillRange); // 스킬 범위
 
@@ -144,6 +144,6 @@ public class Player_Anim_Shield : Player_Attack
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(pos.position, player_boxSize);
         Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(pos.position, skillRange);
+        Gizmos.DrawWireSphere(this.transform.position, skillRange);
     }
 }
