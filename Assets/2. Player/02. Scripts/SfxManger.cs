@@ -16,11 +16,12 @@ public class SfxManger : MonoBehaviour
     public Slider Bgm_Slider; // 유아이 배경음 슬라이더
 
     private GameObject Music_Check;
-    
+
 
     private void Awake()
     {
-        if(instance == null)
+        
+        if (instance == null)
         {
             instance = this; //이 클래스 인스턴스가 탄생했을 때 전역변수 instance에 사운드매니저 인스턴스가 담겨있지 않다면, 자신을 넣어준다
             DontDestroyOnLoad(instance); //사라지지않게
