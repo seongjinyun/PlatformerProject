@@ -5,7 +5,12 @@ using UnityEngine;
 public class NPCTri3 : MonoBehaviour
 {
     public GameObject TalkPannel;
+    B_Test bt;
 
+    private void Start()
+    {
+        bt = GetComponent<B_Test>();
+    }
     void Update()
     {
 
@@ -13,13 +18,17 @@ public class NPCTri3 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (bt.Boss_seal == true)
         {
-            if (EndTalkManager.DataNum < 3)
+            if (collision.tag == "Player")
             {
-                TalkPannel.SetActive(true);
-                Time.timeScale = 0f;
+                if (EndTalkManager.DataNum < 3)
+                {
+                    TalkPannel.SetActive(true);
+                    Time.timeScale = 0f;
+                }
             }
         }
+
     }
 }
