@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
     public void Main()
     {
         LoadingSceneController.LoadScene("UI_Main");
+        Resume();
     }
 
     public void Quit()
