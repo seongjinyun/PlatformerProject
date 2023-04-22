@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UI_Active : MonoBehaviour
 {
+    public GameObject pause_button;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,11 @@ public class UI_Active : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Tutorial")
+        if (SceneManager.GetActiveScene().name == "UI_Select")
         {
-            UI_Test.instance_ui.canvasToDisable.gameObject.SetActive(true);
+            pause_button.SetActive(false);
         }
+        
+        
     }
 }
