@@ -9,7 +9,10 @@ public class Slot : MonoBehaviour
     public GameObject slot;
     public Item item;
     public Image itemIcon;
-    
+
+    public Sprite Transparency_image;
+
+
     private void Update()
     {
 /*        if (Inventory.instance.items.Contains(item))
@@ -24,7 +27,7 @@ public class Slot : MonoBehaviour
 
     public void UpdateSlotUI(Item item)
     {
-        if(itemIcon.sprite == null)
+        if(itemIcon.sprite == Transparency_image)
         {
             itemIcon.sprite = item.itemImage;
             itemIcon.gameObject.SetActive(true);

@@ -14,10 +14,10 @@ public class Gemstone : MonoBehaviour
         {
             GroundGemimg.sprite = GroundGem;
         }
-        else
+        /*else
         {
             GroundGemimg.sprite = null;
-        }
+        }*/
         if (BoolManager.SecondStageBossDie)
         {
             IceGemimg.sprite = IceGem;

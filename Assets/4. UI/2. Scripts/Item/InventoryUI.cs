@@ -13,6 +13,8 @@ public class InventoryUI : MonoBehaviour
     public Slot[] slots;
     public Transform slotHolder;
 
+    public Sprite Transparency_image;
+
     public void Start()
     {
         if(Inventory.instance != null){
@@ -39,7 +41,7 @@ public class InventoryUI : MonoBehaviour
         {   
             if (inven.items.Count == 0)
             {   
-                slots[i].itemIcon.sprite = null;
+                slots[i].itemIcon.sprite = Transparency_image;
                 break;
             }
 
