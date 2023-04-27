@@ -23,6 +23,8 @@ namespace AllUnits
 
         protected bool Player_Die = false;
 
+        public AudioClip[] clip_attacked; // 피격 사운드 
+
         // 자식 클래스들도 사용될 수 있도록
         virtual protected void Start()
         {
@@ -39,7 +41,7 @@ namespace AllUnits
         
         public void TakeDamage(int Monster_Damage) // 피격 
         {
-            
+            SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
             if (Player_UsingItem.UsingActiveShield == false)
             {
                 if (!isDamage)
