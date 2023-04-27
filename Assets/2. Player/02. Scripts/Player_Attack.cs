@@ -13,6 +13,8 @@ public class Player_Attack : MonoBehaviour
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
 
+    public GameObject Attacked_Effect;
+
     public AudioClip[] clip; // 0 = Sword_Attack, 1 = Spear_Attack, 2 = Shield_Attack, 3 = Monster_Attacked
 
     AllUnits.Unit Player_Dam;
@@ -45,6 +47,7 @@ public class Player_Attack : MonoBehaviour
                 {
                     Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage)); // 몬스터hp - 플레이어 데미지
                     Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
+                    //GameObject Atk_Ef = Instantiate(Attacked_Effect, pos.transform.position) // 이펙트 나올 인스턴셰이트
                     SfxManger.instance.SfxPlay("Monster_Attacked", clip[3]);
                     Gauge();
                     // 체력 감소
