@@ -21,7 +21,7 @@ public class Monster_Stats : MonoBehaviour
         anim = Child_anim.GetComponent<Animator>();
         Child = Child_anim.GetComponent<Monster_State>();
 
-        //Monster_currentHp = Monster_hpMax;
+        Monster_currentHp = Monster_hpMax;
     }
 
     // Update is called once per frame

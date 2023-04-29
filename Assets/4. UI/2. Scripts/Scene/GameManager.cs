@@ -15,16 +15,11 @@ public class GameManager : MonoBehaviour
     public GameObject LevelSel;
     public GameObject char1, char2, char3;
 
-    public Mode_Select Mode;
-
     private void Awake() 
     {
         //게임매니저를 싱글턴 처리
         if (instance == null) instance = this; //인스턴스가 존재하지 않으면 현재 인스턴스로 
         else Destroy(this);                    //인스턴스가 존재하면 현재 인스턴스를 삭제 
-
-        Mode = FindObjectOfType<Mode_Select>();
-
     }
 
 
@@ -74,8 +69,5 @@ public class GameManager : MonoBehaviour
         LoadingSceneController.LoadScene("UI_Main");
         Debug.Log("메인메뉴로 이동");
         UI_Test.instance_ui.Resume();
-
-        Mode.Easy = false;
-        Mode.Hard = false;
     }
 }

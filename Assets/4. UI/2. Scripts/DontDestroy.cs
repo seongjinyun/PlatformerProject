@@ -15,7 +15,7 @@ public class DontDestroy : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "UI_Main")
         {
-            DontDestroyObj.Destroy(this);
+            DontDestroyObj.Destroy(this.gameObject);
         }
     }
 }
