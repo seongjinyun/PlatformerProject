@@ -11,8 +11,8 @@ public class Monster_Stats : MonoBehaviour
 
     public int Zero_damage = 0;
     public int Monster_Damage = 1;
-    public float Monster_hpMax = 10f;
-    public float Monster_currentHp;
+    public int Monster_hpMax = 10;
+    public int Monster_currentHp;
 
     public bool MonsterDie = false;
     // Start is called before the first frame update

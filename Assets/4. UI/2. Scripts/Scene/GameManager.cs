@@ -40,17 +40,24 @@ public class GameManager : MonoBehaviour
     public void CharSel()
     {
         LevelSel.SetActive(true);
-        char1.SetActive(false);
+        char1.SetActive(false); 
         char2.SetActive(false);
         char3.SetActive(false);
     }
-    public void TutorialStart() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
+/*    public void TutorialStart_Esay() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
     {   
         LoadingSceneController.LoadScene("Tutorial");
         Debug.Log("게임시작");
         BoolManager.PlayerDie = false;
-
+        Easy = true;
     }
+    public void TutorialStart_Hard() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
+    {
+        LoadingSceneController.LoadScene("Tutorial");
+        Debug.Log("게임시작");
+        BoolManager.PlayerDie = false;
+        Hard = true;
+    }*/
 
     public void Quit() //게임 정지 함수 (QUIT 버튼을 누르면 실행)
     {
