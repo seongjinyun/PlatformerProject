@@ -78,17 +78,17 @@ public class Boss_Spawn : MonoBehaviour
             Boss_prefabs[0].GetComponent<One_Stage_Boss>().Monster_hpMax = Stage_1[1];
             GameObject pre = Instantiate(Boss_prefabs[0], Spawn_Position1.transform.position, Spawn_Position1.transform.rotation);
         }
-        else if (SceneManager.GetActiveScene().name == "1_StageBoss")
+        else if (SceneManager.GetActiveScene().name == "2_StageBoss")
         {
             Boss_prefabs[1].GetComponent<Stage_2_monster>().Monster_hpMax = Stage_2[1];
             GameObject pre = Instantiate(Boss_prefabs[1], Spawn_Position1.transform.position, Spawn_Position1.transform.rotation);
         }
-        else if (SceneManager.GetActiveScene().name == "1_StageBoss")
+        else if (SceneManager.GetActiveScene().name == "3_StageBoss")
         {
             Boss_prefabs[2].GetComponent<Fire_Boss>().Monster_hpMax = Stage_3[1];
             GameObject pre = Instantiate(Boss_prefabs[2], Spawn_Position1.transform.position, Spawn_Position1.transform.rotation);
         }
-        else if (SceneManager.GetActiveScene().name == "1_StageBoss")
+        else if (SceneManager.GetActiveScene().name == "4_StageBoss")
         {
             Boss_prefabs[3].GetComponent<Wind_Boss>().Monster_hpMax = Stage_4[1];
             GameObject pre = Instantiate(Boss_prefabs[3], Spawn_Position1.transform.position, Spawn_Position1.transform.rotation);
