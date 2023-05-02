@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class IceSlam : MonoBehaviour
 {
-    Basic_Boss IceSlam_Damge;
+    public  Basic_Boss IceSlam_Damge;
     public float delay = 0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        IceSlam_Damge = GameObject.Find("Ice Creature").GetComponent<Basic_Boss>();
+        //IceSlam_Damge = GameObject.Find("Ice Creature").GetComponent<Basic_Boss>();
     }
 
 

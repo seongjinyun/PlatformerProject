@@ -9,8 +9,11 @@ public class Boss_HpBar : MonoBehaviour
     public GameObject Boss;
     public Slider BossHpbar;
     public float maxhp, curhp;
+    
+
     void Start()
     {
+
         Boss = GameObject.FindWithTag("Monster");
 
         stat = Boss.GetComponent<Monster_Stats>();

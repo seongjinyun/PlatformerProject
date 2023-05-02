@@ -5,13 +5,13 @@ using UnityEngine;
 public class EarthGrow : MonoBehaviour
 {
     
-    Basic_Boss Earth_Damage;
+    public Basic_Boss Earth_Damage;
     float delay = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Earth_Damage = GameObject.Find("Rock Creature").GetComponent<Basic_Boss>();
+        //Earth_Damage = GameObject.Find("Rock Creature").GetComponent<Basic_Boss>();
     }
     
 

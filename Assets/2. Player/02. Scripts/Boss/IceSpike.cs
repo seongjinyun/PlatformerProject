@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class IceSpike : MonoBehaviour
 {
-    Basic_Boss IceSpike_Dam;
+    public Basic_Boss IceSpike_Dam;
 
     // Start is called before the first frame update
     void Start()
     {
-        IceSpike_Dam = GameObject.Find("Ice Creature").GetComponent<Basic_Boss>();
+        //IceSpike_Dam = GameObject.Find("Ice Creature").GetComponent<Basic_Boss>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
