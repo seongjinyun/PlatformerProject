@@ -15,8 +15,12 @@ public class NPCTri4 : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            TalkPannel.SetActive(true);
-            Time.timeScale = 0f;
+            if (EndTalkManager.DataNum2 < 2)
+            {
+                TalkPannel.SetActive(true);
+                Time.timeScale = 0f;
+            }
+                
         }
     }
 }

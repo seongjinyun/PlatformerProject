@@ -20,12 +20,18 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused == true)
-            {
-                Resume();
+            {   
+                if(Time.timeScale == 0)
+                {
+                    Resume();
+                }
             }
-            else
+            else if(GameIsPaused == false)
             {
-                Pause();
+                if (Time.timeScale != 0)
+                {
+                    Pause();
+                }
             }
         }
     }

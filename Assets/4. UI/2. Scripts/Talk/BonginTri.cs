@@ -15,8 +15,11 @@ public class BonginTri : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            TalkPannel.SetActive(true);
-            Time.timeScale = 0f;
+            if (BonginTalkManager.DataNum < 3)
+            {
+                TalkPannel.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
     }
 }

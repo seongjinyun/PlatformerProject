@@ -34,17 +34,17 @@ public class UI_Test : MonoBehaviour
         
     }
 
-    public void DisableButton()
-    {
-        Button button = canvasToDisable.transform.Find("Pause").GetComponent<Button>();
-        button.gameObject.SetActive(false);
-    }
+    //public void DisableButton()
+    //{
+    //    Button button = canvasToDisable.transform.Find("Pause").GetComponent<Button>();
+    //    button.gameObject.SetActive(false);
+    //}
 
-    public void EnableButton()
-    {
-        Button button = canvasToDisable.transform.Find("Pause").GetComponent<Button>();
-        button.gameObject.SetActive(true);
-    }
+    //public void EnableButton()
+    //{
+    //    Button button = canvasToDisable.transform.Find("Pause").GetComponent<Button>();
+    //    button.gameObject.SetActive(true);
+    //}
 
     public void LoadScene(string sceneName)
     {
@@ -54,13 +54,13 @@ public class UI_Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "UI_Select")
-        {
-            DisableButton();
-        }
-        if (SceneManager.GetActiveScene().name == "Tutorial")
-        {
-            EnableButton();
-        }
+        //if (SceneManager.GetActiveScene().name == "UI_Select")
+        //{
+        //    DisableButton();
+        //}
+        //if (SceneManager.GetActiveScene().name == "Tutorial")
+        //{
+        //    EnableButton();
+        //}
     }
 }
