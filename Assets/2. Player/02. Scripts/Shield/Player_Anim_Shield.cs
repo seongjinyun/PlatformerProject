@@ -33,7 +33,7 @@ public class Player_Anim_Shield : Player_Attack
     protected override void Start()
     {
         base.Start();
-        //Enemy_Test = GameObject.FindGameObjectsWithTag("Enemy");
+        
         player_rigid = GetComponent<Rigidbody2D>();
         Shield_Anim = GetComponent<Animator>();
     }
