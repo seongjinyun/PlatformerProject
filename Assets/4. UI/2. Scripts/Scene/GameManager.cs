@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
     public void SelectStart() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
     {
         LoadingSceneController.LoadScene("UI_Select");
+        BoolManager.FirstStageBossDie = false;
+        BoolManager.SecondStageBossDie = false;
+        BoolManager.ThirdStageBossDie = false;
+        BoolManager.FourthStageBossDie = false;
+
         Debug.Log("게임시작");
     }
     public void CharSel()
