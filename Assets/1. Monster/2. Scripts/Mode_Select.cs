@@ -14,6 +14,7 @@ public class Mode_Select : MonoBehaviour
         Debug.Log("게임시작");
         BoolManager.PlayerDie = false;
         Easy = true;
+        Debug.Log("이지난이도 선택");
     }
     public void TutorialStart_Hard() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
     {
@@ -21,6 +22,7 @@ public class Mode_Select : MonoBehaviour
         Debug.Log("게임시작");
         BoolManager.PlayerDie = false;
         Hard = true;
+        Debug.Log("하드난이도 선택");
     }
     // Start is called before the first frame update
     void Start()

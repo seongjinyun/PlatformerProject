@@ -76,11 +76,11 @@ public class Basic_Boss : Monster_Stats
                 player_Hp.TakeDamage(Monster_Damage);
                 // 체력 감소
             }
-            else if (isDash) // 대쉬 공격 - 달리는 애니메이션 이벤트에 맨 앞에 Collider()함수 추가 + 달리는 애니메이션 스피드 0.7로 지정
+/*            else if (isDash) // 대쉬 공격 - 달리는 애니메이션 이벤트에 맨 앞에 Collider()함수 추가 + 달리는 애니메이션 스피드 0.7로 지정
             {
                 Debug.Log("PlayerHP =" + (player_Hp.currentHealth - Dash_Damage));
                 player_Hp.TakeDamage(Dash_Damage);
-            }
+            }*/
         }
     }
     protected virtual void Collider_Dash() // 텔포 공격 플레이어의 체력을 깎음
