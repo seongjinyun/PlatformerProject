@@ -5,7 +5,7 @@ using UnityEngine;
 public class DiePannel : MonoBehaviour
 {
     public GameObject Diepannel;
-
+    public GameObject PauseCan;
     void Start()
     {
         Diepannel.SetActive(false);
@@ -17,11 +17,11 @@ public class DiePannel : MonoBehaviour
         if(BoolManager.PlayerDie == true)
         {
             Diepannel.SetActive(true);
+            Destroy(PauseCan);
         }
         else
         {
             Diepannel.SetActive(false);
-
         }
     }
 }

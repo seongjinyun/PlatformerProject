@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextScene : MonoBehaviour
+public class NextScene1 : MonoBehaviour
 {
     public string NextMapName;
+    public string HardMapName;
     public CurMapName Player;
+
+    Mode_Select mode;
     void Start()
     {
 
@@ -22,8 +25,16 @@ public class NextScene : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {   
-            Player.CurMapname = NextMapName;
-            LoadingSceneController.LoadScene(NextMapName);
+            if(mode.Hard == true)
+            {
+                Player.CurMapname = HardMapName;
+                LoadingSceneController.LoadScene(HardMapName);
+            }
+            else 
+            {
+                Player.CurMapname = NextMapName;
+                LoadingSceneController.LoadScene(NextMapName);
+            }
         }
     }
 }

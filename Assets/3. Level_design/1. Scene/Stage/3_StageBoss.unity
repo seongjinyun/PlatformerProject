@@ -13149,10 +13149,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6787386915073832327, guid: 32685e026629a0b4d95e98874db8861a, type: 3}
+      propertyPath: HardMapName
+      value: 4_Stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787386915073832327, guid: 32685e026629a0b4d95e98874db8861a, type: 3}
       propertyPath: NextMapName
       value: Maze_Stage
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6787386915073832327, guid: 32685e026629a0b4d95e98874db8861a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32685e026629a0b4d95e98874db8861a, type: 3}
 --- !u!1 &650691575 stripped
 GameObject:
@@ -13164,6 +13169,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6787386915073832320, guid: 32685e026629a0b4d95e98874db8861a, type: 3}
   m_PrefabInstance: {fileID: 650691574}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &650691577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650691575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7fccddefb27b343b1b84203a67a353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextMapName: Maze_Stage
+  HardMapName: 4_Stage
+  Player: {fileID: 0}
 --- !u!1 &684865037
 GameObject:
   m_ObjectHideFlags: 0
