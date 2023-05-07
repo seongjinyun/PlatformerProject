@@ -142556,7 +142556,6 @@ GameObject:
   - component: {fileID: 1864881552}
   - component: {fileID: 1864881551}
   - component: {fileID: 1864881550}
-  - component: {fileID: 1864881556}
   m_Layer: 5
   m_Name: Pause_UI
   m_TagString: test
@@ -142673,18 +142672,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1864881556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864881549}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe73334b88f98f4e85861aa31cc9faa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1872914853
 GameObject:
   m_ObjectHideFlags: 0
