@@ -52,7 +52,7 @@ public class Player_Attack : MonoBehaviour
                         Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage)); // 몬스터hp - 플레이어 데미지
                         Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
                         GameObject Atk_Ef = Instantiate(Attacked_Effect, ef_pos.transform.position, ef_pos.transform.rotation); // 이펙트 나올 인스턴셰이트
-                        Destroy(Atk_Ef, 1f);
+                        Destroy(Atk_Ef, 0.5f);
                         SfxManger.instance.SfxPlay("Monster_Attacked", clip[3]);
                         Gauge();
                         // 체력 감소

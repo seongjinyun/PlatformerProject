@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 223058573386930561}
   m_Layer: 6
   m_Name: P_ClothBody
-  m_TagString: Untagged
+  m_TagString: Hit_Effect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1434,7 +1434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   far_Parent: {fileID: 78367834225025601}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: d9419ba0bfac1e84a95418ac5851caf6, type: 3}
 --- !u!1 &2884225232511951378
 GameObject:
   m_ObjectHideFlags: 0

@@ -3142,6 +3142,8 @@ MonoBehaviour:
   pos: {fileID: 3342777113000464955}
   player_boxSize: {x: 3.53, y: 2.64}
   Kb_delayTime: 2
+  Attacked_Effect: {fileID: 8095768443595268619, guid: a61f03d3bd07f464a8e5e8587b0d0b19, type: 3}
+  Enemy_Effect_Pos: []
   clip:
   - {fileID: 0}
   - {fileID: 8300000, guid: f11db4559b3ffff45b62e9327fc5535d, type: 3}
@@ -4482,6 +4484,8 @@ MonoBehaviour:
   damageDelay: 2
   isDamage: 0
   CharCode: 1
+  clip_attacked:
+  - {fileID: 8300000, guid: f066f3ebedc79dc429b921d5076e5491, type: 3}
   Unit_anim: {fileID: 6997368250977220904}
   doubleJumpState: 0
   isGround: 1
