@@ -12,7 +12,7 @@ public class NextScene1 : MonoBehaviour
     Mode_Select mode;
     void Start()
     {
-
+        mode = FindObjectOfType<Mode_Select>();
     }
 
     // Update is called once per frame
