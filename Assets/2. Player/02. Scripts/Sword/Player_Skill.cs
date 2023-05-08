@@ -14,6 +14,8 @@ public class Player_Skill : MonoBehaviour
     public GameObject Player;
     AllUnits.Unit Pl_Dam;
 
+    public AudioClip[] clip; // 오디오 변수 0 = Monster_Attacked --> 피격사운드
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class Player_Skill : MonoBehaviour
             {
                 Debug.Log("몬스터 스킬 피격" + (Monster_Hp.Monster_currentHp - Pl_Dam.SkillDamage_Sword));
                 Monster_Hp.Monster_TakeDamage(Pl_Dam.SkillDamage_Sword);
+                SfxManger.instance.SfxPlay("Monster_Attacked", clip[0]);
                 // 체력 감소
             }
         }

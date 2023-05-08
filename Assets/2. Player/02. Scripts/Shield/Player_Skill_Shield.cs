@@ -13,7 +13,9 @@ public class Player_Skill_Shield : MonoBehaviour
     
 
     GameObject[] Enemys;
-    protected bool isKnockback;
+
+    public AudioClip[] clip; // 오디오 변수 0 = Monster_Attacked --> 피격사운드
+
 
     public GameObject Player;
     AllUnits.Unit Pl_Dam;
@@ -40,6 +42,7 @@ public class Player_Skill_Shield : MonoBehaviour
             {
                 Debug.Log("몬스터 스킬 피격" + (Monster_Hp.Monster_currentHp - Pl_Dam.SkillDamage_Shield));
                 Monster_Hp.Monster_TakeDamage(Pl_Dam.SkillDamage_Shield);
+                SfxManger.instance.SfxPlay("Monster_Attacked", clip[0]);
                 // 체력 감소
             }
         }

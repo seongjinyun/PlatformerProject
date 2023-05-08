@@ -150,6 +150,8 @@ MonoBehaviour:
   skill_speed: 5
   Attacked_Effect: {fileID: 6466254576252109802, guid: 309de3e1407125945804296303007b8e, type: 3}
   Player: {fileID: 9028496524012394670, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
+  clip:
+  - {fileID: 8300000, guid: f066f3ebedc79dc429b921d5076e5491, type: 3}
 --- !u!1001 &8628470640857478797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,27 +161,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 926412166882374570, guid: 2b09ddcdae2fd974f835cd284356c94c, type: 3}
       propertyPath: m_SortingOrder
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1519734484662117759, guid: 2b09ddcdae2fd974f835cd284356c94c, type: 3}
       propertyPath: m_SortingOrder
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2450410900993883773, guid: 2b09ddcdae2fd974f835cd284356c94c, type: 3}
       propertyPath: m_SortingOrder
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 3951708637505964073, guid: 2b09ddcdae2fd974f835cd284356c94c, type: 3}
       propertyPath: m_SortingOrder
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5537414877766558124, guid: 2b09ddcdae2fd974f835cd284356c94c, type: 3}
       propertyPath: m_SortingOrder
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7217843117043853042, guid: 2b09ddcdae2fd974f835cd284356c94c, type: 3}
       propertyPath: m_SortingOrder
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 7731199014275736697, guid: 2b09ddcdae2fd974f835cd284356c94c, type: 3}
       propertyPath: m_Pivot.x
