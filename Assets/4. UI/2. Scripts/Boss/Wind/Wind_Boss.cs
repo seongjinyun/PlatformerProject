@@ -26,6 +26,10 @@ public class Wind_Boss : Basic_Boss
 
         BulletPos.transform.rotation = transform.rotation;
 
+        if (MonsterDie)
+        {
+            BoolManager.FourthStageBossDie = true;
+        }
     }
 
     IEnumerator BossDash()
