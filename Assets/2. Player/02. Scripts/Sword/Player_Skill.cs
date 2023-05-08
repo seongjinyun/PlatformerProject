@@ -9,6 +9,8 @@ public class Player_Skill : MonoBehaviour
     protected bool isKnockback;
     GameObject[] Enemys; //넉백 변수
 
+    public GameObject Attacked_Effect;
+
     public GameObject Player;
     AllUnits.Unit Pl_Dam;
 
@@ -31,7 +33,9 @@ public class Player_Skill : MonoBehaviour
     {
         if (collision.tag == "Monster") //Monster 태그와 충돌하면
         {
-            
+            StartCoroutine(Effect_Delay());
+            GameObject Atk_Ef = Instantiate(Attacked_Effect, collision.transform.position, collision.transform.rotation);
+            Destroy(Atk_Ef, 0.5f);
             // Health 스크립트 가져오기
             Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
             if (Monster_Hp != null)
@@ -41,5 +45,10 @@ public class Player_Skill : MonoBehaviour
                 // 체력 감소
             }
         }
+    }
+    IEnumerator Effect_Delay()
+    {
+        yield return new WaitForSeconds(0.2f);
+
     }
 }

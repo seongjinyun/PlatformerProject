@@ -10,6 +10,8 @@ public class Player_Skill_Spear : MonoBehaviour
     protected bool isKnockback;
     //public GameObject explo;
 
+    public GameObject Attacked_Effect; //이펙트
+
     public GameObject Player;
     AllUnits.Unit Pl_Dam;
 
@@ -65,7 +67,8 @@ public class Player_Skill_Spear : MonoBehaviour
     {
         if (collision.tag == "Monster") //Monster 태그와 충돌하면
         {
-
+            GameObject Atk_Ef = Instantiate(Attacked_Effect, collision.transform.position, collision.transform.rotation);
+            Destroy(Atk_Ef, 0.5f);
             // Health 스크립트 가져오기
             Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
             if (Monster_Hp != null)

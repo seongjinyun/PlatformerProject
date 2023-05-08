@@ -56,7 +56,7 @@ public class Player_Anim : Player_Attack
     {
 
         
-        if (Input.GetKeyDown(KeyCode.A) && Skill_gauge >= 100) //스킬게이지가 100이고 A키를 누르면
+        if (Input.GetKeyDown(KeyCode.A) /*&& Skill_gauge >= 100*/) //스킬게이지가 100이고 A키를 누르면
         {
 
             if (self.transform.rotation.eulerAngles.y > 0) // 오른쪽으로 스킬
@@ -67,7 +67,6 @@ public class Player_Anim : Player_Attack
             }
             else if(self.transform.rotation.eulerAngles.y == 0) //왼쪽으로 스킬
             {
-
 
                 Player_anim.SetTrigger("Skill");
                 Instantiate(Sword_skill, Sword_pos.position, Quaternion.Euler(180, 0, 180));
