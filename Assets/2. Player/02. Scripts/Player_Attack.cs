@@ -13,9 +13,8 @@ public class Player_Attack : MonoBehaviour
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
 
-    public GameObject Attacked_Effect;
+    public GameObject Attacked_Effect; //이펙트
 
-    public GameObject[] Enemy_Effect_Pos;
 
     public AudioClip[] clip; // 0 = Sword_Attack, 1 = Spear_Attack, 2 = Shield_Attack, 3 = Monster_Attacked
 
@@ -47,16 +46,13 @@ public class Player_Attack : MonoBehaviour
                 //Monster_Stats Monster_Hp = collider.gameObject.GetComponent<Monster_Stats>();
                 if (Monster_Hp != null)
                 {
-                    foreach(GameObject ef_pos in Enemy_Effect_Pos)
-                    {
-                        Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage)); // 몬스터hp - 플레이어 데미지
-                        Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
-                        GameObject Atk_Ef = Instantiate(Attacked_Effect, ef_pos.transform.position, ef_pos.transform.rotation); // 이펙트 나올 인스턴셰이트
-                        Destroy(Atk_Ef, 0.5f);
-                        SfxManger.instance.SfxPlay("Monster_Attacked", clip[3]);
-                        Gauge();
-                        // 체력 감소
-                    }
+                     Debug.Log("몬스터 피격" + (Monster_Hp.Monster_currentHp - Player_Dam.damage)); // 몬스터hp - 플레이어 데미지
+                     Monster_Hp.Monster_TakeDamage(Player_Dam.damage);
+                     GameObject Atk_Ef = Instantiate(Attacked_Effect, pos.position,pos.rotation); // 이펙트 나올 인스턴셰이트
+                     Destroy(Atk_Ef, 0.5f);
+                     SfxManger.instance.SfxPlay("Monster_Attacked", clip[3]);
+                     Gauge();
+                     // 체력 감소
 
                 }
 
@@ -128,7 +124,6 @@ public class Player_Attack : MonoBehaviour
         }
         atk_Anim();
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
-        Enemy_Effect_Pos = GameObject.FindGameObjectsWithTag("Hit_Effect");
     }
     void atk_Anim()
     {
