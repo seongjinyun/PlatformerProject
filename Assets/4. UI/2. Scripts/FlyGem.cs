@@ -13,7 +13,7 @@ public class FlyGem : MonoBehaviour
         {
             flygem.SetActive(true);
         }
-        else
+        if (BoolManager.BonginCom == true && mode.Hard == true)
         {
             flygem2.SetActive(true);
         }

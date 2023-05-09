@@ -23,6 +23,8 @@ public class TalkManager : MonoBehaviour
     {
         TalkPannel3.SetActive(true);
         Time.timeScale = 0f;
+
+        BoolManager.Ending = false;
     }
     void Awake()
     {

@@ -62007,7 +62007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB208 \uB5A0\uBCF4\uB2C8 \uC774\uC138\uACC4\uB354\uB77C\n\nTeam -------\n\nTHANK
+  m_text: "\uB208 \uB5A0\uBCF4\uB2C8 \uC774\uC138\uACC4\uB354\uB77C\n\nTeam \uC0BC\uB9E8\uC774\uAC78\n\nTHANK
     YOU FOR PLAYING"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f83d61307eb89904282bef40ceb0e74c, type: 2}
@@ -74231,7 +74231,6 @@ GameObject:
   - component: {fileID: 2059381724}
   - component: {fileID: 2059381723}
   - component: {fileID: 2059381722}
-  - component: {fileID: 2059381726}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -74323,19 +74322,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2059381726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059381719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47485e58820d78c41a3f7b0cf4e3ad05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TalkPannel: {fileID: 0}
 --- !u!1 &2089489809
 GameObject:
   m_ObjectHideFlags: 0
