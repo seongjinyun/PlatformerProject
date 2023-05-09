@@ -69,7 +69,9 @@ public class Player_Skill_Spear : MonoBehaviour
         if (collision.tag == "Monster") //Monster 태그와 충돌하면
         {
             GameObject Atk_Ef = Instantiate(Attacked_Effect, collision.transform.position, collision.transform.rotation);
+            GameObject Atk_Ef_2 = Instantiate(Attacked_Effect, collision.transform.position + Vector3.right + Vector3.up, collision.transform.rotation);
             Destroy(Atk_Ef, 0.5f);
+            Destroy(Atk_Ef_2, 0.5f);
             // Health 스크립트 가져오기
             Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
             if (Monster_Hp != null)

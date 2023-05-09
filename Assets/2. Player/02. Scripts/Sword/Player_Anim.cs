@@ -14,6 +14,7 @@ public class Player_Anim : Player_Attack
     //public GameObject enemy;
 
     public Transform Sword_pos;
+   //public Transform Sword_pos_2; // 스킬 강화 버전
 
     //넉백
     public float Knockback_speed = 3;
@@ -24,6 +25,7 @@ public class Player_Anim : Player_Attack
 
     //스킬
     public GameObject Sword_skill;
+    public GameObject Sword_skill_2; // 스킬 강화 버전
 
     //게이지
     //public float Skill_gauge = 0;
@@ -63,6 +65,7 @@ public class Player_Anim : Player_Attack
             {
                 Player_anim.SetTrigger("Skill");
                 Instantiate(Sword_skill, Sword_pos.position, Quaternion.Euler(0, 0, 0));
+                //Instantiate(Sword_skill_2, Sword_pos.position, Quaternion.Euler(0, 0, 0)); //스킬 강화
                 Skill_gauge = 0; //게이지 0으로 초기화
             }
             else if(self.transform.rotation.eulerAngles.y == 0) //왼쪽으로 스킬
@@ -70,6 +73,7 @@ public class Player_Anim : Player_Attack
 
                 Player_anim.SetTrigger("Skill");
                 Instantiate(Sword_skill, Sword_pos.position, Quaternion.Euler(180, 0, 180));
+                //Instantiate(Sword_skill_2, Sword_pos.position, Quaternion.Euler(180, 0, 180)); //스킬 강화
                 Skill_gauge = 0; //게이지 0으로 초기화
             }
             

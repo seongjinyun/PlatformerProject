@@ -28,7 +28,7 @@ public class Player_Skill : MonoBehaviour
     void Update()
     {
         //rigid_bullet.velocity = transform.right *-1 * skill_speed;
-        Destroy(gameObject,0.5f); // 창 스킬 사라지기
+        Destroy(gameObject,0.5f); //소드 스킬 사라지기
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +36,7 @@ public class Player_Skill : MonoBehaviour
         if (collision.tag == "Monster") //Monster 태그와 충돌하면
         {
             StartCoroutine(Effect_Delay(collision.transform.position, collision.transform.rotation)); // collision 위치값 회전값 받아옴
+            StartCoroutine(Effect_Delay(collision.transform.position + Vector3.right + Vector3.down, collision.transform.rotation));
             // Health 스크립트 가져오기
             Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
             if (Monster_Hp != null)
@@ -52,6 +53,8 @@ public class Player_Skill : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f); //2초 후
         GameObject Atk_Ef = Instantiate(Attacked_Effect, position, rotation); //이펙트 등장
+        GameObject Atk_Ef_1 = Instantiate(Attacked_Effect, position, rotation); //이펙트 등장
         Destroy(Atk_Ef, 0.5f); //이펙트 사라진다요
+        Destroy(Atk_Ef_1, 0.5f); //이펙트 사라진다요
     }
 }
