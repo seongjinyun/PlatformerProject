@@ -275,14 +275,7 @@ public class Player_Move : AllUnits.Unit
             }
             
         }
-    void NotDash()
-    {
-        if (GameObject.FindGameObjectWithTag("DashNot"))
-        {
-            
-        }
-
-    }
+    
 
 
 
@@ -308,7 +301,7 @@ public class Player_Move : AllUnits.Unit
         move();
         Jump();
         Dash();
-        NotDash();
+        
         //Player_anim(h); //애니메이션
     }
 
