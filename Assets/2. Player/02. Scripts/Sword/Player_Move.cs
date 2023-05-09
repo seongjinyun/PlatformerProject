@@ -232,7 +232,8 @@ public class Player_Move : AllUnits.Unit
         {
             if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
             {
-                SfxManger.instance.SfxPlay("Player_Dash", clip[1]);
+
+                
 
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
 
@@ -258,6 +259,7 @@ public class Player_Move : AllUnits.Unit
         }
         if (isDash) //대쉬가 true이면
         {
+            SfxManger.instance.SfxPlay("Player_Dash", clip[1]);
             Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * movX * -1;
             GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
             Destroy(dash_ef, 0.5f);
@@ -273,7 +275,14 @@ public class Player_Move : AllUnits.Unit
             }
             
         }
+    void NotDash()
+    {
+        if (GameObject.FindGameObjectWithTag("DashNot"))
+        {
+            
+        }
 
+    }
 
 
 
@@ -299,6 +308,7 @@ public class Player_Move : AllUnits.Unit
         move();
         Jump();
         Dash();
+        NotDash();
         //Player_anim(h); //애니메이션
     }
 
