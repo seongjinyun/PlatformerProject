@@ -11,6 +11,10 @@ public class FlyGem : MonoBehaviour
     private void Start()
     {
         mode = FindObjectOfType<Mode_Select>();
+
+        flygem.SetActive(false);
+        flygem2.SetActive(false);
+
     }
     void Update()
     {
