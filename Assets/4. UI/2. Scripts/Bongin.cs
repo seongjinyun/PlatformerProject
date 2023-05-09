@@ -18,16 +18,15 @@ public class Bongin : MonoBehaviour
         if (BoolManager.IsBongin == true && Input.GetKeyDown(KeyCode.B))
         {
             BonginPortal.SetActive(true);
-
             BoolManager.BonginCom = true;
-        }   
+        }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             BoolManager.IsBongin = true;
         }
     }
+
 }
