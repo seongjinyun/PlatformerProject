@@ -60,14 +60,14 @@ public class Wind_Boss : Basic_Boss
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
         if (!MonsterDie)
         {
-            int ranPattern = Random.Range(0, 3);
+            int ranPattern = Random.Range(0, 1);
             switch (ranPattern)
             {
                 case 0:
-                    StartCoroutine(BossDash());
+                    StartCoroutine(TeleAttack());
                     break;
                 case 1:
-                    StartCoroutine(TeleAttack());
+                    StartCoroutine(BossDash());
                     break;
                 case 2:
                     StartCoroutine(SpawnTornado());
