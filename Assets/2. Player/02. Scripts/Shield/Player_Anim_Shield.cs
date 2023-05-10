@@ -104,7 +104,7 @@ public class Player_Anim_Shield : Player_Attack
                             {
                                 Shield_Anim.SetTrigger("Skill_shield");
                                 GameObject She_ = Instantiate(Shield_Skill, pos.transform.position, transform.rotation);
-                                Destroy(She_, 1f);
+                                Destroy(She_, 0.8f);
                                 skillApplied = true; // 스킬이 적용됐음을 표시
                             }
                         }
