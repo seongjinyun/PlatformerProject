@@ -28,7 +28,11 @@ public class FlyGem : MonoBehaviour
             {
                 flygem2.SetActive(true);
             }
-
+        }
+        else if(BoolManager.BonginCom == false)
+        {
+            flygem.SetActive(false);
+            flygem2.SetActive(false);
         }
     }
 }

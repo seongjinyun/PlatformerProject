@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class ddd : MonoBehaviour
+public class BoolReset : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,8 @@ public class ddd : MonoBehaviour
             BoolManager.SecondStageBossDie = false;
             BoolManager.ThirdStageBossDie = false;
             BoolManager.FourthStageBossDie = false;
+
+            BoolManager.BonginCom = false;
         }
     }
 }
