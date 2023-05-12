@@ -266,9 +266,7 @@ public class Player_Move : AllUnits.Unit
 
             if(CurrentDashTimer <= 0)
             {
-                
                 isDash = false;
-                
             }
             
         }
