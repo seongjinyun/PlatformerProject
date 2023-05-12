@@ -128,7 +128,7 @@ public class Player_Move : AllUnits.Unit
         if (isGround && Input.GetKeyDown(KeyCode.C)) //점프
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
-            Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
             jump_Count--;
@@ -136,7 +136,7 @@ public class Player_Move : AllUnits.Unit
         }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //더블점프
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
-            Player_rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
             doubleJumpState = false;
             GameObject jump_ef = Instantiate(jump_effect, effect_Pos.position, effect_Pos.rotation);
             Destroy(jump_ef, 0.5f);
@@ -152,17 +152,17 @@ public class Player_Move : AllUnits.Unit
             {
                 SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
                 //effecter.rotationalOffset = 180;
-                Debug.Log("아래점프");
+                //Debug.Log("아래점프");
                 GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // 아래키 + 점프키 누르면
                 Player_rigid.AddForce(Vector2.down * downjump_power, ForceMode2D.Impulse);
-                Debug.Log("22");
+                //Debug.Log("22");
                 if (Ground_Layer != null)
                 {
-                    Debug.Log("찾음1");
+                    //Debug.Log("찾음1");
                 }
                 else
                 {
-                    Debug.Log("못찾음1");
+                    //Debug.Log("못찾음1");
                 }
                 foreach (GameObject layer in Ground_Layer)
                 {
