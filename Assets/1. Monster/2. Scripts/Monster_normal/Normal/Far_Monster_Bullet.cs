@@ -63,4 +63,9 @@ public class Far_Monster_Bullet : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Attacked = false;
     }
+
+    private void Update()
+    {
+        Destroy(gameObject, 2.5f);
+    }
 }
