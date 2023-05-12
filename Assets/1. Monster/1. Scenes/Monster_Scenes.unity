@@ -526,6 +526,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 654672032478264201, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2197968755758976567, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_Name
       value: Player_shield
@@ -613,6 +617,14 @@ PrefabInstance:
     - target: {fileID: 3526826421527383147, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557219116328778751, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.438
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557219117114761313, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
+      propertyPath: player_boxSize.x
+      value: 2.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae9cbef3e51ef254a8f1f4c9f1c3fc50, type: 3}
@@ -1403,6 +1415,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 190048714, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+      propertyPath: player_boxSize.x
+      value: 3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1652992474, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 1798746268070547124, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_Name
       value: Player_Sword
@@ -2141,6 +2161,14 @@ PrefabInstance:
     - target: {fileID: 2657438444314131828, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342777113000464955, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.627
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342777113667186681, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
+      propertyPath: player_boxSize.x
+      value: 3.93
       objectReference: {fileID: 0}
     - target: {fileID: 9028496524012394670, guid: 0d7ee0dc84be1ad4b832bd50d28da77b, type: 3}
       propertyPath: m_Name

@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: {fileID: 5557219116328778751}
-  player_boxSize: {x: 1.5, y: 2}
+  player_boxSize: {x: 2.48, y: 2.64}
   Kb_delayTime: 2
   Attacked_Effect: {fileID: 8095768443595268619, guid: a61f03d3bd07f464a8e5e8587b0d0b19, type: 3}
   clip:
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
-  maxHealth: 20
+  maxHealth: 25
   currentHealth: 0
   damage: 3
   SkillDamage_Sword: 6
@@ -2457,7 +2457,7 @@ Transform:
   m_GameObject: {fileID: 3973373704925088420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8635729812468728901}
@@ -3154,7 +3154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.42, y: 0.321}
+  m_AnchoredPosition: {x: -0.47, y: 0.321}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5628188484259173190
@@ -3383,7 +3383,7 @@ Transform:
   m_GameObject: {fileID: 6156805254682438902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5095861168881726197}

@@ -1521,7 +1521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3342777113000464954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.655, y: 0.283, z: -0.02}
+  m_LocalPosition: {x: -0.581, y: 0.283, z: -0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3140,7 +3140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: {fileID: 3342777113000464955}
-  player_boxSize: {x: 3.53, y: 2.64}
+  player_boxSize: {x: 3.93, y: 2.64}
   Kb_delayTime: 2
   Attacked_Effect: {fileID: 8095768443595268619, guid: a61f03d3bd07f464a8e5e8587b0d0b19, type: 3}
   clip:
@@ -4474,7 +4474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
-  maxHealth: 20
+  maxHealth: 25
   currentHealth: 0
   damage: 2
   SkillDamage_Sword: 6
