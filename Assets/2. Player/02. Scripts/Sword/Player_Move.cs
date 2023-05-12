@@ -65,6 +65,7 @@ public class Player_Move : AllUnits.Unit
     protected SpriteRenderer sprite;
     // Start is called before the first frame update
 
+    public float dash_gravity;
 
     protected override void Start()
     {
@@ -280,7 +281,7 @@ public class Player_Move : AllUnits.Unit
 
         float original = Player_rigid.gravityScale;
         Player_rigid.gravityScale = 0f;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(dash_gravity);
         Player_rigid.gravityScale = original;
     }
 
