@@ -38,6 +38,8 @@ public class Monster_Stats : MonoBehaviour
         {
             MonsterDie = true;
             anim.SetTrigger("Die");
+            this.gameObject.layer = 7;
+
             //Destroy(gameObject, 1.2f);
             //DIe ¾Ö´Ô ½ÇÇà ¹× »èÁ¦
             Debug.Log("»ç¸Á");

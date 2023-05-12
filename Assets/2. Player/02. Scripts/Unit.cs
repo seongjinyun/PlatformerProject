@@ -33,9 +33,9 @@ namespace AllUnits
         }
         virtual protected void Update()
         {
-           if(currentHealth > 20)
+           if(currentHealth > 25)
             {
-                currentHealth = 20;
+                currentHealth = 25;
             }
         }
         
