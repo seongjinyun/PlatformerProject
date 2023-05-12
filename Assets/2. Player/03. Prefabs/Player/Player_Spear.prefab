@@ -4495,7 +4495,7 @@ MonoBehaviour:
   jump_delay: 0
   downjump_power: 30
   move_animator: {fileID: 1975779875685421878}
-  dash_Speed: 20
+  dash_Speed: 17
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
@@ -4507,6 +4507,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   - {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
   shadow: {fileID: 5797425555756224725}
+  dash_gravity: 0.3
 --- !u!95 &7208729996220655730
 Animator:
   serializedVersion: 4

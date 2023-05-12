@@ -948,7 +948,7 @@ MonoBehaviour:
   jump_delay: 0
   downjump_power: 30
   move_animator: {fileID: 881880671221513260}
-  dash_Speed: 20
+  dash_Speed: 17
   isDash: 0
   StartDashTimer: 0
   isDash_Delay: 0
@@ -960,6 +960,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   - {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
   shadow: {fileID: 7650155042430000967}
+  dash_gravity: 0.3
 --- !u!70 &740505468377667571
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
