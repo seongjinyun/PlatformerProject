@@ -223,7 +223,7 @@ public class Player_Move : AllUnits.Unit
 
     protected virtual void Dash()
     {
-        movX = Input.GetAxis("Horizontal");
+        movX = Input.GetAxisRaw("Horizontal");
 
         Dash_timer -= Time.deltaTime;
 
@@ -232,19 +232,16 @@ public class Player_Move : AllUnits.Unit
         {
             if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //플레이어 대쉬
             {
-
-                
-
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
-
-              //대쉬회피
+                isDash = true;
+                //대쉬회피
                 foreach (GameObject test in monster_change)
                 {
                     test.GetComponent<Dash>().Change_dash();
                 } 
                 
 
-                isDash = true;
+                
                 CurrentDashTimer = StartDashTimer;
                 Player_rigid.velocity = Vector2.zero;
                 Dashdirection = (int)movX;
