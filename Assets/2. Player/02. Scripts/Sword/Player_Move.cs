@@ -256,10 +256,8 @@ public class Player_Move : AllUnits.Unit
         }
         if (isDash) //대쉬가 true이면
         {
-            SfxManger.instance.SfxPlay("Player_Dash", clip[1]);
-            Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * movX * -1;
-            GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
-            Destroy(dash_ef, 0.5f);
+            StartCoroutine(dash_dash());
+            
         }
            
             CurrentDashTimer -= Time.deltaTime;
@@ -271,7 +269,18 @@ public class Player_Move : AllUnits.Unit
             
         }
     
+    IEnumerator dash_dash()
+    {
+        SfxManger.instance.SfxPlay("Player_Dash", clip[1]);
+        Player_rigid.velocity = transform.right * Dashdirection * dash_Speed * movX * -1;
+        GameObject dash_ef = Instantiate(Dash_effect, dash_transform.position, transform.rotation);
+        Destroy(dash_ef, 0.5f);
 
+        float original = Player_rigid.gravityScale;
+        Player_rigid.gravityScale = 0f;
+        yield return new WaitForSeconds(0.2f);
+        Player_rigid.gravityScale = original;
+    }
 
 
     // Update is called once per frame
