@@ -48,6 +48,7 @@ public class Monster_Unit : Monster_Stats
         Rotate();
         if (MonsterDie)
         {
+            this.gameObject.layer = 8;
             Destroy(gameObject, 1.5f);
         }
     }

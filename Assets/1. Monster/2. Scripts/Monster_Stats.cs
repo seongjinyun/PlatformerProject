@@ -38,7 +38,6 @@ public class Monster_Stats : MonoBehaviour
         {
             MonsterDie = true;
             anim.SetTrigger("Die");
-            this.gameObject.layer = 7;
 
             //Destroy(gameObject, 1.2f);
             //DIe 애님 실행 및 삭제

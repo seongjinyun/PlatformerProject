@@ -30,7 +30,7 @@ public class Far_Monster : Monster_Unit
     protected override void Start()
     {
         base.Start();
-        playerTransform = GameObject.FindGameObjectWithTag("Player_Hit").transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Far_Attack_Pos").transform;
         
         //far_state = GetComponent<far_Monster_State>();
     }

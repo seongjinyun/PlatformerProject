@@ -48,8 +48,21 @@ public class Basic_Boss : Monster_Stats
     protected override void Update()
     {
         base.Update();
+        BossDie();
     }
 
+    void BossDie()
+    {
+        if (MonsterDie)
+        {
+            Collider2D coll = GetComponent<Collider2D>();
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.simulated = false;
+            coll.enabled = false;
+
+            return;
+        }
+    }
     public void LookPlayer()
     {
         if (transform.position.x < Player.transform.position.x)
