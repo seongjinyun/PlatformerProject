@@ -31,6 +31,7 @@ public class Mosnter_Repeat : Monster_Stats
 
         if (MonsterDie)
         {
+            this.gameObject.layer = 8;
             Destroy(gameObject, 1.5f);
         }
 

@@ -66,6 +66,6 @@ public class Far_Monster_Bullet : MonoBehaviour
 
     private void Update()
     {
-        Destroy(gameObject, 2.5f);
+        Destroy(gameObject, 1.8f);
     }
 }
