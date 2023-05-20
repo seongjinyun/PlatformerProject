@@ -18,8 +18,8 @@ public class CameraShake : MonoBehaviour
 
     void StartShake()
     {
-        float cameraPosX = Random.value * shakeRange * 3 - shakeRange;
-        float cameraPosY = Random.value * shakeRange * 3 - shakeRange;
+        float cameraPosX = Random.value * shakeRange * 2 - shakeRange;
+        float cameraPosY = Random.value * shakeRange * 2 - shakeRange;
         Vector3 cameraPos = mainCamera.transform.position;
         cameraPos.x += cameraPosX;
         cameraPos.y += cameraPosY;

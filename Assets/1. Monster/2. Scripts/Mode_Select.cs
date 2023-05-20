@@ -10,7 +10,7 @@ public class Mode_Select : MonoBehaviour
 
     public void TutorialStart_Esay() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
     {
-        LoadingSceneController.LoadScene("Tutorial");
+        LoadingSceneController.LoadScene("1_Stage");
         Debug.Log("게임시작");
         BoolManager.PlayerDie = false;
         Easy = true;
@@ -18,7 +18,7 @@ public class Mode_Select : MonoBehaviour
     }
     public void TutorialStart_Hard() //게임 시작 함수 (시작 버튼을 누르면 실행됨)
     {
-        LoadingSceneController.LoadScene("Tutorial");
+        LoadingSceneController.LoadScene("1_Stage");
         Debug.Log("게임시작");
         BoolManager.PlayerDie = false;
         Hard = true;
