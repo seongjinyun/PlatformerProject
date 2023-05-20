@@ -39,6 +39,8 @@ public class Monster_Stats : MonoBehaviour
             MonsterDie = true;
             anim.SetTrigger("Die");
 
+            EnemyCountManager.instance.KillMonsterCount++;
+
             //Destroy(gameObject, 1.2f);
             //DIe ¾Ö´Ô ½ÇÇà ¹× »èÁ¦
             Debug.Log("»ç¸Á");

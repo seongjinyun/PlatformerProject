@@ -21,7 +21,9 @@ public class NextScene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
-        {   
+        {
+            EnemyCountManager.instance.KillMonsterCount = 0;
+
             Player.CurMapname = NextMapName;
             LoadingSceneController.LoadScene(NextMapName);
         }
