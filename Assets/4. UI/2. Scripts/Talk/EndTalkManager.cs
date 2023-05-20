@@ -19,7 +19,7 @@ public class EndTalkManager : MonoBehaviour
     public static int DataNum,DataNum2;
 
     public CanvasGroup Endingpannel;
-    public float fadeCount;
+    public float fadeCount, count;
     public GameObject endingpannel;
     private void Start()
     {
@@ -102,6 +102,11 @@ public class EndTalkManager : MonoBehaviour
             StartCoroutine(Ending());
            
         }
+
+        if(count >= 150)
+        {
+            LoadingSceneController.LoadScene("UI_Main");
+        }
     }
 
     void GenerateData()
@@ -143,8 +148,9 @@ public class EndTalkManager : MonoBehaviour
             fadeCount += 0.0001f;
             yield return new WaitForSeconds(0.1f);
             Endingpannel.alpha = fadeCount;
-
         }
+
+        count += 0.1f;
  
     }
 
