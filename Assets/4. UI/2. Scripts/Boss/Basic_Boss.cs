@@ -96,6 +96,7 @@ public class Basic_Boss : Monster_Stats
             }*/
         }
     }
+
     protected virtual void Collider_Dash() // 텔포 공격 플레이어의 체력을 깎음
     {
         Collider2D collider2d = Physics2D.OverlapCircle(Attack_Pos.position, Attack_Radius, P_Layer);

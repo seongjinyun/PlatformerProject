@@ -114,7 +114,7 @@ public class Player_Anim_Spear : Player_Attack
         }
         */
 
-        if (Input.GetKeyDown(KeyCode.A) && Skill_gauge >= 100 ) //스킬게이지가 100이고 A키를 누르면
+        if (Input.GetKeyDown(KeyCode.A) /*&& Skill_gauge >= 100*/ ) //스킬게이지가 100이고 A키를 누르면
         {
             
 

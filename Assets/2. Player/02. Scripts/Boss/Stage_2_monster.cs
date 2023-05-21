@@ -14,8 +14,8 @@ public class Stage_2_monster : Basic_Boss
     //public Vector2 monster_boxSize;
     //public BoxCollider2D mon_attack;
 
-    
-    
+    public Transform Attack_Pos_slam;
+
 
     protected override void Start()
     {
@@ -50,16 +50,16 @@ public class Stage_2_monster : Basic_Boss
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
         if (!MonsterDie)
         {
-            int ranPattern = Random.Range(0, 4);
+            int ranPattern = Random.Range(0, 1);
             switch (ranPattern)
             {
                 case 0:
-                    StartCoroutine(Ice_Bullet());
-                    
-                    break;
-                case 1:
                     StartCoroutine(Second_Attack());
                     break;
+                case 1:
+                    StartCoroutine(Ice_Bullet());
+                    break;
+                
                 case 2:
                     StartCoroutine(BossDash());
                     break;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Skill_Spear : MonoBehaviour
 {
     private Rigidbody2D rigid_spear;
-    public float skill_speed = 5.0f;
+    public float skill_speed = 15.0f;
     GameObject[] Enemys;
     protected bool isKnockback;
     //public GameObject explo;
@@ -69,7 +69,7 @@ public class Player_Skill_Spear : MonoBehaviour
         if (collision.tag == "Monster") //Monster 태그와 충돌하면
         {
             GameObject Atk_Ef = Instantiate(Attacked_Effect, collision.transform.position, collision.transform.rotation);
-            GameObject Atk_Ef_2 = Instantiate(Attacked_Effect, collision.transform.position + Vector3.right + Vector3.up, collision.transform.rotation);
+            GameObject Atk_Ef_2 = Instantiate(Attacked_Effect, collision.transform.position + Vector3.right + Vector3.up, collision.transform.rotation); // 스킬이펙트
             Destroy(Atk_Ef, 0.5f);
             Destroy(Atk_Ef_2, 0.5f);
             // Health 스크립트 가져오기
