@@ -10,6 +10,8 @@ public class BoolManager : MonoBehaviour
     public static bool PlayerDie;
     public static bool BonginCom;
     public static bool Ending;
+    public static bool isShake;
+
 
     private void Awake()
     {

@@ -13,7 +13,7 @@ public class BoolReset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Tutorial")
+        if (SceneManager.GetActiveScene().name == "UI_Main")
         {
             BoolManager.FirstStageBossDie = false;
             BoolManager.SecondStageBossDie = false;
@@ -21,6 +21,7 @@ public class BoolReset : MonoBehaviour
             BoolManager.FourthStageBossDie = false;
 
             BoolManager.BonginCom = false;
+            BoolManager.isShake = false;
         }
     }
 }
