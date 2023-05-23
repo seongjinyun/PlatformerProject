@@ -27,12 +27,15 @@ namespace AllUnits
 
         public AudioClip[] clip_attacked; // 피격 사운드 
 
+        public GameObject me;
+
         // 자식 클래스들도 사용될 수 있도록
         virtual protected void Start()
         {
             currentHealth = maxHealth;
             initialDamageDelay = damageDelay;
             sprite = GetComponent<SpriteRenderer>();
+            me = GameObject.FindWithTag("Player");
         }
         virtual protected void Update()
         {
@@ -41,9 +44,33 @@ namespace AllUnits
                 currentHealth = 25;
             }
         }
-        
+        public void findAllChildren()
+        {
+            
+        }
         public void TakeDamage(int Monster_Damage) // 피격 
         {
+            SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer child in allChildren)
+            {
+                float damtime = 0;
+
+                while (damtime < 10)
+                {
+                    if (damtime % 2 == 0)
+                    {
+                        child.color = new Color32(255, 255, 255, 90);
+                    }
+                    else
+                    {
+                        child.color = new Color32(255, 255, 255, 180);
+                    }
+
+                    damtime += Time.deltaTime;
+                    Debug.Log(damtime);
+                }
+                sprite.color = new Color32(255, 255, 255, 255);
+            }
             StartCoroutine(dam());
             
             //SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
@@ -79,26 +106,31 @@ namespace AllUnits
 
         IEnumerator dam()
         {
-            int damtime = 0;
-            
-            while (damtime < 10)
+            /*SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer child in allChildren)
             {
-                if(damtime % 2 == 0)
-                {
-                    sprite.color = new Color32(255, 255, 255, 90);
-                }
-                else
-                {
-                    sprite.color = new Color32(255, 255, 255, 90);
-                }
+                int damtime = 0;
 
-                yield return new WaitForSeconds(0.2f);
+                while (damtime < 10)
+                {
+                    if (damtime % 2 == 0)
+                    {
+                        child.color = new Color32(255, 255, 255, 90);
+                    }
+                    else
+                    {
+                        child.color = new Color32(255, 255, 255, 180);
+                    }
 
-                damtime++;
-                Debug.Log(damtime);
+                    yield return new WaitForSeconds(0.2f);
+
+                    damtime++;
+                    Debug.Log(damtime);
+                }
+                sprite.color = new Color32(255, 255, 255, 255);
             }
-
-            sprite.color = new Color32(255, 255, 255, 255);
+            */
+            yield return new WaitForSeconds(0.2f);
         }
         public void NotDamage(int Zero_Damage) //무적 피격
         {
