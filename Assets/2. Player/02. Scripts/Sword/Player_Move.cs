@@ -62,10 +62,12 @@ public class Player_Move : AllUnits.Unit
 
     public GameObject shadow;
 
-    protected SpriteRenderer sprite;
+    
     // Start is called before the first frame update
 
     public float dash_gravity;
+
+
 
     protected override void Start()
     {
@@ -178,7 +180,7 @@ public class Player_Move : AllUnits.Unit
         }
     }
     
-    void NotJump()
+    void NotJump() //더블 점프 안되게 (미로맵)
     {
         if (GameObject.FindGameObjectWithTag("JumpNot"))
         {
@@ -282,6 +284,8 @@ public class Player_Move : AllUnits.Unit
         yield return new WaitForSeconds(dash_gravity);
         Player_rigid.gravityScale = original;
     }
+
+    
 
 
     // Update is called once per frame

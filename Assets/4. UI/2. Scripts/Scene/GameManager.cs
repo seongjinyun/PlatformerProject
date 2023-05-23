@@ -12,8 +12,12 @@ public class GameManager : MonoBehaviour
     public Button btnStart; //시작 버튼   
     public Button btnOption; //옵션 버튼
     public Button btnBack; //메인씬이동 버튼
+    public Button btnEscpae; //끼임 탈출 버튼 
     public GameObject LevelSel;
     public GameObject char1, char2, char3;
+
+    GameObject resetPoint;
+    GameObject player;
 
     private void Awake() 
     {
@@ -81,5 +85,12 @@ public class GameManager : MonoBehaviour
         LoadingSceneController.LoadScene("UI_Main");
         Debug.Log("메인메뉴로 이동");
         UI_Test.instance_ui.Resume();
+    }
+
+    public void Escape()
+    {
+        player = GameObject.FindWithTag("Player");
+        resetPoint = GameObject.FindWithTag("RESPAWN");
+        player.transform.position = resetPoint.transform.position;
     }
 }
