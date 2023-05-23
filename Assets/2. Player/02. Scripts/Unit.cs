@@ -50,7 +50,7 @@ namespace AllUnits
         }
         public void TakeDamage(int Monster_Damage) // 피격 
         {
-            SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
+           /* SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer child in allChildren)
             {
                 float damtime = 0;
@@ -65,13 +65,18 @@ namespace AllUnits
                     {
                         child.color = new Color32(255, 255, 255, 180);
                     }
-
+                    if (damtime > 10f)
+                    {
+                        damtime = 0;
+                        sprite.color = new Color32(255, 255, 255, 255);
+                    }
                     damtime += Time.deltaTime;
                     Debug.Log(damtime);
                 }
-                sprite.color = new Color32(255, 255, 255, 255);
+                
             }
-            StartCoroutine(dam());
+           */
+            //StartCoroutine(dam());
             
             //SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
             if (clip_attacked.Length > 0)
@@ -104,9 +109,9 @@ namespace AllUnits
             isDamage = false;
         }
 
-        IEnumerator dam()
+        /*IEnumerator dam()
         {
-            /*SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
+            SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer child in allChildren)
             {
                 int damtime = 0;
@@ -129,9 +134,10 @@ namespace AllUnits
                 }
                 sprite.color = new Color32(255, 255, 255, 255);
             }
-            */
+            
             yield return new WaitForSeconds(0.2f);
         }
+    */
         public void NotDamage(int Zero_Damage) //무적 피격
         {
             currentHealth -= Zero_Damage;
