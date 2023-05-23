@@ -13,6 +13,8 @@ public class Maze_Monster : MonoBehaviour
     private Vector2 startPos;
     private Vector2 moveDirection = Vector2.right;
 
+    public Vector2 Vec;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,7 +34,8 @@ public class Maze_Monster : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -42,10 +45,10 @@ public class Maze_Monster : MonoBehaviour
                 Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - Damage));
                 player_Hp.TakeDamage(Damage);
             }
-            /*// 플레이어 넉백
+            // 플레이어 넉백
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-            playerRb.velocity = knockbackDirection * knockbackForce;*/
+            playerRb.velocity = Vector2.zero;
+            playerRb.AddForce(moveDirection * knockbackForce, ForceMode2D.Impulse);
         }
     }
 }

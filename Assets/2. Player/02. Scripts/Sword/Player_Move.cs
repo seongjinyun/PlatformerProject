@@ -67,6 +67,8 @@ public class Player_Move : AllUnits.Unit
 
     public float dash_gravity;
 
+    bool dash = true;
+
     protected override void Start()
     {
         base.Start();
@@ -183,6 +185,7 @@ public class Player_Move : AllUnits.Unit
         if (GameObject.FindGameObjectWithTag("JumpNot"))
         {
             doubleJumpState = false;
+            dash = false;
         }
 
     }
@@ -305,8 +308,11 @@ public class Player_Move : AllUnits.Unit
         NotJump();
         move();
         Jump();
-        Dash();
-        
+        if (dash)
+        {
+            Dash();
+        }
+
         //Player_anim(h); //애니메이션
     }
 
