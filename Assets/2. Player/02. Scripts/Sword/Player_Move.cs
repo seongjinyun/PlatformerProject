@@ -7,13 +7,13 @@ public class Player_Move : AllUnits.Unit
 {
     
 
-    //À¯´Ö·çÆ® °´Ã¼
+    //ï¿½ï¿½ï¿½Ö·ï¿½Æ® ï¿½ï¿½Ã¼
     public GameObject Unit_anim;
 
 
-    //½ºÅÝ
-    public static float Max_hp = 101f; // ÃÖ´ë Ã¼·Â
-    public static float Player_Hp; //ÇÃ·¹ÀÌ¾î Ã¼·Â
+    //ï¿½ï¿½ï¿½ï¿½
+    public static float Max_hp = 101f; // ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½
+    public static float Player_Hp; //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ã¼ï¿½ï¿½
 
     // public SpriteRenderer sr;
     //public  float speed;
@@ -22,22 +22,22 @@ public class Player_Move : AllUnits.Unit
     protected Transform Player_tr;
     
 
-    //Á¡ÇÁ
+    //ï¿½ï¿½ï¿½ï¿½
     public bool doubleJumpState = false;
     public bool isGround = true;
     public float jumpPower;
-    public GameObject jump_effect; //Á¡ÇÁ ÀÌÆåÆ®
+    public GameObject jump_effect; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
     public Transform effect_Pos;
     public float jump_Count = 2;
     public bool jump_delay;
     public float downjump_power;
 
 
-    //À¯´Ö·çÆ® ¾Ö´Ï¸ÞÀÌÅÍ
+    //ï¿½ï¿½ï¿½Ö·ï¿½Æ® ï¿½Ö´Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½
     public Animator move_animator;
 
-    // ´ë½¬ º¯¼ö
-    public float dash_Speed; //´ë½¬ ¼Óµµ
+    // ï¿½ë½¬ ï¿½ï¿½ï¿½ï¿½
+    public float dash_Speed; //ï¿½ë½¬ ï¿½Óµï¿½
     public bool isDash;
     public float StartDashTimer;
 
@@ -46,23 +46,23 @@ public class Player_Move : AllUnits.Unit
     protected float movX;
 
     public bool isDash_Delay = false;
-    public float Dash_delayTime = 2f; //´ë½¬ÄðÅ¸ÀÓ
+    public float Dash_delayTime = 2f; //ï¿½ë½¬ï¿½ï¿½Å¸ï¿½ï¿½
     static public float Dash_timer = -5f;
 
     public bool Time_end = false;
 
-    public GameObject Dash_effect; // ´ë½¬ÀÌÆåÆ®
+    public GameObject Dash_effect; // ï¿½ë½¬ï¿½ï¿½ï¿½ï¿½Æ®
     public Transform dash_transform;
 
-    //»ç¿îµå
+    //ï¿½ï¿½ï¿½ï¿½
     public AudioClip[] clip;
 
-    //ÇÏ´Ü Á¡ÇÁ
+    //ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
     int Player_Layer, Ground_Layer;
 
     public GameObject shadow;
 
-    protected SpriteRenderer sprite;
+    
     // Start is called before the first frame update
 
     public float dash_gravity;
@@ -93,22 +93,22 @@ public class Player_Move : AllUnits.Unit
     
     protected virtual void Jump() 
     {
-        //Á¡ÇÁ ÂøÁö Ã¼Å©
-        int layer_mask = (1 << 6) | (1 << 9); // Ground, Monster ·¹ÀÌ¾î
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
+        int layer_mask = (1 << 6) | (1 << 9); // Ground, Monster ï¿½ï¿½ï¿½Ì¾ï¿½
 
-        if (Player_rigid.velocity.y <= 0) // ¶³¾îÁö´Â ÁßÀÏ¶§
+        if (Player_rigid.velocity.y <= 0) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¶ï¿½
         {
             RaycastHit2D hit = Physics2D.Raycast(Player_rigid.position, Vector2.down, 1f, layer_mask);
-            Debug.DrawRay(gameObject.transform.position, Vector2.down, Color.green); // ·¹ÀÌÀú ½î°í
-            if (hit.collider != null && hit.distance <= 0.5) // ·¹ÀÌÀú°¡ ·¹ÀÌ¾î¿¡ ´êÀ¸¸é
+            Debug.DrawRay(gameObject.transform.position, Vector2.down, Color.green); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            if (hit.collider != null && hit.distance <= 0.5) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾î¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
-                //Debug.Log("·¹ÀÌÀú °Å¸®" + hit.distance);
-                jump_Count = 2; // Á¡ÇÁÄ«¿îÆ® 2 
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½" + hit.distance);
+                jump_Count = 2; // ï¿½ï¿½ï¿½ï¿½Ä«ï¿½ï¿½Æ® 2 
                 //jump_delay = true;
             }
         }
 
-        // Á¡ÇÁ Ä«¿îÆ®
+        // ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ®
         if (jump_Count == 2)
         {
             isGround = true;
@@ -128,7 +128,7 @@ public class Player_Move : AllUnits.Unit
         else
             shadow.SetActive(false);
 
-        if (isGround && Input.GetKeyDown(KeyCode.C)) //Á¡ÇÁ
+        if (isGround && Input.GetKeyDown(KeyCode.C)) //ï¿½ï¿½ï¿½ï¿½
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -136,7 +136,7 @@ public class Player_Move : AllUnits.Unit
             Destroy(jump_ef, 0.5f);
             jump_Count--;
             
-        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //´õºíÁ¡ÇÁ
+        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -151,21 +151,21 @@ public class Player_Move : AllUnits.Unit
 
         if (isGround == true)
         {
-            if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //ÇÏ´Ü Á¡ÇÁ
+            if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
             {
                 SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
                 //effecter.rotationalOffset = 180;
-                //Debug.Log("¾Æ·¡Á¡ÇÁ");
-                GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // ¾Æ·¡Å° + Á¡ÇÁÅ° ´©¸£¸é
+                //Debug.Log("ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½");
+                GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // ï¿½Æ·ï¿½Å° + ï¿½ï¿½ï¿½ï¿½Å° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 Player_rigid.AddForce(Vector2.down * downjump_power, ForceMode2D.Impulse);
                 //Debug.Log("22");
                 if (Ground_Layer != null)
                 {
-                    //Debug.Log("Ã£À½1");
+                    //Debug.Log("Ã£ï¿½ï¿½1");
                 }
                 else
                 {
-                    //Debug.Log("¸øÃ£À½1");
+                    //Debug.Log("ï¿½ï¿½Ã£ï¿½ï¿½1");
                 }
                 foreach (GameObject layer in Ground_Layer)
                 {
@@ -174,13 +174,13 @@ public class Player_Move : AllUnits.Unit
                         layer.GetComponent<Down_Platform>().ChangeLayer();
                     }
                 }
-                // ÇÃ·¹ÀÌ¾î´Â Downplatform ÅÂ±×¸¦ ºÙÀº ¿ÀºêÁ§Æ®¸¦ Ã£¾Æ¼­ ±× ¿ÀºêÁ§Æ®¿¡ ¾È¿¡ ½ºÅ©¸³Æ®¿¡ ÀÖ´Â ChangeLayerÇÔ¼ö¸¦ °¡Á®¿Â´Ù
+                // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ Downplatform ï¿½Â±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Ã£ï¿½Æ¼ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½È¿ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ö´ï¿½ ChangeLayerï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½
             }
 
         }
     }
     
-    void NotJump()
+    void NotJump() //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ÈµÇ°ï¿½ (ï¿½Ì·Î¸ï¿½)
     {
         if (GameObject.FindGameObjectWithTag("JumpNot"))
         {
@@ -193,7 +193,7 @@ public class Player_Move : AllUnits.Unit
     
 
 
-    protected virtual void move() //ºÎ¸ð Å¬·¡½º¿¡¼­ ÀÚ½Ä¿¡°Ô »ó¼ÓÇÏ´Â°Í protected virtual--> °¡»óÇÔ¼ö ºÎ¸ð¿¡¼­ ÀÌ¹Ì ¸¸µé¾úÁö¸¸ ÀÚ½ÄÅ¬·¡½º¿¡¼­ ¼öÁ¤°¡´É
+    protected virtual void move() //ï¿½Î¸ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½Ä¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´Â°ï¿½ protected virtual--> ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ ï¿½Î¸ð¿¡¼ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
 
         if (Input.GetKey(KeyCode.RightArrow))
@@ -234,11 +234,11 @@ public class Player_Move : AllUnits.Unit
         
         if (Dash_timer <= 0f)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //ÇÃ·¹ÀÌ¾î ´ë½¬
+            if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ë½¬
             {
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
                 isDash = true;
-                //´ë½¬È¸ÇÇ
+                //ï¿½ë½¬È¸ï¿½ï¿½
                 foreach (GameObject test in monster_change)
                 {
                     test.GetComponent<Dash>().Change_dash();
@@ -258,7 +258,7 @@ public class Player_Move : AllUnits.Unit
                 
             }
         }
-        if (isDash) //´ë½¬°¡ trueÀÌ¸é
+        if (isDash) //ï¿½ë½¬ï¿½ï¿½ trueï¿½Ì¸ï¿½
         {
             StartCoroutine(dash_dash());
             
@@ -285,6 +285,8 @@ public class Player_Move : AllUnits.Unit
         yield return new WaitForSeconds(dash_gravity);
         Player_rigid.gravityScale = original;
     }
+
+    
 
 
     // Update is called once per frame
@@ -313,20 +315,20 @@ public class Player_Move : AllUnits.Unit
             Dash();
         }
 
-        //Player_anim(h); //¾Ö´Ï¸ÞÀÌ¼Ç
+        //Player_anim(h); //ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½
     }
 
     /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Monster"))
         {
-            // Health ½ºÅ©¸³Æ® °¡Á®¿À±â
+            // Health ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             Monster_Stats Monster_Hp = collision.gameObject.GetComponent<Monster_Stats>();
             if (Monster_Hp != null)
             {
-                Debug.Log("¸ó½ºÅÍ ÇÇ°Ý" + Monster_Hp.Monster_currentHp);
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½" + Monster_Hp.Monster_currentHp);
                 Monster_Hp.Monster_TakeDamage(damage);
-                // Ã¼·Â °¨¼Ò
+                // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
             }
         }
@@ -337,7 +339,7 @@ public class Player_Move : AllUnits.Unit
         if (collision.gameObject.CompareTag("Monster_Attack"))
         {
             Player_Hp -= 10;
-            Debug.Log("ÇÇ°Ý" + Player_Hp);
+            Debug.Log("ï¿½Ç°ï¿½" + Player_Hp);
             if (Player_Hp <= 0)
             {
                 Player_Hp = 100;

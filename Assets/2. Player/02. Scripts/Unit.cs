@@ -21,6 +21,8 @@ namespace AllUnits
 
         public int CharCode;
 
+        protected SpriteRenderer sprite;
+
         protected bool Player_Die = false;
 
         public AudioClip[] clip_attacked; // 피격 사운드 
@@ -30,6 +32,7 @@ namespace AllUnits
         {
             currentHealth = maxHealth;
             initialDamageDelay = damageDelay;
+            sprite = GetComponent<SpriteRenderer>();
         }
         virtual protected void Update()
         {
@@ -41,6 +44,8 @@ namespace AllUnits
         
         public void TakeDamage(int Monster_Damage) // 피격 
         {
+            StartCoroutine(dam());
+            
             //SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
             if (clip_attacked.Length > 0)
             {
@@ -51,7 +56,7 @@ namespace AllUnits
                 if (!isDamage)
                 {
                     currentHealth -= Monster_Damage;
-
+                    
                     if (currentHealth <= 0)
                     {
                         //DIe 애님 실행 및 삭제
@@ -70,6 +75,30 @@ namespace AllUnits
             isDamage = true;
             yield return new WaitForSeconds(0.2f);
             isDamage = false;
+        }
+
+        IEnumerator dam()
+        {
+            int damtime = 0;
+            
+            while (damtime < 10)
+            {
+                if(damtime % 2 == 0)
+                {
+                    sprite.color = new Color32(255, 255, 255, 90);
+                }
+                else
+                {
+                    sprite.color = new Color32(255, 255, 255, 90);
+                }
+
+                yield return new WaitForSeconds(0.2f);
+
+                damtime++;
+                Debug.Log(damtime);
+            }
+
+            sprite.color = new Color32(255, 255, 255, 255);
         }
         public void NotDamage(int Zero_Damage) //무적 피격
         {
