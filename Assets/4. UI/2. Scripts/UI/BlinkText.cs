@@ -24,7 +24,7 @@ public class BlinkText : MonoBehaviour
             }
         }
 
-        time += Time.deltaTime;
+        time += 0.01f;
 
     }
 }
