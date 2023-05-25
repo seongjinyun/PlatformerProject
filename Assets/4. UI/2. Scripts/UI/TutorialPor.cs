@@ -20,7 +20,7 @@ public class TutorialPor : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            LoadingSceneController.LoadScene("UI_Main");
+            LoadingSceneController.LoadScene("UI_Select");
         }
     }
 }
