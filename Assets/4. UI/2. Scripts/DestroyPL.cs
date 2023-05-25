@@ -8,7 +8,7 @@ public class DestroyPL : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "UI_Main")
+        if (SceneManager.GetActiveScene().name == "UI_Main" || SceneManager.GetActiveScene().name == "UI_Select")
         {
             Destroy(gameObject);
         }

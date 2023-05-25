@@ -31,11 +31,11 @@ public class Info : MonoBehaviour
         
         if(iscoll == true)
         {
-            count += 0.01f; 
+            count += 0.015f; 
         }
         else
         {
-            count -= 0.01f;
+            count -= 0.015f;
         }
     }
 
