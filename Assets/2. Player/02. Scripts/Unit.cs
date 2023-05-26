@@ -35,7 +35,7 @@ namespace AllUnits
             currentHealth = maxHealth;
             initialDamageDelay = damageDelay;
             sprite = GetComponent<SpriteRenderer>();
-            me = GameObject.FindWithTag("Player");
+            me = GameObject.FindWithTag("test");
         }
         virtual protected void Update()
         {
@@ -50,14 +50,14 @@ namespace AllUnits
         }
         public void TakeDamage(int Monster_Damage) // ÇÇ°Ý 
         {
-           /* SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
+            SpriteRenderer[] allChildren = me.GetComponents<SpriteRenderer>();
             foreach (SpriteRenderer child in allChildren)
             {
                 float damtime = 0;
 
-                while (damtime < 10)
+                while (damtime < 10f)
                 {
-                    if (damtime % 2 == 0)
+                    if (damtime % 2f == 0)
                     {
                         child.color = new Color32(255, 255, 255, 90);
                     }
@@ -68,14 +68,14 @@ namespace AllUnits
                     if (damtime > 10f)
                     {
                         damtime = 0;
-                        sprite.color = new Color32(255, 255, 255, 255);
+                        child.color = new Color32(255, 255, 255, 255);
                     }
                     damtime += Time.deltaTime;
                     Debug.Log(damtime);
                 }
                 
             }
-           */
+           
             //StartCoroutine(dam());
             
             //SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
