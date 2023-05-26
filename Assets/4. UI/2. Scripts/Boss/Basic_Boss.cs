@@ -34,6 +34,8 @@ public class Basic_Boss : Monster_Stats
     public AllUnits.Unit player_Hp;
     Transform Player;
 
+    public bool Boss_Die = false;
+
     protected override void Start()
     {
         base.Start();

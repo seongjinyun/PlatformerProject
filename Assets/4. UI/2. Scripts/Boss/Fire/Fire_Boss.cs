@@ -26,6 +26,7 @@ public class Fire_Boss : Basic_Boss
         if (MonsterDie)
         {
             BoolManager.ThirdStageBossDie = true;
+            isDash = false;
         }
     }
     

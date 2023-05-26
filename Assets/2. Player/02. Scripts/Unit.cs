@@ -27,7 +27,10 @@ namespace AllUnits
 
         public AudioClip[] clip_attacked; // 피격 사운드 
 
-        public GameObject me;
+        
+        
+
+        private float damageTimer = 0f;
 
         // 자식 클래스들도 사용될 수 있도록
         virtual protected void Start()
@@ -35,49 +38,22 @@ namespace AllUnits
             currentHealth = maxHealth;
             initialDamageDelay = damageDelay;
             sprite = GetComponent<SpriteRenderer>();
-            me = GameObject.FindWithTag("test");
+            
+            
         }
         virtual protected void Update()
         {
-           if(currentHealth > 25)
+            if (currentHealth > 25)
             {
                 currentHealth = 25;
             }
         }
-        public void findAllChildren()
-        {
-            
-        }
+        
         public void TakeDamage(int Monster_Damage) // 피격 
         {
-            SpriteRenderer[] allChildren = me.GetComponents<SpriteRenderer>();
-            foreach (SpriteRenderer child in allChildren)
-            {
-                float damtime = 0;
 
-                while (damtime < 10f)
-                {
-                    if (damtime % 2f == 0)
-                    {
-                        child.color = new Color32(255, 255, 255, 90);
-                    }
-                    else
-                    {
-                        child.color = new Color32(255, 255, 255, 180);
-                    }
-                    if (damtime > 10f)
-                    {
-                        damtime = 0;
-                        child.color = new Color32(255, 255, 255, 255);
-                    }
-                    damtime += Time.deltaTime;
-                    Debug.Log(damtime);
-                }
-                
-            }
-           
-            //StartCoroutine(dam());
             
+
             //SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
             if (clip_attacked.Length > 0)
             {
@@ -88,7 +64,7 @@ namespace AllUnits
                 if (!isDamage)
                 {
                     currentHealth -= Monster_Damage;
-                    
+
                     if (currentHealth <= 0)
                     {
                         //DIe 애님 실행 및 삭제
@@ -109,39 +85,6 @@ namespace AllUnits
             isDamage = false;
         }
 
-        /*IEnumerator dam()
-        {
-            SpriteRenderer[] allChildren = me.GetComponentsInChildren<SpriteRenderer>();
-            foreach (SpriteRenderer child in allChildren)
-            {
-                int damtime = 0;
-
-                while (damtime < 10)
-                {
-                    if (damtime % 2 == 0)
-                    {
-                        child.color = new Color32(255, 255, 255, 90);
-                    }
-                    else
-                    {
-                        child.color = new Color32(255, 255, 255, 180);
-                    }
-
-                    yield return new WaitForSeconds(0.2f);
-
-                    damtime++;
-                    Debug.Log(damtime);
-                }
-                sprite.color = new Color32(255, 255, 255, 255);
-            }
-            
-            yield return new WaitForSeconds(0.2f);
-        }
-    */
-        public void NotDamage(int Zero_Damage) //무적 피격
-        {
-            currentHealth -= Zero_Damage;
-            
-        }
+        
     }
 }

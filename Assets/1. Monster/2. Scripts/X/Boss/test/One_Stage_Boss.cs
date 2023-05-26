@@ -30,7 +30,9 @@ public class One_Stage_Boss : Basic_Boss
         if (MonsterDie)
         {
             BoolManager.FirstStageBossDie = true;
+            isDash = false;
         }
+        
     }
 
     IEnumerator RandomPattern()
@@ -38,14 +40,14 @@ public class One_Stage_Boss : Basic_Boss
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
         if (!MonsterDie)
         {
-            int ranPattern = Random.Range(0, 3);
+            int ranPattern = Random.Range(0, 1);
             switch (ranPattern)
             {
                 case 0:
-                    StartCoroutine(TeleAttack());
+                    StartCoroutine(BossDash());
                     break;
                 case 1:
-                    StartCoroutine(BossDash());
+                    StartCoroutine(TeleAttack());
                     break;
                 case 2:
                     StartCoroutine(EarthGrow());
@@ -53,6 +55,7 @@ public class One_Stage_Boss : Basic_Boss
             }
         }
     }
+
     IEnumerator TeleAttack()
     {
         transform.position = Target.transform.position;
@@ -77,6 +80,7 @@ public class One_Stage_Boss : Basic_Boss
         anim.SetBool("Run", false);
         DashPos.SetActive(false);
         StartCoroutine(RandomPattern());
+        
     }
 
     IEnumerator EarthGrow()

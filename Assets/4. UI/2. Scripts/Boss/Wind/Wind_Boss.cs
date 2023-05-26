@@ -29,6 +29,7 @@ public class Wind_Boss : Basic_Boss
         if (MonsterDie)
         {
             BoolManager.FourthStageBossDie = true;
+            isDash = false;
         }
     }
 

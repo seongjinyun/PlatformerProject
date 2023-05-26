@@ -41,6 +41,7 @@ public class Stage_2_monster : Basic_Boss
         if (MonsterDie)
         {
             BoolManager.SecondStageBossDie = true;
+            isDash = false;
         }
     }
 
@@ -54,14 +55,13 @@ public class Stage_2_monster : Basic_Boss
             switch (ranPattern)
             {
                 case 0:
-                    StartCoroutine(Second_Attack());
+                    StartCoroutine(BossDash());
                     break;
                 case 1:
-                    StartCoroutine(Ice_Bullet());
+                    StartCoroutine(Second_Attack());
                     break;
-                
                 case 2:
-                    StartCoroutine(BossDash());
+                    StartCoroutine(Ice_Bullet());
                     break;
                 case 3:
                     StartCoroutine(TeleAttack());
@@ -127,6 +127,7 @@ public class Stage_2_monster : Basic_Boss
         anim.SetBool("Run", false);
         DashPos.SetActive(false);
         StartCoroutine(RandomPattern());
+        
     }
 
     
