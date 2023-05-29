@@ -5,9 +5,10 @@ using UnityEngine;
 public class One_Stage_Boss : Basic_Boss
 {
     //public BoxCollider2D HitBox;
-    public GameObject EarthGrowSkill, Pre_EarthGrow;
+    public GameObject EarthGrowSkill, Pre_EarthGrow; // 2번째 스킬
     Transform Player_Head;
-    public Transform Earth_skill_pos;
+    public Transform Earth_skill_pos, Earth_Bullet_Pos;
+    public GameObject EarthBullet;
 
     public AudioClip[] clip; // 0 = 돌진, 1 = 스킬
 
@@ -40,7 +41,7 @@ public class One_Stage_Boss : Basic_Boss
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
         if (!MonsterDie)
         {
-            int ranPattern = Random.Range(0, 1);
+            int ranPattern = Random.Range(0, 3);
             switch (ranPattern)
             {
                 case 0:
@@ -52,6 +53,9 @@ public class One_Stage_Boss : Basic_Boss
                 case 2:
                     StartCoroutine(EarthGrow());
                     break;
+                /*case 3:
+                    StartCoroutine(EarthRock());
+                    break;*/
             }
         }
     }
@@ -99,6 +103,17 @@ public class One_Stage_Boss : Basic_Boss
         StartCoroutine(RandomPattern());
 
     }
+
+    /*IEnumerator EarthRock()
+    {
+        base.LookPlayer();
+        anim.SetBool("Attack", true);
+        GameObject Skill_Bullet = Instantiate(EarthBullet, Earth_Bullet_Pos.position, Quaternion.Euler(0, 0, 0));
+        yield return new WaitForSeconds(1.5f);
+        anim.SetBool("Attack", false);
+        Destroy(Skill_Bullet, 2f);
+        StartCoroutine(RandomPattern());
+    }*/
    
     private void OnDrawGizmos() // 추적 범위
     {

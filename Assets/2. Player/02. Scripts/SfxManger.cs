@@ -41,8 +41,8 @@ public class SfxManger : MonoBehaviour
             if (GameObject.Find("Music_Chk")) // Music_Chk 게임오브젝트 찾으면 --> 튜토리얼 맵에 존재
             {
                 StopMusic(bgmlist[i]); // 배경음 정지
-                Sfx_Slider.value = 1; // 슬라이더 값 초기화
-                Bgm_Slider.value = 1; // 슬라이더 값 초기화
+                //Sfx_Slider.value = 1; // 슬라이더 값 초기화
+                //Bgm_Slider.value = 1; // 슬라이더 값 초기화
             }
         }
     }
