@@ -51,17 +51,17 @@ public class Stage_2_monster : Basic_Boss
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
         if (!MonsterDie)
         {
-            int ranPattern = Random.Range(0, 4);
+            int ranPattern = Random.Range(0, 1);
             switch (ranPattern)
             {
                 case 0:
-                    StartCoroutine(BossDash());
+                    StartCoroutine(Ice_Bullet());
                     break;
                 case 1:
-                    StartCoroutine(Second_Attack());
+                    StartCoroutine(BossDash());
                     break;
                 case 2:
-                    StartCoroutine(Ice_Bullet());
+                    StartCoroutine(Second_Attack());
                     break;
                 case 3:
                     StartCoroutine(TeleAttack());
@@ -77,15 +77,15 @@ public class Stage_2_monster : Basic_Boss
         anim.SetBool("Attack", true); // 애니메이션 실행
         SfxManger.instance.SfxPlay("Ice_Skill_1", clip[0]);
 
-        yield return new WaitForSeconds(1f); // 1초뒤에
-
+        /*yield return new WaitForSeconds(1f); // 1초뒤에
         GameObject Skill_1_pos = Instantiate(Pre_Ice_Spike, Ice_Arrow_pos.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 준비 스킬뜨고
         anim.SetBool("Attack", false); // 애니메이션 Idle로
+        */
+        yield return new WaitForSeconds(0.5f); // 1초뒤에
 
-        yield return new WaitForSeconds(1f); // 1초뒤에
-
-        GameObject Skill_1 = Instantiate(Ice_Arrow, Skill_1_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
-        Destroy(Skill_1_pos); // 준비 스킬 삭제
+        GameObject Skill_1 = Instantiate(Ice_Arrow, Ice_Arrow_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
+        anim.SetBool("Attack", false);
+        //Destroy(Skill_1_pos); // 준비 스킬 삭제
         Destroy(Skill_1, 1f); // 1초뒤에 삭제
         StartCoroutine(RandomPattern());
     }
