@@ -78,6 +78,8 @@ public class Player_Move : AllUnits.Unit
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
         move_animator = Unit_anim.GetComponent<Animator>();
+
+        
     }
 
     /*protected void OnCollisionEnter2D(Collision2D collision)
@@ -314,6 +316,8 @@ public class Player_Move : AllUnits.Unit
         {
             Dash();
         }
+
+        
 
         //Player_anim(h); //�ִϸ��̼�
     }

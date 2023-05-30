@@ -86,7 +86,7 @@ public class Stage_2_monster : Basic_Boss
         GameObject Skill_1 = Instantiate(Ice_Arrow, Ice_Arrow_pos.transform.position, Quaternion.Euler(0, 0, 0)); // 플레이어 위치에 스킬 뜸
         anim.SetBool("Attack", false);
         //Destroy(Skill_1_pos); // 준비 스킬 삭제
-        Destroy(Skill_1, 1f); // 1초뒤에 삭제
+        Destroy(Skill_1, 0.8f); // 1초뒤에 삭제
         StartCoroutine(RandomPattern());
     }
 

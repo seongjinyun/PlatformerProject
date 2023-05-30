@@ -107,6 +107,15 @@ public class TalkManager : MonoBehaviour
         {
             Portrait3.sprite = CharSprite;
         }
+
+        if (Time.timeScale == 0)
+        {
+            PL.GetComponent<Player_Move>().enabled = false; // 플레이어 스크립트 비활성화
+        }
+        else if (Time.timeScale == 1)
+        {
+            PL.GetComponent<Player_Move>().enabled = true;
+        }
     }
 
     void GenerateData()
