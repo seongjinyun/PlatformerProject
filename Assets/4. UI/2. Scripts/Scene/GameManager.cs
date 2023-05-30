@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Button btnEscpae; //≥¢¿” ≈ª√‚ πˆ∆∞ 
     public GameObject LevelSel;
     public GameObject char1, char2, char3;
+    public bool Eng, Kr;
 
     GameObject resetPoint;
     GameObject player;
@@ -92,5 +93,19 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         resetPoint = GameObject.FindWithTag("RESPAWN");
         player.transform.position = resetPoint.transform.position;
+    }
+
+    public void LanguageChange()
+    {
+        if(Eng == true) 
+        {
+            Kr = true;
+            Eng = false;
+        }
+        else if(Kr == true)        
+        {
+            Kr = false;
+            Eng = true;
+        }
     }
 }
