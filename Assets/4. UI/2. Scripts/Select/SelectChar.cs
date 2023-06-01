@@ -9,7 +9,7 @@ public class SelectChar : MonoBehaviour
     {
     }
 
-    private void OnMouseUpAsButton()
+    public void CharSelect()
     {
         DataMgr.instance.currentCharacter = character;
     }
