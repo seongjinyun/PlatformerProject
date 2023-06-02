@@ -3046,6 +3046,7 @@ GameObject:
   - component: {fileID: 654461438}
   - component: {fileID: 654461436}
   - component: {fileID: 654461437}
+  - component: {fileID: 5577493316158789575}
   m_Layer: 6
   m_Name: Dummy_HP_1
   m_TagString: Monster
@@ -3150,11 +3151,31 @@ MonoBehaviour:
   Child_anim: {fileID: 7049500949917713179}
   anim: {fileID: 0}
   Child: {fileID: 0}
-  test_damage: 0
+  Zero_damage: 0
   Monster_Damage: 0
   Monster_hpMax: 2
   Monster_currentHp: 0
   MonsterDie: 0
+--- !u!95 &5577493316158789575
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473186786845851672}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11622d99647fe7447bac2236a810c043, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7585515588962155626
 GameObject:
   m_ObjectHideFlags: 0
