@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         BoolManager.ThirdStageBossDie = false;
         BoolManager.FourthStageBossDie = false;
     }
-    public void CharSel()
+    public void LevSel()
     {
         LevelSel.SetActive(true);
     }
@@ -86,7 +86,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("메인메뉴로 이동");
         UI_Test.instance_ui.Resume();
     }
-
     public void Escape()
     {
         player = GameObject.FindWithTag("Player");

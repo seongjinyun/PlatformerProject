@@ -13,7 +13,7 @@ public class MapName : MonoBehaviour
 
         if(scene.name == "Tutorial") 
         {
-            scenename.text = "Æ©Åä¸®¾ó ¸Ê";
+            scenename.text = "Æ©Åä¸®¾ó";
         }
         else if (scene.name == "1_Stage")
         {
