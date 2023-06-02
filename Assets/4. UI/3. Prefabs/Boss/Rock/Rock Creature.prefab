@@ -120,6 +120,99 @@ Transform:
   m_Father: {fileID: 5713860511332802690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3141329991198056244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2368608532234373130}
+  m_Layer: 6
+  m_Name: Earth_skill_pos_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2368608532234373130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141329991198056244}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.048, y: -0.027833335, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5713860511332802690}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3686762709601907944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581793184111010560}
+  m_Layer: 6
+  m_Name: Earth_skill_pos_2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &581793184111010560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686762709601907944}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7291667, y: -0.082, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5713860511332802690}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5431631416770611541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7631793303644482857}
+  m_Layer: 6
+  m_Name: Earth_skill_pos_3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7631793303644482857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5431631416770611541}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.048, y: -0.027833335, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5713860511332802690}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5713860511332802695
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,9 +252,14 @@ Transform:
   - {fileID: 1114349195517514056}
   - {fileID: 5750910989362599642}
   - {fileID: 5474341156918364712}
-  - {fileID: 8879416921303124586}
   - {fileID: 8406975859742834384}
   - {fileID: 4266577834627391703}
+  - {fileID: 8879416921303124586}
+  - {fileID: 4317719279814759347}
+  - {fileID: 2368608532234373130}
+  - {fileID: 8472049254404068665}
+  - {fileID: 581793184111010560}
+  - {fileID: 7631793303644482857}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -297,9 +395,20 @@ MonoBehaviour:
   Target: {fileID: 0}
   DashDir: {fileID: 1864480671346987219}
   player_Hp: {fileID: 0}
+  Boss_Die: 0
   EarthGrowSkill: {fileID: 122596793138762460, guid: 313b4e1534ce3c64fbe1c5b04aba14cb, type: 3}
   Pre_EarthGrow: {fileID: 7737431757278319029, guid: b8fdb0f5337e82f46a47ed335aacfe6e, type: 3}
-  Earth_skill_pos: {fileID: 8879416921303124586}
+  EarthGrow_1: {fileID: 5313092431180049779, guid: d4b03710e2c73e54c8eb6b363de23396, type: 3}
+  EarthGrow_2: {fileID: 5313092431180049779, guid: a4500e7421c21814c9dbcd525b32318e, type: 3}
+  EarthGrow_3: {fileID: 5313092431180049779, guid: 3cb2bc5177c99f245ba0eacc4a75116c, type: 3}
+  Earth_skill_pos_1: {fileID: 8879416921303124586}
+  Earth_skill_pos_1_1: {fileID: 8472049254404068665}
+  Earth_skill_pos_2: {fileID: 4317719279814759347}
+  Earth_skill_pos_2_2: {fileID: 581793184111010560}
+  Earth_skill_pos_3: {fileID: 2368608532234373130}
+  Earth_skill_pos_3_3: {fileID: 7631793303644482857}
+  Earth_Bullet_Pos: {fileID: 0}
+  EarthBullet: {fileID: 0}
   clip:
   - {fileID: 8300000, guid: 58e0184a173a27a478edfa50bba51704, type: 3}
   - {fileID: 8300000, guid: 080997fe60e10264b8f5a9b14f63ec61, type: 3}
@@ -392,7 +501,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5713860511332802690}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &5724149232259781900
 PolygonCollider2D:
@@ -424,6 +533,68 @@ PolygonCollider2D:
       - {x: 0.005430525, y: 0.7055283}
       - {x: -0.25577748, y: 0.5873414}
       - {x: -0.35287234, y: 0.4200268}
+--- !u!1 &7289896571474706022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8472049254404068665}
+  m_Layer: 6
+  m_Name: Earth_skill_pos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8472049254404068665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289896571474706022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.436, y: -0.1606667, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5713860511332802690}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7388314131909485784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4317719279814759347}
+  m_Layer: 6
+  m_Name: Earth_skill_pos_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4317719279814759347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388314131909485784}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7291667, y: -0.082, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5713860511332802690}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8299397649071740634
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,12 +619,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8299397649071740634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.979, y: 0.209, z: 0}
+  m_LocalPosition: {x: 0.436, y: -0.16066666, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5713860511332802690}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8599444837828397207
 GameObject:
@@ -485,7 +656,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5713860511332802690}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6212622508222251424
 SpriteRenderer:
