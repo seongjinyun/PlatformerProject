@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class StatImageOnOff : MonoBehaviour
 {
     public GameObject SwordStat, SpearStat, ShieldStat, SwordImg, SpearImg, ShieldImg ;
 
+    SelectChar selectChar;
     PanelCtrl panelCtrl;
     // Update is called once per frame
     void Update()
     {
-        if (DataMgr.instance.currentCharacter == Character.Sword)
+        
+        if (EventSystem.current.currentSelectedGameObject.name == "SwordMan")
         {
             SwordImg.SetActive(true);
             SwordStat.SetActive(true);
@@ -18,8 +22,9 @@ public class StatImageOnOff : MonoBehaviour
             SpearStat.SetActive(false);
             ShieldImg.SetActive(false);
             ShieldStat.SetActive(false);
+            DataMgr.instance.currentCharacter = Character.Sword;
         }
-        else if(DataMgr.instance.currentCharacter == Character.Spear)
+        else if(EventSystem.current.currentSelectedGameObject.name == "SpearMan")
         {
             SwordImg.SetActive(false);
             SwordStat.SetActive(false);
@@ -27,8 +32,10 @@ public class StatImageOnOff : MonoBehaviour
             SpearStat.SetActive(true);
             ShieldImg.SetActive(false);
             ShieldStat.SetActive(false);
+            DataMgr.instance.currentCharacter = Character.Spear;
+
         }
-        else if(DataMgr.instance.currentCharacter == Character.Shield)
+        else if(EventSystem.current.currentSelectedGameObject.name == "ShieldMan")
         {
             SwordImg.SetActive(false);
             SwordStat.SetActive(false);
@@ -36,7 +43,8 @@ public class StatImageOnOff : MonoBehaviour
             SpearStat.SetActive(false);
             ShieldImg.SetActive(true);
             ShieldStat.SetActive(true);
+            DataMgr.instance.currentCharacter = Character.Shield;
+
         }
-       
     }
 }

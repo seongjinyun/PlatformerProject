@@ -10,7 +10,7 @@ public class SelectChar : MonoBehaviour
     }
 
     public void CharSelect()
-    {
+    {   
         DataMgr.instance.currentCharacter = character;
     }
 }
