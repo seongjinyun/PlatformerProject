@@ -10,7 +10,7 @@ public class One_Stage_Boss : Basic_Boss
     Transform Player_Head;
     public Transform Earth_skill_pos_1, Earth_skill_pos_1_1, Earth_skill_pos_2, Earth_skill_pos_2_2, 
         Earth_skill_pos_3, Earth_skill_pos_3_3, Earth_Bullet_Pos; //락 스킬 올라오는 transform 1,2,3  // 바위 굴러가는 포지션
-    public GameObject EarthBullet;
+    public GameObject EarthBullet; // 바위
 
     public AudioClip[] clip; // 0 = 돌진, 1 = 스킬
 
@@ -47,17 +47,17 @@ public class One_Stage_Boss : Basic_Boss
             switch (ranPattern)
             {
                 case 0:
-                    StartCoroutine(EarthGrow());
+                    StartCoroutine(EarthRock());
                     break;
                 case 1:
-                    StartCoroutine(BossDash());
+                    StartCoroutine(EarthGrow());
                     break;
                 case 2:
+                    StartCoroutine(BossDash());
+                    break;
+                case 3:
                     StartCoroutine(TeleAttack());
                     break;
-                /*case 3:
-                    StartCoroutine(EarthRock());
-                    break;*/
             }
         }
     }
@@ -118,16 +118,16 @@ public class One_Stage_Boss : Basic_Boss
 
     }
 
-    /*IEnumerator EarthRock()
+    IEnumerator EarthRock()
     {
         base.LookPlayer();
         anim.SetBool("Attack", true);
-        GameObject Skill_Bullet = Instantiate(EarthBullet, Earth_Bullet_Pos.position, Quaternion.Euler(0, 0, 0));
+        GameObject Skill_Bullet = Instantiate(EarthBullet, Attack_Pos.position, Quaternion.Euler(0, 0, 0));
         yield return new WaitForSeconds(1.5f);
         anim.SetBool("Attack", false);
         Destroy(Skill_Bullet, 2f);
         StartCoroutine(RandomPattern());
-    }*/
+    }
    
     private void OnDrawGizmos() // 추적 범위
     {
