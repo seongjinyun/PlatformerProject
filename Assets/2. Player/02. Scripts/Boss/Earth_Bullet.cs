@@ -18,16 +18,12 @@ public class Earth_Bullet : MonoBehaviour
     void Start()
     {
         rigid_bullet = GetComponent<Rigidbody2D>();
-        // 총알이 생성될 때 회전을 시작합니다.
         StartCoroutine(RotateBullet());
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 총알의 직진 이동 처리
-        Vector3 direction = transform.right.normalized;
-        rigid_bullet.velocity = direction * bullet_speed;
         delay -= Time.deltaTime;
     }
 
@@ -59,9 +55,6 @@ public class Earth_Bullet : MonoBehaviour
     {
         while (true)
         {
-            // 회전 방향과 속도 설정
-            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
-
             // 총알의 직진 이동 처리
             Vector3 direction = transform.right.normalized;
             rigid_bullet.velocity = direction * bullet_speed;
