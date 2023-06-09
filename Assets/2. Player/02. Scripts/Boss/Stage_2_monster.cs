@@ -51,7 +51,7 @@ public class Stage_2_monster : Basic_Boss
         yield return new WaitForSeconds(2.0f); //패턴 사이에 나오는 경직 시간
         if (!MonsterDie)
         {
-            int ranPattern = Random.Range(0, 1);
+            int ranPattern = Random.Range(0, 4);
             switch (ranPattern)
             {
                 case 0:
