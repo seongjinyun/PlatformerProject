@@ -14,7 +14,7 @@ public class StatImageOnOff : MonoBehaviour
     void Update()
     {
         
-        if (EventSystem.current.currentSelectedGameObject.name == "SwordMan")
+        if (DataMgr.instance.currentCharacter == Character.Sword)
         {
             SwordImg.SetActive(true);
             SwordStat.SetActive(true);
@@ -22,9 +22,8 @@ public class StatImageOnOff : MonoBehaviour
             SpearStat.SetActive(false);
             ShieldImg.SetActive(false);
             ShieldStat.SetActive(false);
-            DataMgr.instance.currentCharacter = Character.Sword;
         }
-        else if(EventSystem.current.currentSelectedGameObject.name == "SpearMan")
+        else if(DataMgr.instance.currentCharacter == Character.Spear)
         {
             SwordImg.SetActive(false);
             SwordStat.SetActive(false);
@@ -32,10 +31,9 @@ public class StatImageOnOff : MonoBehaviour
             SpearStat.SetActive(true);
             ShieldImg.SetActive(false);
             ShieldStat.SetActive(false);
-            DataMgr.instance.currentCharacter = Character.Spear;
 
         }
-        else if(EventSystem.current.currentSelectedGameObject.name == "ShieldMan")
+        else if(DataMgr.instance.currentCharacter == Character.Shield)
         {
             SwordImg.SetActive(false);
             SwordStat.SetActive(false);
@@ -43,7 +41,6 @@ public class StatImageOnOff : MonoBehaviour
             SpearStat.SetActive(false);
             ShieldImg.SetActive(true);
             ShieldStat.SetActive(true);
-            DataMgr.instance.currentCharacter = Character.Shield;
 
         }
     }
