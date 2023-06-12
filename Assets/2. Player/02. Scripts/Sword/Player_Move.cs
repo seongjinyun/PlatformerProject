@@ -153,7 +153,7 @@ public class Player_Move : AllUnits.Unit
 
         if (isGround == true)
         {
-            if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //�ϴ� ����
+            if (Input.GetKeyDown(KeyCode.LeftAlt) && Input.GetButton("Vertical")) //�ϴ� ����
             {
                 SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
                 //effecter.rotationalOffset = 180;
@@ -236,7 +236,7 @@ public class Player_Move : AllUnits.Unit
         
         if (Dash_timer <= 0f)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //�÷��̾� �뽬
+            if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0) //�÷��̾� �뽬
             {
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
                 isDash = true;
