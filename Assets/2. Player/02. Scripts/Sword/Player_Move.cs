@@ -130,7 +130,7 @@ public class Player_Move : AllUnits.Unit
         else
             shadow.SetActive(false);
 
-        if (isGround && Input.GetKeyDown(KeyCode.C)) //����
+        if (isGround && Input.GetKeyDown(KeyCode.LeftAlt)) //����
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -138,7 +138,7 @@ public class Player_Move : AllUnits.Unit
             Destroy(jump_ef, 0.5f);
             jump_Count--;
             
-        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //��������
+        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.LeftAlt)) //��������
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -155,6 +155,7 @@ public class Player_Move : AllUnits.Unit
         {
             if (Input.GetKeyDown(KeyCode.LeftAlt) && Input.GetButton("Vertical")) //�ϴ� ����
             {
+                isGround = false;
                 SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
                 //effecter.rotationalOffset = 180;
                 //Debug.Log("�Ʒ�����");
