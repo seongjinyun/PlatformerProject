@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 
 public class GameManager : MonoBehaviour
@@ -92,19 +94,15 @@ public class GameManager : MonoBehaviour
         resetPoint = GameObject.FindWithTag("RESPAWN");
         player.transform.position = resetPoint.transform.position;
     }
-
-    public void LanguageChange()
+    public void LangENG()
     {
-        if(Eng == true) 
-        {
-            Kr = true;
-            Eng = false;
-        }
-        else if(Kr == true)        
-        {
-            Kr = false;
-            Eng = true;
-        }
+        LocalizationSettings.SelectedLocale =
+           LocalizationSettings.AvailableLocales.Locales[0];
     }
-
+    public void LangKOR()
+    {
+        LocalizationSettings.SelectedLocale =
+           LocalizationSettings.AvailableLocales.Locales[1];
+    }
+    
 }
