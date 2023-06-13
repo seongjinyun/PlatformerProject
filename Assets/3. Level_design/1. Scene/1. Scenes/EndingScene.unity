@@ -62089,6 +62089,7 @@ GameObject:
   - component: {fileID: 1427455779}
   - component: {fileID: 1427455781}
   - component: {fileID: 1427455780}
+  - component: {fileID: 1427455782}
   m_Layer: 5
   m_Name: EndingText
   m_TagString: Untagged
@@ -62139,8 +62140,8 @@ MonoBehaviour:
   m_text: "\uB208 \uB5A0\uBCF4\uB2C8 \uC774\uC138\uACC4\uB354\uB77C\n\n\nTeam \uC0BC\uB9E8\uC774\uAC78\n\n\n\uAE30\uD68D
     \uBC0F \uD504\uB85C\uADF8\uB798\uBA38 \uC724\uC131\uC9C4\n\n\uAE30\uD68D \uBC0F
     \uD504\uB85C\uADF8\uB798\uBA38 \uBC15\uC0C1\uBA85\n\n\uD504\uB85C\uADF8\uB798\uBA38
-    \uC870\uACC4\uD658\n\n\uADF8\uB798\uD53D \uC724\uC18C\uC815\n\nPM \uD604\uC138\uC740\n\n\n\nTHANK
-    YOU FOR PLAYING"
+    \uC870\uACC4\uD658\n\n\uADF8\uB798\uD53D \uC724\uC18C\uC815\n\nPM \uBC0F \uD604\uC138\uC740\n\n\n\n\uD50C\uB808\uC774\uD574\uC8FC\uC154\uC11C
+    \uAC10\uC0AC\uD569\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f83d61307eb89904282bef40ceb0e74c, type: 2}
   m_sharedMaterial: {fileID: -1620922363222546127, guid: f83d61307eb89904282bef40ceb0e74c, type: 2}
@@ -62217,6 +62218,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427455778}
   m_CullTransparentMesh: 1
+--- !u!114 &1427455782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427455778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:1c59491e32c7b88498a9ea7b863ab6d6
+    m_TableEntryReference:
+      m_KeyId: 802417111830528
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1427455780}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1442262812
 GameObject:
   m_ObjectHideFlags: 0
