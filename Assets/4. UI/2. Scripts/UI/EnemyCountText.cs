@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class EnemyCountText : MonoBehaviour
 {
@@ -16,22 +18,52 @@ public class EnemyCountText : MonoBehaviour
     }
     void Update()
     {
+        ILocalesProvider availableLocales = LocalizationSettings.AvailableLocales;
+
         curkillcount = EnemyCountManager.instance.KillMonsterCount;
-        if(SceneManager.GetActiveScene().name == "1_Stage")
+        if (SceneManager.GetActiveScene().name == "1_Stage")
         {
-            enemycounttext.text = "잔여 적 : " + curkillcount + " /" + EnemyCountManager.instance.onestage;
+            if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("en"))
+            {
+                enemycounttext.text = "REMAINING ENEMIES  " + curkillcount + " /" + EnemyCountManager.instance.onestage;
+            }
+            else if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("ko-KR"))
+            {
+                enemycounttext.text = "남은 적 : " + curkillcount + " /" + EnemyCountManager.instance.onestage;
+            }
         }
         if (SceneManager.GetActiveScene().name == "2_Stage")
         {
-            enemycounttext.text = "잔여 적 : " + curkillcount + " /" + EnemyCountManager.instance.twostage;
+            if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("en"))
+            {
+                enemycounttext.text = "REMAINING ENEMIES  " + curkillcount + " /" + EnemyCountManager.instance.twostage;
+            }
+            else if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("ko-KR"))
+            {
+                enemycounttext.text = "남은 적 : " + curkillcount + " /" + EnemyCountManager.instance.twostage;
+            }
         }
         if (SceneManager.GetActiveScene().name == "3_Stage")
         {
-            enemycounttext.text = "잔여 적 : " + curkillcount + " /" + EnemyCountManager.instance.threestage;
+            if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("en"))
+            {
+                enemycounttext.text = "REMAINING ENEMIES  " + curkillcount + " /" + EnemyCountManager.instance.threestage;
+            }
+            else if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("ko-KR"))
+            {
+                enemycounttext.text = "남은 적 : " + curkillcount + " /" + EnemyCountManager.instance.threestage;
+            }
         }
         if (SceneManager.GetActiveScene().name == "4_Stage")
         {
-            enemycounttext.text = "잔여 적 : " + curkillcount + " /" + EnemyCountManager.instance.fourstage;
+            if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("en"))
+            {
+                enemycounttext.text = "REMAINING ENEMIES  " + curkillcount + " /" + EnemyCountManager.instance.fourstage;
+            }
+            else if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("ko-KR"))
+            {
+                enemycounttext.text = "남은 적 : " + curkillcount + " /" + EnemyCountManager.instance.fourstage;
+            }
         }
 
     }

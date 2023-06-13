@@ -23,6 +23,12 @@ public class BoolReset : MonoBehaviour
             BoolManager.BonginCom = false;
             BoolManager.isShake = false;
             BoolManager.Ending = false;
+
+            EnemyCountManager.instance.one = false;
+            EnemyCountManager.instance.two = false;
+            EnemyCountManager.instance.three = false;
+            EnemyCountManager.instance.four = false;
+
         }
     }
 }
