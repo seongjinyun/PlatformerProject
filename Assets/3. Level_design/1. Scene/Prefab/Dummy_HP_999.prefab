@@ -495,7 +495,6 @@ GameObject:
   - component: {fileID: 2713866018366978549}
   - component: {fileID: 7819912562054254063}
   - component: {fileID: 7819912561631164348}
-  - component: {fileID: 7819912561631164349}
   - component: {fileID: 7819912561631164339}
   - component: {fileID: 7819912561631164338}
   m_Layer: 6
@@ -559,22 +558,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!70 &7819912561631164349
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807268870371211182}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3266171}
-  m_Size: {x: 0.38, y: 0.6247403}
-  m_Direction: 0
 --- !u!114 &7819912561631164339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +585,7 @@ MonoBehaviour:
   Child_anim: {fileID: 959604032618116269}
   anim: {fileID: 0}
   Child: {fileID: 0}
-  test_damage: 0
+  Zero_damage: 0
   Monster_Damage: 0
   Monster_hpMax: 9999
   Monster_currentHp: 0
