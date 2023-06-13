@@ -127,7 +127,7 @@ public class Player_Attack : MonoBehaviour
     }
     void atk_Anim()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             Player_anim.SetTrigger("Attack");
         }

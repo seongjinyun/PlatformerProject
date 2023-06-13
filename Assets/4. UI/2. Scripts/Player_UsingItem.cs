@@ -31,7 +31,7 @@ public class Player_UsingItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             if (inven.items.Count > 0)
             {

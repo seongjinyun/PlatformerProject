@@ -130,7 +130,7 @@ public class Player_Move : AllUnits.Unit
         else
             shadow.SetActive(false);
 
-        if (isGround && Input.GetKeyDown(KeyCode.C)) //����
+        if (isGround && Input.GetKeyDown(KeyCode.LeftAlt)) //����
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -138,7 +138,7 @@ public class Player_Move : AllUnits.Unit
             Destroy(jump_ef, 0.5f);
             jump_Count--;
             
-        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.C)) //��������
+        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.LeftAlt)) //��������
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -153,8 +153,9 @@ public class Player_Move : AllUnits.Unit
 
         if (isGround == true)
         {
-            if (Input.GetKeyDown(KeyCode.C) && Input.GetButton("Vertical")) //�ϴ� ����
+            if (Input.GetKeyDown(KeyCode.LeftAlt) && Input.GetButton("Vertical")) //�ϴ� ����
             {
+                isGround = false;
                 SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
                 //effecter.rotationalOffset = 180;
                 //Debug.Log("�Ʒ�����");
@@ -236,7 +237,7 @@ public class Player_Move : AllUnits.Unit
         
         if (Dash_timer <= 0f)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && movX != 0) //�÷��̾� �뽬
+            if (Input.GetKeyDown(KeyCode.LeftShift) && movX != 0) //�÷��̾� �뽬
             {
                 GameObject[] monster_change = GameObject.FindGameObjectsWithTag("Monster");
                 isDash = true;

@@ -26,7 +26,6 @@ public class Slam_atk : MonoBehaviour
                 {
                     if (delay <= 0f)
                     {
-
                         Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - IceSlam_Damge.IceWave_Damage));
                         player_Hp.TakeDamage(IceSlam_Damge.IceWave_Damage);
                         // 체력 감소
@@ -36,6 +35,8 @@ public class Slam_atk : MonoBehaviour
             }
         }
     }
+
+    
 
     // Update is called once per frame
     void Update()
