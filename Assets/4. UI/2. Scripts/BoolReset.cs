@@ -22,6 +22,7 @@ public class BoolReset : MonoBehaviour
 
             BoolManager.BonginCom = false;
             BoolManager.isShake = false;
+            BoolManager.Ending = false;
         }
     }
 }
