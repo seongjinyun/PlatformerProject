@@ -9,7 +9,7 @@ public class EnemyCountManager : MonoBehaviour
 {
     public static EnemyCountManager instance;
     public int onestage, twostage, threestage, fourstage;
-    public bool one, two, three, four;
+    public static bool one, two, three, four;
     public int KillMonsterCount;
     private void Awake()
     {
