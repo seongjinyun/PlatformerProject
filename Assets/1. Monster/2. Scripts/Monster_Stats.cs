@@ -15,6 +15,9 @@ public class Monster_Stats : MonoBehaviour
     public int Monster_currentHp;
 
     public bool MonsterDie = false;
+
+    public bool Boss_Mode = false; // 모드 보스만 true로 지정 
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -44,8 +47,11 @@ public class Monster_Stats : MonoBehaviour
             //Destroy(gameObject, 1.2f);
             //DIe 애님 실행 및 삭제
             Debug.Log("사망");
+        }
 
-            
+        if (Boss_Mode)
+        {
+            ScoreManager.instance.AddScore(damage);
         }
     }
 }

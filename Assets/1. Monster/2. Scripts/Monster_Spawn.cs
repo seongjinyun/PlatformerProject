@@ -17,6 +17,7 @@ public class Monster_Spawn : MonoBehaviour
 
     Mode_Select Mode;
 
+    public Sprite[] sprite;
     void Awake()
     {
         Mode = FindObjectOfType<Mode_Select>();

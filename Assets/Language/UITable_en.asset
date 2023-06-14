@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 1c59491e32c7b88498a9ea7b863ab6d6, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 5058495955431587844
   m_TableData:
   - m_Id: 6755553280
     m_Localized: START
@@ -144,13 +145,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 802417111830528
-    m_Localized: "\uB208 \uB5A0\uBCF4\uB2C8 \uC774\uC138\uACC4\uB354\uB77C\n\n\nTeam
-      \uC0BC\uB9E8\uC774\uAC78\n\n\n\uAE30\uD68D \uBC0F \uD504\uB85C\uADF8\uB798\uBA38
-      \uC724\uC131\uC9C4\n\n\uAE30\uD68D \uBC0F \uD504\uB85C\uADF8\uB798\uBA38 \uBC15\uC0C1\uBA85\n\n\uD504\uB85C\uADF8\uB798\uBA38
-      \uC870\uACC4\uD658\n\n\uADF8\uB798\uD53D \uC724\uC18C\uC815\n\nPM \uBC0F \uD604\uC138\uC740\n\n\n\n\uD50C\uB808\uC774\uD574\uC8FC\uC154\uC11C
-      \uAC10\uC0AC\uD569\uB2C8\uB2E4."
+    m_Localized: "Another World In the Morning\n\n\nTeam ThreeManTwoGirl\n\n\nGame
+      designer & \r                Programmer / YON SEONGJIN\n\nGame designer & \r               
+      Programmer / PARK SANGMYEONG\n\nProgrammer / CHO KYEHWAN\n\nGraphic Designer
+      / YOUN SOJUNG\n\nPM & Sub Game Designer / HYUN SEEUN\n\n\n\nTHANK YOU FOR PLAYING"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 5058495955431587844
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5058495955431587844
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0090e94acbd90200

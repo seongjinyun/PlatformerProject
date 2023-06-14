@@ -23,6 +23,7 @@ public class Cooltime : MonoBehaviour
     void Update()
     {
         currentCooldown = Player_Move.Dash_timer;
+
         if (currentCooldown <= 0)
         {
             // 대쉬 쿨타임이 0 이하일 때 UI 숨기기

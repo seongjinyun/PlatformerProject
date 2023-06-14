@@ -105,4 +105,8 @@ public class GameManager : MonoBehaviour
            LocalizationSettings.AvailableLocales.Locales[1];
     }
     
+    public void Mode_Scene()
+    {
+        LoadingSceneController.LoadScene("FinalBoss_ModeScene");
+    }
 }

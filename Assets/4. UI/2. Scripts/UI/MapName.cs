@@ -9,7 +9,6 @@ using UnityEngine.Localization.Settings;
 public class MapName : MonoBehaviour
 {
     public TMP_Text scenename;
-    public bool ENG, KOR;
     // Update is called once per frame
    
 

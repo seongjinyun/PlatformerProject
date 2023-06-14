@@ -7,12 +7,38 @@ public class Normal_Monster : Monster_Unit
     public bool Chase = false; // 추적
     public Transform Attpos;
     public float AttSize;
-
-
+    public Sprite[] sp_head; // 4개
+    public Sprite[] sp_armor; // 4개
+    public SpriteRenderer[] Spr; // 0 = 헤드, 1 = 아머,
+    int random;
     protected override void Start()
     {
         base.Start();
-        
+
+        spChange();
+
+    }
+
+    void spChange()
+    {
+        random = Random.Range(0, 3);
+        if (random == 1)
+        {
+            int rand = Random.Range(0, 4);
+            Spr[0].sprite = sp_head[rand];
+            Spr[1].sprite = sp_armor[rand];
+        }
+        else if (random == 2)
+        {
+            int rand = Random.Range(0, 4);
+            Spr[0].sprite = sp_head[rand];
+            Spr[1].sprite = sp_armor[rand];
+        }
+        else if (random == 3)
+        {
+            Spr[0].sprite = null;
+            Spr[1].sprite = null;
+        }
     }
     protected override void Update()
     {
