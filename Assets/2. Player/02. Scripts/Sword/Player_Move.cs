@@ -80,6 +80,7 @@ public class Player_Move : AllUnits.Unit
         move_animator = Unit_anim.GetComponent<Animator>();
 
         
+
     }
 
     /*protected void OnCollisionEnter2D(Collision2D collision)
@@ -318,7 +319,10 @@ public class Player_Move : AllUnits.Unit
             Dash();
         }
 
-        
+        if (BoolManager.Ending == true) // 엔딩씬일때 스크립트 중지
+        {
+            this.GetComponent<Player_Move>().enabled = false;
+        }
 
         //Player_anim(h); //�ִϸ��̼�
     }

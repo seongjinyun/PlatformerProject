@@ -52,6 +52,7 @@ public class Player_Anim : Player_Attack
         sprite = GetComponent<SpriteRenderer>();
         move_animator = GetComponent<Animator>();
         //Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
+        
     }
 
     protected virtual void Attack()

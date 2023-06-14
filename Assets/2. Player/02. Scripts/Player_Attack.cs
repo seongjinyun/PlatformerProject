@@ -124,6 +124,11 @@ public class Player_Attack : MonoBehaviour
         }
         atk_Anim();
         Enemy_Test = GameObject.FindGameObjectsWithTag("Monster");
+
+        if (BoolManager.Ending == true) // 엔딩일때 스크립트 비활성화
+        {
+            this.GetComponent<Player_Anim>().enabled = false;
+        }
     }
     void atk_Anim()
     {
