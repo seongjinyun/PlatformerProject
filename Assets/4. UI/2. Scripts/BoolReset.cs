@@ -24,10 +24,10 @@ public class BoolReset : MonoBehaviour
             BoolManager.isShake = false;
             BoolManager.Ending = false;
 
-            EnemyCountManager.instance.one = false;
-            EnemyCountManager.instance.two = false;
-            EnemyCountManager.instance.three = false;
-            EnemyCountManager.instance.four = false;
+            EnemyCountManager.one = false;
+            EnemyCountManager.two = false;
+            EnemyCountManager.three = false;
+            EnemyCountManager.four = false;
 
         }
     }

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Image Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Image
+  m_TableCollectionNameGuidString: 9957c50afe679584ea62cba73718e074
+  m_Entries:
+  - m_Id: 8018038784
+    m_Key: MAIN_IMAGE
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items:
+    - rid: 5058495988331970563
+  m_KeyGenerator:
+    rid: 5058495988331970562
+  references:
+    version: 2
+    RefIds:
+    - rid: 5058495988331970562
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1686751298077
+    - rid: 5058495988331970563
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 8018038784
+          m_TableCodes:
+          - en
+          - ko-KR
+        m_TypeString: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject LevelSel;
     public GameObject char1, char2, char3;
     public bool Eng, Kr;
+    public GameObject Main_Image_KOR, Main_Image_ENG;
 
     GameObject resetPoint;
     GameObject player;
@@ -34,7 +35,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        ILocalesProvider availableLocales = LocalizationSettings.AvailableLocales;
 
+        if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("en"))
+        {
+            Main_Image_ENG.SetActive(true);
+            Main_Image_KOR.SetActive(false);
+        }
+        else if (LocalizationSettings.SelectedLocale == availableLocales.GetLocale("ko-KR"))
+        {
+            Main_Image_ENG.SetActive(false);
+            Main_Image_KOR.SetActive(true);
+        }
     }
     void Start()
     {

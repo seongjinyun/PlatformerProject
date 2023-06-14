@@ -10,24 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Localization-Assets-Shared
+  m_Name: Localization-Assets-Korean (South Korea) (ko-KR)
   m_EditorClassIdentifier: 
-  m_GroupName: Localization-Assets-Shared
+  m_GroupName: Localization-Assets-Korean (South Korea) (ko-KR)
   m_Data:
     m_SerializedData: []
-  m_GUID: 556b753e9e427ae448a1a3f698cb2f2c
+  m_GUID: 802596915c66a5742a66fa488609962c
   m_SerializeEntries:
-  - m_GUID: 1c59491e32c7b88498a9ea7b863ab6d6
-    m_Address: Assets/Language/UITable Shared Data.asset
+  - m_GUID: ff3771c7aad22784da091023cd8b3880
+    m_Address: Main_Kor
     m_ReadOnly: 1
-    m_SerializedLabels: []
-  - m_GUID: 9957c50afe679584ea62cba73718e074
-    m_Address: Assets/Language/Image Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale-ko-KR
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 445d25ea1d67ba94d834e34f56ad10be, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: a77eaaabd8ff4b048a9a6befa587e0fd, type: 2}
-    - {fileID: 11400000, guid: 70ad75cf1b9dc09459019b06483c1a91, type: 2}
+    - {fileID: 11400000, guid: 55ee2f70b487e364695830f1bb0111db, type: 2}
+    - {fileID: 11400000, guid: 8bce53df4d2055341bc8d12a9f7688aa, type: 2}
