@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Respawn : MonoBehaviour
+{
+    public GameObject[] charPrebabs;
+    public GameObject player;
+    
+    void Awake()
+    {
+        player = Instantiate(charPrebabs[(int)DataMgr.instance.currentCharacter]);
+        player.transform.position = transform.position;
+    }
+
+    private void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

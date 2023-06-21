@@ -12,16 +12,47 @@ TagManager:
   - Monster
   - Downplatform
   - Enemy
+  - BossWeapon
+  - select
+  - Player_Skill_Pos
+  - Player_Weapon
+  - StageCan
+  - Ground
+  - Monster_Skill_Pos
+  - Heal
+  - Shield_Skill_pos
+  - Sword_weapon
+  - Shield_weapon
+  - Spear_weapon
+  - Target
+  - Monster_Attack
+  - Player_Hit
+  - Portal
+  - Bongin
+  - JumpNot
+  - test
+  - Sfx_Manager
+  - Gauge_Chk
+  - Manager_Chk
+  - NormalMonster_Spawn
+  - farMonster_Spawn
+  - repeatMonster_Spawn
+  - Boss_Spawn
+  - Hit_Effect
+  - DashNot
+  - HeadNot
+  - Far_Attack_Pos
+  - RESPAWN
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Talk
   - Water
   - UI
   - Monster
   - 
-  - 
+  - MonsterDIe
   - Ground
   - Player
   - 
@@ -29,17 +60,17 @@ TagManager:
   - 
   - test
   - Pass
+  - Change
   - 
   - 
   - 
   - 
+  - Minimap
+  - Minimap_platform
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - BossDie
   - 
   - 
   - 
@@ -57,4 +88,10 @@ TagManager:
     locked: 0
   - name: HealEft
     uniqueID: 2362969075
+    locked: 0
+  - name: Talk
+    uniqueID: 240206619
+    locked: 0
+  - name: Inven
+    uniqueID: 1382766939
     locked: 0
