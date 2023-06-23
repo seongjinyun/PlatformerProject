@@ -18,6 +18,11 @@ public class SfxManger : MonoBehaviour
     private GameObject Music_Check;
 
 
+
+    private const string SFXVolumeKey = "SFXVolume";
+    private const string BGMVolumeKey = "BGMVolume";
+
+    
     private void Awake()
     {
         
@@ -46,16 +51,40 @@ public class SfxManger : MonoBehaviour
             }
         }
     }
-   
+    public void SaveSoundVolume() // 사운드 조절 저장
+    {
+        float sfxVolume = Mathf.Log10(Sfx_Slider.value) * 20;
+        float bgmVolume = Mathf.Log10(Bgm_Slider.value) * 20;
 
-    public void SetSFXVolume() // 효과음 사운드 조절
+        PlayerPrefs.SetFloat(SFXVolumeKey, sfxVolume);
+        PlayerPrefs.SetFloat(BGMVolumeKey, bgmVolume);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadSoundVolume() // 사운드 불러오기
+    {
+        if (PlayerPrefs.HasKey(SFXVolumeKey))
+        {
+            float sfxVolume = PlayerPrefs.GetFloat(SFXVolumeKey);
+            mixer.SetFloat("SFX", sfxVolume);
+            Sfx_Slider.value = Mathf.Pow(10, sfxVolume / 20);
+        }
+
+        if (PlayerPrefs.HasKey(BGMVolumeKey))
+        {
+            float bgmVolume = PlayerPrefs.GetFloat(BGMVolumeKey);
+            mixer.SetFloat("BGM", bgmVolume);
+            Bgm_Slider.value = Mathf.Pow(10, bgmVolume / 20);
+        }
+    }
+
+    public void SetSoundVolume() // 사운드 조절
     {
         mixer.SetFloat("SFX", Mathf.Log10(Sfx_Slider.value) * 20);
-    }
-    public void SetBGMVolume() // 배경음 사운드 조절
-    {
         mixer.SetFloat("BGM", Mathf.Log10(Bgm_Slider.value) * 20);
+
     }
+    
     public void SfxPlay(string sfxName, AudioClip clip) // 사운드 매개변수 사운드 이름, 사운드 클립
     {
         GameObject sound = new GameObject(sfxName + "Sound");
@@ -81,7 +110,7 @@ public class SfxManger : MonoBehaviour
     void Start()
     {
         Music_Check = GameObject.FindGameObjectWithTag("Sfx_Manager"); //배경음 정지 오브젝트 태그
-        
+        LoadSoundVolume();
     }
     public void StopMusic(AudioClip clip) // 배경음 정지 함수
     {
@@ -94,6 +123,7 @@ public class SfxManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //LoadSoundVolume();
         
     }
 }
