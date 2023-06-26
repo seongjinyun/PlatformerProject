@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Boss_Tor : MonoBehaviour
 {
+    public Transform tordir;
+    public float speed = 3.5f;
     public Boss_mode final_boss;
     public float delay = 0f;
-
+    public float time = 0f;
     // Start is called before the first frame update
     private void Awake()
     {
         final_boss = GameObject.FindObjectOfType<Boss_mode>();
         Destroy(gameObject, 4f);
+
     }
     void Start()
     {
@@ -21,6 +24,11 @@ public class Boss_Tor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (time > 2)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, tordir.position, speed * Time.deltaTime);
+        }
+        time += Time.deltaTime;
         delay -= Time.deltaTime;
 
     }

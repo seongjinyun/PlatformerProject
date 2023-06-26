@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text timerText;
     public TMP_Text FinalscoreText;
     public GameObject Panel;
-    public int score;
+    public int score = 0;
     public float timer = 60f;
     private bool timerEnded = false;
 
@@ -25,6 +25,8 @@ public class ScoreManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+
+        scoreText.text = "SCORE: " + score;
     }
 
     private void Update()
@@ -32,7 +34,7 @@ public class ScoreManager : MonoBehaviour
         if (!timerEnded)
         {
             timer -= Time.deltaTime;
-            timerText.text = "Time " + Mathf.Round(timer);
+            timerText.text = "TIME: " + Mathf.Round(timer);
 
             if (timer <= 0)
             {
@@ -50,7 +52,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int value)
     {
         score += value;
-        scoreText.text = "Score:" + score;
+        scoreText.text = "SCORE: " + score;
     }
 
     public void MainSceneGO()
@@ -67,8 +69,8 @@ public class ScoreManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         Panel.SetActive(true);
-        FinalscoreText.text = "Score:" + score;
-        
+        FinalscoreText.text = "SCORE: " + score;
+
 
 
 

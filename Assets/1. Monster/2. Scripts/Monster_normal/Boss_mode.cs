@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss_mode : Basic_Boss
 {
-    public Transform Tornado1, Tornado2, Tornado3, Tornado4, BulletPos, MeteorPos, Skill_pos_2;
+    public Transform Tornado1, Tornado2, Tornado3, Tornado4, BulletPos, MeteorPos, Skill_pos_2, tordir, tordir2;
     public GameObject TornadoPrefab, MeteorPrepab, Attack_Skill_2;
     public GameObject bullet;
 
@@ -85,12 +85,10 @@ public class Boss_mode : Basic_Boss
         anim.SetTrigger("Skill_1");        //SfxManger.instance.SfxPlay("Wind_Skill_Tornado", clip[0]);
         yield return new WaitForSeconds(1f);
         GameObject Tor1 = Instantiate(TornadoPrefab, Tornado1.position, Tornado1.rotation);
-        GameObject Tor2 = Instantiate(TornadoPrefab, Tornado2.position, Tornado1.rotation);
-        GameObject Tor3 = Instantiate(TornadoPrefab, Tornado3.position, Tornado1.rotation);
-        GameObject Tor4 = Instantiate(TornadoPrefab, Tornado4.position, Tornado1.rotation);
-
+        GameObject Tor2 = Instantiate(TornadoPrefab, Tornado2.position, Tornado2.rotation);
+        GameObject Tor3 = Instantiate(TornadoPrefab, Tornado3.position, Tornado3.rotation);
+        GameObject Tor4 = Instantiate(TornadoPrefab, Tornado4.position, Tornado4.rotation);
         yield return new WaitForSeconds(3.5f);
-
         StartCoroutine(RandomPattern());
 
 
