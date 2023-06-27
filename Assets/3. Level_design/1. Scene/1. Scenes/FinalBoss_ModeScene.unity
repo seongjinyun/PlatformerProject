@@ -7796,7 +7796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &278847818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7867,6 +7867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284526833}
   - component: {fileID: 284526834}
+  - component: {fileID: 284526835}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -7907,6 +7908,21 @@ MonoBehaviour:
   Panel: {fileID: 1351838143}
   score: 0
   timer: 60
+--- !u!114 &284526835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284526832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93301db56f5cc3141a8e1b4b78ccf3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laser_before: {fileID: 1797540452875671775, guid: 04d7dc6fe5966bc42878ff3ed3312516, type: 3}
+  laser: {fileID: 5607525686911959492, guid: b29be3d5ee3ac9043a7d39bb68aa844e, type: 3}
+  delay: 5
 --- !u!1 &284761876
 GameObject:
   m_ObjectHideFlags: 0
@@ -11138,7 +11154,7 @@ GameObject:
   - component: {fileID: 429431747}
   m_Layer: 5
   m_Name: Canvas (1)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

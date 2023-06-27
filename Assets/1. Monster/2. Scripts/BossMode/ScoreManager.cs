@@ -43,10 +43,12 @@ public class ScoreManager : MonoBehaviour
             }
         }
     }
+
     public void RestartScene() // 씬 다시시작
     {
         Scene currentScene = SceneManager.GetActiveScene(); // 현재 활성화된 씬을 가져옵니다.
         SceneManager.LoadScene(currentScene.name); // 현재 씬을 다시 불러옵니다.
+
     }
 
     public void AddScore(int value)
@@ -79,23 +81,23 @@ public class ScoreManager : MonoBehaviour
         StartCoroutine(RegisterScore(playerName, score));*/
     }
 
-/*    IEnumerator RegisterScore(string playerName, int score) // 스코어 API에 전송
-    {
-        WWWForm form = new WWWForm();
-        form.AddField("playerName", playerName);
-        form.AddField("score", score);
-
-        UnityWebRequest www = UnityWebRequest.Post(baseURL + "/register_score", form);
-        yield return www.SendWebRequest();
-
-        if (www.result != UnityWebRequest.Result.Success)
+    /*    IEnumerator RegisterScore(string playerName, int score) // 스코어 API에 전송
         {
-            Debug.LogError("Error registering score: " + www.error);
-        }
-        else
-        {
-            Debug.Log("Score registered successfully!");
-            // 적절한 메시지 및 결과 화면 표시
-        }
-    }*/
+            WWWForm form = new WWWForm();
+            form.AddField("playerName", playerName);
+            form.AddField("score", score);
+
+            UnityWebRequest www = UnityWebRequest.Post(baseURL + "/register_score", form);
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error registering score: " + www.error);
+            }
+            else
+            {
+                Debug.Log("Score registered successfully!");
+                // 적절한 메시지 및 결과 화면 표시
+            }
+        }*/
 }
