@@ -311,6 +311,10 @@ public class Player_Move : AllUnits.Unit
         {
             BoolManager.PlayerDie = true;
         }
+        else if(currentHealth > 1)
+        {
+            BoolManager.PlayerDie = false;
+        }
         NotJump();
         move();
         Jump();

@@ -93,6 +93,7 @@ public class Player_Anim : Player_Attack
     // Update is called once per frame
     protected override void Update()
     {
+        
         base.Update();
         //Nb();
         Attack();

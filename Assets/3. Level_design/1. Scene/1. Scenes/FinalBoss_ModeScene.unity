@@ -7902,6 +7902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff611e39cf2314d43bb506c3558b0e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   scoreText: {fileID: 1478144426}
   timerText: {fileID: 96051190}
   FinalscoreText: {fileID: 2092904978}
@@ -11219,12 +11220,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429431746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c28f23495bf61e54eaa92155cfe0510c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Diepannel: {fileID: 278847817}
+  Diepannel: {fileID: 1351838143}
   PauseCan: {fileID: 0}
 --- !u!114 &429431752
 MonoBehaviour:
@@ -17288,9 +17289,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2059435656, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1798746268070547124, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_Name
       value: Player_Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232195497802421768, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
+      propertyPath: m_TagString
+      value: loot
       objectReference: {fileID: 0}
     - target: {fileID: 5066100314870972562, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_RootOrder
@@ -43538,7 +43547,6 @@ GameObject:
   - component: {fileID: 2092904976}
   - component: {fileID: 2092904979}
   - component: {fileID: 2092904978}
-  - component: {fileID: 2092904977}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -43566,46 +43574,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 189}
   m_SizeDelta: {x: 347.1777, y: 137.46}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2092904977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092904975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StringReference:
-    m_TableReference:
-      m_TableCollectionName: GUID:1c59491e32c7b88498a9ea7b863ab6d6
-    m_TableEntryReference:
-      m_KeyId: 370692745433088
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  m_FormatArguments: []
-  m_UpdateString:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2092904978}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &2092904978
 MonoBehaviour:
   m_ObjectHideFlags: 0

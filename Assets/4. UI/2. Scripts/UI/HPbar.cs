@@ -12,7 +12,7 @@ public class HPbar : MonoBehaviour
     public TMP_Text hp;
     public Slider hpbar;
 
-    private int maxhp = 25;
+    private int maxhp = 5;
 
     public float curhp;
     void Start()
@@ -27,7 +27,7 @@ public class HPbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hp.text = curhp + "/ 25";
+        hp.text = curhp + "/ 3";
         curhp = CurHp.currentHealth;
 
         handleHp();

@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+    public GameObject player;
+
     public static ScoreManager instance;
     public TMP_Text scoreText;
     public TMP_Text timerText;
@@ -16,9 +18,9 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     public float timer = 60f;
     private bool timerEnded = false;
-
+    Player_Move player_Move;
+    Player_Anim player_Anim;
     //private string baseURL = "https://your-api-server-url.com"; // API 주소
-
     private void Awake()
     {
         if (instance == null)
@@ -28,7 +30,12 @@ public class ScoreManager : MonoBehaviour
 
         scoreText.text = "SCORE: " + score;
     }
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player");
 
+        player_Move = player.GetComponent<Player_Move>();
+    }
     private void Update()
     {
         if (!timerEnded)
@@ -42,13 +49,24 @@ public class ScoreManager : MonoBehaviour
                 EndGame();
             }
         }
+
+        if(BoolManager.PlayerDie == true)
+        {
+            EndGame();
+        }
+        //else if(BoolManager.PlayerDie == false)
+       // {
+         //   Panel.SetActive(false);
+       // }
     }
 
     public void RestartScene() // 씬 다시시작
     {
+        BoolManager.PlayerDie = false;
+        player_Move.currentHealth = 5;
+        
         Scene currentScene = SceneManager.GetActiveScene(); // 현재 활성화된 씬을 가져옵니다.
         SceneManager.LoadScene(currentScene.name); // 현재 씬을 다시 불러옵니다.
-
     }
 
     public void AddScore(int value)

@@ -19,7 +19,7 @@ public class DiePannel : MonoBehaviour
             Diepannel.SetActive(true);
             Destroy(PauseCan);
         }
-        else
+        else if(BoolManager.PlayerDie == false)
         {
             Diepannel.SetActive(false);
         }

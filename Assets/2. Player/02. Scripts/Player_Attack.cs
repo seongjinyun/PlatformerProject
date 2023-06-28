@@ -8,7 +8,7 @@ public class Player_Attack : MonoBehaviour
     static protected GameObject[] Enemy_Test;
     public Vector2 player_boxSize;
     protected float Kb_timer = 0f;
-    static public float Skill_gauge = 0;
+    public static float Skill_gauge = 0;
     protected Animator Player_anim;
     public float Kb_delayTime = 2f;
     protected float Max_Skill_gauge = 101;
