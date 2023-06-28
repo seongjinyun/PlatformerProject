@@ -282,7 +282,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1494425697}
         m_TargetAssemblyTypeName: SfxManger, Assembly-CSharp
         m_MethodName: SetSoundVolume
         m_Mode: 1
@@ -13635,7 +13635,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1494425697}
         m_TargetAssemblyTypeName: SfxManger, Assembly-CSharp
         m_MethodName: SetSoundVolume
         m_Mode: 1
@@ -17295,7 +17295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1798746268070547124, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_Name
-      value: Player_Sword
+      value: Player_Sword(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 4232195497802421768, guid: edaaa792cf28ad44db180a94df71dcc3, type: 3}
       propertyPath: m_TagString
@@ -25987,6 +25987,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492378642}
   m_CullTransparentMesh: 1
+--- !u!114 &1494425697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8033197110575994881, guid: 2aa3c9d06b5428a4187bb3b2e9e88685, type: 3}
+  m_PrefabInstance: {fileID: 1548108317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1f71f45972b1842aa2d55c0a787ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495730529
 GameObject:
   m_ObjectHideFlags: 0
