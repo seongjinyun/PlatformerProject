@@ -62,7 +62,8 @@ public class Player_Move : AllUnits.Unit
 
     public GameObject shadow;
 
-    
+    public GameObject Me;
+
     // Start is called before the first frame update
 
     public float dash_gravity;

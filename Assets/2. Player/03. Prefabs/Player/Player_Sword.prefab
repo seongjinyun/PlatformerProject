@@ -810,6 +810,8 @@ MonoBehaviour:
   CharCode: 0
   clip_attacked:
   - {fileID: 8300000, guid: f066f3ebedc79dc429b921d5076e5491, type: 3}
+  Attacked_Effect: {fileID: 8095768443595268619, guid: a759c2ab9db135a4c88d8099ecfbcf00, type: 3}
+  me: {fileID: 5615633155795565511}
   Unit_anim: {fileID: 4232195497802421768}
   doubleJumpState: 0
   isGround: 1
@@ -832,6 +834,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
   - {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
   shadow: {fileID: 3752698119209442433}
+  Me: {fileID: 0}
   dash_gravity: 0.3
 --- !u!114 &8348247135978081382
 MonoBehaviour:
