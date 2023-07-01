@@ -61,6 +61,7 @@ public class Player_Skill_Spear : MonoBehaviour
         rigid_spear.velocity = transform.right* -1 * skill_speed;
         this.gameObject.transform.Rotate(0, 0, 5 * Time.deltaTime);
         Destroy(gameObject, 3f);
+        rigid_spear.gravityScale = 0f;
         //rigid_spear.velocity = new Vector2(1, -1); // 대각선 창
         //rigid_spear.AddForce(Vector2.left * skill_speed);
         

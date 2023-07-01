@@ -114,14 +114,14 @@ public class Player_Anim_Spear : Player_Attack
         }
         */
 
-        if (Input.GetKeyDown(KeyCode.A) && Skill_gauge >= 100 ) //스킬게이지가 100이고 A키를 누르면
+        if (Input.GetKeyDown(KeyCode.A) /*&& Skill_gauge >= 100*/ ) //스킬게이지가 100이고 A키를 누르면
         {
             
 
             Spear_anim.SetTrigger("Skill_spear");
             Instantiate(Spear_skill, pos.position, transform.rotation);
             Skill_gauge = 0; //게이지 0으로 초기화
-
+            
 
         }
     }

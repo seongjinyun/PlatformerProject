@@ -155,7 +155,7 @@ public class Player_Move_Atals : AllUnits.Unit
                 isGround = false;
                 SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
                 //effecter.rotationalOffset = 180;
-                //Debug.Log("�Ʒ�����");
+                Debug.Log("점프");
                 GameObject[] Ground_Layer = GameObject.FindGameObjectsWithTag("Downplatform");//.GetComponent<Down_Platform>().ChangeLayer(); // �Ʒ�Ű + ����Ű ������
                 Player_rigid.AddForce(Vector2.down * downjump_power, ForceMode2D.Impulse);
                 //Debug.Log("22");
@@ -198,13 +198,13 @@ public class Player_Move_Atals : AllUnits.Unit
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            sprite.flipX = true;
-            transform.localEulerAngles = new Vector3(0, 180, 0);
+            //sprite.flipX = true;
+            transform.localEulerAngles = new Vector3(0, -180, 0);
             move_animator.SetBool("Run", true);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            sprite.flipX = false;
+            //sprite.flipX = false;
             transform.localEulerAngles = new Vector3(0, 0, 0);
             move_animator.SetBool("Run", true);
         }
@@ -219,9 +219,6 @@ public class Player_Move_Atals : AllUnits.Unit
         transform.position += speed * Time.deltaTime * new Vector3(h, 0, 0);
 
     }
-
-
-
 
 
 
