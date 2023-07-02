@@ -64,7 +64,8 @@ public class ScoreManager : MonoBehaviour
     {
         BoolManager.PlayerDie = false;
         player_Move.currentHealth = 5;
-        
+        Player_Attack.Skill_gauge = 0f;
+
         Scene currentScene = SceneManager.GetActiveScene(); // 현재 활성화된 씬을 가져옵니다.
         SceneManager.LoadScene(currentScene.name); // 현재 씬을 다시 불러옵니다.
     }
