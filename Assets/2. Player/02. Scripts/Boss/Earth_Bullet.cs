@@ -27,25 +27,23 @@ public class Earth_Bullet : MonoBehaviour
         delay -= Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 충돌한 오브젝트가 플레이어인 경우
         if (collision.gameObject.CompareTag("Player"))
         {
             // Health 스크립트 가져오기
             AllUnits.Unit player_Hp = collision.gameObject.GetComponent<AllUnits.Unit>();
-            if (collision)
+            if (player_Hp != null)
             {
-                if (player_Hp != null)
+                if (delay <= 0f)
                 {
-                    if (delay <= 0f)
-                    {
-                        Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - EarthBullet_Damage.IceWave_Damage));
-                        player_Hp.TakeDamage(EarthBullet_Damage.IceWave_Damage);
-                        // 체력 감소
-                        delay = 0.9f;
-                    }
+                    Debug.Log("플레이어 체력 = " + (player_Hp.currentHealth - EarthBullet_Damage.IceWave_Damage));
+                    player_Hp.TakeDamage(EarthBullet_Damage.IceWave_Damage);
+                    // 체력 감소
+                    delay = 0.8f;
                 }
+
             }
         }
     }
