@@ -376,6 +376,7 @@ MonoBehaviour:
   Monster_hpMax: 80
   Monster_currentHp: 0
   MonsterDie: 0
+  Boss_Mode: 0
   DashPos: {fileID: 6246096216042164371}
   speed: 20
   isDash: 0
@@ -407,8 +408,8 @@ MonoBehaviour:
   Earth_skill_pos_2_2: {fileID: 581793184111010560}
   Earth_skill_pos_3: {fileID: 2368608532234373130}
   Earth_skill_pos_3_3: {fileID: 7631793303644482857}
-  Earth_Bullet_Pos: {fileID: 0}
-  EarthBullet: {fileID: 0}
+  Earth_Bullet_Pos: {fileID: 1864480671346987219}
+  EarthBullet: {fileID: 2627288374745274300, guid: 615107d2d9ec95f42a4926354297d545, type: 3}
   clip:
   - {fileID: 8300000, guid: 58e0184a173a27a478edfa50bba51704, type: 3}
   - {fileID: 8300000, guid: 080997fe60e10264b8f5a9b14f63ec61, type: 3}

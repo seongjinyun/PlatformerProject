@@ -6,7 +6,7 @@ public class Earth_Bullet : MonoBehaviour
 {
 
     private Rigidbody2D rigid_bullet;
-    public float bullet_speed = 15.0f;
+    public float bullet_speed = 20.0f;
 
     public Basic_Boss EarthBullet_Damage;
     public float delay = 0f;
