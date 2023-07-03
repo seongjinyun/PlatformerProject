@@ -45,6 +45,7 @@ public class Earth_Bullet : MonoBehaviour
                 }
 
             }
+            
         }
     }
 

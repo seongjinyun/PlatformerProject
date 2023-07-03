@@ -15,6 +15,6 @@ public class Bullet_rotate : MonoBehaviour
     void Update()
     {
         // 회전 방향과 속도 설정
-        this.gameObject.transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+        this.gameObject.transform.Rotate(Vector3.forward* -1 * rotationSpeed * Time.deltaTime);
     }
 }
