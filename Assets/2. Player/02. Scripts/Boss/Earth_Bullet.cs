@@ -45,7 +45,7 @@ public class Earth_Bullet : MonoBehaviour
                 }
 
             }
-            
+            Destroy(this.gameObject);
         }
     }
 
