@@ -126,7 +126,7 @@ public class One_Stage_Boss : Basic_Boss
         GameObject Skill_Bullet = Instantiate(EarthBullet, Attack_Pos.position, transform.rotation);
         yield return new WaitForSeconds(1.5f);
         anim.SetBool("Attack", false);
-        Destroy(Skill_Bullet, 2f);
+        Destroy(Skill_Bullet, 3.5f);
         StartCoroutine(RandomPattern());
     }
    

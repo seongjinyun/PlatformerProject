@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5822eb8284a4a4b92ef74a96a3616e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet_speed: 10
+  bullet_speed: 15
   EarthBullet_Damage: {fileID: 1698383613, guid: 284ddda6b85037f479c054dd221fd7aa, type: 3}
   delay: 0
   rotationSpeed: 150
