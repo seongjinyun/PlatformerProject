@@ -27,9 +27,9 @@ namespace AllUnits
 
         public AudioClip[] clip_attacked; // 피격 사운드 
 
-        public GameObject Attacked_Effect; // 피격 이펙트
+        public GameObject Player_Attacked_Effect; // 피격 이펙트
 
-
+        public GameObject me; //피격 이펙트 위치 Body Set
 
         private float damageTimer = 0f;
 
@@ -53,8 +53,8 @@ namespace AllUnits
         public void TakeDamage(int Monster_Damage) // 피격 
         {
 
-            //GameObject Atk_Ef = Instantiate(Attacked_Effect, me.transform.position, me.transform.rotation);
-            //Destroy(Atk_Ef, 0.5f);
+            GameObject Atk_Ef = Instantiate(Player_Attacked_Effect, me.transform.position, me.transform.rotation);
+            Destroy(Atk_Ef, 0.5f);
 
             //SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
             if (clip_attacked.Length > 0)
