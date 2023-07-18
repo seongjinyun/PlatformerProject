@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class EndTalkManager : MonoBehaviour
 {
     AllUnits.Unit unit;
     Dictionary<int, string> talkData, talkData2;
+    Dictionary<int, string> talkDataENG, talkDataENG2;
     public GameObject TalkPannel, TalkPannel2;
     public Image Portrait, Portrait2;
     public Text talk, talk2;
@@ -29,11 +31,15 @@ public class EndTalkManager : MonoBehaviour
     {
         talkData = new Dictionary<int, string>();
         talkData2 = new Dictionary<int, string>();
+        talkDataENG = new Dictionary<int, string>();
+        talkDataENG2 = new Dictionary<int, string>();
         DataNum = 1;
         DataNum2 = 1;
-        GenerateData();
 
-        
+        GenerateData();
+        GenerateDataENG();
+
+
 
     }
 
@@ -118,26 +124,54 @@ public class EndTalkManager : MonoBehaviour
         talkData2.Add(2, "내 소원은…!");
         talkData2.Add(3, "");
     }
+    void GenerateDataENG()
+    {
+        talkDataENG.Add(1, "There's the goddess, I'll try to talk to her.");
+        talkDataENG.Add(2, "");
 
+        talkDataENG2.Add(1, "Alright, you've done well. What is your wish?");
+        talkDataENG2.Add(2, "My wish is...");
+        talkDataENG2.Add(3, "");
+    }
 
 
     IEnumerator ActTalk()
     {
-        talk.text = talkData[DataNum];
-        Debug.Log(DataNum);
+        if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
+        {
+            talk.text = talkDataENG[DataNum];
 
-        DataNum++;
-        yield return new WaitForSeconds(0.5f);
+            DataNum++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        else if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[1])
+        {
+            talk.text = talkData[DataNum];
+
+            DataNum++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        
         
     }
 
     IEnumerator ActTalk2()
     {
-        talk2.text = talkData2[DataNum2];
-        Debug.Log(DataNum);
+        if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
+        {
+            talk2.text = talkDataENG2[DataNum2];
 
-        DataNum2++;
-        yield return new WaitForSeconds(0.5f);
+            DataNum2++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        else if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[1])
+        {
+            talk2.text = talkData2[DataNum2];
+
+            DataNum2++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        
 
     }
 

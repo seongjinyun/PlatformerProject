@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.EventSystems;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class TalkManager : MonoBehaviour
 {
     AllUnits.Unit unit;
     Dictionary<int, string> talkData, talkData2, talkData3;
+    Dictionary<int, string> talkDataENG, talkDataENG2, talkDataENG3;
     public GameObject TalkPannel, TalkPannel2, TalkPannel3;
     public Image Portrait, Portrait2, Portrait3;
     public Text talk, talk2, talk3;
@@ -32,15 +35,21 @@ public class TalkManager : MonoBehaviour
         talkData2 = new Dictionary<int, string>();
         talkData3 = new Dictionary<int, string>();
 
+        talkDataENG = new Dictionary<int, string>();
+        talkDataENG2 = new Dictionary<int, string>();
+        talkDataENG3 = new Dictionary<int, string>();
+
         DataNum = 1;
         DataNum2 = 1;
         DataNum3 = 1;
 
         GenerateData();
+        GenerateDataENG();
     }
 
     void Update()
     {
+        ILocalesProvider availableLocales = LocalizationSettings.AvailableLocales;
 
         PL = GameObject.FindWithTag("Player");
 
@@ -142,33 +151,85 @@ public class TalkManager : MonoBehaviour
         talkData3.Add(1, "앞에 저 여자는 누구지..? 여기가 어딘지 물어봐야겠어");
         talkData3.Add(2, "");
     }
+    void GenerateDataENG()
+    {
+        talkDataENG.Add(1, "kreaitor? What brought me here?");
+        talkDataENG.Add(2, "You died from fatigue and have been reincarnated here in kreaitor.");
+        talkDataENG.Add(3, "That's impossible... I was just working overtime...");
+        talkDataENG.Add(4, "Unlike Earth, there is a demon living in Creator and you have been chosen to defeat the demon's underlings and imprison him.");
+        talkDataENG.Add(5, "Wait what? A demon? What are you talking about?");
+        talkDataENG.Add(6, "The imprisoned demon tricked the elemental lord, corrupted him, and escaped his imprisonment.");
+        talkDataENG.Add(7, "You need to defeat the demon's underlings and cleanse the corrupted elemental lord, gather the broken elemental shards and fix the seal of imprisonment.");
+        talkDataENG.Add(8, "Why me? How do you expect me to defeat the demon's underlings?");
+        talkDataENG.Add(9, "Only the chosen one can do this.");
+        talkDataENG.Add(10, "If you are successful, I shall return you to Earth and grant you one wish.");
+        talkDataENG.Add(11, "What happens if I refuse?");
+        talkDataENG.Add(12, "Then, you will die as intended.");
+        talkDataENG.Add(13, "...Alright. I'll do as you say.");
+        talkDataENG.Add(14, "");
 
+        talkDataENG2.Add(1, "I guess. What do I do now?");
+        talkDataENG2.Add(2, "This portal will take you to kreaitor. Defeat the demon's underlings and cleanse the corrupted elemental lord.");
+        talkDataENG2.Add(3, "");
+
+        talkDataENG3.Add(1, "Who is that woman in front of you? I need to ask where I am");
+        talkDataENG3.Add(2, "");
+    }
 
 
     IEnumerator ActTalk()
-    {
-        talk.text = talkData[DataNum];
+    {   
+        if(LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
+        {
+            talk.text = talkDataENG[DataNum];
 
-        DataNum++;
-        yield return new WaitForSeconds(0.5f);
-        
+            DataNum++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        else if(LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[1])
+        {
+            talk.text = talkData[DataNum];
+
+            DataNum++;
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     IEnumerator ActTalk2()
     {
-        talk2.text = talkData2[DataNum2];
+        if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
+        {
+            talk2.text = talkDataENG2[DataNum2];
 
-        DataNum2++;
-        yield return new WaitForSeconds(0.5f);
+            DataNum2++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        else if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[1])
+        {
+            talk2.text = talkData2[DataNum2];
 
+            DataNum2++;
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     IEnumerator ActTalk3()
     {
-        talk3.text = talkData3[DataNum3];
+        if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[0])
+        {
+            talk3.text = talkDataENG3[DataNum3];
 
-        DataNum3++;
-        yield return new WaitForSeconds(0.5f);
+            DataNum3++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        else if (LocalizationSettings.SelectedLocale == LocalizationSettings.AvailableLocales.Locales[1])
+        {
+            talk3.text = talkData3[DataNum3];
+
+            DataNum3++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        
 
     }
 
