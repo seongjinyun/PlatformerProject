@@ -79,7 +79,6 @@ public class Player_Move : AllUnits.Unit
         Player_Layer = LayerMask.NameToLayer("Player");
         Ground_Layer = LayerMask.NameToLayer("Ground");
         move_animator = Unit_anim.GetComponent<Animator>();
-
         
 
     }
@@ -328,6 +327,7 @@ public class Player_Move : AllUnits.Unit
         {
             this.GetComponent<Player_Move>().enabled = false;
         }
+
 
         //Player_anim(h); //�ִϸ��̼�
     }

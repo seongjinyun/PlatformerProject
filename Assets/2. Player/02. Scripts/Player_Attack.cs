@@ -26,7 +26,7 @@ public class Player_Attack : MonoBehaviour
         
         Player_anim = GetComponent<Animator>();
         Player_Dam = GetComponentInParent<AllUnits.Unit>();
-        if (GameObject.FindGameObjectWithTag("Gauge_Chk"))
+        if (GameObject.FindGameObjectWithTag("Gauge_Chk") || GameObject.FindGameObjectWithTag("RESPAWN"))
         {
             Skill_gauge = 0;
         }
