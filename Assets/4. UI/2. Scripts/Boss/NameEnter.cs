@@ -24,6 +24,15 @@ public class NameEnter : MonoBehaviour
         playerName = playerNameInput.text;
         PlayerPrefs.SetString("CurrentPlayerName", playerName);
 
-        LoadingSceneController.LoadScene("UI_Main");
+        if (!string.IsNullOrEmpty(playerName))
+        {
+            Debug.Log(playerName);
+            LoadingSceneController.LoadScene("UI_Main");
+        }
+        else
+        {
+            Debug.Log("이름을 입력하세요.");
+        }
+        
     }
 }
