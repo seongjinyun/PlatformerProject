@@ -14,12 +14,12 @@ public class scoreModel
         get;
         set;
     }
-    public int timer
+    public int playedTime
     {
         get;
         set;
     }
-    public string gameKind
+    public string gamekind
     {
         get;
         set;
@@ -30,12 +30,12 @@ public class scoreModel
         set;
     }
 
-    public scoreModel(string playerName, int score, int timer, string gameKind, string key)
+    public scoreModel(string playerName, int score, int playedTime, string gamekind, string key)
     {
         this.playerName = playerName;
         this.score = score;
-        this.timer = timer;
-        this.gameKind = gameKind;
+        this.playedTime = playedTime;
+        this.gamekind = gamekind;
         this.key = key;
     }
 }

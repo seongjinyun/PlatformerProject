@@ -44,17 +44,16 @@ public class NameEnter : MonoBehaviour
         }
         
     }
-    IEnumerator RegisterScore(string playerName, int score, int timer, string gameKind, string key) // 스코어 API에 전송
+    IEnumerator RegisterScore(string playerName, int score, int playedTime, string gamekind, string key) // 스코어 API에 전송
     {
 
-        scoreModel scoremodel = new scoreModel(playerName, score, timer, gameKind, key);
+        scoreModel scoremodel = new scoreModel(playerName, score, playedTime, gamekind, key);
         string output = JsonConvert.SerializeObject(scoremodel); 
 
         Debug.Log(output);
 
         using (UnityWebRequest www = UnityWebRequest.Post(baseURL + "/result", output))
         {
-            Debug.Log("www : " + www);
             www.SetRequestHeader("Content-Type", "application/json");
 
             yield return www.SendWebRequest();
