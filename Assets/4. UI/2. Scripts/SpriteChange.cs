@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SpriteChange : MonoBehaviour
 {
     public Sprite SwordSel, SwordDesel, SpearSel, SpearDeSel, ShieldSel, ShieldDeSel;
+
     public GameObject SwordBtn, SpearBtn, ShieldBtn;
     void Start()
     {
