@@ -15,12 +15,13 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text timerText;
     public TMP_Text FinalscoreText;
     public GameObject Panel;
-    public int score = 0;
-    public float timer = 60f;
+    public static int gameScore = 0;
+    public static float gameTimer = 60f;
     private bool timerEnded = false;
     Player_Move player_Move;
     Player_Anim player_Anim;
-    //private string baseURL = "https://your-api-server-url.com"; // API 주소
+/*    private string baseURL = "https://desktop-api.op.gg/indi/result?gamekind=&key="; // API 주소
+*/
     private void Awake()
     {
         if (instance == null)
@@ -28,8 +29,9 @@ public class ScoreManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        scoreText.text = "SCORE: " + score;
+        scoreText.text = "SCORE: " + gameScore;
     }
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -40,10 +42,10 @@ public class ScoreManager : MonoBehaviour
     {
         if (!timerEnded)
         {
-            timer -= Time.deltaTime;
-            timerText.text = "TIME: " + Mathf.Round(timer);
+            gameTimer -= Time.deltaTime;
+            timerText.text = "TIME: " + Mathf.Round(gameTimer);
 
-            if (timer <= 0)
+            if (gameTimer <= 0)
             {
                 timerEnded = true;
                 EndGame();
@@ -72,8 +74,8 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int value)
     {
-        score += value;
-        scoreText.text = "SCORE: " + score;
+        gameScore += value;
+        scoreText.text = "SCORE: " + gameScore;
     }
 
     public void MainSceneGO()
@@ -90,33 +92,36 @@ public class ScoreManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         Panel.SetActive(true);
-        FinalscoreText.text = "SCORE: " + score;
+        FinalscoreText.text = "SCORE: " + gameScore;
 
 
 
 
 
-        /*string playerName = "사용자 이름"; // 프로젝트에 맞게 사용자 이름을 설정하세요.
-        StartCoroutine(RegisterScore(playerName, score));*/
+        //string playerName = "사용자 이름"; // 프로젝트에 맞게 사용자 이름을 설정하세요.
+        //StartCoroutine(RegisterScore(NameEnter.playerName, score, Mathf.RoundToInt(timer * 100), "another-world", "fezTOzdREMzdIIOKwZObYl0ELfQ0rUXV1jRLP1DlHvoFAPDqbH"));
     }
 
-    /*    IEnumerator RegisterScore(string playerName, int score) // 스코어 API에 전송
+/*    IEnumerator RegisterScore(string playerName, int score, int timer, string gameKind, string key) // 스코어 API에 전송
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("playerName", playerName);
+        form.AddField("score", score);
+        form.AddField("playedTime", timer);
+        form.AddField("gameKind", gameKind);
+        form.AddField("key", key);
+
+        UnityWebRequest www = UnityWebRequest.Post(baseURL + "/register_score", form);
+        yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
         {
-            WWWForm form = new WWWForm();
-            form.AddField("playerName", playerName);
-            form.AddField("score", score);
-
-            UnityWebRequest www = UnityWebRequest.Post(baseURL + "/register_score", form);
-            yield return www.SendWebRequest();
-
-            if (www.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError("Error registering score: " + www.error);
-            }
-            else
-            {
-                Debug.Log("Score registered successfully!");
-                // 적절한 메시지 및 결과 화면 표시
-            }
-        }*/
+            Debug.LogError("Error registering score: " + www.error);
+        }
+        else
+        {
+            Debug.Log("Score registered successfully!");
+            // 적절한 메시지 및 결과 화면 표시
+        }
+    }*/
 }

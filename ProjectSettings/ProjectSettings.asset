@@ -665,7 +665,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: ENABLE_FULL_STACKTRACE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

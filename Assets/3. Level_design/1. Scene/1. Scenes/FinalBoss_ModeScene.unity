@@ -7842,8 +7842,6 @@ MonoBehaviour:
   timerText: {fileID: 96051190}
   FinalscoreText: {fileID: 2092904978}
   Panel: {fileID: 1351838143}
-  score: 0
-  timer: 60
 --- !u!114 &284526835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26505,11 +26503,11 @@ PrefabInstance:
     - target: {fileID: 8033197110575994881, guid: 2aa3c9d06b5428a4187bb3b2e9e88685, type: 3}
       propertyPath: Bgm_Slider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 766698966}
     - target: {fileID: 8033197110575994881, guid: 2aa3c9d06b5428a4187bb3b2e9e88685, type: 3}
       propertyPath: Sfx_Slider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 728501015}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2aa3c9d06b5428a4187bb3b2e9e88685, type: 3}
 --- !u!1 &1556271579
