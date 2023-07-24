@@ -11407,6 +11407,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6033414857541211011, guid: e13effd4d6e292a44aee01cb63868dc6, type: 3}
   m_PrefabInstance: {fileID: 883069748}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &473498796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8033197110575994881, guid: 2aa3c9d06b5428a4187bb3b2e9e88685, type: 3}
+  m_PrefabInstance: {fileID: 1548108317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1f71f45972b1842aa2d55c0a787ee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &475181521
 GameObject:
   m_ObjectHideFlags: 0
@@ -12325,7 +12336,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 473498796}
         m_TargetAssemblyTypeName: SfxManger, Assembly-CSharp
         m_MethodName: SetSoundVolume
         m_Mode: 1
@@ -12562,7 +12573,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 473498796}
         m_TargetAssemblyTypeName: SfxManger, Assembly-CSharp
         m_MethodName: SetSoundVolume
         m_Mode: 1
