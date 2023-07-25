@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
+using System;
 
 public class NameEnter : MonoBehaviour
 {
@@ -31,12 +32,8 @@ public class NameEnter : MonoBehaviour
 
         if (!string.IsNullOrEmpty(playerName))
         {
-            /*Debug.Log(playerName);
-            Debug.Log(ScoreManager.gameScore);
-            Debug.Log(ScoreManager.gameTimer);
-*/
-            StartCoroutine(RegisterScore(playerName, ScoreManager.gameScore, Mathf.RoundToInt(ScoreManager.gameTimer), "another-world", "fezTOzdREMzdIIOKwZObYl0ELfQ0rUXV1jRLP1DlHvoFAPDqbH"));
 
+            StartCoroutine(RegisterScore(playerName, ScoreManager.gameScore, Mathf.RoundToInt(ScoreManager.gameTimer), "another-world", "fezTOzdREMzdIIOKwZObYl0ELfQ0rUXV1jRLP1DlHvoFAPDqbH"));
         }
         else
         {
@@ -48,17 +45,19 @@ public class NameEnter : MonoBehaviour
     {
 
         scoreModel scoremodel = new scoreModel(playerName, score, playedTime, gamekind, key);
-        string output = JsonConvert.SerializeObject(scoremodel); 
+        string output = JsonConvert.SerializeObject(scoremodel);
 
-        Debug.Log(output);
+        Debug.Log("요청 보내는 URL: " + baseURL + "/result");
+        Debug.Log("요청 데이터: " + output);
 
-        using (UnityWebRequest www = UnityWebRequest.Post(baseURL + "/result", output))
+        using (UnityWebRequest www = UnityWebRequest.Post(new Uri(baseURL + "/result"), new System.Collections.Generic.Dictionary<string, string> { { "Content-Type", "application/json" }, { "Accept", "application/json" } }))
         {
-            www.SetRequestHeader("Content-Type", "application/json");
+            www.SetRequestHeader("Content-Type", "application/json"); // Content-Type 지정
+            byte[] data = System.Text.Encoding.UTF8.GetBytes(output);
+            www.uploadHandler = (UploadHandler)new UploadHandlerRaw(data);
+            www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
 
             yield return www.SendWebRequest();
-
-            Debug.Log(www.result);
 
             if (www.result != UnityWebRequest.Result.Success)
             {
@@ -69,10 +68,10 @@ public class NameEnter : MonoBehaviour
                 Debug.Log("Score registered successfully!");
                 LoadingSceneController.LoadScene("UI_Main");
 
-                // 적절한 메시지 및 결과 화면 표시
+                ScoreManager.gameScore = 0;
+                ScoreManager.gameTimer = 60f;
             }
         }
 
-            
     }
 }
