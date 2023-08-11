@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
 using System;
+using UnityEngine.SceneManagement;
 
 public class NameEnter : MonoBehaviour
 {
@@ -14,14 +15,18 @@ public class NameEnter : MonoBehaviour
 
     private string baseURL = "https://desktop-api.op.gg/indi"; // API 주소
 
+    int type_btn = 0;
 
     private void Awake()
     {
         playerName = playerNameInput.GetComponent<InputField>().text;
     }
 
+    
     private void Update()
     {
+
+
     }
 
     //마우스
@@ -34,6 +39,7 @@ public class NameEnter : MonoBehaviour
         {
 
             StartCoroutine(RegisterScore(playerName, ScoreManager.gameScore, Mathf.RoundToInt(ScoreManager.gameTimer * 1000), "another_world", "fezTOzdREMzdIIOKwZObYl0ELfQ0rUXV1jRLP1DlHvoFAPDqbH"));
+            type_btn = 1;
         }
         else
         {
@@ -41,6 +47,24 @@ public class NameEnter : MonoBehaviour
         }
         
     }
+    public void InputNameRestart()
+    {
+        playerName = playerNameInput.text;
+        PlayerPrefs.SetString("CurrentPlayerName", playerName);
+
+        if (!string.IsNullOrEmpty(playerName))
+        {
+
+            StartCoroutine(RegisterScore(playerName, ScoreManager.gameScore, Mathf.RoundToInt(ScoreManager.gameTimer * 1000), "another_world", "fezTOzdREMzdIIOKwZObYl0ELfQ0rUXV1jRLP1DlHvoFAPDqbH"));
+            type_btn = 2;
+        }
+        else
+        {
+            Debug.Log("이름을 입력하세요.");
+        }
+
+    }
+
     IEnumerator RegisterScore(string playerName, int score, int playedTime, string gamekind, string key) // 스코어 API에 전송
     {
 
@@ -66,7 +90,25 @@ public class NameEnter : MonoBehaviour
             else
             {
                 Debug.Log("Score registered successfully!");
-                LoadingSceneController.LoadScene("UI_Main");
+                
+                if (type_btn == 1)
+                {
+                    type_btn = 0;
+                    LoadingSceneController.LoadScene("UI_Main");
+                }
+                else if (type_btn == 2)
+                {
+                    type_btn = 0;
+
+                    BoolManager.PlayerDie = false;
+                    LoadingSceneController.LoadScene("FinalBoss_ModeScene");
+
+                    ScoreManager.p_Move.currentHealth = 5;
+                    Player_Attack.Skill_gauge = 0f;
+                    /*Scene currentScene = SceneManager.GetActiveScene(); // 현재 활성화된 씬을 가져옵니다.
+                    SceneManager.LoadScene(currentScene.name); // 현재 씬을 다시 불러옵니다.*/
+
+                }
 
                 ScoreManager.gameScore = 0;
                 ScoreManager.gameTimer = 60f;

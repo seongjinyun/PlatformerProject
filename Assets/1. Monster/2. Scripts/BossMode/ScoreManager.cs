@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     public static int gameScore = 0;
     public static float gameTimer = 60f;
     private bool timerEnded = false;
-    Player_Move player_Move;
+    public static Player_Move p_Move;
     Player_Anim player_Anim;
 /*    private string baseURL = "https://desktop-api.op.gg/indi/result?gamekind=&key="; // API 주소
 */
@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
 
-        player_Move = player.GetComponent<Player_Move>();
+        p_Move = player.GetComponent<Player_Move>();
     }
     private void Update()
     {
@@ -65,7 +65,7 @@ public class ScoreManager : MonoBehaviour
     public void RestartScene() // 씬 다시시작
     {
         BoolManager.PlayerDie = false;
-        player_Move.currentHealth = 5;
+        p_Move.currentHealth = 5;
         Player_Attack.Skill_gauge = 0f;
 
         Scene currentScene = SceneManager.GetActiveScene(); // 현재 활성화된 씬을 가져옵니다.
