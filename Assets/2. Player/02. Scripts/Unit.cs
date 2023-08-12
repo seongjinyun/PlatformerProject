@@ -48,6 +48,8 @@ namespace AllUnits
             {
                 currentHealth = 25;
             }
+
+            Playerdie();
         }
         
         public void TakeDamage(int Monster_Damage) // 피격 
@@ -61,6 +63,7 @@ namespace AllUnits
             {
                 SfxManger.instance.SfxPlay("Monster_Attacked", clip_attacked[0]);
             }
+            
             if (Player_UsingItem.UsingActiveShield == false)
             {
                 if (!isDamage)
@@ -69,8 +72,10 @@ namespace AllUnits
 
                     if (currentHealth <= 0)
                     {
+                        
                         //DIe 애님 실행 및 삭제
                         //Debug.Log("사망");
+                        
                     }
                     StartCoroutine(NotDam());
                 }
@@ -86,7 +91,19 @@ namespace AllUnits
             yield return new WaitForSeconds(0.2f);
             isDamage = false;
         }
+        void Playerdie()
+        {
+            if (currentHealth <= 0)
+            {
+                Collider2D coll = GetComponent<Collider2D>();
+                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                rb.simulated = false;
+                coll.enabled = false;
 
-        
+                return;
+            }
+        }
+
     }
+    
 }

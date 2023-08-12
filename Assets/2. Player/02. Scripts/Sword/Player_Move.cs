@@ -324,6 +324,12 @@ public class Player_Move : AllUnits.Unit
             this.GetComponent<Player_Move>().enabled = false;
         }
 
+        if(currentHealth <= 0)
+        {
+            this.GetComponent<Player_Move>().enabled = false;
+            //move_animator.SetTrigger("Die");
+        }
+
         //Player_anim(h); //�ִϸ��̼�
     }
 

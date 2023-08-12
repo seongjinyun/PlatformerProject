@@ -19,11 +19,11 @@ public class Player_Attack : MonoBehaviour
     public AudioClip[] clip; // 0 = Sword_Attack, 1 = Spear_Attack, 2 = Shield_Attack, 3 = Monster_Attacked
 
     AllUnits.Unit Player_Dam;
-
+    AllUnits.Unit currentHealth;
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        
+        currentHealth = GetComponentInParent<AllUnits.Unit>();
         Player_anim = GetComponent<Animator>();
         Player_Dam = GetComponentInParent<AllUnits.Unit>();
         if (GameObject.FindGameObjectWithTag("Gauge_Chk"))
@@ -129,7 +129,13 @@ public class Player_Attack : MonoBehaviour
         {
             this.GetComponent<Player_Anim>().enabled = false;
         }
+
+        if(currentHealth.currentHealth <= 0)
+        {
+            this.GetComponent<Player_Anim>().enabled = false;
+        }
     }
+    
     void atk_Anim()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
