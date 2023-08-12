@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
     {
         LoadingSceneController.LoadScene("UI_Main");
         Debug.Log("메인메뉴로 이동");
+        BoolManager.PlayerDie = false;
         UI_Test.instance_ui.Resume();
     }
     public void Escape()

@@ -131,7 +131,7 @@ public class Player_Move : AllUnits.Unit
         else
             shadow.SetActive(false);
 
-        if (isGround && Input.GetKeyDown(KeyCode.LeftAlt)) //����
+        if (isGround && Input.GetKeyDown(KeyCode.Space)) //����
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -139,7 +139,7 @@ public class Player_Move : AllUnits.Unit
             Destroy(jump_ef, 0.5f);
             jump_Count--;
             
-        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.LeftAlt)) //��������
+        }else if (doubleJumpState && Input.GetKeyDown(KeyCode.Space)) //��������
         {
             SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
             Player_rigid.velocity = new Vector2(Player_rigid.velocity.x, jumpPower);
@@ -154,7 +154,7 @@ public class Player_Move : AllUnits.Unit
 
         if (isGround == true)
         {
-            if (Input.GetKeyDown(KeyCode.LeftAlt) && Input.GetButton("Vertical")) //�ϴ� ����
+            if (Input.GetKeyDown(KeyCode.Space) && Input.GetButton("Vertical")) //�ϴ� ����
             {
                 isGround = false;
                 SfxManger.instance.SfxPlay("Player_Jump", clip[0]);
